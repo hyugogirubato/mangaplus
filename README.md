@@ -35,7 +35,7 @@ features of MangaPlus, such as retrieving manga settings, bookmarking titles, fe
 You can install the MangaPlus Python library using pip:
 
 ````shell
-python3 setup.py install
+pip install mangaplus
 ````
 
 ## Usage
