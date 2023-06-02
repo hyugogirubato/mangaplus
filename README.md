@@ -5,7 +5,6 @@
 **MangaPlus**
 
 [![License](https://img.shields.io/badge/License-GNU%20v3-blue.svg)](https://opensource.org/licenses/GPL-3.0)
-[![Python Version](https://img.shields.io/badge/Python-3.7%20%7C%203.8%20%7C%203.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
 [![Release](https://img.shields.io/github/release-date/hyugogirubato/MangaPlus)](https://github.com/hyugogirubato/MangaPlus/releases)
 
 </div>
