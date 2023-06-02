@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://github.com/hyugogirubato/MangaPlus/blob/main/docs/icon.png" width="10%">
+<img src="./docs/icon.png" width="10%">
 
 **MangaPlus**
 
