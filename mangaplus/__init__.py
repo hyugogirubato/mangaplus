@@ -1,3 +1,3 @@
-from .client import Client
+from .client import Client, Language, Mode, Quality
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
