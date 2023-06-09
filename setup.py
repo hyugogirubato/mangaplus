@@ -1,33 +1,38 @@
-"""Setup module"""
-
-from setuptools import setup
-
-with open("README.md", mode="r", encoding="utf-8") as f:
-    LONG_DESCRIPTION = f.read()
+from setuptools import setup, find_packages
 
 setup(
-    name="mangaplus",
-    version="1.0.2",
-    description="Python library for interacting with the MangaPlus API.",
-    long_description=LONG_DESCRIPTION,
-    long_description_content_type="text/markdown",
-    url="https://github.com/hyugogirubato/MangaPlus",
+    name="pymangaplus",
+    version="1.1.0",
     author="hyugogirubato",
     author_email="hyugogirubato@gmail.com",
-    license="GNU GPLv3",
-    packages=["mangaplus"],
+    description="Python client for the MangaPlus API.",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
+    url="https://github.com/hyugogirubato/pymangaplus",
+    packages=find_packages(),
+    license="GPL-3.0-only",
+    keywords=[
+        "client",
+        "manga",
+        "ebooks",
+        "manga-plus"
+    ],
+    classifiers=[
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Intended Audience :: End Users/Desktop",
+        "Natural Language :: English",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Topic :: Utilities"
+    ],
     install_requires=[
         "requests",
         "protobuf"
     ],
-    classifiers=[
-        "Environment :: Console",
-        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-        "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3.4",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Topic :: Utilities"
-    ]
+    python_requires=">=3.7"
 )
