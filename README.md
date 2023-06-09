@@ -2,7 +2,7 @@
 
 <img src="https://github.com/hyugogirubato/pymangaplus/blob/main/docs/images/icon.png" width="10%">
 
-# PyMangaPlus
+**PyMangaPlus**
 
 [![License](https://img.shields.io/github/license/hyugogirubato/pymangaplus)](https://github.com/hyugogirubato/pymangaplus/blob/main/LICENSE)
 [![Release](https://img.shields.io/github/release-date/hyugogirubato/pymangaplus)](https://github.com/hyugogirubato/pymangaplus/releases)
