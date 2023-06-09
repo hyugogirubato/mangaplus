@@ -46,7 +46,7 @@ from pymangaplus.client import MangaPlus
 from pymangaplus.constants import Quality
 
 if __name__ == "__main__":
-    title_id = 100191  # 【OSHI NO KO】
+    title_id = 100191  # OSHI NO KO
     chapter_id = 1014090  # Chapter 86: ASSISTANT DIRECTOR
     android_id = secrets.token_bytes(8).hex()
 
