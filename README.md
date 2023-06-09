@@ -11,7 +11,6 @@
 </div>
 
 
-
 PyMangaPlus is a Python client for the MangaPlus API, allowing you to access various manga-related information and
 features. This library provides a convenient way to interact with the MangaPlus API and retrieve data such as manga
 details, chapters, comments, rankings, and more.
