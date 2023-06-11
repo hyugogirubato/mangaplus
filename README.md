@@ -42,7 +42,7 @@ Here's an example of how to use the PyMangaPlus library:
 ```python
 import secrets
 
-from pymangaplus.client import MangaPlus
+from pymangaplus.client import Client
 from pymangaplus.constants import Quality
 
 if __name__ == "__main__":
@@ -50,7 +50,7 @@ if __name__ == "__main__":
     chapter_id = 1014090  # Chapter 86: ASSISTANT DIRECTOR
     android_id = secrets.token_bytes(8).hex()
 
-    client = MangaPlus()
+    client = Client()
 
     # Register new device
     client.register(android_id)

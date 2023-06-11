@@ -5,7 +5,7 @@ from pymangaplus.constants import Language, Mode, Quality
 from pymangaplus.utils import proto2dict
 
 
-class MangaPlus:
+class Client:
 
     def __init__(self, language: Language = Language.ENGLISH):
         self.language = language.value
@@ -17,7 +17,7 @@ class MangaPlus:
             "accept": "*/*",
             "user-agent": "okhttp/4.9.0"
         }
-        headers.update(kwargs.get("update") or {})
+        headers.update(kwargs.get("headers") or {})
 
         params = kwargs.get("params") or {}
         params["os"] = "android"
