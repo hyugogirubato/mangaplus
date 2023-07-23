@@ -277,7 +277,7 @@ message TitleDetailView {
   string imageTitle = 2;
   string overview = 3;
   string imageBackground = 4;
-  string nextTimeStamp = 5;
+  uint32 nextTimeStamp = 5;
 
   enum UpdateTiming {
     NOT_REGULARLY = 0;

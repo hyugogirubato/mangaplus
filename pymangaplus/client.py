@@ -9,7 +9,7 @@ class Client:
 
     def __init__(self, language: Language = Language.ENGLISH):
         self.language = language.value
-        self.secret = None
+        self._secret = None
         self.api = "https://jumpg-api.tokyo-cdn.com/api"
 
     def _request(self, **kwargs) -> dict:
