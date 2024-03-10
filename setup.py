@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pymangaplus",
-    version="1.1.3",
+    version="1.1.4",
     author="hyugogirubato",
     author_email="hyugogirubato@gmail.com",
     description="Python client for the MangaPlus API.",
