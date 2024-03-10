@@ -22,7 +22,7 @@ class Client:
         params = kwargs.get("params") or {}
         params["os"] = "android"
         params["os_ver"] = 29
-        params["app_ver"] = 47
+        params["app_ver"] = 124
         if self._secret:
             params["secret"] = self._secret
 
@@ -139,7 +139,7 @@ class Client:
     def home(self) -> dict:
         return self._request(
             method="GET",
-            url=f"{self.api}/home_v3",
+            url=f"{self.api}/home_v4",
             params={"lang": self.language}
         )["homeView"]
 
@@ -161,7 +161,7 @@ class Client:
     def title_detail(self, title_id: int) -> dict:
         return self._request(
             method="GET",
-            url=f"{self.api}/title_detailV2",
+            url=f"{self.api}/title_detailV3",
             params={"title_id": title_id, "lang": self.language}
         )["titleDetailView"]
 
