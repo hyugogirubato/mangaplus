@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "BannerOuterClass.proto";
+import "LabelOuterClass.proto";
+import "TagOuterClass.proto";
+import "TitleListGroup.proto";
+import "TitleListOuterClass.proto";
+
+message SearchView {
+
+  message Contents {
+    Banner banner = 1;
+    TitleList titleList = 2;
+    repeated TitleRankingGroup rankedTitles = 3;
+    repeated Label allLabels = 4;
+  }
+
+  repeated Banner topSearchBanners = 1;
+  repeated Tag allTags = 2;
+  repeated AllTitlesGroup allTitlesGroup = 3;
+  repeated Contents contents = 5;
+}

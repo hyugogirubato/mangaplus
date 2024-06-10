@@ -1,78 +1,78 @@
 <div align="center">
 
-<img src="https://github.com/hyugogirubato/pymangaplus/blob/main/docs/images/icon.png" width="10%">
+<img src="https://github.com/hyugogirubato/mangaplus/blob/main/docs/images/icon.png" width="10%">
 
-# PyMangaPlus
+# MangaPlus
 
-[![License](https://img.shields.io/github/license/hyugogirubato/pymangaplus)](https://github.com/hyugogirubato/pymangaplus/blob/main/LICENSE)
-[![Release](https://img.shields.io/github/release-date/hyugogirubato/pymangaplus)](https://github.com/hyugogirubato/pymangaplus/releases)
-[![Latest Version](https://img.shields.io/pypi/v/pymangaplus)](https://pypi.org/project/pymangaplus/)
+[![License](https://img.shields.io/github/license/hyugogirubato/mangaplus)](https://github.com/hyugogirubato/mangaplus/blob/main/LICENSE)
+[![Release](https://img.shields.io/github/release-date/hyugogirubato/mangaplus)](https://github.com/hyugogirubato/mangaplus/releases)
+[![Latest Version](https://img.shields.io/pypi/v/mangaplus)](https://pypi.org/project/mangaplus/)
 
 </div>
 
-
-PyMangaPlus is a Python client for the MangaPlus API, allowing you to access various manga-related information and
-features. This library provides a convenient way to interact with the MangaPlus API and retrieve data such as manga
-details, chapters, comments, rankings, and more.
+MangaPlus is a Python client for the MangaPlus API, allowing you to access various manga-related information and features. This library provides a convenient way to interact with the MangaPlus API and retrieve data such as manga details, chapters, comments, rankings, and more.
 
 ## Features
 
 - Retrieve manga details including title, author, description, cover image, and more.
 - Get a list of available chapters for a specific manga.
-- View manga chapters and read them online.
+- View manga chapters with different quality settings.
 - Add or remove manga titles from your bookmarks.
 - Access publisher news for specific publishers.
 - View featured manga titles.
 - Retrieve and update user profile information.
 - View the home page with recommended manga titles.
-- Like or unlike comments on manga chapters.
+- Like or dislike comments on manga chapters.
+- Fetch ranking lists (hottest, trending, completed).
+- Manage user subscriptions and view history.
 
 ## Installation
 
-You can install PyMangaPlus using pip:
+You can install MangaPlus using pip:
 
-````shell
-pip install pymangaplus
-````
+```shell
+pip install mangaplus
+```
 
 ## Usage
 
-Here's an example of how to use the PyMangaPlus library:
+Here's an example of how to use the MangaPlus library:
 
 ```python
-import secrets
-
-from pymangaplus.client import Client
-from pymangaplus.constants import Quality
+from mangaplus import MangaPlus, Language, Viewer, Quality
 
 if __name__ == "__main__":
-    title_id = 100191  # OSHI NO KO
-    chapter_id = 1014090  # Chapter 86: ASSISTANT DIRECTOR
-    android_id = secrets.token_bytes(8).hex()
+    title_id = 100191  # Example title ID
+    chapter_id = 1014090  # Example chapter ID
 
-    client = Client()
+    # Initialize the MangaPlus client with default settings
+    client = MangaPlus(lang=Language.ENGLISH, viewer=Viewer.HORIZONTAL)
 
-    # Register new device
-    client.register(android_id)
+    # Register a new device
+    device_id = "your_device_id_here"
+    client.register(device_id)
 
-    # Home titles
-    content = client.home()
-    print(content)
+    # Fetch home titles
+    home_content = client.home()
+    print(home_content)
 
     # View manga chapters
-    content = client.manga_viewer(chapter_id, quality=Quality.SUPER_HIGH)
-    print(content)
+    manga_chapter = client.manga_viewer(
+        chapter_id=chapter_id,
+        split=True,
+        quality=Quality.SUPER_HIGH
+    )
+    print(manga_chapter)
 ```
 
-For more information on how to use PyMangaPlus, please refer to
-the [documentation](https://github.com/hyugogirubato/pymangaplus/blob/main/docs).
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request or open an issue on the [GitHub repository](https://github.com/hyugogirubato/mangaplus/issues).
 
 ## Disclaimer
 
-PyMangaPlus is an unofficial library and is not affiliated with or endorsed by MangaPlus or Shueisha. The library is
-provided "as is" without any warranty, and the usage of this library is at your own risk. Make sure to comply with the
-terms and conditions of the MangaPlus service while using this library.
+MangaPlus is an unofficial library and is not affiliated with or endorsed by Shueisha. The library is provided "as is" without any warranty, and the usage of this library is at your own risk. Make sure to comply with the terms and conditions of the MangaPlus service while using this library.
 
-### License
+## License
 
-This project is licensed under the [GPL v3 License](https://github.com/hyugogirubato/pymangaplus/blob/main/LICENSE).
+The MangaPlus library is released under the MIT License. See [LICENSE](https://github.com/hyugogirubato/mangaplus/blob/main/LICENSE) for details.

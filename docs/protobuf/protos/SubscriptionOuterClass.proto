@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "SubscriptionOffers.proto";
+
+message PlanType {
+  string plan = 1;
+  string description = 2;
+  string productId = 3;
+  IosSubscriptionOffer subscriptionOffer = 4;
+  repeated AndroidSubscriptionOfferTags androidOfferTags = 5;
+}
+
+message Subscription {
+  string planType = 1;
+  string nextPaymentDate = 2;
+  bool isFreeTrial = 3;
+  bool isPendingDowngrade = 4;
+  bool isFirstTimeUser = 5;
+}

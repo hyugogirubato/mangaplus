@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "BannerOuterClass.proto";
+import "TitleListGroup.proto";
+import "TitleListOuterClass.proto";
+
+message FeaturedTitlesViewV2 {
+
+  message Contents {
+    Banner banner = 1;
+    TitleList titleList = 2;
+    TitleRankingGroup rankedTitles = 3;
+  }
+
+  repeated Banner topSearchBanners = 1;
+  repeated Contents contents = 2;
+}

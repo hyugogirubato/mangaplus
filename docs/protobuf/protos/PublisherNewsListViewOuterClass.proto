@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "BannerOuterClass.proto";
+import "PublisherNewsOuterClass.proto";
+
+message PublisherNewsListView {
+  int32 publisherId = 1;
+  string publisherName = 2;
+  Banner banner = 3;
+  repeated PublisherNews newsList = 4;
+}

@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+message AdNetwork {
+
+  enum NetworkCase {
+    NETWORK_NOT_SET = 0;
+    FACEBOOK = 1;
+    ADMOB = 2;
+    MOPUB = 3;
+    ADSENSE = 4;
+    APPLOVIN = 5;
+    APPLOVINMAX = 6;
+  }
+
+  message Facebook {
+    string placementId = 1;
+  }
+
+  message Mopub {
+    string unitId = 1;
+  }
+
+  message Admob {
+    string unitId = 1;
+  }
+
+  message Adsense {
+    string unitId = 1;
+    string location = 2;
+  }
+
+  message Applovin {
+    string unitId = 1;
+  }
+
+  message ApplovinMax {
+
+    enum AdType {
+      STILL_IMAGE = 0;
+      MOVIE = 1;
+      NATIVE_MANUAL = 2;
+      NATIVE_MEDIUM = 3;
+      MREC = 4;
+      REWARD = 5;
+      UNRECOGNIZED = -1;
+    }
+
+    string unitId = 1;
+    AdType type = 2;
+  }
+
+  Facebook facebook = 1;
+  Mopub mopub = 3;
+  Admob admob = 2;
+  Adsense adsense = 4;
+  Applovin applovin = 5;
+  ApplovinMax applovinmax = 6;
+}
+
+message AdNetworkList {
+  repeated AdNetwork adNetworks = 1;
+}
+
+message AdRewardNetworkList {
+  repeated AdNetwork adNetworks = 1;
+  string token = 2;
+  int32 rewardViewCount = 3;
+}

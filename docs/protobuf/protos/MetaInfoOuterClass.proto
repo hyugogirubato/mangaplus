@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+message MetaInfo {
+  string metaTitle = 1;
+}

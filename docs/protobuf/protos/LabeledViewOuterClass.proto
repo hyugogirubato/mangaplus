@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "LabelOuterClass.proto";
+import "TitleListGroup.proto";
+
+message LabeledView {
+  Label label = 1;
+  repeated LabeledTitlesGroup labeledTitlesGroup = 2;
+}

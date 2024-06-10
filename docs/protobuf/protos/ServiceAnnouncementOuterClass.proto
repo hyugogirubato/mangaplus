@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+message ServiceAnnouncement {
+  string title = 1;
+  string body = 2;
+  int64 date = 3;
+  int32 id = 4;
+}

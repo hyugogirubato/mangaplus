@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "BannerOuterClass.proto";
+import "TitleOuterClass.proto";
+
+message HistoryView {
+  repeated Banner historyBanners = 1;
+  repeated Title viewHistory = 2;
+}

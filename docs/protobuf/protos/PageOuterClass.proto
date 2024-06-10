@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "AdNetworkOuterClass.proto";
+import "BannerOuterClass.proto";
+import "ChapterOuterClass.proto";
+import "CommentOuterClass.proto";
+import "Dialogue.proto";
+import "PopupOuterClass.proto";
+import "TitleOuterClass.proto";
+import "UserTicketsOuterClass.proto";
+
+message Page {
+
+  enum DataCase {
+    DATA_NOT_SET = 0;
+    MANGA_PAGE = 1;
+    BANNER_LIST = 2;
+    LAST_PAGE = 3;
+    ADVERTISEMENT = 4;
+    INSERT_BANNER_LIST = 5;
+  }
+
+  message MangaPage {
+
+    enum PageType {
+      SINGLE = 0;
+      LEFT = 1;
+      RIGHT = 2;
+      DOUBLE = 3;
+      UNRECOGNIZED = -1;
+    }
+
+    string imageUrl = 1;
+    int32 width = 2;
+    int32 height = 3;
+    PageType type = 4;
+    string encryptionKey = 5;
+  }
+
+  message BannerList {
+    string bannerTitle = 1;
+    repeated Banner banners = 2;
+  }
+
+  message LastPage {
+
+    enum ChapterType {
+      LATEST = 0;
+      SEQUENCE = 1;
+      NOSEQUENCE = 2;
+      UNRECOGNIZED = -1;
+    }
+
+    Chapter currentChapter = 1;
+    ChapterType nextChapter = 2;
+    repeated Comment topComments = 3;
+    bool isSubscribed = 4;
+    int64 nextTimeStamp = 5;
+    ChapterType chapterType = 6;
+    AdNetworkList advertisement = 7;
+    Popup movieReward = 8;
+    repeated Banner banners = 9;
+    Title ticketTitleList = 10;
+    Banner publisherBanner = 11;
+    UserTickets userTickets = 12;
+    bool isNextChapterReadByTicket = 13;
+    bool isNextChapterOneTimeFree = 14;
+    FreeViewDialogue freeViewDialogue = 15;
+    bool isNextChapterSubscription = 16;
+    AdRewardNetworkList advertisementReward = 17;
+  }
+
+  MangaPage mangaPage = 1;
+  BannerList bannerList = 2;
+  LastPage lastPage = 3;
+  AdNetworkList advertisement = 4;
+  BannerList insertBannerList = 5;
+}

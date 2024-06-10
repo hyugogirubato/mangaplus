@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+message Questionnaire {
+  string description = 1;
+  repeated string selection = 2;
+  int32 numberOfChoices = 3;
+  bool hideFreeform = 4;
+  string freeForm = 5;
+  bool canSkip = 6;
+}

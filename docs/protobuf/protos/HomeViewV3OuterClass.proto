@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "BannerOuterClass.proto";
+import "PopupOuterClass.proto";
+import "ServiceAnnouncementOuterClass.proto";
+import "SubscriptionOuterClass.proto";
+import "UpdatedTitleGroupOuterClass.proto";
+
+message HomeViewV3 {
+  repeated Banner topBanners = 1;
+  repeated UpdatedTitleV2Group groups = 2;
+  Popup popup = 9;
+  bool displayTrackingPopup = 10;
+  Subscription userSubscription = 11;
+  repeated ServiceAnnouncement serviceAnnouncements = 12;
+}

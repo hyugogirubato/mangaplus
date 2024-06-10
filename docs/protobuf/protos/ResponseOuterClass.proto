@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "ErrorResultOuterClass.proto";
+import "SuccessResultOuterClass.proto";
+
+message Response {
+
+  enum ResultCase {
+    RESULT_NOT_SET = 0;
+    SUCCESS = 1;
+    ERROR = 2;
+  }
+
+  SuccessResult success = 1;
+  ErrorResult error = 2;
+}

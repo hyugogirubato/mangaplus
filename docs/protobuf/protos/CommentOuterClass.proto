@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+message Comment {
+  int32 id = 1;
+  int32 index = 2;
+  string userName = 3;
+  string iconUrl = 4;
+  bool isMyComment = 6;
+  bool alreadyLiked = 7;
+  int32 numberOfLikes = 9;
+  string body = 10;
+  int64 created = 11;
+}

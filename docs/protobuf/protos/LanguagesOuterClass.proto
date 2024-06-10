@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+enum Language {
+  ENGLISH = 0;
+  SPANISH = 1;
+  FRENCH = 2;
+  INDONESIAN = 3;
+  PORTUGUESE_BR = 4;
+  RUSSIAN = 5;
+  THAI = 6;
+  GERMAN = 7;
+  ITALIAN = 8;
+  VIETNAMESE = 9;
+  UNRECOGNIZED = -1;
+}
+
+message AvailableLanguages {
+  Language language = 1;
+  int32 titlesCount = 2;
+}
+
+message Languages {
+  Language defaultUiLanguage = 1;
+  Language defaultContentLanguageOne = 2;
+  Language defaultContentLanguageTwo = 3;
+  Language defaultContentLanguageThree = 4;
+  repeated AvailableLanguages availableLanguages = 5;
+}

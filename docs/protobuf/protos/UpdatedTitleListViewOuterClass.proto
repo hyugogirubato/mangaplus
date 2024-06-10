@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "UpdatedTitleGroupOuterClass.proto";
+
+message UpdatedTitleListView {
+  repeated UpdatedTitleGroup groups = 1;
+}

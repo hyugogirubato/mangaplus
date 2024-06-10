@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "LanguagesOuterClass.proto";
+
+message InitialViewV2 {
+  bool gdprAgreementRequired = 1;
+  repeated AvailableLanguages availableLanguages = 2;
+}

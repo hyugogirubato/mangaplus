@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+message PushTokenView {
+  string token = 1;
+  int64 tokenTimeStamp = 2;
+}

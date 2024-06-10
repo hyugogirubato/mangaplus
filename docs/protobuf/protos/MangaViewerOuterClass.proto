@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "ChapterOuterClass.proto";
+import "PageOuterClass.proto";
+import "PopupOuterClass.proto";
+import "SnsOuterClass.proto";
+import "SubscriptionOuterClass.proto";
+
+message MangaViewer {
+  repeated Page pages = 1;
+  int32 chapterId = 2;
+  repeated Chapter chapters = 3;
+  Sns sns = 4;
+  string titleName = 5;
+  string chapterName = 6;
+  int32 numberOfComments = 7;
+  bool isVerticalOnly = 8;
+  int32 titleId = 9;
+  bool startFromRight = 10;
+  string regionCode = 11;
+  bool isHorizontalOnly = 12;
+  Subscription userSubscription = 13;
+  string planType = 14; // TODO: SubscriptionOuterClass.PlanType
+  string titleLanguage = 15; // TODO: LanguagesOuterClass.Language
+  Popup ratingPopup = 16;
+}

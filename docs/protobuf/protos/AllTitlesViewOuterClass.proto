@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "TitleOuterClass.proto";
+
+message AllTitlesView {
+  repeated Title titles = 1;
+}

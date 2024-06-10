@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "TransitionActionOuterClass.proto";
+
+message PublisherNews {
+  int32 id = 1;
+  int32 publisherId = 2;
+  string publisherName = 3;
+  string subject = 4;
+  string body = 5;
+  int64 publishedTimeStamp = 6;
+  TransitionAction action = 7;
+}

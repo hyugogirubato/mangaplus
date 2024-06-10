@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "AdNetworkOuterClass.proto";
+import "LanguagesOuterClass.proto";
+import "TransitionActionOuterClass.proto";
+
+message Popup {
+
+  enum PopupCase {
+    POPUP_NOT_SET = 0;
+    OS_DEFAULT = 1;
+    APP_DEFAULT = 2;
+    MOVIE_REWARD = 3;
+    ONE_IMAGE = 4;
+  }
+
+  message Button {
+    string text = 1;
+    TransitionAction action = 2;
+  }
+
+  message OSDefault {
+    string subject = 1;
+    string body = 2;
+    Button okButton = 3;
+    Button neutralButton = 4;
+    Button cancelButton = 5;
+    Language language = 6;
+  }
+
+  message AppDefault {
+    string subject = 1;
+    string body = 2;
+    TransitionAction action = 3;
+    string imageUrl = 4;
+  }
+
+  message MovieReward {
+    string imageUrl = 1;
+    AdNetworkList advertisement = 2;
+  }
+
+  message OneImage {
+    TransitionAction action = 1;
+    string imageUrl = 2;
+  }
+
+  OSDefault osDefault = 1;
+  AppDefault appDefault = 2;
+  MovieReward movieReward = 3;
+  OneImage oneImage = 4;
+  int32 popupId = 5;
+}

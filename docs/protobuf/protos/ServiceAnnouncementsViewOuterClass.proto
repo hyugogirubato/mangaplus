@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "ServiceAnnouncementOuterClass.proto";
+
+message ServiceAnnouncementsView {
+  repeated ServiceAnnouncement serviceAnnouncements = 1;
+}

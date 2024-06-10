@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "BannerOuterClass.proto";
+
+message FreeViewDialogue {
+
+  enum FirstTimeFreePlatform {
+    DISABLED = 0;
+    WEB = 1;
+    APP = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  FirstTimeFreePlatform platform = 1;
+  string dialogueUrl = 2;
+  Banner publisherBanner = 3;
+}

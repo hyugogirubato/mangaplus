@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "BannerOuterClass.proto";
+import "TitleListOuterClass.proto";
+
+message FeaturedTitlesView {
+
+  message Contents {
+
+    enum DataCase {
+      DATA_NOT_SET = 0;
+      BANNER = 1;
+      TITLE_LIST = 2;
+    }
+
+    DataCase data = 1;
+    TitleList titleList = 2;
+  }
+
+  Banner mainBanner = 1;
+  Banner subBanner1 = 2;
+  Banner subBanner2 = 3;
+  repeated Contents contents = 4;
+}

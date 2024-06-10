@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+message AndroidSubscriptionOfferTags {
+  string tag = 1;
+}
+
+message IosSubscriptionOffer {
+
+  enum OfferType {
+    NO_OFFER = 0;
+    INTRODUCTORY = 1;
+    PROMOTIONAL = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  OfferType offerType = 1;
+  string signature = 2;
+  string appleKey = 3;
+  string nonce = 4;
+  int64 timestamp = 5;
+  string identifier = 6;
+}

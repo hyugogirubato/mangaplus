@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "mangaplus"
+version = "1.9.19"
+description = "Python client for the MangaPlus API."
+authors = ["hyugogirubato <65763543+hyugogirubato@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+protobuf = "^4.25.1"
+requests = "^2.31.0"
+pathlib = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

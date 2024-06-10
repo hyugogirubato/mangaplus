@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+message Label {
+
+  enum LabelCodes {
+    WJ = 0;
+    SQ = 1;
+    VJ = 2;
+    YJ = 3;
+    J_PLUS = 4;
+    REVIVAL = 5;
+    CREATORS = 6;
+    MEE = 7;
+    TYJ = 8;
+    OTHERS = 9;
+    SKJ = 10;
+    GIGA = 11;
+    UNRECOGNIZED = -1;
+  }
+
+  LabelCodes label = 1;
+  string description = 2;
+}

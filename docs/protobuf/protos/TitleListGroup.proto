@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "LabelOuterClass.proto";
+import "TagOuterClass.proto";
+import "TitleOuterClass.proto";
+
+message AllTitlesGroup {
+  string theTitle = 1;
+  repeated Title titles = 2;
+  repeated Tag tags = 3;
+  Label label = 4;
+  int64 nextChapterStartTimestamp = 5;
+}
+
+message LabeledTitlesGroup {
+  string theTitle = 1;
+  repeated Title titles = 2;
+}
+
+message TitleRankingGroup {
+  int32 originalTitleId = 1;
+  repeated Title titles = 2;
+  int32 score = 3;
+}
+
+message TitleSubscriptionGroup {
+  string plan = 1;
+  repeated Title titles = 2;
+}
+
+message TitleUpdatedGroup {
+  int64 updatedTitleTimestamp = 1;
+  repeated AllTitlesGroup latestTitle = 2;
+}

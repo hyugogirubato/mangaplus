@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "CommentIconOuterClass.proto";
+
+message ProfileSettingsView {
+  repeated CommentIcon iconList = 1;
+  string userName = 2;
+  CommentIcon myIcon = 3;
+}

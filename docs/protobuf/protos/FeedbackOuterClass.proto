@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+message Feedback {
+
+  enum ResponseType {
+    QUESTION = 0;
+    ANSWER = 1;
+    UNRECOGNIZED = -1;
+  }
+
+  int64 timeStamp = 1;
+  string body = 2;
+  ResponseType responseType = 3;
+}

@@ -1,0 +1,110 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "AllFreeTitlesViewOuterClass.proto";
+import "AllTicketTitlesViewOuterClass.proto";
+import "AllTitlesViewOuterClass.proto";
+import "AllTitlesViewV2OuterClass.proto";
+import "CommentListViewOuterClass.proto";
+import "FeaturedTitlesViewOuterClass.proto";
+import "FeaturedTitlesViewV2OuterClass.proto";
+import "FeedbackViewOuterClass.proto";
+import "HistoryViewOuterClass.proto";
+import "HomeViewV3OuterClass.proto";
+import "InitialViewV2OuterClass.proto";
+import "LabeledViewOuterClass.proto";
+import "LanguagesOuterClass.proto";
+import "MangaViewerOuterClass.proto";
+import "ProfileSettingsViewOuterClass.proto";
+import "PublisherNewsListViewOuterClass.proto";
+import "PushTokenViewOuterClass.proto";
+import "QuestionnaireViewOuterClass.proto";
+import "RegistrationDataOuterClass.proto";
+import "SearchViewOuterClass.proto";
+import "ServiceAnnouncementsViewOuterClass.proto";
+import "SettingsViewV2OuterClass.proto";
+import "SubscribedTitlesViewOuterClass.proto";
+import "SubscriptionViewOuterClass.proto";
+import "TitleDetailViewOuterClass.proto";
+import "TitleRankingViewOuterClass.proto";
+import "TitleRankingViewV2OuterClass.proto";
+import "TitleUpdatedViewOuterClass.proto";
+import "TitleUpdatedViewV2OuterClass.proto";
+import "UpdateProfileResultViewOuterClass.proto";
+import "UpdatedTitleListViewOuterClass.proto";
+import "WebHomeViewV4OuterClass.proto";
+
+message SuccessResult {
+
+  enum DataCase {
+    DATA_NOT_SET = 0;
+    REGISTERATION_DATA = 2;
+    FEATURED_TITLES_VIEW = 4;
+    ALL_TITLES_VIEW = 5;
+    TITLE_RANKING_VIEW = 6;
+    SUBSCRIBED_TITLES_VIEW = 7;
+    TITLE_DETAIL_VIEW = 8;
+    COMMENT_LIST_VIEW = 9;
+    MANGA_VIEWER = 10;
+    PROFILE_SETTINGS_VIEW = 13;
+    UPDATE_PROFILE_RESULT_VIEW = 14;
+    SERVICE_ANNOUNCEMENTS_VIEW = 15;
+    FEEDBACK_VIEW = 17;
+    PUBLISHER_NEWS_LIST_VIEW = 18;
+    QUESTIONNAIRE_VIEW = 19;
+    TITLE_UPDATED_VIEW = 20;
+    UPDATED_TITLE_LIST_VIEW = 22;
+    ALL_TICKET_TITLES_VIEW = 23;
+    HOME_VIEW_V3 = 24;
+    ALL_TITLES_VIEW_V2 = 25;
+    SETTINGS_VIEW_V2 = 26;
+    TITLE_LIST_VIEW_V2 = 27;
+    INITIAL_VIEW_V2 = 28;
+    PUSH_TOKEN_VIEW = 32;
+    ALL_FREE_TITLES_VIEW = 33;
+    LABELED_VIEW = 34;
+    SEARCH_VIEW = 35;
+    SUBSCRIPTION_VIEW = 36;
+    TITLE_RANKING_VIEW_V2 = 37;
+    WEB_HOME_VIEW_V4 = 38;
+    FEATURED_TITLES_VIEW_V2 = 39;
+    HISTORY_VIEW = 40;
+  }
+
+  bool isFeaturedUpdated = 1;
+  RegistrationData registrationData = 2;
+  FeaturedTitlesView featuredTitlesView = 4;
+  AllTitlesView allTitlesView = 5;
+  TitleRankingView titleRankingView = 6;
+  SubscribedTitlesView subscribedTitlesView = 7;
+  TitleDetailView titleDetailView = 8;
+  CommentListView commentListView = 9;
+  MangaViewer mangaViewer = 10;
+  ProfileSettingsView profileSettingsView = 13;
+  UpdateProfileResultView updateProfileResultView = 14;
+  ServiceAnnouncementsView serviceAnnouncementsView = 15;
+  FeedbackView feedbackView = 17;
+  PublisherNewsListView publisherNewsListView = 18;
+  QuestionnaireView questionnaireView = 19;
+  TitleUpdatedView titleUpdatedView = 20;
+  UpdatedTitleListView updatedTitleListView = 22;
+  AllTicketTitlesView allTicketTitlesView = 23;
+  HomeViewV3 homeViewV3 = 24;
+  AllTitlesViewV2 allTitlesViewV2 = 25;
+  SettingsViewV2 settingsViewV2 = 26;
+  TitleUpdatedViewV2 titleListViewV2 = 27;
+  InitialViewV2 initialViewV2 = 28;
+  Languages languages = 29;
+  PushTokenView pushTokenView = 32;
+  AllFreeTitlesView allFreeTitlesView = 33;
+  LabeledView labeledView = 34;
+  SearchView searchView = 35;
+  SubscriptionView subscriptionView = 36;
+  TitleRankingViewV2 titleRankingViewV2 = 37;
+  WebHomeViewV4 webHomeViewV4 = 38;
+  FeaturedTitlesViewV2 featuredTitlesViewV2 = 39;
+  HistoryView historyView = 40;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "SubscriptionOuterClass.proto";
+import "TitleListGroup.proto";
+
+message SubscriptionView {
+  Subscription  userSubscription = 1;
+  repeated PlanType planTypes = 2;
+  repeated TitleSubscriptionGroup subscriptionTitles = 3;
+  bool userHasUsedTrial = 4;
+}

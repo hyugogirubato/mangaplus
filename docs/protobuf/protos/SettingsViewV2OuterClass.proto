@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "CommentIconOuterClass.proto";
+import "LanguagesOuterClass.proto";
+import "SubscriptionOuterClass.proto";
+
+message SettingsViewV2 {
+  CommentIcon myIcon = 1;
+  string userName = 2;
+  bool noticeOfNewsAndEvents = 3;
+  bool noticeOfUpdatesOfSubscribedTitles = 4;
+  repeated AvailableLanguages availableLanguages = 5;
+  Subscription userSubscription = 6;
+}

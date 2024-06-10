@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "BannerOuterClass.proto";
+import "PopupOuterClass.proto";
+import "ServiceAnnouncementOuterClass.proto";
+import "TitleListGroup.proto";
+import "TitleListOuterClass.proto";
+import "UpdatedTitleGroupOuterClass.proto";
+
+message WebHomeViewV4 {
+  repeated Banner topBanners = 1;
+  repeated UpdatedTitleV2Group groups = 2;
+  repeated TitleRankingGroup rankedTitles = 3;
+  Popup popup = 4;
+  repeated TitleList featuredTitleLists = 5;
+  repeated ServiceAnnouncement serviceAnnouncements = 6;
+}

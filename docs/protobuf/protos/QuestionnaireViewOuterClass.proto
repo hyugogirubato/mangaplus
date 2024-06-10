@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "LanguagesOuterClass.proto";
+import "QuestionnaireOuterClass.proto";
+
+message QuestionnaireView {
+  bool isAnswered = 1;
+  string subject = 2;
+  repeated Questionnaire questions = 3;
+  Language language = 4;
+}
