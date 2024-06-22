@@ -8,7 +8,7 @@ from mangaplus.utils import bool2str, proto2dict
 
 class MangaPlus:
     # @jp.co.shueisha.mangaplus.g.c;
-    VERSION = 147
+    VERSION = 150
 
     def __init__(
             self,
