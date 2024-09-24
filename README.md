@@ -39,7 +39,7 @@ pip install mangaplus
 Here's an example of how to use the MangaPlus library:
 
 ```python
-from mangaplus import MangaPlus, Language, Viewer, Quality
+from mangaplus.shueisha import MangaPlus, Language, Viewer, Quality
 
 if __name__ == "__main__":
     title_id = 100191  # Example title ID
