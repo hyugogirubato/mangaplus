@@ -1,0 +1,979 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+
+message AdNetwork {
+
+  enum NetworkCase {
+    NETWORK_NOT_SET = 0;
+    FACEBOOK = 1;
+    ADMOB = 2;
+    MOPUB = 3;
+    ADSENSE = 4;
+    APPLOVIN = 5;
+    APPLOVINMAX = 6;
+  }
+
+  message Facebook {
+    string placementId = 1;
+  }
+
+  message Mopub {
+    string unitId = 1;
+  }
+
+  message Admob {
+    string unitId = 1;
+  }
+
+  message Adsense {
+    string unitId = 1;
+    string location = 2;
+  }
+
+  message Applovin {
+    string unitId = 1;
+  }
+
+  message ApplovinMax {
+
+    enum AdType {
+      STILL_IMAGE = 0;
+      MOVIE = 1;
+      NATIVE_MANUAL = 2;
+      NATIVE_MEDIUM = 3;
+      MREC = 4;
+      REWARD = 5;
+      UNRECOGNIZED = -1;
+    }
+
+    string unitId = 1;
+    AdType type = 2;
+  }
+
+  Facebook facebook = 1;
+  Mopub mopub = 3;
+  Admob admob = 2;
+  Adsense adsense = 4;
+  Applovin applovin = 5;
+  ApplovinMax applovinmax = 6;
+}
+
+message AdNetworkList {
+  repeated AdNetwork adNetworks = 1;
+}
+
+message AdRewardNetworkList {
+  repeated AdNetwork adNetworks = 1;
+  string token = 2;
+  int32 rewardViewCount = 3;
+}
+
+
+message AllFreeTitlesView {
+  repeated FreeTitle freeTitles = 1;
+}
+
+
+message AllTicketTitlesView {
+  repeated TicketTitles ticketTitle = 1;
+}
+
+
+message AllTitlesView {
+  repeated Title titles = 1;
+}
+
+
+message AllTitlesViewV2 {
+  repeated AllTitlesGroup allTitlesGroup = 1;
+}
+
+
+message Banner {
+  string imageUrl = 1;
+  TransitionAction action = 2;
+  int32 id = 3;
+  int32 width = 4;
+  int32 height = 5;
+}
+
+message Chapter {
+  int32 titleId = 1;
+  int32 chapterId = 2;
+  string name = 3;
+  string subTitle = 4;
+  string thumbnailUrl = 5;
+  int64 startTimeStamp = 6;
+  int64 endTimeStamp = 7;
+  bool alreadyViewed = 8;
+  bool isVerticalOnly = 9;
+  int64 chapterTicketEndtime = 10;
+  bool viewedForFree = 11;
+  bool isHorizontalOnly = 12;
+  int32 viewCount = 13;
+  int32 commentCount = 14;
+}
+
+message CommentIcon {
+  int32 id = 1;
+  string imageUrl = 2;
+}
+
+
+message CommentListView {
+  repeated Comment comments = 1;
+  bool ifSetUserName = 2;
+}
+
+message Comment {
+  int32 id = 1;
+  int32 index = 2;
+  string userName = 3;
+  string iconUrl = 4;
+  bool isMyComment = 6;
+  bool alreadyLiked = 7;
+  int32 numberOfLikes = 9;
+  string body = 10;
+  int64 created = 11;
+}
+
+
+message FreeViewDialogue {
+
+  enum FirstTimeFreePlatform {
+    DISABLED = 0;
+    WEB = 1;
+    APP = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  FirstTimeFreePlatform platform = 1;
+  string dialogueUrl = 2;
+  Banner publisherBanner = 3;
+}
+
+
+message ErrorResult {
+
+  enum Action {
+    DEFAULT = 0;
+    UNAUTHORIZED = 1;
+    MAINTENANCE = 2;
+    GEOIP_BLOCKING = 3;
+    UNRECOGNIZED = -1;
+  }
+
+  Action action = 1;
+  Popup.OSDefault englishPopup = 2;
+  Popup.OSDefault spanishPopup = 3;
+  string debugInfo = 4;
+  repeated Popup.OSDefault popups = 5;
+}
+
+
+message FeaturedTitlesView {
+
+  message Contents {
+
+    enum DataCase {
+      DATA_NOT_SET = 0;
+      BANNER = 1;
+      TITLE_LIST = 2;
+    }
+
+    DataCase data = 1;
+    TitleList titleList = 2;
+  }
+
+  Banner mainBanner = 1;
+  Banner subBanner1 = 2;
+  Banner subBanner2 = 3;
+  repeated Contents contents = 4;
+}
+
+
+message FeaturedTitlesViewV2 {
+
+  message Contents {
+    Banner banner = 1;
+    TitleList titleList = 2;
+    TitleRankingGroup rankedTitles = 3;
+  }
+
+  repeated Banner topSearchBanners = 1;
+  repeated Contents contents = 2;
+}
+
+message Feedback {
+
+  enum ResponseType {
+    QUESTION = 0;
+    ANSWER = 1;
+    UNRECOGNIZED = -1;
+  }
+
+  int64 timeStamp = 1;
+  string body = 2;
+  ResponseType responseType = 3;
+}
+
+
+message FeedbackView {
+  repeated Feedback feedbackList = 1;
+}
+
+
+message HistoryView {
+  repeated Banner historyBanners = 1;
+  repeated Title viewHistory = 2;
+}
+
+
+message HomeViewV3 {
+  repeated Banner topBanners = 1;
+  repeated UpdatedTitleV2Group groups = 2;
+  Popup popup = 9;
+  bool displayTrackingPopup = 10;
+  Subscription userSubscription = 11;
+  repeated ServiceAnnouncement serviceAnnouncements = 12;
+}
+
+
+message InitialViewV2 {
+  bool gdprAgreementRequired = 1;
+  repeated AvailableLanguages availableLanguages = 2;
+}
+
+
+message LabeledView {
+  Label label = 1;
+  repeated LabeledTitlesGroup labeledTitlesGroup = 2;
+}
+
+message Label {
+
+  enum LabelCodes {
+    WJ = 0;
+    SQ = 1;
+    VJ = 2;
+    YJ = 3;
+    J_PLUS = 4;
+    REVIVAL = 5;
+    CREATORS = 6;
+    MEE = 7;
+    TYJ = 8;
+    OTHERS = 9;
+    SKJ = 10;
+    GIGA = 11;
+    UNRECOGNIZED = -1;
+  }
+
+  LabelCodes label = 1;
+  string description = 2;
+}
+
+enum Language {
+  ENGLISH = 0;
+  SPANISH = 1;
+  FRENCH = 2;
+  INDONESIAN = 3;
+  PORTUGUESE_BR = 4;
+  RUSSIAN = 5;
+  THAI = 6;
+  GERMAN = 7;
+  ITALIAN = 8;
+  VIETNAMESE = 9;
+  UNRECOGNIZED = -1;
+}
+
+message AvailableLanguages {
+  Language language = 1;
+  int32 titlesCount = 2;
+}
+
+message Languages {
+  Language defaultUiLanguage = 1;
+  Language defaultContentLanguageOne = 2;
+  Language defaultContentLanguageTwo = 3;
+  Language defaultContentLanguageThree = 4;
+  repeated AvailableLanguages availableLanguages = 5;
+}
+
+
+message MangaViewer {
+  repeated Page pages = 1;
+  int32 chapterId = 2;
+  repeated Chapter chapters = 3;
+  Sns sns = 4;
+  string titleName = 5;
+  string chapterName = 6;
+  int32 numberOfComments = 7;
+  bool isVerticalOnly = 8;
+  int32 titleId = 9;
+  bool startFromRight = 10;
+  string regionCode = 11;
+  bool isHorizontalOnly = 12;
+  Subscription userSubscription = 13;
+  string planType = 14; // TODO: SubscriptionOuterClass.PlanType
+  string titleLanguage = 15; // TODO: LanguagesOuterClass.Language
+  Popup ratingPopup = 16;
+}
+
+message MetaInfo {
+  string metaTitle = 1;
+}
+
+
+message Page {
+
+  enum DataCase {
+    DATA_NOT_SET = 0;
+    MANGA_PAGE = 1;
+    BANNER_LIST = 2;
+    LAST_PAGE = 3;
+    ADVERTISEMENT = 4;
+    INSERT_BANNER_LIST = 5;
+  }
+
+  message MangaPage {
+
+    enum PageType {
+      SINGLE = 0;
+      LEFT = 1;
+      RIGHT = 2;
+      DOUBLE = 3;
+      UNRECOGNIZED = -1;
+    }
+
+    string imageUrl = 1;
+    int32 width = 2;
+    int32 height = 3;
+    PageType type = 4;
+    string encryptionKey = 5;
+  }
+
+  message BannerList {
+    string bannerTitle = 1;
+    repeated Banner banners = 2;
+  }
+
+  message LastPage {
+
+    enum ChapterType {
+      LATEST = 0;
+      SEQUENCE = 1;
+      NOSEQUENCE = 2;
+      UNRECOGNIZED = -1;
+    }
+
+    Chapter currentChapter = 1;
+    ChapterType nextChapter = 2;
+    repeated Comment topComments = 3;
+    bool isSubscribed = 4;
+    int64 nextTimeStamp = 5;
+    ChapterType chapterType = 6;
+    AdNetworkList advertisement = 7;
+    Popup movieReward = 8;
+    repeated Banner banners = 9;
+    Title ticketTitleList = 10;
+    Banner publisherBanner = 11;
+    UserTickets userTickets = 12;
+    bool isNextChapterReadByTicket = 13;
+    bool isNextChapterOneTimeFree = 14;
+    FreeViewDialogue freeViewDialogue = 15;
+    bool isNextChapterSubscription = 16;
+    AdRewardNetworkList advertisementReward = 17;
+  }
+
+  MangaPage mangaPage = 1;
+  BannerList bannerList = 2;
+  LastPage lastPage = 3;
+  AdNetworkList advertisement = 4;
+  BannerList insertBannerList = 5;
+}
+
+
+message Popup {
+
+  enum PopupCase {
+    POPUP_NOT_SET = 0;
+    OS_DEFAULT = 1;
+    APP_DEFAULT = 2;
+    MOVIE_REWARD = 3;
+    ONE_IMAGE = 4;
+  }
+
+  message Button {
+    string text = 1;
+    TransitionAction action = 2;
+  }
+
+  message OSDefault {
+    string subject = 1;
+    string body = 2;
+    Button okButton = 3;
+    Button neutralButton = 4;
+    Button cancelButton = 5;
+    Language language = 6;
+  }
+
+  message AppDefault {
+    string subject = 1;
+    string body = 2;
+    TransitionAction action = 3;
+    string imageUrl = 4;
+  }
+
+  message MovieReward {
+    string imageUrl = 1;
+    AdNetworkList advertisement = 2;
+  }
+
+  message OneImage {
+    TransitionAction action = 1;
+    string imageUrl = 2;
+  }
+
+  OSDefault osDefault = 1;
+  AppDefault appDefault = 2;
+  MovieReward movieReward = 3;
+  OneImage oneImage = 4;
+  int32 popupId = 5;
+}
+
+
+message ProfileSettingsView {
+  repeated CommentIcon iconList = 1;
+  string userName = 2;
+  CommentIcon myIcon = 3;
+}
+
+
+message PublisherNewsListView {
+  int32 publisherId = 1;
+  string publisherName = 2;
+  Banner banner = 3;
+  repeated PublisherNews newsList = 4;
+}
+
+
+message PublisherNews {
+  int32 id = 1;
+  int32 publisherId = 2;
+  string publisherName = 3;
+  string subject = 4;
+  string body = 5;
+  int64 publishedTimeStamp = 6;
+  TransitionAction action = 7;
+}
+
+message PushTokenView {
+  string token = 1;
+  int64 tokenTimeStamp = 2;
+}
+
+message Questionnaire {
+  string description = 1;
+  repeated string selection = 2;
+  int32 numberOfChoices = 3;
+  bool hideFreeform = 4;
+  string freeForm = 5;
+  bool canSkip = 6;
+}
+
+
+message QuestionnaireView {
+  bool isAnswered = 1;
+  string subject = 2;
+  repeated Questionnaire questions = 3;
+  Language language = 4;
+}
+
+message RegistrationData {
+  string deviceSecret = 1;
+}
+
+
+message Response {
+
+  enum ResultCase {
+    RESULT_NOT_SET = 0;
+    SUCCESS = 1;
+    ERROR = 2;
+  }
+
+  SuccessResult success = 1;
+  ErrorResult error = 2;
+}
+
+
+message SearchView {
+
+  message Contents {
+    Banner banner = 1;
+    TitleList titleList = 2;
+    repeated TitleRankingGroup rankedTitles = 3;
+    repeated Label allLabels = 4;
+  }
+
+  repeated Banner topSearchBanners = 1;
+  repeated Tag allTags = 2;
+  repeated AllTitlesGroup allTitlesGroup = 3;
+  repeated Contents contents = 5;
+}
+
+message ServiceAnnouncement {
+  string title = 1;
+  string body = 2;
+  int64 date = 3;
+  int32 id = 4;
+}
+
+
+message ServiceAnnouncementsView {
+  repeated ServiceAnnouncement serviceAnnouncements = 1;
+}
+
+
+message SettingsViewV2 {
+  CommentIcon myIcon = 1;
+  string userName = 2;
+  bool noticeOfNewsAndEvents = 3;
+  bool noticeOfUpdatesOfSubscribedTitles = 4;
+  repeated AvailableLanguages availableLanguages = 5;
+  Subscription userSubscription = 6;
+}
+
+message Sns {
+  string body = 1;
+  string url = 2;
+}
+
+
+message SubscribedTitlesView {
+  repeated Title titles = 1;
+  repeated Banner historyBanners = 2;
+  repeated Title viewHistory = 3;
+}
+
+message AndroidSubscriptionOfferTags {
+  string tag = 1;
+}
+
+message IosSubscriptionOffer {
+
+  enum OfferType {
+    NO_OFFER = 0;
+    INTRODUCTORY = 1;
+    PROMOTIONAL = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  OfferType offerType = 1;
+  string signature = 2;
+  string appleKey = 3;
+  string nonce = 4;
+  int64 timestamp = 5;
+  string identifier = 6;
+}
+
+
+message PlanType {
+  string plan = 1;
+  string description = 2;
+  string productId = 3;
+  IosSubscriptionOffer subscriptionOffer = 4;
+  repeated AndroidSubscriptionOfferTags androidOfferTags = 5;
+}
+
+message Subscription {
+  string planType = 1;
+  string nextPaymentDate = 2;
+  bool isFreeTrial = 3;
+  bool isPendingDowngrade = 4;
+  bool isFirstTimeUser = 5;
+}
+
+
+message SubscriptionView {
+  Subscription  userSubscription = 1;
+  repeated PlanType planTypes = 2;
+  repeated TitleSubscriptionGroup subscriptionTitles = 3;
+  bool userHasUsedTrial = 4;
+}
+
+
+message SuccessResult {
+
+  enum DataCase {
+    DATA_NOT_SET = 0;
+    REGISTERATION_DATA = 2;
+    FEATURED_TITLES_VIEW = 4;
+    ALL_TITLES_VIEW = 5;
+    TITLE_RANKING_VIEW = 6;
+    SUBSCRIBED_TITLES_VIEW = 7;
+    TITLE_DETAIL_VIEW = 8;
+    COMMENT_LIST_VIEW = 9;
+    MANGA_VIEWER = 10;
+    PROFILE_SETTINGS_VIEW = 13;
+    UPDATE_PROFILE_RESULT_VIEW = 14;
+    SERVICE_ANNOUNCEMENTS_VIEW = 15;
+    FEEDBACK_VIEW = 17;
+    PUBLISHER_NEWS_LIST_VIEW = 18;
+    QUESTIONNAIRE_VIEW = 19;
+    TITLE_UPDATED_VIEW = 20;
+    UPDATED_TITLE_LIST_VIEW = 22;
+    ALL_TICKET_TITLES_VIEW = 23;
+    HOME_VIEW_V3 = 24;
+    ALL_TITLES_VIEW_V2 = 25;
+    SETTINGS_VIEW_V2 = 26;
+    TITLE_LIST_VIEW_V2 = 27;
+    INITIAL_VIEW_V2 = 28;
+    PUSH_TOKEN_VIEW = 32;
+    ALL_FREE_TITLES_VIEW = 33;
+    LABELED_VIEW = 34;
+    SEARCH_VIEW = 35;
+    SUBSCRIPTION_VIEW = 36;
+    TITLE_RANKING_VIEW_V2 = 37;
+    WEB_HOME_VIEW_V4 = 38;
+    FEATURED_TITLES_VIEW_V2 = 39;
+    HISTORY_VIEW = 40;
+  }
+
+  bool isFeaturedUpdated = 1;
+  RegistrationData registrationData = 2;
+  FeaturedTitlesView featuredTitlesView = 4;
+  AllTitlesView allTitlesView = 5;
+  TitleRankingView titleRankingView = 6;
+  SubscribedTitlesView subscribedTitlesView = 7;
+  TitleDetailView titleDetailView = 8;
+  CommentListView commentListView = 9;
+  MangaViewer mangaViewer = 10;
+  ProfileSettingsView profileSettingsView = 13;
+  UpdateProfileResultView updateProfileResultView = 14;
+  ServiceAnnouncementsView serviceAnnouncementsView = 15;
+  FeedbackView feedbackView = 17;
+  PublisherNewsListView publisherNewsListView = 18;
+  QuestionnaireView questionnaireView = 19;
+  TitleUpdatedView titleUpdatedView = 20;
+  UpdatedTitleListView updatedTitleListView = 22;
+  AllTicketTitlesView allTicketTitlesView = 23;
+  HomeViewV3 homeViewV3 = 24;
+  AllTitlesViewV2 allTitlesViewV2 = 25;
+  SettingsViewV2 settingsViewV2 = 26;
+  TitleUpdatedViewV2 titleListViewV2 = 27;
+  InitialViewV2 initialViewV2 = 28;
+  Languages languages = 29;
+  PushTokenView pushTokenView = 32;
+  AllFreeTitlesView allFreeTitlesView = 33;
+  LabeledView labeledView = 34;
+  SearchView searchView = 35;
+  SubscriptionView subscriptionView = 36;
+  TitleRankingViewV2 titleRankingViewV2 = 37;
+  WebHomeViewV4 webHomeViewV4 = 38;
+  FeaturedTitlesViewV2 featuredTitlesViewV2 = 39;
+  HistoryView historyView = 40;
+}
+
+message Tag {
+  string tag = 1;
+  string slug = 2;
+}
+
+
+message TitleDetailView {
+
+  enum UpdateTiming {
+    NOT_REGULARLY = 0;
+    MONDAY = 1;
+    TUESDAY = 2;
+    WEDNESDAY = 3;
+    THURSDAY = 4;
+    FRIDAY = 5;
+    SATURDAY = 6;
+    SUNDAY = 7;
+    DAY = 8;
+    // UNRECOGNIZED = -1;
+  }
+
+  enum Rating {
+    ALLAGE = 0;
+    TEEN = 1;
+    TEENPLUS = 2;
+    MATURE = 3;
+    UNRECOGNIZED = -1;
+  }
+
+  message PublisherItem {
+    Banner banner = 1;
+    PublisherNews publisherNews = 2;
+  }
+
+  message TitleLanguages {
+    int32 titleId = 1;
+    Language language = 2;
+  }
+
+  message ChapterGroup {
+    string chapterNumbers = 1;
+    repeated Chapter firstChapterList = 2;
+    repeated Chapter midChapterList = 3;
+    repeated Chapter lastChapterList = 4;
+  }
+
+  message TitleLabels {
+
+    enum ReleaseSchedule {
+      DISABLED = 0;
+      EVERYDAY = 1;
+      WEEKLY = 2;
+      BIWEEKLY = 3;
+      MONTHLY = 4;
+      BIMONTHLY = 5;
+      TRIMONTHLY = 6;
+      OTHER = 7;
+      COMPLETED = 8;
+      UNRECOGNIZED = -1;
+    }
+
+    ReleaseSchedule releaseSchedule = 1;
+    bool isSimulpub = 2;
+    string planType = 3; // SubscriptionOuterClass.PlanType
+  }
+
+  Title title = 1;
+  string titleImageUrl = 2;
+  string overview = 3;
+  string backgroundImageUrl = 4;
+  int64 nextTimeStamp = 5;
+  UpdateTiming updateTiming = 6;
+  string viewingPeriodDescription = 7;
+  string nonAppearanceInfo = 8;
+  repeated Chapter firstChapterList = 9;
+  repeated Chapter lastChapterList = 10;
+  repeated Banner banners = 11;
+  repeated Title recommendedTitleList = 12;
+  Sns sns = 13;
+  bool isSimulReleased = 14;
+  bool isSubscribed = 15;
+  Rating rating = 16;
+  bool chaptersDescending = 17;
+  int32 numberOfViews = 18;
+  repeated PublisherItem publisherItems = 19;
+  repeated Banner titleBanners = 20;
+  UserTickets userTickets = 21;
+  repeated Chapter ticketChapterList = 22;
+  repeated Title ticketTitleList = 23;
+  bool hasChaptersBetween = 24;
+  Banner publisherBanner = 25;
+  AdNetworkList advertisement = 26;
+  repeated TitleLanguages titleLanguages = 27;
+  repeated ChapterGroup chapterListGroup = 28;
+  FreeViewDialogue freeViewDialogue = 29;
+  string regionCode = 30;
+  repeated Tag tags = 31;
+  TitleLabels titleLabels = 32;
+  Subscription userSubscription = 33;
+  Label label = 34;
+  bool isFirstTimeFree = 35;
+  MetaInfo metaInfo = 36;
+  Popup ratingPopup = 37;
+}
+
+
+message AllTitlesGroup {
+  string theTitle = 1;
+  repeated Title titles = 2;
+  repeated Tag tags = 3;
+  Label label = 4;
+  int64 nextChapterStartTimestamp = 5;
+}
+
+message LabeledTitlesGroup {
+  string theTitle = 1;
+  repeated Title titles = 2;
+}
+
+message TitleRankingGroup {
+  int32 originalTitleId = 1;
+  repeated Title titles = 2;
+  int32 score = 3;
+}
+
+message TitleSubscriptionGroup {
+  string plan = 1;
+  repeated Title titles = 2;
+}
+
+message TitleUpdatedGroup {
+  int64 updatedTitleTimestamp = 1;
+  repeated AllTitlesGroup latestTitle = 2;
+}
+
+
+message TitleList {
+  string listName = 1;
+  repeated Title featuredTitles = 2;
+}
+
+
+enum TitleUpdateStatus {
+  NONE = 0;
+  NEW = 1;
+  UP = 2;
+  REEDITION = 3;
+  CREATORS_STATUS = 4;
+  // UNRECOGNIZED = -1;
+}
+
+message Title {
+  int32 titleId = 1;
+  string name = 2;
+  string author = 3;
+  string portraitImageUrl = 4;
+  string landscapeImageUrl = 5;
+  int32 viewCount = 6;
+  Language language = 7;
+  TitleUpdateStatus titleUpdateStatus = 8;
+}
+
+message ComingSoonTitle {
+  Title title = 1;
+  string nextChapterName = 2;
+  int64 nextChapterTimestamp = 3;
+}
+
+message FreeTitle {
+  Title title = 1;
+  string updatedTitleTimestamp = 2;
+}
+
+message SubscribableTitle {
+  Title title = 1;
+  bool isLatest = 2;
+  bool isSubscribed = 3;
+}
+
+message TicketTitles {
+  Title title = 1;
+  int32 firstTicketChapter = 2;
+  int32 lastTicketChapter = 3;
+}
+
+message TitleHighlight {
+  Title title = 1;
+  int32 chapterId = 2;
+  repeated string pageUrlList = 3;
+  int32 pageHight = 4;
+  int32 pageWidth = 5;
+  bool isVerticalOnly = 6;
+  bool isHorizontalOnly = 7;
+}
+
+message TitleUpdated {
+  Title title = 1;
+  string updatedTitleTimestamp = 2;
+}
+
+message UpdatedTitle {
+  Title title = 1;
+  int32 chapterId = 2;
+  string chapterName = 3;
+  string chapterSubTitle = 4;
+  bool isLatest = 5;
+  bool isVerticalOnly = 6;
+  bool isHorizontalOnly = 7;
+}
+
+
+message TitleRankingView {
+  repeated Title titles = 1;
+}
+
+
+message TitleRankingViewV2 {
+  repeated Banner rankingBanners = 1;
+  int64 updatedTimeStamp = 2;
+  repeated TitleRankingGroup rankedTitles = 3;
+}
+
+
+message TitleUpdatedView {
+  repeated TitleUpdated latestTitle = 1;
+}
+
+
+message TitleUpdatedViewV2 {
+  repeated TitleUpdatedGroup titleUpdatedGroup = 1;
+}
+
+message TransitionAction {
+
+  enum PresentationMethod {
+    PUSH = 0;
+    MODAL = 1;
+    EXTERNAL = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  PresentationMethod method = 1;
+  string url = 2;
+}
+
+
+message UpdatedTitleGroup {
+  string groupName = 1;
+  repeated UpdatedTitle titles = 2;
+}
+
+message UpdatedTitleV2Group {
+
+  message OriginalTitleGroup {
+    string theTitle = 1;
+    string chapterNumber = 2;
+    repeated UpdatedTitle titles = 3;
+    int32 viewCount = 4;
+    TitleUpdateStatus titleUpdateStatus = 5;
+    int64 chapterStartTime = 6;
+  }
+
+  string groupName = 1;
+  repeated OriginalTitleGroup titleGroups = 2;
+  int32 groupNameDays = 3;
+}
+
+
+message UpdatedTitleListView {
+  repeated UpdatedTitleGroup groups = 1;
+}
+
+message UpdateProfileResultView {
+
+  enum Result {
+    SUCCESS = 0;
+    DUPLICATED = 1;
+    NG_WORD = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  Result result = 1;
+}
+
+message UserTickets {
+  int64 currentTickets = 1;
+  int64 nextTicketTimestamp = 2;
+}
+
+
+message WebHomeViewV4 {
+  repeated Banner topBanners = 1;
+  repeated UpdatedTitleV2Group groups = 2;
+  repeated TitleRankingGroup rankedTitles = 3;
+  Popup popup = 4;
+  repeated TitleList featuredTitleLists = 5;
+  repeated ServiceAnnouncement serviceAnnouncements = 6;
+}

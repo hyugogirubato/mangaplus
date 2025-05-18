@@ -8,7 +8,7 @@ from mangaplus.utils import bool2str, proto2dict
 
 class MangaPlus:
     # @jp.co.shueisha.mangaplus.g.c;
-    VERSION = 150
+    VERSION = 191
 
     def __init__(
             self,
@@ -27,7 +27,7 @@ class MangaPlus:
     def __request(self, **kwargs) -> dict:
         headers = {
             'Accept': '*/*',
-            'User-Agent': 'okhttp/4.9.0',
+            'User-Agent': 'okhttp/4.12.0',
             **kwargs.get('headers', {})
         }
 
