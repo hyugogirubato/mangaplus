@@ -5,74 +5,95 @@
 # MangaPlus
 
 [![License](https://img.shields.io/github/license/hyugogirubato/mangaplus)](https://github.com/hyugogirubato/mangaplus/blob/main/LICENSE)
-[![Release](https://img.shields.io/github/release-date/hyugogirubato/mangaplus)](https://github.com/hyugogirubato/mangaplus/releases)
-[![Latest Version](https://img.shields.io/pypi/v/mangaplus)](https://pypi.org/project/mangaplus/)
+[![PyPI version](https://img.shields.io/pypi/v/mangaplus.svg)](https://pypi.org/project/mangaplus/)  
+[![Python Version](https://img.shields.io/pypi/pyversions/mangaplus.svg)](https://pypi.org/project/mangaplus/)
 
 </div>
 
-MangaPlus is a Python client for the MangaPlus API, allowing you to access various manga-related information and features. This library provides a convenient way to interact with the MangaPlus API and retrieve data such as manga details, chapters, comments, rankings, and more.
+A Python client for **MangaPlus** by Shueisha, allowing developers to access manga content and interact with the official API programmatically.
 
 ## Features
 
-- Retrieve manga details including title, author, description, cover image, and more.
-- Get a list of available chapters for a specific manga.
-- View manga chapters with different quality settings.
-- Add or remove manga titles from your bookmarks.
-- Access publisher news for specific publishers.
-- View featured manga titles.
-- Retrieve and update user profile information.
-- View the home page with recommended manga titles.
-- Like or dislike comments on manga chapters.
-- Fetch ranking lists (hottest, trending, completed).
-- Manage user subscriptions and view history.
+- Access all MangaPlus titles: **serializing, completed, one-shots**.
+- Fetch manga chapters and downloadable images in multiple qualities.
+- Manage **favorites, comments, and subscriptions**.
+- Track reading history and title rankings.
+- Log user interactions, including banner taps, popup taps, and downloads.
+- Supports multiple languages and viewer modes (vertical/horizontal).
+- Provides device registration and secure subscription handling.
 
 ## Installation
 
-You can install MangaPlus using pip:
+You can install via **pip**:
 
-```shell
+```bash
 pip install mangaplus
+````
+
+Or install the latest version from GitHub:
+
+```bash
+pip install git+https://github.com/hyugogirubato/mangaplus.git
 ```
 
 ## Usage
 
-Here's an example of how to use the MangaPlus library:
-
 ```python
-from mangaplus.shueisha import MangaPlus, Language, Viewer, Quality
+from mangaplus import MangaPlus
+from mangaplus.constants import Language, Viewer, Quality, Ranking, TitleType, PageType
 
 if __name__ == "__main__":
-    title_id = 100191  # Example title ID
-    chapter_id = 1014090  # Example chapter ID
-
-    # Initialize the MangaPlus client with default settings
-    client = MangaPlus(lang=Language.ENGLISH, viewer=Viewer.HORIZONTAL)
+    # Initialize the client
+    client = MangaPlus(lang=Language.ENGLISH, viewer=Viewer.VERTICAL)
 
     # Register a new device
     device_id = "your_device_id_here"
-    client.register(device_id)
+    client.register(device_id=device_id)
 
-    # Fetch home titles
-    home_content = client.home()
-    print(home_content)
+    # Fetch updates titles
+    updates_content = client.getUpdates()
 
-    # View manga chapters
-    manga_chapter = client.manga_viewer(
-        chapter_id=chapter_id,
-        split=True,
-        quality=Quality.SUPER_HIGH
-    )
-    print(manga_chapter)
+    # Fetch all serializing titles
+    titles = client.getAllTitlesV3(title_type=TitleType.SERIALIZING)
+
+    # Get chapter images
+    chapter_data = client.getMangaData(chapter_id=1014090, quality=Quality.SUPER_HIGH)
+
+    # Add a title to favorites
+    client.addFavorited(title_id=100191)
+
+    # Post a comment
+    client.postComment(chapter_id=1014090, body="Great chapter!")
 ```
 
-## Contributing
+## API Methods
 
-Contributions are welcome! Please feel free to submit a Pull Request or open an issue on the [GitHub repository](https://github.com/hyugogirubato/mangaplus/issues).
+Some of the key methods provided by this client:
+
+| Method                                             | Description                                                     |
+|----------------------------------------------------|-----------------------------------------------------------------|
+| `getAllTitlesV3()`                                 | Get titles by type (serializing, completed, one-shots)          |
+| `getMangaData()`                                   | Retrieve chapter images with optional quality and split options |
+| `getTitleDetail()`                                 | Get detailed title information                                  |
+| `getFavoriteTitles()`                              | List all favorite titles                                        |
+| `addFavorited()` / `deleteFavorite()`              | Add or remove titles from favorites                             |
+| `postComment()` / `banComment()` / `likeComment()` | Manage comments and likes                                       |
+| `register()`                                       | Register a device and obtain a secret key                       |
+| `setSubscription()` / `setSubscriptionRestore()`   | Manage subscription data                                        |
+| `getRankingV2()`                                   | Get ranking lists (hottest, trending, completed)                |
+| `getHistory()`                                     | Retrieve user reading history                                   |
+| `logBannerTap()` / `logPopupTap()`                 | Log interactions with banners and popups                        |
+
+> And many more methods for publisher news, downloadable images, language preferences, and event logging.
 
 ## Disclaimer
 
-MangaPlus is an unofficial library and is not affiliated with or endorsed by Shueisha. The library is provided "as is" without any warranty, and the usage of this library is at your own risk. Make sure to comply with the terms and conditions of the MangaPlus service while using this library.
+**MangaPlus Python Client** is an unofficial library and is **not affiliated** with or endorsed by Shueisha. The library is provided "as-is" without any warranty, and usage is at your own risk. Please comply with the MangaPlus service terms and conditions while using this library.
 
 ## License
 
-The MangaPlus library is released under the MIT License. See [LICENSE](https://github.com/hyugogirubato/mangaplus/blob/main/LICENSE) for details.
+This project is licensed under the **GNU License**. See the [LICENSE](https://github.com/hyugogirubato/mangaplus/blob/main/LICENSE) file for details.
+
+---
+
+© hyugogirubato 2025
