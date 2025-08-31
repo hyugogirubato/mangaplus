@@ -13,8 +13,8 @@ class MangaPlus:
     def __init__(
             self,
             lang: Language = Language.ENGLISH,
-            clang: [Language] = None,
-            viewer: Viewer = Viewer.HORIZONTAL
+            clang: List[Language] = None,
+            viewer: Viewer = Viewer.VERTICAL
     ):
         # @package jp.co.shueisha.mangaplus.d;
         self.lang = lang
