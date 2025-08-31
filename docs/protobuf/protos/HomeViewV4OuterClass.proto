@@ -5,7 +5,7 @@ package mangaplus_api_protocol;
 option java_package = "jp.co.comic.jump.proto";
 
 import "BannerOuterClass.proto";
-import "LanguagesOuterClass.proto"; // TODO: Import?
+import "LanguagesOuterClass.proto"; // TODO: Import definition error?
 import "PopupOuterClass.proto";
 import "RankingTabTypeOuterClass.proto";
 import "ServiceAnnouncementOuterClass.proto";
