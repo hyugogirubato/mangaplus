@@ -113,12 +113,20 @@ class MangaPlus:
             url=f'{self.api}/ad_tap_log',
             params={'chapter_id': chapter_id, 'token': token, 'type': type})
 
-    def getAllTitlesV3(self, type: str, tag: str):
-        # TODO
+    def getAllTitlesV3(
+            self,
+            title_type: TitleType = TitleType.SERIALIZING,
+            # tag: str
+    ) -> dict:
         return self.__request(
             method='GET',
             url=f'{self.api}/title_list/all_v3',
-            params={'type': type, 'lang': self.__lang, 'clang': self.__clang, 'tag': tag})
+            params={
+                'type': title_type.value,
+                'lang': self.__lang,
+                'clang': self.__clang,
+                # 'tag': tag
+            })
 
     def getComments(self, chapter_id: int) -> dict:
         return self.__request(
