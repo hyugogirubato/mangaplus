@@ -136,7 +136,7 @@ class MangaPlus:
             url=f'{self.api}/title_list/all_v3',
             params={
                 'type': title_type.value,
-                'lang': self.__lang,
+                'lang': self.lang.value,
                 'clang': self.__clang,
                 # 'tag': tag
             })
@@ -176,14 +176,14 @@ class MangaPlus:
         return self.__request(
             method='GET',
             url=f'{self.api}/title_list/history',
-            params={'lang': self.__lang, 'clang': self.__clang})
+            params={'lang': self.lang.value, 'clang': self.__clang})
 
     def getMPCStatus(self) -> dict:
         # @Unchecked
         return self.__request(
             method='GET',
             url=f'{self.api}/mpc_status',
-            params={'lang': self.__lang})
+            params={'lang': self.lang.value})
 
     def getMangaData(
             self,
@@ -212,25 +212,25 @@ class MangaPlus:
         return self.__request(
             method='GET',
             url=f'{self.api}/publisher_news_list',
-            params={'publisher_id': publisher_id, 'lang': self.__lang})
+            params={'publisher_id': publisher_id, 'lang': self.lang.value})
 
     def getRankingV2(self, ranking: Ranking = Ranking.HOTTEST) -> dict:
         return self.__request(
             method='GET',
             url=f'{self.api}/title_list/rankingV2',
-            params={'lang': self.__lang, 'type': ranking.value, 'clang': self.__clang})
+            params={'lang': self.lang.value, 'type': ranking.value, 'clang': self.__clang})
 
     def getSearchTitles(self) -> dict:
         return self.__request(
             method='GET',
             url=f'{self.api}/title_list/search',
-            params={'lang': self.__lang, 'clang': self.__clang})
+            params={'lang': self.lang.value, 'clang': self.__clang})
 
     def getSettings(self) -> dict:
         return self.__request(
             method='GET',
             url=f'{self.api}/settings_v2',
-            params={'lang': self.__lang, 'viewer_mode': self.viewer.value, 'clang': self.__clang})
+            params={'lang': self.lang.value, 'viewer_mode': self.viewer.value, 'clang': self.__clang})
 
     def getSubscriptionView(self) -> dict:
         return self.__request(
@@ -246,13 +246,13 @@ class MangaPlus:
         return self.__request(
             method='GET',
             url=f'{self.api}/title_detailV3',
-            params={'title_id': title_id, 'lang': self.__lang, 'clang': self.__clang})
+            params={'title_id': title_id, 'lang': self.lang.value, 'clang': self.__clang})
 
     def getUpdates(self) -> dict:
         return self.__request(
             method='GET',
             url=f'{self.api}/home_v4',
-            params={'lang': self.__lang, 'viewer_mode': self.viewer.value, 'clang': self.__clang})
+            params={'lang': self.lang.value, 'viewer_mode': self.viewer.value, 'clang': self.__clang})
 
     def likeComment(self, comment_id: int) -> dict:
         return self.__request(
@@ -351,7 +351,7 @@ class MangaPlus:
         return self.__request(
             method='PUT',
             url=f'{self.api}/language_preferences',
-            params={'lang': self.__lang, 'clang': self.__clang, 'dlang': dlang})
+            params={'lang': self.lang.value, 'clang': self.__clang, 'dlang': dlang})
 
     def register(self, device_id: str) -> dict:
         # package jp.co.shueisha.mangaplus.util.UtilKt;
