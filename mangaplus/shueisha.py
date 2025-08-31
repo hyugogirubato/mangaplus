@@ -1,5 +1,7 @@
 import hashlib
 
+from typing import List
+
 import requests
 
 from mangaplus.constants import Language, Viewer, Quality, Ranking
