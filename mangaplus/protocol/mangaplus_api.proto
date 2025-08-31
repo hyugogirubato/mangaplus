@@ -1,66 +1,8 @@
 syntax = "proto3";
 
-package mangaplus_api_protocol;
+package mangaplus_api;
 
 option java_package = "jp.co.comic.jump.proto";
-
-
-message AdNetwork {
-
-  enum NetworkCase {
-    NETWORK_NOT_SET = 0;
-    FACEBOOK = 1;
-    ADMOB = 2;
-    MOPUB = 3;
-    ADSENSE = 4;
-    APPLOVIN = 5;
-    APPLOVINMAX = 6;
-  }
-
-  message Facebook {
-    string placementId = 1;
-  }
-
-  message Mopub {
-    string unitId = 1;
-  }
-
-  message Admob {
-    string unitId = 1;
-  }
-
-  message Adsense {
-    string unitId = 1;
-    string location = 2;
-  }
-
-  message Applovin {
-    string unitId = 1;
-  }
-
-  message ApplovinMax {
-
-    enum AdType {
-      STILL_IMAGE = 0;
-      MOVIE = 1;
-      NATIVE_MANUAL = 2;
-      NATIVE_MEDIUM = 3;
-      MREC = 4;
-      REWARD = 5;
-      UNRECOGNIZED = -1;
-    }
-
-    string unitId = 1;
-    AdType type = 2;
-  }
-
-  Facebook facebook = 1;
-  Mopub mopub = 3;
-  Admob admob = 2;
-  Adsense adsense = 4;
-  Applovin applovin = 5;
-  ApplovinMax applovinmax = 6;
-}
 
 message AdNetworkList {
   repeated AdNetwork adNetworks = 1;
@@ -72,26 +14,78 @@ message AdRewardNetworkList {
   int32 rewardViewCount = 3;
 }
 
+message AdNetwork {
+
+  enum AdType {
+    STILL_IMAGE = 0;
+    MOVIE = 1;
+    NATIVE_MANUAL = 2;
+    NATIVE_MEDIUM = 3;
+    MREC = 4;
+    REWARD = 5;
+  }
+
+  message Facebook {
+    string placementID = 1;
+  }
+
+  message Admob {
+    string unitID = 1;
+  }
+
+  message Adsense {
+    string unitID = 1;
+    string location = 2;
+  }
+
+  message Applovin {
+    string unitID = 1;
+  }
+
+  message Mopub {
+    string unitID = 1;
+  }
+
+  message ApplovinMax {
+    string unitID = 1;
+    int32 type = 2;
+    string amazonAppId = 3;
+    string amazonAdUnitId = 4;
+  }
+
+  Facebook facebook = 1;
+  Admob admob = 2;
+  Mopub mopub = 3;
+  Adsense adsense = 4;
+  Applovin applovin = 5;
+  ApplovinMax applovinMax = 6;
+
+  enum NetworkCase {
+    NETWORK_NOT_SET = 0;
+    FACEBOOK = 1;
+    ADMOB = 2;
+    MOPUB = 3;
+    ADSENSE = 4;
+    APPLOVIN = 5;
+    APPLOVINMAX = 6;
+  }
+}
 
 message AllFreeTitlesView {
   repeated FreeTitle freeTitles = 1;
 }
 
-
 message AllTicketTitlesView {
   repeated TicketTitles ticketTitle = 1;
 }
-
 
 message AllTitlesView {
   repeated Title titles = 1;
 }
 
-
 message AllTitlesViewV2 {
   repeated AllTitlesGroup allTitlesGroup = 1;
 }
-
 
 message Banner {
   string imageUrl = 1;
@@ -99,6 +93,7 @@ message Banner {
   int32 id = 3;
   int32 width = 4;
   int32 height = 5;
+  bool isPr = 6;
 }
 
 message Chapter {
@@ -111,7 +106,7 @@ message Chapter {
   int64 endTimeStamp = 7;
   bool alreadyViewed = 8;
   bool isVerticalOnly = 9;
-  int64 chapterTicketEndtime = 10;
+  int32 chapterTicketEndtime = 10;
   bool viewedForFree = 11;
   bool isHorizontalOnly = 12;
   int32 viewCount = 13;
@@ -123,10 +118,17 @@ message CommentIcon {
   string imageUrl = 2;
 }
 
-
 message CommentListView {
+  message TitleDetailComment {
+    int32 titleId = 1;
+    string titleName = 2;
+    string chapterName = 3;
+    string credit = 4;
+  }
+
   repeated Comment comments = 1;
   bool ifSetUserName = 2;
+  TitleDetailComment titleDetailComment = 3;
 }
 
 message Comment {
@@ -138,33 +140,40 @@ message Comment {
   bool alreadyLiked = 7;
   int32 numberOfLikes = 9;
   string body = 10;
-  int64 created = 11;
+  int32 created = 11;
 }
 
+enum FirstTimeFreePlatform {
+  DISABLED = 0;
+  WEB = 1;
+  APP = 2;
+}
 
 message FreeViewDialogue {
-
-  enum FirstTimeFreePlatform {
-    DISABLED = 0;
-    WEB = 1;
-    APP = 2;
-    UNRECOGNIZED = -1;
-  }
-
   FirstTimeFreePlatform platform = 1;
   string dialogueUrl = 2;
   Banner publisherBanner = 3;
 }
 
+message DownloadableImagesView {
+  repeated DownloadableImageGroup downloadableImages = 1;
+}
+
+message DownloadableImageGroup {
+  int32 id = 1;
+  string imageUrl = 2;
+  string imageTitle = 3;
+  int32 width = 4;
+  int32 height = 5;
+  string type = 6;
+}
 
 message ErrorResult {
-
   enum Action {
     DEFAULT = 0;
     UNAUTHORIZED = 1;
     MAINTENANCE = 2;
     GEOIP_BLOCKING = 3;
-    UNRECOGNIZED = -1;
   }
 
   Action action = 1;
@@ -174,11 +183,19 @@ message ErrorResult {
   repeated Popup.OSDefault popups = 5;
 }
 
+message FavoriteTitlesView {
+  repeated AvailableLanguages availableLanguages = 1;
+  repeated FavoriteTitleGroup favoriteTitles = 2;
+}
+
+message FavoriteTitleGroup {
+  Language language = 1;
+  repeated Title titles = 2;
+}
 
 message FeaturedTitlesView {
 
   message Contents {
-
     enum DataCase {
       DATA_NOT_SET = 0;
       BANNER = 1;
@@ -195,13 +212,12 @@ message FeaturedTitlesView {
   repeated Contents contents = 4;
 }
 
-
 message FeaturedTitlesViewV2 {
 
   message Contents {
     Banner banner = 1;
     TitleList titleList = 2;
-    TitleRankingGroup rankedTitles = 3;
+    repeated TitleRankingGroup rankedTitles = 3;
   }
 
   repeated Banner topSearchBanners = 1;
@@ -209,11 +225,9 @@ message FeaturedTitlesViewV2 {
 }
 
 message Feedback {
-
   enum ResponseType {
     QUESTION = 0;
     ANSWER = 1;
-    UNRECOGNIZED = -1;
   }
 
   int64 timeStamp = 1;
@@ -221,17 +235,14 @@ message Feedback {
   ResponseType responseType = 3;
 }
 
-
 message FeedbackView {
   repeated Feedback feedbackList = 1;
 }
-
 
 message HistoryView {
   repeated Banner historyBanners = 1;
   repeated Title viewHistory = 2;
 }
-
 
 message HomeViewV3 {
   repeated Banner topBanners = 1;
@@ -242,36 +253,136 @@ message HomeViewV3 {
   repeated ServiceAnnouncement serviceAnnouncements = 12;
 }
 
+message HomeViewV4 {
+
+  message Sections {
+    enum SectionCase {
+      SECTION_NOT_SET = 0;
+      WEEKLY_SECTION = 1;
+      RANKING_SECTION = 2;
+      PREVIEW_SECTION = 3;
+      TITLE_LIST_SECTION = 4;
+      BANNER_SECTION = 5;
+    }
+
+    WeeklySection weeklySection = 1;
+    RankingSection rankingSection = 2;
+    PreviewSection previewSection = 3;
+    TitleListSection titleListSection = 4;
+    BannerSection bannerSection = 5;
+  }
+
+  message WeeklySection {
+    message WeeklyContent {
+      bool isUpdated = 1;
+      int64 updatedTimeStamp = 2;
+      repeated ContentItem contentItems = 3;
+    }
+
+    message ContentItem {
+      enum ContentCase {
+        CONTENT_NOT_SET = 0;
+        PR_BANNER = 1;
+        MV_BANNER = 2;
+        TITLE_GROUP = 3;
+        CAROUSEL_BANNERS = 4;
+        MINOR_LANGUAGE_BANNER = 5;
+      }
+
+      ContentCase content = 1;
+      MVBanner mVBanner = 2;
+      TitleGroup titleGroup = 3;
+      CarouselBanner carouselBanners = 4;
+      MinorLanguageBanner minorLanguageBanner = 5;
+    }
+
+    message MVBanner {
+      string imageUrl = 1;
+      OriginalTitleGroup titleGroups = 2;
+    }
+
+    message TitleGroup {
+      repeated OriginalTitleGroup titleGroups = 1;
+    }
+
+    message CarouselBanner {
+      repeated Banner banners = 1;
+    }
+
+    message MinorLanguageBanner {
+      repeated OriginalTitleGroup titleGroups = 1;
+    }
+
+    repeated WeeklyContent contents = 1;
+  }
+
+  message RankingSection {
+    message RankingTab {
+      RankingTabType tabType = 1;
+      repeated TitleRankingGroup rankedTitles = 2;
+    }
+
+    repeated RankingTab rankingTabs = 1;
+  }
+
+  message PreviewSection {
+    message PreviewTab {
+      RankingTabType tabType = 1;
+      ChapterPageList chapterPagesList = 2;
+    }
+
+    repeated PreviewTab previewTabs = 1;
+  }
+
+  message TitleListSection {
+    TitleList titleList = 1;
+  }
+
+  message BannerSection {
+    repeated Banner banners = 1;
+  }
+
+  repeated Sections sections = 1;
+  Popup popup = 2;
+  bool displayTrackingPopup = 3;
+  Subscription userSubscription = 4;
+  repeated ServiceAnnouncement serviceAnnouncements = 5;
+}
 
 message InitialViewV2 {
   bool gdprAgreementRequired = 1;
   repeated AvailableLanguages availableLanguages = 2;
 }
 
+message IntroduceSubscription {
+  string subscription = 1;
+  string titleCountText = 2;
+  string chapterCountText = 3;
+}
 
 message LabeledView {
   Label label = 1;
   repeated LabeledTitlesGroup labeledTitlesGroup = 2;
 }
 
+enum LabelCodes {
+  WJ = 0;
+  SQ = 1;
+  VJ = 2;
+  YJ = 3;
+  J_PLUS = 4;
+  REVIVAL = 5;
+  CREATORS = 6;
+  MEE = 7;
+  TYJ = 8;
+  OTHERS = 9;
+  SKJ = 10;
+  GIGA = 11;
+  UJ = 12;
+  DX = 13;
+}
+
 message Label {
-
-  enum LabelCodes {
-    WJ = 0;
-    SQ = 1;
-    VJ = 2;
-    YJ = 3;
-    J_PLUS = 4;
-    REVIVAL = 5;
-    CREATORS = 6;
-    MEE = 7;
-    TYJ = 8;
-    OTHERS = 9;
-    SKJ = 10;
-    GIGA = 11;
-    UNRECOGNIZED = -1;
-  }
-
   LabelCodes label = 1;
   string description = 2;
 }
@@ -287,12 +398,6 @@ enum Language {
   GERMAN = 7;
   ITALIAN = 8;
   VIETNAMESE = 9;
-  UNRECOGNIZED = -1;
-}
-
-message AvailableLanguages {
-  Language language = 1;
-  int32 titlesCount = 2;
 }
 
 message Languages {
@@ -303,8 +408,19 @@ message Languages {
   repeated AvailableLanguages availableLanguages = 5;
 }
 
+message AvailableLanguages {
+  Language language = 1;
+  int32 titlesCount = 2;
+}
 
 message MangaViewer {
+
+  message TitleAvailableLanguages {
+    int32 titleId = 1;
+    Language language = 2;
+    bool isNew = 3;
+  }
+
   repeated Page pages = 1;
   int32 chapterId = 2;
   repeated Chapter chapters = 3;
@@ -318,17 +434,70 @@ message MangaViewer {
   string regionCode = 11;
   bool isHorizontalOnly = 12;
   Subscription userSubscription = 13;
-  string planType = 14; // TODO: SubscriptionOuterClass.PlanType
-  string titleLanguage = 15; // TODO: LanguagesOuterClass.Language
+  string planType = 14;
+  string titleLanguage = 15;
   Popup ratingPopup = 16;
+  repeated TitleAvailableLanguages titleAvailableLanguages = 17;
+  Title title = 18;
 }
 
 message MetaInfo {
   string metaTitle = 1;
+  string metaDescription = 2;
 }
 
+message MpcStatusView {
+  bool isMpcMaintenance = 1;
+  string maintenanceMessage = 2;
+}
 
 message Page {
+  enum ChapterType {
+    LATEST = 0;
+    SEQUENCE = 1;
+    NOSEQUENCE = 2;
+  }
+
+  enum PageType {
+    SINGLE = 0;
+    LEFT = 1;
+    RIGHT = 2;
+    DOUBLE = 3;
+  }
+
+  message MangaPage {
+    string imageUrl = 1;
+    int32 width = 2;
+    int32 height = 3;
+    PageType type = 4;
+    string encryptionKey = 5;
+  }
+
+  message LastPage {
+    Chapter currentChapter = 1;
+    Chapter nextChapter = 2;
+    repeated Comment topComments = 3;
+    bool isSubscribed = 4;
+    int64 nextTimeStamp = 5;
+    ChapterType chapterType = 6;
+    AdNetworkList advertisement = 7;
+    Popup movieReward = 8;
+    repeated Banner banners = 9;
+    repeated Title ticketTitleList = 10;
+    Banner publisherBanner = 11;
+    UserTickets userTickets = 12;
+    bool isNextChapterReadByTicket = 13;
+    bool isNextChapterOneTimeFree = 14;
+    FreeViewDialogue freeViewDialogue = 15;
+    bool isNextChapterSubscription = 16;
+    AdRewardNetworkList advertisementReward = 17;
+    AdNetworkList viewerEndAdvertisement = 18;
+  }
+
+  message BannerList {
+    string bannerTitle = 1;
+    repeated Banner banners = 2;
+  }
 
   enum DataCase {
     DATA_NOT_SET = 0;
@@ -339,79 +508,14 @@ message Page {
     INSERT_BANNER_LIST = 5;
   }
 
-  message MangaPage {
-
-    enum PageType {
-      SINGLE = 0;
-      LEFT = 1;
-      RIGHT = 2;
-      DOUBLE = 3;
-      UNRECOGNIZED = -1;
-    }
-
-    string imageUrl = 1;
-    int32 width = 2;
-    int32 height = 3;
-    PageType type = 4;
-    string encryptionKey = 5;
-  }
-
-  message BannerList {
-    string bannerTitle = 1;
-    repeated Banner banners = 2;
-  }
-
-  message LastPage {
-
-    enum ChapterType {
-      LATEST = 0;
-      SEQUENCE = 1;
-      NOSEQUENCE = 2;
-      UNRECOGNIZED = -1;
-    }
-
-    Chapter currentChapter = 1;
-    ChapterType nextChapter = 2;
-    repeated Comment topComments = 3;
-    bool isSubscribed = 4;
-    int64 nextTimeStamp = 5;
-    ChapterType chapterType = 6;
-    AdNetworkList advertisement = 7;
-    Popup movieReward = 8;
-    repeated Banner banners = 9;
-    Title ticketTitleList = 10;
-    Banner publisherBanner = 11;
-    UserTickets userTickets = 12;
-    bool isNextChapterReadByTicket = 13;
-    bool isNextChapterOneTimeFree = 14;
-    FreeViewDialogue freeViewDialogue = 15;
-    bool isNextChapterSubscription = 16;
-    AdRewardNetworkList advertisementReward = 17;
-  }
-
   MangaPage mangaPage = 1;
   BannerList bannerList = 2;
   LastPage lastPage = 3;
-  AdNetworkList advertisement = 4;
+  AdRewardNetworkList advertisement = 4;
   BannerList insertBannerList = 5;
 }
 
-
 message Popup {
-
-  enum PopupCase {
-    POPUP_NOT_SET = 0;
-    OS_DEFAULT = 1;
-    APP_DEFAULT = 2;
-    MOVIE_REWARD = 3;
-    ONE_IMAGE = 4;
-  }
-
-  message Button {
-    string text = 1;
-    TransitionAction action = 2;
-  }
-
   message OSDefault {
     string subject = 1;
     string body = 2;
@@ -428,23 +532,35 @@ message Popup {
     string imageUrl = 4;
   }
 
-  message MovieReward {
-    string imageUrl = 1;
-    AdNetworkList advertisement = 2;
-  }
-
   message OneImage {
     TransitionAction action = 1;
     string imageUrl = 2;
   }
 
-  OSDefault osDefault = 1;
+  message Button {
+    string text = 1;
+    TransitionAction action = 2;
+  }
+
+  enum PopupCase {
+    POPUP_NOT_SET = 0;
+    OS_DEFAULT = 1;
+    APP_DEFAULT = 2;
+    MOVIE_REWARD = 3;
+    ONE_IMAGE = 4;
+  }
+
+  OSDefault oSDefault = 1;
   AppDefault appDefault = 2;
   MovieReward movieReward = 3;
   OneImage oneImage = 4;
   int32 popupId = 5;
 }
 
+message MovieReward {
+  string imageUrl = 1;
+  AdNetworkList advertisement = 2;
+}
 
 message ProfileSettingsView {
   repeated CommentIcon iconList = 1;
@@ -452,14 +568,12 @@ message ProfileSettingsView {
   CommentIcon myIcon = 3;
 }
 
-
 message PublisherNewsListView {
   int32 publisherId = 1;
   string publisherName = 2;
   Banner banner = 3;
   repeated PublisherNews newsList = 4;
 }
-
 
 message PublisherNews {
   int32 id = 1;
@@ -485,7 +599,6 @@ message Questionnaire {
   bool canSkip = 6;
 }
 
-
 message QuestionnaireView {
   bool isAnswered = 1;
   string subject = 2;
@@ -493,13 +606,17 @@ message QuestionnaireView {
   Language language = 4;
 }
 
+enum RankingTabType {
+  HOTTEST = 0;
+  TRENDING = 1;
+  COMPLETED = 2;
+}
+
 message RegistrationData {
   string deviceSecret = 1;
 }
 
-
 message Response {
-
   enum ResultCase {
     RESULT_NOT_SET = 0;
     SUCCESS = 1;
@@ -510,14 +627,13 @@ message Response {
   ErrorResult error = 2;
 }
 
-
 message SearchView {
-
   message Contents {
     Banner banner = 1;
     TitleList titleList = 2;
     repeated TitleRankingGroup rankedTitles = 3;
     repeated Label allLabels = 4;
+    ChapterPageList chapterPagesList = 5;
   }
 
   repeated Banner topSearchBanners = 1;
@@ -533,11 +649,18 @@ message ServiceAnnouncement {
   int32 id = 4;
 }
 
-
 message ServiceAnnouncementsView {
   repeated ServiceAnnouncement serviceAnnouncements = 1;
 }
 
+message SettingsView {
+  CommentIcon myIcon = 1;
+  string userName = 2;
+  bool noticeOfNewsAndEvents = 3;
+  bool noticeOfUpdatesOfSubscribedTitles = 4;
+  int32 englishTitlesCount = 5;
+  int32 spanishTitlesCount = 6;
+}
 
 message SettingsViewV2 {
   CommentIcon myIcon = 1;
@@ -546,6 +669,13 @@ message SettingsViewV2 {
   bool noticeOfUpdatesOfSubscribedTitles = 4;
   repeated AvailableLanguages availableLanguages = 5;
   Subscription userSubscription = 6;
+  Banner banner = 7;
+  repeated CustomCodeDialogue availableCustomCodes = 8;
+  repeated TitleRankingGroup favoriteTitles = 9;
+}
+
+message CustomCodeDialogue {
+  string planType = 1;
 }
 
 message Sns {
@@ -553,34 +683,38 @@ message Sns {
   string url = 2;
 }
 
-
 message SubscribedTitlesView {
   repeated Title titles = 1;
   repeated Banner historyBanners = 2;
   repeated Title viewHistory = 3;
 }
 
-message AndroidSubscriptionOfferTags {
-  string tag = 1;
-}
-
 message IosSubscriptionOffer {
-
   enum OfferType {
     NO_OFFER = 0;
     INTRODUCTORY = 1;
     PROMOTIONAL = 2;
-    UNRECOGNIZED = -1;
   }
 
   OfferType offerType = 1;
   string signature = 2;
   string appleKey = 3;
   string nonce = 4;
-  int64 timestamp = 5;
+  string timestamp = 5;
   string identifier = 6;
 }
 
+message AndroidSubscriptionOfferTags {
+  string tag = 1;
+}
+
+message Subscription {
+  string planType = 1;
+  int32 nextPaymentDate = 2;
+  bool isFreeTrial = 3;
+  bool isPendingDowngrade = 4;
+  bool isFirstTimeUser = 5;
+}
 
 message PlanType {
   string plan = 1;
@@ -590,25 +724,27 @@ message PlanType {
   repeated AndroidSubscriptionOfferTags androidOfferTags = 5;
 }
 
-message Subscription {
-  string planType = 1;
-  string nextPaymentDate = 2;
-  bool isFreeTrial = 3;
-  bool isPendingDowngrade = 4;
-  bool isFirstTimeUser = 5;
-}
-
-
 message SubscriptionView {
-  Subscription  userSubscription = 1;
+  Subscription userSubscription = 1;
   repeated PlanType planTypes = 2;
   repeated TitleSubscriptionGroup subscriptionTitles = 3;
   bool userHasUsedTrial = 4;
+  Banner banner = 5;
+  SubscriptionPlanBoxDescription planBoxDescription = 6;
+  SubscriptionNote note = 7;
 }
 
+message SubscriptionPlanBoxDescription {
+  string title = 1;
+  string text = 2;
+}
+
+message SubscriptionNote {
+  string title = 1;
+  string text = 2;
+}
 
 message SuccessResult {
-
   enum DataCase {
     DATA_NOT_SET = 0;
     REGISTERATION_DATA = 2;
@@ -642,10 +778,15 @@ message SuccessResult {
     WEB_HOME_VIEW_V4 = 38;
     FEATURED_TITLES_VIEW_V2 = 39;
     HISTORY_VIEW = 40;
+    DOWNLOADABLE_IMAGES_VIEW = 41;
+    INTRODUCE_SUBSCRIPTION = 42;
+    FAVORITE_TITLES_VIEW = 43;
+    MPC_STATUS_VIEW = 44;
+    HOME_VIEW_V4 = 45;
   }
 
   bool isFeaturedUpdated = 1;
-  RegistrationData registrationData = 2;
+  RegistrationData registerationData = 2;
   FeaturedTitlesView featuredTitlesView = 4;
   AllTitlesView allTitlesView = 5;
   TitleRankingView titleRankingView = 6;
@@ -677,6 +818,11 @@ message SuccessResult {
   WebHomeViewV4 webHomeViewV4 = 38;
   FeaturedTitlesViewV2 featuredTitlesViewV2 = 39;
   HistoryView historyView = 40;
+  DownloadableImagesView downloadableImagesView = 41;
+  IntroduceSubscription introduceSubscription = 42;
+  FavoriteTitlesView favoriteTitlesView = 43;
+  MpcStatusView mpcStatusView = 44;
+  HomeViewV4 homeViewV4 = 45;
 }
 
 message Tag {
@@ -684,8 +830,18 @@ message Tag {
   string slug = 2;
 }
 
-
 message TitleDetailView {
+  enum ReleaseSchedule {
+    DISABLED = 0;
+    EVERYDAY = 1;
+    WEEKLY = 2;
+    BIWEEKLY = 3;
+    MONTHLY = 4;
+    BIMONTHLY = 5;
+    TRIMONTHLY = 6;
+    OTHER = 7;
+    COMPLETED = 8;
+  }
 
   enum UpdateTiming {
     NOT_REGULARLY = 0;
@@ -697,7 +853,6 @@ message TitleDetailView {
     SATURDAY = 6;
     SUNDAY = 7;
     DAY = 8;
-    // UNRECOGNIZED = -1;
   }
 
   enum Rating {
@@ -705,7 +860,12 @@ message TitleDetailView {
     TEEN = 1;
     TEENPLUS = 2;
     MATURE = 3;
-    UNRECOGNIZED = -1;
+  }
+
+  message TitleLabels {
+    int32 releaseSchedule = 1;
+    bool isSimulpub = 2;
+    string planType = 3;
   }
 
   message PublisherItem {
@@ -725,32 +885,12 @@ message TitleDetailView {
     repeated Chapter lastChapterList = 4;
   }
 
-  message TitleLabels {
-
-    enum ReleaseSchedule {
-      DISABLED = 0;
-      EVERYDAY = 1;
-      WEEKLY = 2;
-      BIWEEKLY = 3;
-      MONTHLY = 4;
-      BIMONTHLY = 5;
-      TRIMONTHLY = 6;
-      OTHER = 7;
-      COMPLETED = 8;
-      UNRECOGNIZED = -1;
-    }
-
-    ReleaseSchedule releaseSchedule = 1;
-    bool isSimulpub = 2;
-    string planType = 3; // SubscriptionOuterClass.PlanType
-  }
-
   Title title = 1;
   string titleImageUrl = 2;
   string overview = 3;
   string backgroundImageUrl = 4;
   int64 nextTimeStamp = 5;
-  UpdateTiming updateTiming = 6;
+  int32 updateTiming = 6;
   string viewingPeriodDescription = 7;
   string nonAppearanceInfo = 8;
   repeated Chapter firstChapterList = 9;
@@ -784,7 +924,6 @@ message TitleDetailView {
   Popup ratingPopup = 37;
 }
 
-
 message AllTitlesGroup {
   string theTitle = 1;
   repeated Title titles = 2;
@@ -793,20 +932,10 @@ message AllTitlesGroup {
   int64 nextChapterStartTimestamp = 5;
 }
 
-message LabeledTitlesGroup {
-  string theTitle = 1;
-  repeated Title titles = 2;
-}
-
 message TitleRankingGroup {
   int32 originalTitleId = 1;
   repeated Title titles = 2;
   int32 score = 3;
-}
-
-message TitleSubscriptionGroup {
-  string plan = 1;
-  repeated Title titles = 2;
 }
 
 message TitleUpdatedGroup {
@@ -814,12 +943,37 @@ message TitleUpdatedGroup {
   repeated AllTitlesGroup latestTitle = 2;
 }
 
+message LabeledTitlesGroup {
+  string theTitle = 1;
+  repeated Title titles = 2;
+}
+
+message TitleSubscriptionGroup {
+  string plan = 1;
+  repeated Title titles = 2;
+  string titleCountText = 3;
+}
 
 message TitleList {
   string listName = 1;
   repeated Title featuredTitles = 2;
+  int32 containerId = 3;
 }
 
+message ChapterPageList {
+  string listName = 1;
+  repeated ChapterPages chapterPages = 2;
+}
+
+message ChapterPages {
+  int32 containerId = 1;
+  int32 chapterId = 2;
+  int32 titleId = 3;
+  string name = 4;
+  string author = 5;
+  string favoriteImageUrl = 6;
+  repeated Page pages = 7;
+}
 
 enum TitleUpdateStatus {
   NONE = 0;
@@ -827,7 +981,7 @@ enum TitleUpdateStatus {
   UP = 2;
   REEDITION = 3;
   CREATORS_STATUS = 4;
-  // UNRECOGNIZED = -1;
+  OUR_PICKS = 5;
 }
 
 message Title {
@@ -839,44 +993,7 @@ message Title {
   int32 viewCount = 6;
   Language language = 7;
   TitleUpdateStatus titleUpdateStatus = 8;
-}
-
-message ComingSoonTitle {
-  Title title = 1;
-  string nextChapterName = 2;
-  int64 nextChapterTimestamp = 3;
-}
-
-message FreeTitle {
-  Title title = 1;
-  string updatedTitleTimestamp = 2;
-}
-
-message SubscribableTitle {
-  Title title = 1;
-  bool isLatest = 2;
-  bool isSubscribed = 3;
-}
-
-message TicketTitles {
-  Title title = 1;
-  int32 firstTicketChapter = 2;
-  int32 lastTicketChapter = 3;
-}
-
-message TitleHighlight {
-  Title title = 1;
-  int32 chapterId = 2;
-  repeated string pageUrlList = 3;
-  int32 pageHight = 4;
-  int32 pageWidth = 5;
-  bool isVerticalOnly = 6;
-  bool isHorizontalOnly = 7;
-}
-
-message TitleUpdated {
-  Title title = 1;
-  string updatedTitleTimestamp = 2;
+  string favoriteImageUrl = 9;
 }
 
 message UpdatedTitle {
@@ -889,11 +1006,47 @@ message UpdatedTitle {
   bool isHorizontalOnly = 7;
 }
 
+message TitleUpdated {
+  Title title = 1;
+  string updatedTitleTimestamp = 2;
+}
+
+message FreeTitle {
+  Title title = 1;
+  string updatedTitleTimestamp = 2;
+}
+
+message TicketTitles {
+  Title title = 1;
+  int32 firstTicketChapter = 2;
+  int32 lastTicketChapter = 3;
+}
+
+message SubscribableTitle {
+  Title title = 1;
+  bool isLatest = 2;
+  bool isSubscribed = 3;
+}
+
+message ComingSoonTitle {
+  Title title = 1;
+  string nextChapterName = 2;
+  int64 nextChapterStartTimestamp = 3;
+}
+
+message TitleHighlight {
+  Title title = 1;
+  int32 chapterId = 2;
+  repeated string pageUrlList = 3;
+  int32 pageHight = 4;
+  int32 pageWidth = 5;
+  bool isVerticalOnly = 6;
+  bool isHorizontalOnly = 7;
+}
 
 message TitleRankingView {
   repeated Title titles = 1;
 }
-
 
 message TitleRankingViewV2 {
   repeated Banner rankingBanners = 1;
@@ -901,29 +1054,24 @@ message TitleRankingViewV2 {
   repeated TitleRankingGroup rankedTitles = 3;
 }
 
-
 message TitleUpdatedView {
   repeated TitleUpdated latestTitle = 1;
 }
-
 
 message TitleUpdatedViewV2 {
   repeated TitleUpdatedGroup titleUpdatedGroup = 1;
 }
 
 message TransitionAction {
-
   enum PresentationMethod {
     PUSH = 0;
     MODAL = 1;
     EXTERNAL = 2;
-    UNRECOGNIZED = -1;
   }
 
   PresentationMethod method = 1;
   string url = 2;
 }
-
 
 message UpdatedTitleGroup {
   string groupName = 1;
@@ -931,43 +1079,38 @@ message UpdatedTitleGroup {
 }
 
 message UpdatedTitleV2Group {
-
-  message OriginalTitleGroup {
-    string theTitle = 1;
-    string chapterNumber = 2;
-    repeated UpdatedTitle titles = 3;
-    int32 viewCount = 4;
-    TitleUpdateStatus titleUpdateStatus = 5;
-    int64 chapterStartTime = 6;
-  }
-
   string groupName = 1;
   repeated OriginalTitleGroup titleGroups = 2;
   int32 groupNameDays = 3;
 }
 
+message OriginalTitleGroup {
+  string theTitle = 1;
+  string chapterNumber = 2;
+  repeated UpdatedTitle titles = 3;
+  int32 viewCount = 4;
+  TitleUpdateStatus titleUpdateStatus = 5;
+  int32 chapterStartTime = 6;
+}
 
 message UpdatedTitleListView {
   repeated UpdatedTitleGroup groups = 1;
 }
 
 message UpdateProfileResultView {
-
   enum Result {
     SUCCESS = 0;
     DUPLICATED = 1;
     NG_WORD = 2;
-    UNRECOGNIZED = -1;
   }
 
   Result result = 1;
 }
 
 message UserTickets {
-  int64 currentTickets = 1;
+  int32 currentTickets = 1;
   int64 nextTicketTimestamp = 2;
 }
-
 
 message WebHomeViewV4 {
   repeated Banner topBanners = 1;
