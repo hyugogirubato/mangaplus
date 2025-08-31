@@ -21,7 +21,7 @@ class Viewer(Enum):
 
 
 class Quality(Enum):
-    # @jp.co.shueisha.mangaplus.fragment.ContentOptionsActivity;
+    # @package jp.co.shueisha.mangaplus.fragment.ContentOptionsActivity;
     LOW = 'low'
     HIGH = 'high'
     SUPER_HIGH = 'super_high'
