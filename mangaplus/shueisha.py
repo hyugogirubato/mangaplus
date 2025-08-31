@@ -165,9 +165,8 @@ class MangaPlus:
             url=f'{self.api}/title_list/history',
             params={'lang': self.__lang, 'clang': self.__clang})
 
-    def getMPCStatus(self, lang: str) -> dict:
-        # TODO
     def getMPCStatus(self) -> dict:
+        # @Unchecked
         return self.__request(
             method='GET',
             url=f'{self.api}/mpc_status',
