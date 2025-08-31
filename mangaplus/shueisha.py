@@ -21,6 +21,7 @@ class MangaPlus:
         self.clang = clang or [Language.ENGLISH]
         self.viewer = viewer
 
+        # @package jp.co.shueisha.mangaplus.Constants;
         self.api = 'https://jumpg-api.tokyo-cdn.com/api'
         self.secret = None
 
