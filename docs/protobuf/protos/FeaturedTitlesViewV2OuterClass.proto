@@ -11,11 +11,11 @@ import "TitleListOuterClass.proto";
 message FeaturedTitlesViewV2 {
 
   message Contents {
-    Banner banner = 1;
-    TitleList titleList = 2;
-    TitleRankingGroup rankedTitles = 3;
+    BannerOuterClass.Banner banner = 1;
+    TitleListOuterClass.TitleList titleList = 2;
+    repeated TitleListGroup.TitleRankingGroup rankedTitles = 3;
   }
 
-  repeated Banner topSearchBanners = 1;
+  repeated BannerOuterClass.Banner topSearchBanners = 1;
   repeated Contents contents = 2;
 }

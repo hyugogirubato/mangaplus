@@ -4,15 +4,24 @@ package mangaplus_api_protocol;
 
 option java_package = "jp.co.comic.jump.proto";
 
+import "BannerOuterClass.proto";
 import "CommentIconOuterClass.proto";
 import "LanguagesOuterClass.proto";
 import "SubscriptionOuterClass.proto";
+import "TitleListGroup.proto";
 
 message SettingsViewV2 {
-  CommentIcon myIcon = 1;
+  CommentIconOuterClass.CommentIcon myIcon = 1;
   string userName = 2;
   bool noticeOfNewsAndEvents = 3;
   bool noticeOfUpdatesOfSubscribedTitles = 4;
-  repeated AvailableLanguages availableLanguages = 5;
-  Subscription userSubscription = 6;
+  repeated LanguagesOuterClass.AvailableLanguages availableLanguages = 5;
+  SubscriptionOuterClass.Subscription userSubscription = 6;
+  BannerOuterClass.Banner banner = 7;
+  repeated CustomCodeDialogue availableCustomCodes = 8;
+  repeated TitleListGroup.TitleRankingGroup favoriteTitles = 9;
+}
+
+message CustomCodeDialogue {
+  string planType = 1;
 }

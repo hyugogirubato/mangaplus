@@ -7,5 +7,5 @@ option java_package = "jp.co.comic.jump.proto";
 import "TitleListGroup.proto";
 
 message AllTitlesViewV2 {
-  repeated AllTitlesGroup allTitlesGroup = 1;
+  repeated TitleListGroup.AllTitlesGroup allTitlesGroup = 1;
 }

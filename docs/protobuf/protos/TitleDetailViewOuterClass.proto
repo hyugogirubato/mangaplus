@@ -20,6 +20,17 @@ import "TitleOuterClass.proto";
 import "UserTicketsOuterClass.proto";
 
 message TitleDetailView {
+  enum ReleaseSchedule {
+    DISABLED = 0;
+    EVERYDAY = 1;
+    WEEKLY = 2;
+    BIWEEKLY = 3;
+    MONTHLY = 4;
+    BIMONTHLY = 5;
+    TRIMONTHLY = 6;
+    OTHER = 7;
+    COMPLETED = 8;
+  }
 
   enum UpdateTiming {
     NOT_REGULARLY = 0;
@@ -31,7 +42,6 @@ message TitleDetailView {
     SATURDAY = 6;
     SUNDAY = 7;
     DAY = 8;
-    // UNRECOGNIZED = -1;
   }
 
   enum Rating {
@@ -39,81 +49,66 @@ message TitleDetailView {
     TEEN = 1;
     TEENPLUS = 2;
     MATURE = 3;
-    UNRECOGNIZED = -1;
+  }
+
+  message TitleLabels {
+    int32 releaseSchedule = 1;
+    bool isSimulpub = 2;
+    string planType = 3;
   }
 
   message PublisherItem {
-    Banner banner = 1;
-    PublisherNews publisherNews = 2;
+    BannerOuterClass.Banner banner = 1;
+    PublisherNewsOuterClass.PublisherNews publisherNews = 2;
   }
 
   message TitleLanguages {
     int32 titleId = 1;
-    Language language = 2;
+    LanguagesOuterClass.Language language = 2;
   }
 
   message ChapterGroup {
     string chapterNumbers = 1;
-    repeated Chapter firstChapterList = 2;
-    repeated Chapter midChapterList = 3;
-    repeated Chapter lastChapterList = 4;
+    repeated ChapterOuterClass.Chapter firstChapterList = 2;
+    repeated ChapterOuterClass.Chapter midChapterList = 3;
+    repeated ChapterOuterClass.Chapter lastChapterList = 4;
   }
 
-  message TitleLabels {
-
-    enum ReleaseSchedule {
-      DISABLED = 0;
-      EVERYDAY = 1;
-      WEEKLY = 2;
-      BIWEEKLY = 3;
-      MONTHLY = 4;
-      BIMONTHLY = 5;
-      TRIMONTHLY = 6;
-      OTHER = 7;
-      COMPLETED = 8;
-      UNRECOGNIZED = -1;
-    }
-
-    ReleaseSchedule releaseSchedule = 1;
-    bool isSimulpub = 2;
-    string planType = 3; // SubscriptionOuterClass.PlanType
-  }
-
-  Title title = 1;
+  TitleOuterClass.Title title = 1;
   string titleImageUrl = 2;
   string overview = 3;
   string backgroundImageUrl = 4;
   int64 nextTimeStamp = 5;
-  UpdateTiming updateTiming = 6;
+  int32 updateTiming = 6;
   string viewingPeriodDescription = 7;
   string nonAppearanceInfo = 8;
-  repeated Chapter firstChapterList = 9;
-  repeated Chapter lastChapterList = 10;
-  repeated Banner banners = 11;
-  repeated Title recommendedTitleList = 12;
-  Sns sns = 13;
+  repeated ChapterOuterClass.Chapter firstChapterList = 9;
+  repeated ChapterOuterClass.Chapter lastChapterList = 10;
+  repeated BannerOuterClass.Banner banners = 11;
+  repeated TitleOuterClass.Title recommendedTitleList = 12;
+  SnsOuterClass.Sns sns = 13;
   bool isSimulReleased = 14;
   bool isSubscribed = 15;
   Rating rating = 16;
   bool chaptersDescending = 17;
   int32 numberOfViews = 18;
   repeated PublisherItem publisherItems = 19;
-  repeated Banner titleBanners = 20;
-  UserTickets userTickets = 21;
-  repeated Chapter ticketChapterList = 22;
-  repeated Title ticketTitleList = 23;
+  repeated BannerOuterClass.Banner titleBanners = 20;
+  UserTicketsOuterClass.UserTickets userTickets = 21;
+  repeated ChapterOuterClass.Chapter ticketChapterList = 22;
+  repeated TitleOuterClass.Title ticketTitleList = 23;
   bool hasChaptersBetween = 24;
-  Banner publisherBanner = 25;
-  AdNetworkList advertisement = 26;
+  BannerOuterClass.Banner publisherBanner = 25;
+  AdNetworkOuterClass.AdNetworkList advertisement = 26;
   repeated TitleLanguages titleLanguages = 27;
   repeated ChapterGroup chapterListGroup = 28;
-  FreeViewDialogue freeViewDialogue = 29;
+  Dialogue.FreeViewDialogue freeViewDialogue = 29;
   string regionCode = 30;
-  repeated Tag tags = 31;
+  repeated TagOuterClass.Tag tags = 31;
   TitleLabels titleLabels = 32;
-  Subscription userSubscription = 33;
-  Label label = 34;
+  SubscriptionOuterClass.Subscription userSubscription = 33;
+  LabelOuterClass.Label label = 34;
   bool isFirstTimeFree = 35;
-  MetaInfo metaInfo = 36;
-  Popup ratingPopup = 37;
+  MetaInfoOuterClass.MetaInfo metaInfo = 36;
+  PopupOuterClass.Popup ratingPopup = 37;
 }

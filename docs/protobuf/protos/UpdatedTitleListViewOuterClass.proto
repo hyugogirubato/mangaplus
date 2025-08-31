@@ -7,5 +7,5 @@ option java_package = "jp.co.comic.jump.proto";
 import "UpdatedTitleGroupOuterClass.proto";
 
 message UpdatedTitleListView {
-  repeated UpdatedTitleGroup groups = 1;
+  repeated UpdatedTitleGroupOuterClass.UpdatedTitleGroup groups = 1;
 }

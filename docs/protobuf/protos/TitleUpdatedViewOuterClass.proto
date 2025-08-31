@@ -7,5 +7,5 @@ option java_package = "jp.co.comic.jump.proto";
 import "TitleOuterClass.proto";
 
 message TitleUpdatedView {
-  repeated TitleUpdated latestTitle = 1;
+  repeated TitleOuterClass.TitleUpdated latestTitle = 1;
 }

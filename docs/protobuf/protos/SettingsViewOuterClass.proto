@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "CommentIconOuterClass.proto";
+
+message SettingsView {
+  CommentIconOuterClass.CommentIcon myIcon = 1;
+  string userName = 2;
+  bool noticeOfNewsAndEvents = 3;
+  bool noticeOfUpdatesOfSubscribedTitles = 4;
+  int32 englishTitlesCount = 5;
+  int32 spanishTitlesCount = 6;
+}

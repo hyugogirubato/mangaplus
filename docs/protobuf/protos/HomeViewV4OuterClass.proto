@@ -1,0 +1,111 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "BannerOuterClass.proto";
+import "LanguagesOuterClass.proto"; // TODO: Import?
+import "PopupOuterClass.proto";
+import "RankingTabTypeOuterClass.proto";
+import "ServiceAnnouncementOuterClass.proto";
+import "SubscriptionOuterClass.proto";
+import "TitleListGroup.proto";
+import "TitleListOuterClass.proto";
+import "UpdatedTitleGroupOuterClass.proto";
+
+message HomeViewV4 {
+
+  message Sections {
+    enum SectionCase {
+      SECTION_NOT_SET = 0;
+      WEEKLY_SECTION = 1;
+      RANKING_SECTION = 2;
+      PREVIEW_SECTION = 3;
+      TITLE_LIST_SECTION = 4;
+      BANNER_SECTION = 5;
+    }
+
+    WeeklySection weeklySection = 1;
+    RankingSection rankingSection = 2;
+    PreviewSection previewSection = 3;
+    TitleListSection titleListSection = 4;
+    BannerSection bannerSection = 5;
+  }
+
+  message WeeklySection {
+    message WeeklyContent {
+      bool isUpdated = 1;
+      int64 updatedTimeStamp = 2;
+      repeated ContentItem contentItems = 3;
+    }
+
+    message ContentItem {
+      enum ContentCase {
+        CONTENT_NOT_SET = 0;
+        PR_BANNER = 1;
+        MV_BANNER = 2;
+        TITLE_GROUP = 3;
+        CAROUSEL_BANNERS = 4;
+        MINOR_LANGUAGE_BANNER = 5;
+      }
+
+      ContentCase content = 1;
+      MVBanner mVBanner = 2;
+      TitleGroup titleGroup = 3;
+      CarouselBanner carouselBanners = 4;
+      MinorLanguageBanner minorLanguageBanner = 5;
+    }
+
+    message MVBanner {
+      string imageUrl = 1;
+      UpdatedTitleGroupOuterClass.OriginalTitleGroup titleGroups = 2;
+    }
+
+    message TitleGroup {
+      repeated UpdatedTitleGroupOuterClass.OriginalTitleGroup titleGroups = 1;
+    }
+
+    message CarouselBanner {
+      repeated BannerOuterClass.Banner banners = 1;
+    }
+
+    message MinorLanguageBanner {
+      repeated UpdatedTitleGroupOuterClass.OriginalTitleGroup titleGroups = 1;
+    }
+
+    repeated WeeklyContent contents = 1;
+  }
+
+  message RankingSection {
+    message RankingTab {
+      RankingTabTypeOuterClass.RankingTabType tabType = 1;
+      repeated TitleListGroup.TitleRankingGroup rankedTitles = 2;
+    }
+
+    repeated RankingTab rankingTabs = 1;
+  }
+
+  message PreviewSection {
+    message PreviewTab {
+      RankingTabTypeOuterClass.RankingTabType tabType = 1;
+      TitleListOuterClass.ChapterPageList chapterPagesList = 2;
+    }
+
+    repeated PreviewTab previewTabs = 1;
+  }
+
+  message TitleListSection {
+    TitleListOuterClass.TitleList titleList = 1;
+  }
+
+  message BannerSection {
+    repeated BannerOuterClass.Banner banners = 1;
+  }
+
+  repeated Sections sections = 1;
+  PopupOuterClass.Popup popup = 2;
+  bool displayTrackingPopup = 3;
+  SubscriptionOuterClass.Subscription userSubscription = 4;
+  repeated ServiceAnnouncementOuterClass.ServiceAnnouncement serviceAnnouncements = 5;
+}

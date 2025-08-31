@@ -8,5 +8,5 @@ import "LanguagesOuterClass.proto";
 
 message InitialViewV2 {
   bool gdprAgreementRequired = 1;
-  repeated AvailableLanguages availableLanguages = 2;
+  repeated LanguagesOuterClass.AvailableLanguages availableLanguages = 2;
 }

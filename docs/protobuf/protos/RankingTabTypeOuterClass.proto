@@ -4,7 +4,8 @@ package mangaplus_api_protocol;
 
 option java_package = "jp.co.comic.jump.proto";
 
-message UserTickets {
-  int32 currentTickets = 1;
-  int64 nextTicketTimestamp = 2;
+enum RankingTabType {
+  HOTTEST = 0;
+  TRENDING = 1;
+  COMPLETED = 2;
 }

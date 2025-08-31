@@ -7,5 +7,5 @@ option java_package = "jp.co.comic.jump.proto";
 import "FeedbackOuterClass.proto";
 
 message FeedbackView {
-  repeated Feedback feedbackList = 1;
+  repeated FeedbackOuterClass.Feedback feedbackList = 1;
 }

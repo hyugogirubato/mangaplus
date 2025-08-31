@@ -7,5 +7,5 @@ option java_package = "jp.co.comic.jump.proto";
 import "TitleOuterClass.proto";
 
 message AllFreeTitlesView {
-  repeated FreeTitle freeTitles = 1;
+  repeated TitleOuterClass.FreeTitle freeTitles = 1;
 }

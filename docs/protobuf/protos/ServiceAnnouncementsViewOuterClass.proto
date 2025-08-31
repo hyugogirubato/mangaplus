@@ -7,5 +7,5 @@ option java_package = "jp.co.comic.jump.proto";
 import "ServiceAnnouncementOuterClass.proto";
 
 message ServiceAnnouncementsView {
-  repeated ServiceAnnouncement serviceAnnouncements = 1;
+  repeated ServiceAnnouncementOuterClass.ServiceAnnouncement serviceAnnouncements = 1;
 }

@@ -12,7 +12,7 @@ enum TitleUpdateStatus {
   UP = 2;
   REEDITION = 3;
   CREATORS_STATUS = 4;
-  // UNRECOGNIZED = -1;
+  OUR_PICKS = 5;
 }
 
 message Title {
@@ -22,39 +22,17 @@ message Title {
   string portraitImageUrl = 4;
   string landscapeImageUrl = 5;
   int32 viewCount = 6;
-  Language language = 7;
+  LanguagesOuterClass.Language language = 7;
   TitleUpdateStatus titleUpdateStatus = 8;
+  string favoriteImageUrl = 9;
 }
 
-message ComingSoonTitle {
-  Title title = 1;
-  string nextChapterName = 2;
-  int64 nextChapterTimestamp = 3;
-}
-
-message FreeTitle {
-  Title title = 1;
-  string updatedTitleTimestamp = 2;
-}
-
-message SubscribableTitle {
-  Title title = 1;
-  bool isLatest = 2;
-  bool isSubscribed = 3;
-}
-
-message TicketTitles {
-  Title title = 1;
-  int32 firstTicketChapter = 2;
-  int32 lastTicketChapter = 3;
-}
-
-message TitleHighlight {
+message UpdatedTitle {
   Title title = 1;
   int32 chapterId = 2;
-  repeated string pageUrlList = 3;
-  int32 pageHight = 4;
-  int32 pageWidth = 5;
+  string chapterName = 3;
+  string chapterSubTitle = 4;
+  bool isLatest = 5;
   bool isVerticalOnly = 6;
   bool isHorizontalOnly = 7;
 }
@@ -64,12 +42,35 @@ message TitleUpdated {
   string updatedTitleTimestamp = 2;
 }
 
-message UpdatedTitle {
+message FreeTitle {
+  Title title = 1;
+  string updatedTitleTimestamp = 2;
+}
+
+message TicketTitles {
+  Title title = 1;
+  int32 firstTicketChapter = 2;
+  int32 lastTicketChapter = 3;
+}
+
+message SubscribableTitle {
+  Title title = 1;
+  bool isLatest = 2;
+  bool isSubscribed = 3;
+}
+
+message ComingSoonTitle {
+  Title title = 1;
+  string nextChapterName = 2;
+  int64 nextChapterStartTimestamp = 3;
+}
+
+message TitleHighlight {
   Title title = 1;
   int32 chapterId = 2;
-  string chapterName = 3;
-  string chapterSubTitle = 4;
-  bool isLatest = 5;
+  repeated string pageUrlList = 3;
+  int32 pageHight = 4;
+  int32 pageWidth = 5;
   bool isVerticalOnly = 6;
   bool isHorizontalOnly = 7;
 }

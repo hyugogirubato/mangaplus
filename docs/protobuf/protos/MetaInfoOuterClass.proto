@@ -6,4 +6,5 @@ option java_package = "jp.co.comic.jump.proto";
 
 message MetaInfo {
   string metaTitle = 1;
+  string metaDescription = 2;
 }

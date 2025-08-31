@@ -13,5 +13,5 @@ message PublisherNews {
   string subject = 4;
   string body = 5;
   int64 publishedTimeStamp = 6;
-  TransitionAction action = 7;
+  TransitionActionOuterClass.TransitionAction action = 7;
 }

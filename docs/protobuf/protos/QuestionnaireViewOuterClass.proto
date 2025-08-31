@@ -10,6 +10,6 @@ import "QuestionnaireOuterClass.proto";
 message QuestionnaireView {
   bool isAnswered = 1;
   string subject = 2;
-  repeated Questionnaire questions = 3;
-  Language language = 4;
+  repeated QuestionnaireOuterClass.Questionnaire questions = 3;
+  LanguagesOuterClass.Language language = 4;
 }

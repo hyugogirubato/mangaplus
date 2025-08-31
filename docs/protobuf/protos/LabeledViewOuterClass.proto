@@ -8,6 +8,6 @@ import "LabelOuterClass.proto";
 import "TitleListGroup.proto";
 
 message LabeledView {
-  Label label = 1;
-  repeated LabeledTitlesGroup labeledTitlesGroup = 2;
+  LabelOuterClass.Label label = 1;
+  repeated TitleListGroup.LabeledTitlesGroup labeledTitlesGroup = 2;
 }

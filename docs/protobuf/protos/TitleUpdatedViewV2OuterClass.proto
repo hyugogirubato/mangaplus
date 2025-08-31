@@ -7,5 +7,5 @@ option java_package = "jp.co.comic.jump.proto";
 import "TitleListGroup.proto";
 
 message TitleUpdatedViewV2 {
-  repeated TitleUpdatedGroup titleUpdatedGroup = 1;
+  repeated TitleListGroup.TitleUpdatedGroup titleUpdatedGroup = 1;
 }

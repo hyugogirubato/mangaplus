@@ -8,8 +8,9 @@ import "TransitionActionOuterClass.proto";
 
 message Banner {
   string imageUrl = 1;
-  TransitionAction action = 2;
+  TransitionActionOuterClass.TransitionAction action = 2;
   int32 id = 3;
   int32 width = 4;
   int32 height = 5;
+  bool isPr = 6;
 }

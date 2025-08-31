@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+message DownloadableImagesView {
+  repeated DownloadableImageGroup downloadableImages = 1;
+}
+
+message DownloadableImageGroup {
+  int32 id = 1;
+  string imageUrl = 2;
+  string imageTitle = 3;
+  int32 width = 4;
+  int32 height = 5;
+  string type = 6;
+}
+

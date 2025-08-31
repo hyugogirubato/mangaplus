@@ -5,12 +5,10 @@ package mangaplus_api_protocol;
 option java_package = "jp.co.comic.jump.proto";
 
 message UpdateProfileResultView {
-
   enum Result {
     SUCCESS = 0;
     DUPLICATED = 1;
     NG_WORD = 2;
-    UNRECOGNIZED = -1;
   }
 
   Result result = 1;

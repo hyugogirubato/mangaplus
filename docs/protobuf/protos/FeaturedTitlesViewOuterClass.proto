@@ -10,7 +10,6 @@ import "TitleListOuterClass.proto";
 message FeaturedTitlesView {
 
   message Contents {
-
     enum DataCase {
       DATA_NOT_SET = 0;
       BANNER = 1;
@@ -18,11 +17,11 @@ message FeaturedTitlesView {
     }
 
     DataCase data = 1;
-    TitleList titleList = 2;
+    TitleListOuterClass.TitleList titleList = 2;
   }
 
-  Banner mainBanner = 1;
-  Banner subBanner1 = 2;
-  Banner subBanner2 = 3;
+  BannerOuterClass.Banner mainBanner = 1;
+  BannerOuterClass.Banner subBanner1 = 2;
+  BannerOuterClass.Banner subBanner2 = 3;
   repeated Contents contents = 4;
 }

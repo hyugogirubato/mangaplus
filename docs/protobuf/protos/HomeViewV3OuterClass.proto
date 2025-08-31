@@ -11,10 +11,10 @@ import "SubscriptionOuterClass.proto";
 import "UpdatedTitleGroupOuterClass.proto";
 
 message HomeViewV3 {
-  repeated Banner topBanners = 1;
-  repeated UpdatedTitleV2Group groups = 2;
-  Popup popup = 9;
+  repeated BannerOuterClass.Banner topBanners = 1;
+  repeated UpdatedTitleGroupOuterClass.UpdatedTitleV2Group groups = 2;
+  PopupOuterClass.Popup popup = 9;
   bool displayTrackingPopup = 10;
-  Subscription userSubscription = 11;
-  repeated ServiceAnnouncement serviceAnnouncements = 12;
+  SubscriptionOuterClass.Subscription userSubscription = 11;
+  repeated ServiceAnnouncementOuterClass.ServiceAnnouncement serviceAnnouncements = 12;
 }

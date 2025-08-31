@@ -5,16 +5,25 @@ package mangaplus_api_protocol;
 option java_package = "jp.co.comic.jump.proto";
 
 import "ChapterOuterClass.proto";
+import "LanguagesOuterClass.proto";
 import "PageOuterClass.proto";
 import "PopupOuterClass.proto";
 import "SnsOuterClass.proto";
 import "SubscriptionOuterClass.proto";
+import "TitleOuterClass.proto";
 
 message MangaViewer {
-  repeated Page pages = 1;
+
+  message TitleAvailableLanguages {
+    int32 titleId = 1;
+    LanguagesOuterClass.Language language = 2;
+    bool isNew = 3;
+  }
+
+  repeated PageOuterClass.Page pages = 1;
   int32 chapterId = 2;
-  repeated Chapter chapters = 3;
-  Sns sns = 4;
+  repeated ChapterOuterClass.Chapter chapters = 3;
+  SnsOuterClass.Sns sns = 4;
   string titleName = 5;
   string chapterName = 6;
   int32 numberOfComments = 7;
@@ -23,8 +32,10 @@ message MangaViewer {
   bool startFromRight = 10;
   string regionCode = 11;
   bool isHorizontalOnly = 12;
-  Subscription userSubscription = 13;
-  string planType = 14; // TODO: SubscriptionOuterClass.PlanType
-  string titleLanguage = 15; // TODO: LanguagesOuterClass.Language
-  Popup ratingPopup = 16;
+  SubscriptionOuterClass.Subscription userSubscription = 13;
+  string planType = 14;
+  string titleLanguage = 15;
+  PopupOuterClass.Popup ratingPopup = 16;
+  repeated TitleAvailableLanguages titleAvailableLanguages = 17;
+  TitleOuterClass.Title title = 18;
 }

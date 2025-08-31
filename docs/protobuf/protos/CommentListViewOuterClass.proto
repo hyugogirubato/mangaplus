@@ -7,6 +7,14 @@ option java_package = "jp.co.comic.jump.proto";
 import "CommentOuterClass.proto";
 
 message CommentListView {
-  repeated Comment comments = 1;
+  message TitleDetailComment {
+    int32 titleId = 1;
+    string titleName = 2;
+    string chapterName = 3;
+    string credit = 4;
+  }
+
+  repeated CommentOuterClass.Comment comments = 1;
   bool ifSetUserName = 2;
+  TitleDetailComment titleDetailComment = 3;
 }

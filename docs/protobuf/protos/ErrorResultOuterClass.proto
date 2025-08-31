@@ -7,18 +7,16 @@ option java_package = "jp.co.comic.jump.proto";
 import "PopupOuterClass.proto";
 
 message ErrorResult {
-
   enum Action {
     DEFAULT = 0;
     UNAUTHORIZED = 1;
     MAINTENANCE = 2;
     GEOIP_BLOCKING = 3;
-    UNRECOGNIZED = -1;
   }
 
   Action action = 1;
-  Popup.OSDefault englishPopup = 2;
-  Popup.OSDefault spanishPopup = 3;
+  PopupOuterClass.Popup.OSDefault englishPopup = 2;
+  PopupOuterClass.Popup.OSDefault spanishPopup = 3;
   string debugInfo = 4;
-  repeated Popup.OSDefault popups = 5;
+  repeated PopupOuterClass.Popup.OSDefault popups = 5;
 }

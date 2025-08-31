@@ -4,12 +4,26 @@ package mangaplus_api_protocol;
 
 option java_package = "jp.co.comic.jump.proto";
 
+import "BannerOuterClass.proto";
 import "SubscriptionOuterClass.proto";
 import "TitleListGroup.proto";
 
 message SubscriptionView {
-  Subscription  userSubscription = 1;
-  repeated PlanType planTypes = 2;
-  repeated TitleSubscriptionGroup subscriptionTitles = 3;
+  SubscriptionOuterClass.Subscription userSubscription = 1;
+  repeated SubscriptionOuterClass.PlanType planTypes = 2;
+  repeated TitleListGroup.TitleSubscriptionGroup subscriptionTitles = 3;
   bool userHasUsedTrial = 4;
+  BannerOuterClass.Banner banner = 5;
+  SubscriptionPlanBoxDescription planBoxDescription = 6;
+  SubscriptionNote note = 7;
+}
+
+message SubscriptionPlanBoxDescription {
+  string title = 1;
+  string text = 2;
+}
+
+message SubscriptionNote {
+  string title = 1;
+  string text = 2;
 }

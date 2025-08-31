@@ -12,10 +12,10 @@ import "TitleListOuterClass.proto";
 import "UpdatedTitleGroupOuterClass.proto";
 
 message WebHomeViewV4 {
-  repeated Banner topBanners = 1;
-  repeated UpdatedTitleV2Group groups = 2;
-  repeated TitleRankingGroup rankedTitles = 3;
-  Popup popup = 4;
-  repeated TitleList featuredTitleLists = 5;
-  repeated ServiceAnnouncement serviceAnnouncements = 6;
+  repeated BannerOuterClass.Banner topBanners = 1;
+  repeated UpdatedTitleGroupOuterClass.UpdatedTitleV2Group groups = 2;
+  repeated TitleListGroup.TitleRankingGroup rankedTitles = 3;
+  PopupOuterClass.Popup popup = 4;
+  repeated TitleListOuterClass.TitleList featuredTitleLists = 5;
+  repeated ServiceAnnouncementOuterClass.ServiceAnnouncement serviceAnnouncements = 6;
 }

@@ -13,5 +13,5 @@ message Comment {
   bool alreadyLiked = 7;
   int32 numberOfLikes = 9;
   string body = 10;
-  int64 created = 11;
+  int32 created = 11;
 }

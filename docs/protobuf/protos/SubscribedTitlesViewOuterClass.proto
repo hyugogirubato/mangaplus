@@ -8,7 +8,7 @@ import "BannerOuterClass.proto";
 import "TitleOuterClass.proto";
 
 message SubscribedTitlesView {
-  repeated Title titles = 1;
-  repeated Banner historyBanners = 2;
-  repeated Title viewHistory = 3;
+  repeated TitleOuterClass.Title titles = 1;
+  repeated BannerOuterClass.Banner historyBanners = 2;
+  repeated TitleOuterClass.Title viewHistory = 3;
 }

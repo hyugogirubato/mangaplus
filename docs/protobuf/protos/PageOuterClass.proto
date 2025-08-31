@@ -14,6 +14,52 @@ import "TitleOuterClass.proto";
 import "UserTicketsOuterClass.proto";
 
 message Page {
+  enum ChapterType {
+    LATEST = 0;
+    SEQUENCE = 1;
+    NOSEQUENCE = 2;
+  }
+
+  enum PageType {
+    SINGLE = 0;
+    LEFT = 1;
+    RIGHT = 2;
+    DOUBLE = 3;
+  }
+
+  message MangaPage {
+    string imageUrl = 1;
+    int32 width = 2;
+    int32 height = 3;
+    PageType type = 4;
+    string encryptionKey = 5;
+  }
+
+  message LastPage {
+    ChapterOuterClass.Chapter currentChapter = 1;
+    ChapterOuterClass.Chapter nextChapter = 2;
+    repeated CommentOuterClass.Comment topComments = 3;
+    bool isSubscribed = 4;
+    int64 nextTimeStamp = 5;
+    ChapterType chapterType = 6;
+    AdNetworkOuterClass.AdNetworkList advertisement = 7;
+    PopupOuterClass.Popup movieReward = 8;
+    repeated BannerOuterClass.Banner banners = 9;
+    repeated TitleOuterClass.Title ticketTitleList = 10;
+    BannerOuterClass.Banner publisherBanner = 11;
+    UserTicketsOuterClass.UserTickets userTickets = 12;
+    bool isNextChapterReadByTicket = 13;
+    bool isNextChapterOneTimeFree = 14;
+    Dialogue.FreeViewDialogue freeViewDialogue = 15;
+    bool isNextChapterSubscription = 16;
+    AdNetworkOuterClass.AdRewardNetworkList advertisementReward = 17;
+    AdNetworkOuterClass.AdNetworkList viewerEndAdvertisement = 18;
+  }
+
+  message BannerList {
+    string bannerTitle = 1;
+    repeated BannerOuterClass.Banner banners = 2;
+  }
 
   enum DataCase {
     DATA_NOT_SET = 0;
@@ -24,59 +70,9 @@ message Page {
     INSERT_BANNER_LIST = 5;
   }
 
-  message MangaPage {
-
-    enum PageType {
-      SINGLE = 0;
-      LEFT = 1;
-      RIGHT = 2;
-      DOUBLE = 3;
-      UNRECOGNIZED = -1;
-    }
-
-    string imageUrl = 1;
-    int32 width = 2;
-    int32 height = 3;
-    PageType type = 4;
-    string encryptionKey = 5;
-  }
-
-  message BannerList {
-    string bannerTitle = 1;
-    repeated Banner banners = 2;
-  }
-
-  message LastPage {
-
-    enum ChapterType {
-      LATEST = 0;
-      SEQUENCE = 1;
-      NOSEQUENCE = 2;
-      UNRECOGNIZED = -1;
-    }
-
-    Chapter currentChapter = 1;
-    ChapterType nextChapter = 2;
-    repeated Comment topComments = 3;
-    bool isSubscribed = 4;
-    int64 nextTimeStamp = 5;
-    ChapterType chapterType = 6;
-    AdNetworkList advertisement = 7;
-    Popup movieReward = 8;
-    repeated Banner banners = 9;
-    Title ticketTitleList = 10;
-    Banner publisherBanner = 11;
-    UserTickets userTickets = 12;
-    bool isNextChapterReadByTicket = 13;
-    bool isNextChapterOneTimeFree = 14;
-    FreeViewDialogue freeViewDialogue = 15;
-    bool isNextChapterSubscription = 16;
-    AdRewardNetworkList advertisementReward = 17;
-  }
-
   MangaPage mangaPage = 1;
   BannerList bannerList = 2;
   LastPage lastPage = 3;
-  AdNetworkList advertisement = 4;
+  AdNetworkOuterClass.AdRewardNetworkList advertisement = 4;
   BannerList insertBannerList = 5;
 }

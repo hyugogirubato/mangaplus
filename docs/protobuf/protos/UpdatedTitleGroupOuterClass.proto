@@ -8,21 +8,20 @@ import "TitleOuterClass.proto";
 
 message UpdatedTitleGroup {
   string groupName = 1;
-  repeated UpdatedTitle titles = 2;
+  repeated TitleOuterClass.UpdatedTitle titles = 2;
 }
 
 message UpdatedTitleV2Group {
-
-  message OriginalTitleGroup {
-    string theTitle = 1;
-    string chapterNumber = 2;
-    repeated UpdatedTitle titles = 3;
-    int32 viewCount = 4;
-    TitleUpdateStatus titleUpdateStatus = 5;
-    int64 chapterStartTime = 6;
-  }
-
   string groupName = 1;
   repeated OriginalTitleGroup titleGroups = 2;
   int32 groupNameDays = 3;
+}
+
+message OriginalTitleGroup {
+  string theTitle = 1;
+  string chapterNumber = 2;
+  repeated TitleOuterClass.UpdatedTitle titles = 3;
+  int32 viewCount = 4;
+  TitleOuterClass.TitleUpdateStatus titleUpdateStatus = 5;
+  int32 chapterStartTime = 6;
 }

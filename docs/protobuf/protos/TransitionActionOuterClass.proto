@@ -5,12 +5,10 @@ package mangaplus_api_protocol;
 option java_package = "jp.co.comic.jump.proto";
 
 message TransitionAction {
-
   enum PresentationMethod {
     PUSH = 0;
     MODAL = 1;
     EXTERNAL = 2;
-    UNRECOGNIZED = -1;
   }
 
   PresentationMethod method = 1;

@@ -11,16 +11,16 @@ import "TitleListGroup.proto";
 import "TitleListOuterClass.proto";
 
 message SearchView {
-
   message Contents {
-    Banner banner = 1;
-    TitleList titleList = 2;
-    repeated TitleRankingGroup rankedTitles = 3;
-    repeated Label allLabels = 4;
+    BannerOuterClass.Banner banner = 1;
+    TitleListOuterClass.TitleList titleList = 2;
+    repeated TitleListGroup.TitleRankingGroup rankedTitles = 3;
+    repeated LabelOuterClass.Label allLabels = 4;
+    TitleListOuterClass.ChapterPageList chapterPagesList = 5;
   }
 
-  repeated Banner topSearchBanners = 1;
-  repeated Tag allTags = 2;
-  repeated AllTitlesGroup allTitlesGroup = 3;
+  repeated BannerOuterClass.Banner topSearchBanners = 1;
+  repeated TagOuterClass.Tag allTags = 2;
+  repeated TitleListGroup.AllTitlesGroup allTitlesGroup = 3;
   repeated Contents contents = 5;
 }

@@ -15,12 +15,6 @@ enum Language {
   GERMAN = 7;
   ITALIAN = 8;
   VIETNAMESE = 9;
-  UNRECOGNIZED = -1;
-}
-
-message AvailableLanguages {
-  Language language = 1;
-  int32 titlesCount = 2;
 }
 
 message Languages {
@@ -30,3 +24,9 @@ message Languages {
   Language defaultContentLanguageThree = 4;
   repeated AvailableLanguages availableLanguages = 5;
 }
+
+message AvailableLanguages {
+  Language language = 1;
+  int32 titlesCount = 2;
+}
+

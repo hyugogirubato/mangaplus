@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+import "LanguagesOuterClass.proto";
+import "TitleOuterClass.proto";
+
+message FavoriteTitlesView {
+  repeated LanguagesOuterClass.AvailableLanguages availableLanguages = 1;
+  repeated FavoriteTitleGroup favoriteTitles = 2;
+}
+
+message FavoriteTitleGroup {
+  LanguagesOuterClass.Language language = 1;
+  repeated TitleOuterClass.Title titles = 2;
+}

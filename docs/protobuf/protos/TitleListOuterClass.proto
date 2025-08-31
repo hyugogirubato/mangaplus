@@ -4,9 +4,26 @@ package mangaplus_api_protocol;
 
 option java_package = "jp.co.comic.jump.proto";
 
+import "PageOuterClass.proto";
 import "TitleOuterClass.proto";
 
 message TitleList {
   string listName = 1;
-  repeated Title featuredTitles = 2;
+  repeated TitleOuterClass.Title featuredTitles = 2;
+  int32 containerId = 3;
+}
+
+message ChapterPageList {
+  string listName = 1;
+  repeated ChapterPages chapterPages = 2;
+}
+
+message ChapterPages {
+  int32 containerId = 1;
+  int32 chapterId = 2;
+  int32 titleId = 3;
+  string name = 4;
+  string author = 5;
+  string favoriteImageUrl = 6;
+  repeated PageOuterClass.Page pages = 7;
 }

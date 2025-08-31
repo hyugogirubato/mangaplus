@@ -14,7 +14,7 @@ message Chapter {
   int64 endTimeStamp = 7;
   bool alreadyViewed = 8;
   bool isVerticalOnly = 9;
-  int64 chapterTicketEndtime = 10;
+  int32 chapterTicketEndtime = 10;
   bool viewedForFree = 11;
   bool isHorizontalOnly = 12;
   int32 viewCount = 13;
