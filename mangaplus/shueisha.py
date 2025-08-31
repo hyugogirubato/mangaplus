@@ -135,19 +135,19 @@ class MangaPlus:
             params={'chapter_id': chapter_id})
 
     def getDownloadableImages(self) -> dict:
-        # TODO
+        # @Unchecked
         return self.__request(
             method='GET',
             url=f'{self.api}/downloadable_images')
 
     def getFavoriteTitles(self) -> dict:
-        # TODO
+        # @Unchecked
         return self.__request(
             method='GET',
             url=f'{self.api}/title_list/favorite_titles')
 
     def getFirstSubscriptionView(self) -> dict:
-        # TODO
+        # @Unchecked
         return self.__request(
             method='GET',
             url=f'{self.api}/introduce_subscription',
@@ -267,15 +267,20 @@ class MangaPlus:
             })
 
     def logBrowseTab(self, tap_type: str) -> dict:
-        # TODO
+        # @Unchecked
         return self.__request(
             method='GET',
             url=f'{self.api}/browse_tab_tap_log',
             params={'tap_type': tap_type})
 
-    def logDiscoverSegment(self, item_container_id: int, tap_type: str, chapter_id: int,
-                           translated_title_id: int) -> dict:
-        # TODO
+    def logDiscoverSegment(
+            self,
+            item_container_id: int,
+            tap_type: str,
+            chapter_id: int,
+            translated_title_id: int
+    ) -> dict:
+        # @Unchecked
         return self.__request(
             method='GET',
             url=f'{self.api}/discover_segment_chapter_tap_log',
@@ -287,7 +292,7 @@ class MangaPlus:
             })
 
     def logDownloadImage(self, downloadable_image_id: int, access_type: str) -> dict:
-        # TODO
+        # @Unchecked
         return self.__request(
             method='GET',
             url=f'{self.api}/downloadable_image_tap_log',
@@ -322,14 +327,14 @@ class MangaPlus:
             params={'push_token': push_token})
 
     def putFavoriteTitles(self, title_ids: str) -> dict:
-        # TODO
+        # @Unchecked
         return self.__request(
             method='PUT',
             url=f'{self.api}/title_list/favorite_titles',
             params={'title_ids': title_ids})
 
     def putLanguagePreferences(self, dlang: str) -> dict:
-        # TODO
+        # @Unchecked
         return self.__request(
             method='PUT',
             url=f'{self.api}/language_preferences',
