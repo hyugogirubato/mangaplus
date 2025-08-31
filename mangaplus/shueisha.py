@@ -50,7 +50,7 @@ class MangaPlus:
         )
         r.raise_for_status()
 
-        # @package jp.co.comic.jump.proto
+        # @package jp.co.comic.jump.proto;
         data = proto2dict(r.content)
         error = data.get('error')
         if error:
