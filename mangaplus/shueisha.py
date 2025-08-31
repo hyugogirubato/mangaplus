@@ -43,7 +43,7 @@ class MangaPlus:
             params['secret'] = self.secret
 
         r = requests.request(
-            method=kwargs['method'],
+            method=kwargs.get('method', 'GET'),
             url=kwargs['url'],
             params=params,
             headers=headers
