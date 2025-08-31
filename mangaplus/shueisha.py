@@ -25,10 +25,11 @@ class MangaPlus:
         self.secret = None
 
     def __request(self, **kwargs) -> dict:
-        headers = {
-            'Accept': '*/*',
-            'User-Agent': 'okhttp/4.12.0',
-            **kwargs.get('headers', {})
+        headers = kwargs.get('headers') or {
+            'Accept-Encoding': 'gzip',
+            'Connection': 'Keep-Alive',
+            'Host': 'jumpg-api.tokyo-cdn.com',
+            'User-Agent': 'okhttp/4.12.0'
         }
 
         params = {
