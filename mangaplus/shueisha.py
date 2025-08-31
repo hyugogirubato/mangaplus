@@ -167,10 +167,11 @@ class MangaPlus:
 
     def getMPCStatus(self, lang: str) -> dict:
         # TODO
+    def getMPCStatus(self) -> dict:
         return self.__request(
             method='GET',
             url=f'{self.api}/mpc_status',
-            params={'lang': lang})
+            params={'lang': self.__lang})
 
     def getMangaData(
             self,
