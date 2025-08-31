@@ -4,7 +4,7 @@ from typing import List
 
 import requests
 
-from mangaplus.constants import Language, Viewer, Quality, Ranking, PageType
+from mangaplus.constants import Language, Viewer, Quality, Ranking, PageType, TitleType
 from mangaplus.utils import bool2str, proto2dict
 
 
