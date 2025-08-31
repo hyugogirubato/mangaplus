@@ -63,6 +63,8 @@ class MangaPlus:
 
     @property
     def __clang(self) -> str:
+        assert isinstance(self.clang, list), f'Expected self.clang to be a list, got {type(self.clang).__name__}'
+        assert all(isinstance(l, Language) for l in self.clang), 'All elements must be instances of Language'
         return ','.join([l.value for l in self.clang])
 
     @property
