@@ -28,7 +28,7 @@ class Quality(Enum):
 
 
 class Ranking(Enum):
-    # @package jp.co.shueisha.mangaplus.fragment.p6;
+    # @package jp.co.shueisha.mangaplus.ui.screen.Hot2ScreenKt;
     HOTTEST = 'hottest'
     TRENDING = 'trending'
     COMPLETED = 'completed'
