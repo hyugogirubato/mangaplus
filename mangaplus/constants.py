@@ -2,16 +2,16 @@ from enum import Enum
 
 
 class Language(Enum):
-    # @jp.co.shueisha.mangaplus.fragment.v6;
+    # @package jp.co.shueisha.mangaplus.util.LanguageUtilKt;
     ENGLISH = 'eng'
     SPANISH = 'esp'
-    THAI = 'tha'
-    PORTUGUESE_BR = 'ptb'
-    INDONESIAN = 'ind'
-    RUSSIAN = 'rus'
     FRENCH = 'fra'
-    GERMAN = 'deu'
+    INDONESIAN = 'ind'
+    PORTUGUESE_BR = 'ptb'
+    RUSSIAN = 'rus'
+    THAI = 'tha'
     VIETNAMESE = 'vie'
+    GERMAN = 'deu'
 
 
 class Viewer(Enum):
