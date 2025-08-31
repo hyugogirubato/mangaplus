@@ -239,8 +239,14 @@ class MangaPlus:
             url=f'{self.api}/comment_like',
             params={'comment_id': comment_id})
 
-    def logBannerTap(self, banner_id: int, title_id: int, banner_type: str, location: str, type: str) -> dict:
-        # TODO
+    def logBannerTap(self, banner_id: int) -> dict:
+        return self.__request(
+            method='GET',
+            url=f'{self.api}/title_banner_tap_log',
+            params={'banner_id': banner_id})
+
+    def logTitleBannerTap(self, banner_id: int, title_id: int, banner_type: str, location: str, tap_type: str) -> dict:
+        # @Unchecked
         return self.__request(
             method='GET',
             url=f'{self.api}/title_banner_tap_log',
