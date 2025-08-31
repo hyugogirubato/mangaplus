@@ -7,8 +7,8 @@ from mangaplus.utils import bool2str, proto2dict
 
 
 class MangaPlus:
-    # @jp.co.shueisha.mangaplus.g.c;
-    VERSION = 191
+    # @package jp.co.shueisha.mangaplus.api.ApiFactory;
+    APP_VERSION = 222
 
     def __init__(
             self,
@@ -35,7 +35,7 @@ class MangaPlus:
             **kwargs.get('params', {}),
             'os': 'android',
             'os_ver': 29,
-            'app_ver': self.VERSION
+            'app_ver': self.APP_VERSION
         }
 
         if self.secret:
