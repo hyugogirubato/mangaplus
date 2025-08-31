@@ -90,9 +90,15 @@ Some of the key methods provided by this client:
 
 **MangaPlus Python Client** is an unofficial library and is **not affiliated** with or endorsed by Shueisha. The library is provided "as-is" without any warranty, and usage is at your own risk. Please comply with the MangaPlus service terms and conditions while using this library.
 
-## License
+## Contributors
 
-This project is licensed under the **GNU License**. See the [LICENSE](https://github.com/hyugogirubato/mangaplus/blob/main/LICENSE) file for details.
+<a href="https://github.com/hyugogirubato"><img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/65763543?v=4&h=25&w=25&fit=cover&mask=circle&maxage=7d" alt="hyugogirubato"/></a>
+<a href="https://github.com/gregoryn22"><img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/56735924?v=4&h=25&w=25&fit=cover&mask=circle&maxage=7d" alt="gregoryn22"/></a>
+
+## Licensing
+
+This project is licensed under the terms of [GNU License](https://github.com/hyugogirubato/mangaplus/blob/main/LICENSE).
+You can find a copy of the license in the LICENSE file in the root folder.
 
 ---
 
