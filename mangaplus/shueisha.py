@@ -107,11 +107,11 @@ class MangaPlus:
             method='GET',
             url=f'{self.api}/title_list/bookmark')
 
-    def getAdTapLog(self, chapter_id: int, token: str, type: str) -> dict:
+    def getAdTapLog(self, chapter_id: int, token: str, tap_type: str) -> dict:
         return self.__request(
             method='GET',
             url=f'{self.api}/ad_tap_log',
-            params={'chapter_id': chapter_id, 'token': token, 'type': type})
+            params={'chapter_id': chapter_id, 'token': token, 'type': tap_type})
 
     def getAllTitlesV3(
             self,
@@ -263,7 +263,7 @@ class MangaPlus:
                 'title_id': title_id,
                 'banner_type': banner_type,
                 'location': location,
-                'type': type
+                'type': tap_type
             })
 
     def logBrowseTab(self, tap_type: str) -> dict:
