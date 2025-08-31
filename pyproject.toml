@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "mangaplus"
 version = "1.23.1"
-description = "Python client for the MangaPlus API."
+description = "Python client for MangaPlus to access manga content and interact with the API."
 license = "GNU"
 authors = ["hyugogirubato <65763543+hyugogirubato@users.noreply.github.com>"]
 readme = "README.md"
