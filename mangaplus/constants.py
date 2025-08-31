@@ -32,3 +32,10 @@ class Ranking(Enum):
     HOTTEST = 'hottest'
     TRENDING = 'trending'
     COMPLETED = 'completed'
+
+
+class PageType(Enum):
+    # @package jp.co.shueisha.mangaplus.ui.screen.InitialRegistrationScreenKt;
+    SERVICE_AGREEMENT = 'service_agreement'
+    SUBSCRIPTION_EXPLANATION = 'subscription_explanation'
+    TITLE_BOOKMARKS = 'title_bookmarks'
