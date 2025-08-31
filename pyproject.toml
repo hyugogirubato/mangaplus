@@ -1,18 +1,51 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
 name = "mangaplus"
-version = "1.9.19"
+version = "1.23.1"
 description = "Python client for the MangaPlus API."
+license = "GNU"
 authors = ["hyugogirubato <65763543+hyugogirubato@users.noreply.github.com>"]
-license = "MIT"
 readme = "README.md"
+repository = "https://github.com/hyugogirubato/mangaplus"
+keywords = ["python", "manga", "ebooks", "shueisha"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Utilities",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Linguistic"
+]
+include = [
+    { path = "CHANGELOG.md", format = "sdist" },
+    { path = "README.md", format = "sdist" },
+    { path = "LICENSE", format = "sdist" }
+]
+
+[tool.poetry.urls]
+"Issues" = "https://github.com/hyugogirubato/mangaplus/issues"
+"Changelog" = "https://github.com/hyugogirubato/mangaplus/blob/main/CHANGELOG.md"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-protobuf = "^4.25.1"
-requests = "^2.31.0"
-pathlib = "^1.0.1"
+python = ">=3.8,<4.0"
+protobuf = "^5.29.5"
+requests = ">=2.32.3"
 
+[tool.poetry.group.dev.dependencies]
+mypy-protobuf = ">=3.6.0"
+pathvalidate = ">=3.2.1"
+cbz = ">=3.4.2"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[[tool.poetry.source]]
+name = "localpypi"
+url = "https://pypi.org/simple/"
+priority = "primary"
+
+[certificates]
+localpypi = { cert = false }
