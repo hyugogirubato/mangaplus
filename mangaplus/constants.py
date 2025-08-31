@@ -39,3 +39,10 @@ class PageType(Enum):
     SERVICE_AGREEMENT = 'service_agreement'
     SUBSCRIPTION_EXPLANATION = 'subscription_explanation'
     TITLE_BOOKMARKS = 'title_bookmarks'
+
+
+class TitleType(Enum):
+    # @package jp.co.shueisha.mangaplus.ui.screen.BrowseTitleScreenKt;
+    SERIALIZING = 'serializing'
+    COMPLETED = 'completed'
+    ONE_SHOT = 'one-shot'
