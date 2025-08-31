@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.23.1] - 2025-08-31
+
+### Added
+
+- Parser script to convert Java `*.class` files to Protocol Buffers (`.proto`).
+- README section explaining the conversion process from compiled protobuf (`.pb`) to `.proto` format.
+- Language references included in graphic/UI components.
+- Auto-completion support for protobuf objects via `mypy-protobuf`.
+- Several new API and utility functions added.
+
+### Changed
+
+- Unified builder script now generates a single consolidated protobuf prototype file.
+- Updated protobuf definitions to the latest format.
+- Removed redundant or obsolete functions to streamline the codebase.
+- Updated README to reflect recent API and project changes.
+- Automatic function renaming implemented
+  through [retropy.py](https://gist.github.com/hyugogirubato/e4e602f2d135622fa5a3f889c0726ce3)
+
+### Fixed
+
+- Corrected invalid enum values being passed as parameters.
+- Fixed language references in graphic/UI components.
+- Resolved dependency issues in `pyproject.toml`.
+- Corrected license type declaration for the project.
+
 ## [1.9.19] - 2024-06-10
 
 ### Added
@@ -83,6 +109,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Initial push.
 
+[1.23.1]: https://github.com/hyugogirubato/mangaplus/releases/tag/v1.23.1
 [1.9.19]: https://github.com/hyugogirubato/mangaplus/releases/tag/v1.9.19
 [1.1.4]: https://github.com/hyugogirubato/mangaplus/releases/tag/v1.1.4
 [1.1.3]: https://github.com/hyugogirubato/mangaplus/releases/tag/v1.1.3
