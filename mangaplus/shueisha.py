@@ -9,6 +9,8 @@ from mangaplus.utils import bool2str, proto2dict
 
 
 class MangaPlus:
+    """Python client for interacting with the MangaPlus API."""
+
     # @package jp.co.shueisha.mangaplus.api.ApiFactory;
     APP_VERSION = 222
 
@@ -18,6 +20,14 @@ class MangaPlus:
             clang: List[Language] = None,
             viewer: Viewer = Viewer.VERTICAL
     ):
+        """
+        Initialize the client.
+
+        Args:
+            lang (Language): Main language for API responses.
+            clang (List[Language]): Additional languages to include.
+            viewer (Viewer): Viewer mode (horizontal or vertical).
+        """
         # @package jp.co.shueisha.mangaplus.d;
         self.lang = lang
         self.clang = clang or [Language.ENGLISH]
@@ -28,6 +38,16 @@ class MangaPlus:
         self.secret = None
 
     def __request(self, **kwargs) -> dict:
+        """
+        Internal helper for sending HTTP requests to the MangaPlus API.
+        Handles headers, parameters, and error parsing.
+
+        Returns:
+            dict: API response data.
+
+        Raises:
+            Exception: If API returns an error message.
+        """
         headers = kwargs.get('headers') or {
             'Accept-Encoding': 'gzip',
             'Connection': 'Keep-Alive',
@@ -65,6 +85,7 @@ class MangaPlus:
 
     @property
     def __clang(self) -> str:
+        """Return additional languages as a comma-separated string."""
         assert isinstance(self.clang, list), f'Expected self.clang to be a list, got {type(self.clang).__name__}'
         assert all(isinstance(l, Language) for l in self.clang), 'All elements must be instances of Language'
         return ','.join([l.value for l in self.clang])
