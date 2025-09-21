@@ -362,8 +362,7 @@ class MangaPlus:
             method='PUT',
             url=f'{self.api}/register',
             params={'device_token': device_token, 'security_key': security_key})
-
-        self.secret = content['registrationData']['deviceSecret']
+        self.secret = content['registerationData']['deviceSecret']
         return content
 
     def setSubscription(self, purchase_data: str, signature: str) -> dict:
