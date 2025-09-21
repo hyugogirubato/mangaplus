@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.23.2] - 2025-09-21
+
+### Changed
+
+- Updated `clang` typing for MangaPlus object.
+
+### Fixed
+
+- JSON key error for device registration.
+
 ## [1.23.1] - 2025-08-31
 
 ### Added
@@ -109,6 +119,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Initial push.
 
+[1.23.2]: https://github.com/hyugogirubato/mangaplus/releases/tag/v1.23.2
 [1.23.1]: https://github.com/hyugogirubato/mangaplus/releases/tag/v1.23.1
 [1.9.19]: https://github.com/hyugogirubato/mangaplus/releases/tag/v1.9.19
 [1.1.4]: https://github.com/hyugogirubato/mangaplus/releases/tag/v1.1.4
