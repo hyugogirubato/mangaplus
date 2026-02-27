@@ -15,6 +15,7 @@ MAGIC_ENUM_FIELD = re.compile('(\w+)\s*\(\s*(-?\d+)\s*\)')
 # Patterns for handling internal list + type mapping
 INTERNAL_PROTO_LIST = re.compile(r'Internal\.ProtobufList<([\w.]+)>')
 INTERNAL_PROTO_TYPE = {
+    'long': 'int64',
     'int': 'int32',
     'String': 'string',
     'boolean': 'bool'
