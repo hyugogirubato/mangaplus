@@ -25,4 +25,3 @@ message Label {
   LabelCodes label = 1;
   string description = 2;
 }
-

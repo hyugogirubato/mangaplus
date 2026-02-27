@@ -33,6 +33,7 @@ message Page {
     int32 height = 3;
     PageType type = 4;
     string encryptionKey = 5;
+    string merchStoreUrl = 6;
   }
 
   message LastPage {

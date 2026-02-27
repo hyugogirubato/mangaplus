@@ -30,6 +30,8 @@ message TitleDetailView {
     TRIMONTHLY = 6;
     OTHER = 7;
     COMPLETED = 8;
+    ONE_SHOT = 9;
+    HIATUS = 10;
   }
 
   enum UpdateTiming {
@@ -52,7 +54,7 @@ message TitleDetailView {
   }
 
   message TitleLabels {
-    int32 releaseSchedule = 1;
+    ReleaseSchedule releaseSchedule = 1;
     bool isSimulpub = 2;
     string planType = 3;
   }
@@ -64,7 +66,7 @@ message TitleDetailView {
 
   message TitleLanguages {
     int32 titleId = 1;
-    LanguagesOuterClass.Language language = 2;
+    int32 language = 2;
   }
 
   message ChapterGroup {
@@ -79,7 +81,7 @@ message TitleDetailView {
   string overview = 3;
   string backgroundImageUrl = 4;
   int64 nextTimeStamp = 5;
-  int32 updateTiming = 6;
+  UpdateTiming updateTiming = 6;
   string viewingPeriodDescription = 7;
   string nonAppearanceInfo = 8;
   repeated ChapterOuterClass.Chapter firstChapterList = 9;
@@ -111,4 +113,5 @@ message TitleDetailView {
   bool isFirstTimeFree = 35;
   MetaInfoOuterClass.MetaInfo metaInfo = 36;
   PopupOuterClass.Popup ratingPopup = 37;
+  repeated ChapterOuterClass.Chapter chapterListV2 = 38;
 }

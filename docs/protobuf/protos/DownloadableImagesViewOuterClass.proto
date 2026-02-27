@@ -16,4 +16,3 @@ message DownloadableImageGroup {
   int32 height = 5;
   string type = 6;
 }
-

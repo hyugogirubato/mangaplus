@@ -10,13 +10,16 @@ import "AllTitlesViewOuterClass.proto";
 import "AllTitlesViewV2OuterClass.proto";
 import "CommentListViewOuterClass.proto";
 import "DownloadableImagesViewOuterClass.proto";
+import "EngageViewOuterClass.proto";
 import "FavoriteTitlesViewOuterClass.proto";
 import "FeaturedTitlesViewOuterClass.proto";
 import "FeaturedTitlesViewV2OuterClass.proto";
 import "FeedbackViewOuterClass.proto";
 import "HistoryViewOuterClass.proto";
+import "HomePreviewViewOuterClass.proto";
 import "HomeViewV3OuterClass.proto";
 import "HomeViewV4OuterClass.proto";
+import "HomeViewV6OuterClass.proto";
 import "InitialViewV2OuterClass.proto";
 import "IntroduceSubscriptionOuterClass.proto";
 import "LabeledViewOuterClass.proto";
@@ -81,6 +84,9 @@ message SuccessResult {
     FAVORITE_TITLES_VIEW = 43;
     MPC_STATUS_VIEW = 44;
     HOME_VIEW_V4 = 45;
+    ENGAGE_VIEW = 46;
+    HOME_VIEW_V6 = 47;
+    HOME_PREVIEW_VIEW = 48;
   }
 
   bool isFeaturedUpdated = 1;
@@ -121,4 +127,7 @@ message SuccessResult {
   FavoriteTitlesViewOuterClass.FavoriteTitlesView favoriteTitlesView = 43;
   MpcStatusViewOuterClass.MpcStatusView mpcStatusView = 44;
   HomeViewV4OuterClass.HomeViewV4 homeViewV4 = 45;
+  EngageViewOuterClass.EngageView engageView = 46;
+  HomeViewV6OuterClass.HomeViewV6 homeViewV6 = 47;
+  HomePreviewViewOuterClass.HomePreviewView homePreviewView = 48;
 }

@@ -17,4 +17,3 @@ message Response {
   SuccessResultOuterClass.SuccessResult success = 1;
   ErrorResultOuterClass.ErrorResult error = 2;
 }
-

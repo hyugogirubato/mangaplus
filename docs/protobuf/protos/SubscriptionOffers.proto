@@ -4,6 +4,11 @@ package mangaplus_api_protocol;
 
 option java_package = "jp.co.comic.jump.proto";
 
+enum SaleType {
+  DISCOUNT = 0;
+  FREE_TRIAL = 1;
+}
+
 message IosSubscriptionOffer {
   enum OfferType {
     NO_OFFER = 0;
@@ -17,9 +22,10 @@ message IosSubscriptionOffer {
   string nonce = 4;
   string timestamp = 5;
   string identifier = 6;
+  SaleType saleType = 7;
 }
 
 message AndroidSubscriptionOfferTags {
   string tag = 1;
+  SaleType saleType = 2;
 }
-

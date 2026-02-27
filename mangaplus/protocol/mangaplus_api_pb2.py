@@ -15,8 +15,10 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13mangaplus_api.proto\x12\rmangaplus_api\"=\n\rAdNetworkList\x12,\n\nadNetworks\x18\x01 \x03(\x0b\x32\x18.mangaplus_api.AdNetwork\"k\n\x13\x41\x64RewardNetworkList\x12,\n\nadNetworks\x18\x01 \x03(\x0b\x32\x18.mangaplus_api.AdNetwork\x12\r\n\x05token\x18\x02 \x01(\t\x12\x17\n\x0frewardViewCount\x18\x03 \x01(\x05\"\x8d\x06\n\tAdNetwork\x12\x33\n\x08\x66\x61\x63\x65\x62ook\x18\x01 \x01(\x0b\x32!.mangaplus_api.AdNetwork.Facebook\x12-\n\x05\x61\x64mob\x18\x02 \x01(\x0b\x32\x1e.mangaplus_api.AdNetwork.Admob\x12-\n\x05mopub\x18\x03 \x01(\x0b\x32\x1e.mangaplus_api.AdNetwork.Mopub\x12\x31\n\x07\x61\x64sense\x18\x04 \x01(\x0b\x32 .mangaplus_api.AdNetwork.Adsense\x12\x33\n\x08\x61pplovin\x18\x05 \x01(\x0b\x32!.mangaplus_api.AdNetwork.Applovin\x12\x39\n\x0b\x61pplovinMax\x18\x06 \x01(\x0b\x32$.mangaplus_api.AdNetwork.ApplovinMax\x1a\x1f\n\x08\x46\x61\x63\x65\x62ook\x12\x13\n\x0bplacementID\x18\x01 \x01(\t\x1a\x17\n\x05\x41\x64mob\x12\x0e\n\x06unitID\x18\x01 \x01(\t\x1a+\n\x07\x41\x64sense\x12\x0e\n\x06unitID\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x1a\x1a\n\x08\x41pplovin\x12\x0e\n\x06unitID\x18\x01 \x01(\t\x1a\x17\n\x05Mopub\x12\x0e\n\x06unitID\x18\x01 \x01(\t\x1aX\n\x0b\x41pplovinMax\x12\x0e\n\x06unitID\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\x05\x12\x13\n\x0b\x61mazonAppId\x18\x03 \x01(\t\x12\x16\n\x0e\x61mazonAdUnitId\x18\x04 \x01(\t\"`\n\x06\x41\x64Type\x12\x0f\n\x0bSTILL_IMAGE\x10\x00\x12\t\n\x05MOVIE\x10\x01\x12\x11\n\rNATIVE_MANUAL\x10\x02\x12\x11\n\rNATIVE_MEDIUM\x10\x03\x12\x08\n\x04MREC\x10\x04\x12\n\n\x06REWARD\x10\x05\"r\n\x0bNetworkCase\x12\x13\n\x0fNETWORK_NOT_SET\x10\x00\x12\x0c\n\x08\x46\x41\x43\x45\x42OOK\x10\x01\x12\t\n\x05\x41\x44MOB\x10\x02\x12\t\n\x05MOPUB\x10\x03\x12\x0b\n\x07\x41\x44SENSE\x10\x04\x12\x0c\n\x08\x41PPLOVIN\x10\x05\x12\x0f\n\x0b\x41PPLOVINMAX\x10\x06\"A\n\x11\x41llFreeTitlesView\x12,\n\nfreeTitles\x18\x01 \x03(\x0b\x32\x18.mangaplus_api.FreeTitle\"G\n\x13\x41llTicketTitlesView\x12\x30\n\x0bticketTitle\x18\x01 \x03(\x0b\x32\x1b.mangaplus_api.TicketTitles\"5\n\rAllTitlesView\x12$\n\x06titles\x18\x01 \x03(\x0b\x32\x14.mangaplus_api.Title\"H\n\x0f\x41llTitlesViewV2\x12\x35\n\x0e\x61llTitlesGroup\x18\x01 \x03(\x0b\x32\x1d.mangaplus_api.AllTitlesGroup\"\x84\x01\n\x06\x42\x61nner\x12\x10\n\x08imageUrl\x18\x01 \x01(\t\x12/\n\x06\x61\x63tion\x18\x02 \x01(\x0b\x32\x1f.mangaplus_api.TransitionAction\x12\n\n\x02id\x18\x03 \x01(\x05\x12\r\n\x05width\x18\x04 \x01(\x05\x12\x0e\n\x06height\x18\x05 \x01(\x05\x12\x0c\n\x04isPr\x18\x06 \x01(\x08\"\xb8\x02\n\x07\x43hapter\x12\x0f\n\x07titleId\x18\x01 \x01(\x05\x12\x11\n\tchapterId\x18\x02 \x01(\x05\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x10\n\x08subTitle\x18\x04 \x01(\t\x12\x14\n\x0cthumbnailUrl\x18\x05 \x01(\t\x12\x16\n\x0estartTimeStamp\x18\x06 \x01(\x03\x12\x14\n\x0c\x65ndTimeStamp\x18\x07 \x01(\x03\x12\x15\n\ralreadyViewed\x18\x08 \x01(\x08\x12\x16\n\x0eisVerticalOnly\x18\t \x01(\x08\x12\x1c\n\x14\x63hapterTicketEndtime\x18\n \x01(\x05\x12\x15\n\rviewedForFree\x18\x0b \x01(\x08\x12\x18\n\x10isHorizontalOnly\x18\x0c \x01(\x08\x12\x11\n\tviewCount\x18\r \x01(\x05\x12\x14\n\x0c\x63ommentCount\x18\x0e \x01(\x05\"+\n\x0b\x43ommentIcon\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08imageUrl\x18\x02 \x01(\t\"\x80\x02\n\x0f\x43ommentListView\x12(\n\x08\x63omments\x18\x01 \x03(\x0b\x32\x16.mangaplus_api.Comment\x12\x15\n\rifSetUserName\x18\x02 \x01(\x08\x12M\n\x12titleDetailComment\x18\x03 \x01(\x0b\x32\x31.mangaplus_api.CommentListView.TitleDetailComment\x1a]\n\x12TitleDetailComment\x12\x0f\n\x07titleId\x18\x01 \x01(\x05\x12\x11\n\ttitleName\x18\x02 \x01(\t\x12\x13\n\x0b\x63hapterName\x18\x03 \x01(\t\x12\x0e\n\x06\x63redit\x18\x04 \x01(\t\"\xa8\x01\n\x07\x43omment\x12\n\n\x02id\x18\x01 \x01(\x05\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x10\n\x08userName\x18\x03 \x01(\t\x12\x0f\n\x07iconUrl\x18\x04 \x01(\t\x12\x13\n\x0bisMyComment\x18\x06 \x01(\x08\x12\x14\n\x0c\x61lreadyLiked\x18\x07 \x01(\x08\x12\x15\n\rnumberOfLikes\x18\t \x01(\x05\x12\x0c\n\x04\x62ody\x18\n \x01(\t\x12\x0f\n\x07\x63reated\x18\x0b \x01(\x05\"\x8f\x01\n\x10\x46reeViewDialogue\x12\x36\n\x08platform\x18\x01 \x01(\x0e\x32$.mangaplus_api.FirstTimeFreePlatform\x12\x13\n\x0b\x64ialogueUrl\x18\x02 \x01(\t\x12.\n\x0fpublisherBanner\x18\x03 \x01(\x0b\x32\x15.mangaplus_api.Banner\"[\n\x16\x44ownloadableImagesView\x12\x41\n\x12\x64ownloadableImages\x18\x01 \x03(\x0b\x32%.mangaplus_api.DownloadableImageGroup\"w\n\x16\x44ownloadableImageGroup\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08imageUrl\x18\x02 \x01(\t\x12\x12\n\nimageTitle\x18\x03 \x01(\t\x12\r\n\x05width\x18\x04 \x01(\x05\x12\x0e\n\x06height\x18\x05 \x01(\x05\x12\x0c\n\x04type\x18\x06 \x01(\t\"\xbd\x02\n\x0b\x45rrorResult\x12\x31\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32!.mangaplus_api.ErrorResult.Action\x12\x34\n\x0c\x65nglishPopup\x18\x02 \x01(\x0b\x32\x1e.mangaplus_api.Popup.OSDefault\x12\x34\n\x0cspanishPopup\x18\x03 \x01(\x0b\x32\x1e.mangaplus_api.Popup.OSDefault\x12\x11\n\tdebugInfo\x18\x04 \x01(\t\x12.\n\x06popups\x18\x05 \x03(\x0b\x32\x1e.mangaplus_api.Popup.OSDefault\"L\n\x06\x41\x63tion\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x10\n\x0cUNAUTHORIZED\x10\x01\x12\x0f\n\x0bMAINTENANCE\x10\x02\x12\x12\n\x0eGEOIP_BLOCKING\x10\x03\"\x8e\x01\n\x12\x46\x61voriteTitlesView\x12=\n\x12\x61vailableLanguages\x18\x01 \x03(\x0b\x32!.mangaplus_api.AvailableLanguages\x12\x39\n\x0e\x66\x61voriteTitles\x18\x02 \x03(\x0b\x32!.mangaplus_api.FavoriteTitleGroup\"e\n\x12\x46\x61voriteTitleGroup\x12)\n\x08language\x18\x01 \x01(\x0e\x32\x17.mangaplus_api.Language\x12$\n\x06titles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\"\x8a\x03\n\x12\x46\x65\x61turedTitlesView\x12)\n\nmainBanner\x18\x01 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12)\n\nsubBanner1\x18\x02 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12)\n\nsubBanner2\x18\x03 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12<\n\x08\x63ontents\x18\x04 \x03(\x0b\x32*.mangaplus_api.FeaturedTitlesView.Contents\x1a\xb4\x01\n\x08\x43ontents\x12\x41\n\x04\x64\x61ta\x18\x01 \x01(\x0e\x32\x33.mangaplus_api.FeaturedTitlesView.Contents.DataCase\x12+\n\ttitleList\x18\x02 \x01(\x0b\x32\x18.mangaplus_api.TitleList\"8\n\x08\x44\x61taCase\x12\x10\n\x0c\x44\x41TA_NOT_SET\x10\x00\x12\n\n\x06\x42\x41NNER\x10\x01\x12\x0e\n\nTITLE_LIST\x10\x02\"\xa0\x02\n\x14\x46\x65\x61turedTitlesViewV2\x12/\n\x10topSearchBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12>\n\x08\x63ontents\x18\x02 \x03(\x0b\x32,.mangaplus_api.FeaturedTitlesViewV2.Contents\x1a\x96\x01\n\x08\x43ontents\x12%\n\x06\x62\x61nner\x18\x01 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12+\n\ttitleList\x18\x02 \x01(\x0b\x32\x18.mangaplus_api.TitleList\x12\x36\n\x0crankedTitles\x18\x03 \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\"\x91\x01\n\x08\x46\x65\x65\x64\x62\x61\x63k\x12\x11\n\ttimeStamp\x18\x01 \x01(\x03\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12:\n\x0cresponseType\x18\x03 \x01(\x0e\x32$.mangaplus_api.Feedback.ResponseType\"(\n\x0cResponseType\x12\x0c\n\x08QUESTION\x10\x00\x12\n\n\x06\x41NSWER\x10\x01\"=\n\x0c\x46\x65\x65\x64\x62\x61\x63kView\x12-\n\x0c\x66\x65\x65\x64\x62\x61\x63kList\x18\x01 \x03(\x0b\x32\x17.mangaplus_api.Feedback\"g\n\x0bHistoryView\x12-\n\x0ehistoryBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12)\n\x0bviewHistory\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\"\xa7\x02\n\nHomeViewV3\x12)\n\ntopBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12\x32\n\x06groups\x18\x02 \x03(\x0b\x32\".mangaplus_api.UpdatedTitleV2Group\x12#\n\x05popup\x18\t \x01(\x0b\x32\x14.mangaplus_api.Popup\x12\x1c\n\x14\x64isplayTrackingPopup\x18\n \x01(\x08\x12\x35\n\x10userSubscription\x18\x0b \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12@\n\x14serviceAnnouncements\x18\x0c \x03(\x0b\x32\".mangaplus_api.ServiceAnnouncement\"\xae\x12\n\nHomeViewV4\x12\x34\n\x08sections\x18\x01 \x03(\x0b\x32\".mangaplus_api.HomeViewV4.Sections\x12#\n\x05popup\x18\x02 \x01(\x0b\x32\x14.mangaplus_api.Popup\x12\x1c\n\x14\x64isplayTrackingPopup\x18\x03 \x01(\x08\x12\x35\n\x10userSubscription\x18\x04 \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12@\n\x14serviceAnnouncements\x18\x05 \x03(\x0b\x32\".mangaplus_api.ServiceAnnouncement\x1a\xe3\x03\n\x08Sections\x12>\n\rweeklySection\x18\x01 \x01(\x0b\x32\'.mangaplus_api.HomeViewV4.WeeklySection\x12@\n\x0erankingSection\x18\x02 \x01(\x0b\x32(.mangaplus_api.HomeViewV4.RankingSection\x12@\n\x0epreviewSection\x18\x03 \x01(\x0b\x32(.mangaplus_api.HomeViewV4.PreviewSection\x12\x44\n\x10titleListSection\x18\x04 \x01(\x0b\x32*.mangaplus_api.HomeViewV4.TitleListSection\x12>\n\rbannerSection\x18\x05 \x01(\x0b\x32\'.mangaplus_api.HomeViewV4.BannerSection\"\x8c\x01\n\x0bSectionCase\x12\x13\n\x0fSECTION_NOT_SET\x10\x00\x12\x12\n\x0eWEEKLY_SECTION\x10\x01\x12\x13\n\x0fRANKING_SECTION\x10\x02\x12\x13\n\x0fPREVIEW_SECTION\x10\x03\x12\x16\n\x12TITLE_LIST_SECTION\x10\x04\x12\x12\n\x0e\x42\x41NNER_SECTION\x10\x05\x1a\xa5\x08\n\rWeeklySection\x12G\n\x08\x63ontents\x18\x01 \x03(\x0b\x32\x35.mangaplus_api.HomeViewV4.WeeklySection.WeeklyContent\x1a\x87\x01\n\rWeeklyContent\x12\x11\n\tisUpdated\x18\x01 \x01(\x08\x12\x18\n\x10updatedTimeStamp\x18\x02 \x01(\x03\x12I\n\x0c\x63ontentItems\x18\x03 \x03(\x0b\x32\x33.mangaplus_api.HomeViewV4.WeeklySection.ContentItem\x1a\x9b\x04\n\x0b\x43ontentItem\x12P\n\x07\x63ontent\x18\x01 \x01(\x0e\x32?.mangaplus_api.HomeViewV4.WeeklySection.ContentItem.ContentCase\x12\x42\n\x08mVBanner\x18\x02 \x01(\x0b\x32\x30.mangaplus_api.HomeViewV4.WeeklySection.MVBanner\x12\x46\n\ntitleGroup\x18\x03 \x01(\x0b\x32\x32.mangaplus_api.HomeViewV4.WeeklySection.TitleGroup\x12O\n\x0f\x63\x61rouselBanners\x18\x04 \x01(\x0b\x32\x36.mangaplus_api.HomeViewV4.WeeklySection.CarouselBanner\x12X\n\x13minorLanguageBanner\x18\x05 \x01(\x0b\x32;.mangaplus_api.HomeViewV4.WeeklySection.MinorLanguageBanner\"\x82\x01\n\x0b\x43ontentCase\x12\x13\n\x0f\x43ONTENT_NOT_SET\x10\x00\x12\r\n\tPR_BANNER\x10\x01\x12\r\n\tMV_BANNER\x10\x02\x12\x0f\n\x0bTITLE_GROUP\x10\x03\x12\x14\n\x10\x43\x41ROUSEL_BANNERS\x10\x04\x12\x19\n\x15MINOR_LANGUAGE_BANNER\x10\x05\x1aT\n\x08MVBanner\x12\x10\n\x08imageUrl\x18\x01 \x01(\t\x12\x36\n\x0btitleGroups\x18\x02 \x01(\x0b\x32!.mangaplus_api.OriginalTitleGroup\x1a\x44\n\nTitleGroup\x12\x36\n\x0btitleGroups\x18\x01 \x03(\x0b\x32!.mangaplus_api.OriginalTitleGroup\x1a\x38\n\x0e\x43\x61rouselBanner\x12&\n\x07\x62\x61nners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x1aM\n\x13MinorLanguageBanner\x12\x36\n\x0btitleGroups\x18\x01 \x03(\x0b\x32!.mangaplus_api.OriginalTitleGroup\x1a\xd0\x01\n\x0eRankingSection\x12H\n\x0brankingTabs\x18\x01 \x03(\x0b\x32\x33.mangaplus_api.HomeViewV4.RankingSection.RankingTab\x1at\n\nRankingTab\x12.\n\x07tabType\x18\x01 \x01(\x0e\x32\x1d.mangaplus_api.RankingTabType\x12\x36\n\x0crankedTitles\x18\x02 \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\x1a\xd2\x01\n\x0ePreviewSection\x12H\n\x0bpreviewTabs\x18\x01 \x03(\x0b\x32\x33.mangaplus_api.HomeViewV4.PreviewSection.PreviewTab\x1av\n\nPreviewTab\x12.\n\x07tabType\x18\x01 \x01(\x0e\x32\x1d.mangaplus_api.RankingTabType\x12\x38\n\x10\x63hapterPagesList\x18\x02 \x01(\x0b\x32\x1e.mangaplus_api.ChapterPageList\x1a?\n\x10TitleListSection\x12+\n\ttitleList\x18\x01 \x01(\x0b\x32\x18.mangaplus_api.TitleList\x1a\x37\n\rBannerSection\x12&\n\x07\x62\x61nners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\"m\n\rInitialViewV2\x12\x1d\n\x15gdprAgreementRequired\x18\x01 \x01(\x08\x12=\n\x12\x61vailableLanguages\x18\x02 \x03(\x0b\x32!.mangaplus_api.AvailableLanguages\"_\n\x15IntroduceSubscription\x12\x14\n\x0csubscription\x18\x01 \x01(\t\x12\x16\n\x0etitleCountText\x18\x02 \x01(\t\x12\x18\n\x10\x63hapterCountText\x18\x03 \x01(\t\"q\n\x0bLabeledView\x12#\n\x05label\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Label\x12=\n\x12labeledTitlesGroup\x18\x02 \x03(\x0b\x32!.mangaplus_api.LabeledTitlesGroup\"F\n\x05Label\x12(\n\x05label\x18\x01 \x01(\x0e\x32\x19.mangaplus_api.LabelCodes\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"\xb4\x02\n\tLanguages\x12\x32\n\x11\x64\x65\x66\x61ultUiLanguage\x18\x01 \x01(\x0e\x32\x17.mangaplus_api.Language\x12:\n\x19\x64\x65\x66\x61ultContentLanguageOne\x18\x02 \x01(\x0e\x32\x17.mangaplus_api.Language\x12:\n\x19\x64\x65\x66\x61ultContentLanguageTwo\x18\x03 \x01(\x0e\x32\x17.mangaplus_api.Language\x12<\n\x1b\x64\x65\x66\x61ultContentLanguageThree\x18\x04 \x01(\x0e\x32\x17.mangaplus_api.Language\x12=\n\x12\x61vailableLanguages\x18\x05 \x03(\x0b\x32!.mangaplus_api.AvailableLanguages\"T\n\x12\x41vailableLanguages\x12)\n\x08language\x18\x01 \x01(\x0e\x32\x17.mangaplus_api.Language\x12\x13\n\x0btitlesCount\x18\x02 \x01(\x05\"\xab\x05\n\x0bMangaViewer\x12\"\n\x05pages\x18\x01 \x03(\x0b\x32\x13.mangaplus_api.Page\x12\x11\n\tchapterId\x18\x02 \x01(\x05\x12(\n\x08\x63hapters\x18\x03 \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12\x1f\n\x03sns\x18\x04 \x01(\x0b\x32\x12.mangaplus_api.Sns\x12\x11\n\ttitleName\x18\x05 \x01(\t\x12\x13\n\x0b\x63hapterName\x18\x06 \x01(\t\x12\x18\n\x10numberOfComments\x18\x07 \x01(\x05\x12\x16\n\x0eisVerticalOnly\x18\x08 \x01(\x08\x12\x0f\n\x07titleId\x18\t \x01(\x05\x12\x16\n\x0estartFromRight\x18\n \x01(\x08\x12\x12\n\nregionCode\x18\x0b \x01(\t\x12\x18\n\x10isHorizontalOnly\x18\x0c \x01(\x08\x12\x35\n\x10userSubscription\x18\r \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12\x10\n\x08planType\x18\x0e \x01(\t\x12\x15\n\rtitleLanguage\x18\x0f \x01(\t\x12)\n\x0bratingPopup\x18\x10 \x01(\x0b\x32\x14.mangaplus_api.Popup\x12S\n\x17titleAvailableLanguages\x18\x11 \x03(\x0b\x32\x32.mangaplus_api.MangaViewer.TitleAvailableLanguages\x12#\n\x05title\x18\x12 \x01(\x0b\x32\x14.mangaplus_api.Title\x1a\x64\n\x17TitleAvailableLanguages\x12\x0f\n\x07titleId\x18\x01 \x01(\x05\x12)\n\x08language\x18\x02 \x01(\x0e\x32\x17.mangaplus_api.Language\x12\r\n\x05isNew\x18\x03 \x01(\x08\"6\n\x08MetaInfo\x12\x11\n\tmetaTitle\x18\x01 \x01(\t\x12\x17\n\x0fmetaDescription\x18\x02 \x01(\t\"E\n\rMpcStatusView\x12\x18\n\x10isMpcMaintenance\x18\x01 \x01(\x08\x12\x1a\n\x12maintenanceMessage\x18\x02 \x01(\t\"\xfc\x0b\n\x04Page\x12\x30\n\tmangaPage\x18\x01 \x01(\x0b\x32\x1d.mangaplus_api.Page.MangaPage\x12\x32\n\nbannerList\x18\x02 \x01(\x0b\x32\x1e.mangaplus_api.Page.BannerList\x12.\n\x08lastPage\x18\x03 \x01(\x0b\x32\x1c.mangaplus_api.Page.LastPage\x12\x39\n\radvertisement\x18\x04 \x01(\x0b\x32\".mangaplus_api.AdRewardNetworkList\x12\x38\n\x10insertBannerList\x18\x05 \x01(\x0b\x32\x1e.mangaplus_api.Page.BannerList\x1a\x7f\n\tMangaPage\x12\x10\n\x08imageUrl\x18\x01 \x01(\t\x12\r\n\x05width\x18\x02 \x01(\x05\x12\x0e\n\x06height\x18\x03 \x01(\x05\x12*\n\x04type\x18\x04 \x01(\x0e\x32\x1c.mangaplus_api.Page.PageType\x12\x15\n\rencryptionKey\x18\x05 \x01(\t\x1a\xb1\x06\n\x08LastPage\x12.\n\x0e\x63urrentChapter\x18\x01 \x01(\x0b\x32\x16.mangaplus_api.Chapter\x12+\n\x0bnextChapter\x18\x02 \x01(\x0b\x32\x16.mangaplus_api.Chapter\x12+\n\x0btopComments\x18\x03 \x03(\x0b\x32\x16.mangaplus_api.Comment\x12\x14\n\x0cisSubscribed\x18\x04 \x01(\x08\x12\x15\n\rnextTimeStamp\x18\x05 \x01(\x03\x12\x34\n\x0b\x63hapterType\x18\x06 \x01(\x0e\x32\x1f.mangaplus_api.Page.ChapterType\x12\x33\n\radvertisement\x18\x07 \x01(\x0b\x32\x1c.mangaplus_api.AdNetworkList\x12)\n\x0bmovieReward\x18\x08 \x01(\x0b\x32\x14.mangaplus_api.Popup\x12&\n\x07\x62\x61nners\x18\t \x03(\x0b\x32\x15.mangaplus_api.Banner\x12-\n\x0fticketTitleList\x18\n \x03(\x0b\x32\x14.mangaplus_api.Title\x12.\n\x0fpublisherBanner\x18\x0b \x01(\x0b\x32\x15.mangaplus_api.Banner\x12/\n\x0buserTickets\x18\x0c \x01(\x0b\x32\x1a.mangaplus_api.UserTickets\x12!\n\x19isNextChapterReadByTicket\x18\r \x01(\x08\x12 \n\x18isNextChapterOneTimeFree\x18\x0e \x01(\x08\x12\x39\n\x10\x66reeViewDialogue\x18\x0f \x01(\x0b\x32\x1f.mangaplus_api.FreeViewDialogue\x12!\n\x19isNextChapterSubscription\x18\x10 \x01(\x08\x12?\n\x13\x61\x64vertisementReward\x18\x11 \x01(\x0b\x32\".mangaplus_api.AdRewardNetworkList\x12<\n\x16viewerEndAdvertisement\x18\x12 \x01(\x0b\x32\x1c.mangaplus_api.AdNetworkList\x1aI\n\nBannerList\x12\x13\n\x0b\x62\x61nnerTitle\x18\x01 \x01(\t\x12&\n\x07\x62\x61nners\x18\x02 \x03(\x0b\x32\x15.mangaplus_api.Banner\"7\n\x0b\x43hapterType\x12\n\n\x06LATEST\x10\x00\x12\x0c\n\x08SEQUENCE\x10\x01\x12\x0e\n\nNOSEQUENCE\x10\x02\"7\n\x08PageType\x12\n\n\x06SINGLE\x10\x00\x12\x08\n\x04LEFT\x10\x01\x12\t\n\x05RIGHT\x10\x02\x12\n\n\x06\x44OUBLE\x10\x03\"w\n\x08\x44\x61taCase\x12\x10\n\x0c\x44\x41TA_NOT_SET\x10\x00\x12\x0e\n\nMANGA_PAGE\x10\x01\x12\x0f\n\x0b\x42\x41NNER_LIST\x10\x02\x12\r\n\tLAST_PAGE\x10\x03\x12\x11\n\rADVERTISEMENT\x10\x04\x12\x16\n\x12INSERT_BANNER_LIST\x10\x05\"\xba\x06\n\x05Popup\x12\x31\n\toSDefault\x18\x01 \x01(\x0b\x32\x1e.mangaplus_api.Popup.OSDefault\x12\x33\n\nappDefault\x18\x02 \x01(\x0b\x32\x1f.mangaplus_api.Popup.AppDefault\x12/\n\x0bmovieReward\x18\x03 \x01(\x0b\x32\x1a.mangaplus_api.MovieReward\x12/\n\x08oneImage\x18\x04 \x01(\x0b\x32\x1d.mangaplus_api.Popup.OneImage\x12\x0f\n\x07popupId\x18\x05 \x01(\x05\x1a\xeb\x01\n\tOSDefault\x12\x0f\n\x07subject\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12-\n\x08okButton\x18\x03 \x01(\x0b\x32\x1b.mangaplus_api.Popup.Button\x12\x32\n\rneutralButton\x18\x04 \x01(\x0b\x32\x1b.mangaplus_api.Popup.Button\x12\x31\n\x0c\x63\x61ncelButton\x18\x05 \x01(\x0b\x32\x1b.mangaplus_api.Popup.Button\x12)\n\x08language\x18\x06 \x01(\x0e\x32\x17.mangaplus_api.Language\x1an\n\nAppDefault\x12\x0f\n\x07subject\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12/\n\x06\x61\x63tion\x18\x03 \x01(\x0b\x32\x1f.mangaplus_api.TransitionAction\x12\x10\n\x08imageUrl\x18\x04 \x01(\t\x1aM\n\x08OneImage\x12/\n\x06\x61\x63tion\x18\x01 \x01(\x0b\x32\x1f.mangaplus_api.TransitionAction\x12\x10\n\x08imageUrl\x18\x02 \x01(\t\x1aG\n\x06\x42utton\x12\x0c\n\x04text\x18\x01 \x01(\t\x12/\n\x06\x61\x63tion\x18\x02 \x01(\x0b\x32\x1f.mangaplus_api.TransitionAction\"`\n\tPopupCase\x12\x11\n\rPOPUP_NOT_SET\x10\x00\x12\x0e\n\nOS_DEFAULT\x10\x01\x12\x0f\n\x0b\x41PP_DEFAULT\x10\x02\x12\x10\n\x0cMOVIE_REWARD\x10\x03\x12\r\n\tONE_IMAGE\x10\x04\"T\n\x0bMovieReward\x12\x10\n\x08imageUrl\x18\x01 \x01(\t\x12\x33\n\radvertisement\x18\x02 \x01(\x0b\x32\x1c.mangaplus_api.AdNetworkList\"\x81\x01\n\x13ProfileSettingsView\x12,\n\x08iconList\x18\x01 \x03(\x0b\x32\x1a.mangaplus_api.CommentIcon\x12\x10\n\x08userName\x18\x02 \x01(\t\x12*\n\x06myIcon\x18\x03 \x01(\x0b\x32\x1a.mangaplus_api.CommentIcon\"\x9a\x01\n\x15PublisherNewsListView\x12\x13\n\x0bpublisherId\x18\x01 \x01(\x05\x12\x15\n\rpublisherName\x18\x02 \x01(\t\x12%\n\x06\x62\x61nner\x18\x03 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12.\n\x08newsList\x18\x04 \x03(\x0b\x32\x1c.mangaplus_api.PublisherNews\"\xb3\x01\n\rPublisherNews\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x13\n\x0bpublisherId\x18\x02 \x01(\x05\x12\x15\n\rpublisherName\x18\x03 \x01(\t\x12\x0f\n\x07subject\x18\x04 \x01(\t\x12\x0c\n\x04\x62ody\x18\x05 \x01(\t\x12\x1a\n\x12publishedTimeStamp\x18\x06 \x01(\x03\x12/\n\x06\x61\x63tion\x18\x07 \x01(\x0b\x32\x1f.mangaplus_api.TransitionAction\"6\n\rPushTokenView\x12\r\n\x05token\x18\x01 \x01(\t\x12\x16\n\x0etokenTimeStamp\x18\x02 \x01(\x03\"\x89\x01\n\rQuestionnaire\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x11\n\tselection\x18\x02 \x03(\t\x12\x17\n\x0fnumberOfChoices\x18\x03 \x01(\x05\x12\x14\n\x0chideFreeform\x18\x04 \x01(\x08\x12\x10\n\x08\x66reeForm\x18\x05 \x01(\t\x12\x0f\n\x07\x63\x61nSkip\x18\x06 \x01(\x08\"\x94\x01\n\x11QuestionnaireView\x12\x12\n\nisAnswered\x18\x01 \x01(\x08\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12/\n\tquestions\x18\x03 \x03(\x0b\x32\x1c.mangaplus_api.Questionnaire\x12)\n\x08language\x18\x04 \x01(\x0e\x32\x17.mangaplus_api.Language\"(\n\x10RegistrationData\x12\x14\n\x0c\x64\x65viceSecret\x18\x01 \x01(\t\"\x9e\x01\n\x08Response\x12-\n\x07success\x18\x01 \x01(\x0b\x32\x1c.mangaplus_api.SuccessResult\x12)\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1a.mangaplus_api.ErrorResult\"8\n\nResultCase\x12\x12\n\x0eRESULT_NOT_SET\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\t\n\x05\x45RROR\x10\x02\"\xcb\x03\n\nSearchView\x12/\n\x10topSearchBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12#\n\x07\x61llTags\x18\x02 \x03(\x0b\x32\x12.mangaplus_api.Tag\x12\x35\n\x0e\x61llTitlesGroup\x18\x03 \x03(\x0b\x32\x1d.mangaplus_api.AllTitlesGroup\x12\x34\n\x08\x63ontents\x18\x05 \x03(\x0b\x32\".mangaplus_api.SearchView.Contents\x1a\xf9\x01\n\x08\x43ontents\x12%\n\x06\x62\x61nner\x18\x01 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12+\n\ttitleList\x18\x02 \x01(\x0b\x32\x18.mangaplus_api.TitleList\x12\x36\n\x0crankedTitles\x18\x03 \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\x12\'\n\tallLabels\x18\x04 \x03(\x0b\x32\x14.mangaplus_api.Label\x12\x38\n\x10\x63hapterPagesList\x18\x05 \x01(\x0b\x32\x1e.mangaplus_api.ChapterPageList\"L\n\x13ServiceAnnouncement\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\x03\x12\n\n\x02id\x18\x04 \x01(\x05\"\\\n\x18ServiceAnnouncementsView\x12@\n\x14serviceAnnouncements\x18\x01 \x03(\x0b\x32\".mangaplus_api.ServiceAnnouncement\"\xce\x01\n\x0cSettingsView\x12*\n\x06myIcon\x18\x01 \x01(\x0b\x32\x1a.mangaplus_api.CommentIcon\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x1d\n\x15noticeOfNewsAndEvents\x18\x03 \x01(\x08\x12)\n!noticeOfUpdatesOfSubscribedTitles\x18\x04 \x01(\x08\x12\x1a\n\x12\x65nglishTitlesCount\x18\x05 \x01(\x05\x12\x1a\n\x12spanishTitlesCount\x18\x06 \x01(\x05\"\xb0\x03\n\x0eSettingsViewV2\x12*\n\x06myIcon\x18\x01 \x01(\x0b\x32\x1a.mangaplus_api.CommentIcon\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x1d\n\x15noticeOfNewsAndEvents\x18\x03 \x01(\x08\x12)\n!noticeOfUpdatesOfSubscribedTitles\x18\x04 \x01(\x08\x12=\n\x12\x61vailableLanguages\x18\x05 \x03(\x0b\x32!.mangaplus_api.AvailableLanguages\x12\x35\n\x10userSubscription\x18\x06 \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12%\n\x06\x62\x61nner\x18\x07 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12?\n\x14\x61vailableCustomCodes\x18\x08 \x03(\x0b\x32!.mangaplus_api.CustomCodeDialogue\x12\x38\n\x0e\x66\x61voriteTitles\x18\t \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\"&\n\x12\x43ustomCodeDialogue\x12\x10\n\x08planType\x18\x01 \x01(\t\" \n\x03Sns\x12\x0c\n\x04\x62ody\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\"\x96\x01\n\x14SubscribedTitlesView\x12$\n\x06titles\x18\x01 \x03(\x0b\x32\x14.mangaplus_api.Title\x12-\n\x0ehistoryBanners\x18\x02 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12)\n\x0bviewHistory\x18\x03 \x03(\x0b\x32\x14.mangaplus_api.Title\"\xf1\x01\n\x14IosSubscriptionOffer\x12@\n\tofferType\x18\x01 \x01(\x0e\x32-.mangaplus_api.IosSubscriptionOffer.OfferType\x12\x11\n\tsignature\x18\x02 \x01(\t\x12\x10\n\x08\x61ppleKey\x18\x03 \x01(\t\x12\r\n\x05nonce\x18\x04 \x01(\t\x12\x11\n\ttimestamp\x18\x05 \x01(\t\x12\x12\n\nidentifier\x18\x06 \x01(\t\"<\n\tOfferType\x12\x0c\n\x08NO_OFFER\x10\x00\x12\x10\n\x0cINTRODUCTORY\x10\x01\x12\x0f\n\x0bPROMOTIONAL\x10\x02\"+\n\x1c\x41ndroidSubscriptionOfferTags\x12\x0b\n\x03tag\x18\x01 \x01(\t\"\x83\x01\n\x0cSubscription\x12\x10\n\x08planType\x18\x01 \x01(\t\x12\x17\n\x0fnextPaymentDate\x18\x02 \x01(\x05\x12\x13\n\x0bisFreeTrial\x18\x03 \x01(\x08\x12\x1a\n\x12isPendingDowngrade\x18\x04 \x01(\x08\x12\x17\n\x0fisFirstTimeUser\x18\x05 \x01(\x08\"\xc7\x01\n\x08PlanType\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x11\n\tproductId\x18\x03 \x01(\t\x12>\n\x11subscriptionOffer\x18\x04 \x01(\x0b\x32#.mangaplus_api.IosSubscriptionOffer\x12\x45\n\x10\x61ndroidOfferTags\x18\x05 \x03(\x0b\x32+.mangaplus_api.AndroidSubscriptionOfferTags\"\xf3\x02\n\x10SubscriptionView\x12\x35\n\x10userSubscription\x18\x01 \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12*\n\tplanTypes\x18\x02 \x03(\x0b\x32\x17.mangaplus_api.PlanType\x12\x41\n\x12subscriptionTitles\x18\x03 \x03(\x0b\x32%.mangaplus_api.TitleSubscriptionGroup\x12\x18\n\x10userHasUsedTrial\x18\x04 \x01(\x08\x12%\n\x06\x62\x61nner\x18\x05 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12I\n\x12planBoxDescription\x18\x06 \x01(\x0b\x32-.mangaplus_api.SubscriptionPlanBoxDescription\x12-\n\x04note\x18\x07 \x01(\x0b\x32\x1f.mangaplus_api.SubscriptionNote\"=\n\x1eSubscriptionPlanBoxDescription\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"/\n\x10SubscriptionNote\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"\xa5\x18\n\rSuccessResult\x12\x19\n\x11isFeaturedUpdated\x18\x01 \x01(\x08\x12:\n\x11registerationData\x18\x02 \x01(\x0b\x32\x1f.mangaplus_api.RegistrationData\x12=\n\x12\x66\x65\x61turedTitlesView\x18\x04 \x01(\x0b\x32!.mangaplus_api.FeaturedTitlesView\x12\x33\n\rallTitlesView\x18\x05 \x01(\x0b\x32\x1c.mangaplus_api.AllTitlesView\x12\x39\n\x10titleRankingView\x18\x06 \x01(\x0b\x32\x1f.mangaplus_api.TitleRankingView\x12\x41\n\x14subscribedTitlesView\x18\x07 \x01(\x0b\x32#.mangaplus_api.SubscribedTitlesView\x12\x37\n\x0ftitleDetailView\x18\x08 \x01(\x0b\x32\x1e.mangaplus_api.TitleDetailView\x12\x37\n\x0f\x63ommentListView\x18\t \x01(\x0b\x32\x1e.mangaplus_api.CommentListView\x12/\n\x0bmangaViewer\x18\n \x01(\x0b\x32\x1a.mangaplus_api.MangaViewer\x12?\n\x13profileSettingsView\x18\r \x01(\x0b\x32\".mangaplus_api.ProfileSettingsView\x12G\n\x17updateProfileResultView\x18\x0e \x01(\x0b\x32&.mangaplus_api.UpdateProfileResultView\x12I\n\x18serviceAnnouncementsView\x18\x0f \x01(\x0b\x32\'.mangaplus_api.ServiceAnnouncementsView\x12\x31\n\x0c\x66\x65\x65\x64\x62\x61\x63kView\x18\x11 \x01(\x0b\x32\x1b.mangaplus_api.FeedbackView\x12\x43\n\x15publisherNewsListView\x18\x12 \x01(\x0b\x32$.mangaplus_api.PublisherNewsListView\x12;\n\x11questionnaireView\x18\x13 \x01(\x0b\x32 .mangaplus_api.QuestionnaireView\x12\x39\n\x10titleUpdatedView\x18\x14 \x01(\x0b\x32\x1f.mangaplus_api.TitleUpdatedView\x12\x41\n\x14updatedTitleListView\x18\x16 \x01(\x0b\x32#.mangaplus_api.UpdatedTitleListView\x12?\n\x13\x61llTicketTitlesView\x18\x17 \x01(\x0b\x32\".mangaplus_api.AllTicketTitlesView\x12-\n\nhomeViewV3\x18\x18 \x01(\x0b\x32\x19.mangaplus_api.HomeViewV3\x12\x37\n\x0f\x61llTitlesViewV2\x18\x19 \x01(\x0b\x32\x1e.mangaplus_api.AllTitlesViewV2\x12\x35\n\x0esettingsViewV2\x18\x1a \x01(\x0b\x32\x1d.mangaplus_api.SettingsViewV2\x12:\n\x0ftitleListViewV2\x18\x1b \x01(\x0b\x32!.mangaplus_api.TitleUpdatedViewV2\x12\x33\n\rinitialViewV2\x18\x1c \x01(\x0b\x32\x1c.mangaplus_api.InitialViewV2\x12+\n\tlanguages\x18\x1d \x01(\x0b\x32\x18.mangaplus_api.Languages\x12\x33\n\rpushTokenView\x18  \x01(\x0b\x32\x1c.mangaplus_api.PushTokenView\x12;\n\x11\x61llFreeTitlesView\x18! \x01(\x0b\x32 .mangaplus_api.AllFreeTitlesView\x12/\n\x0blabeledView\x18\" \x01(\x0b\x32\x1a.mangaplus_api.LabeledView\x12-\n\nsearchView\x18# \x01(\x0b\x32\x19.mangaplus_api.SearchView\x12\x39\n\x10subscriptionView\x18$ \x01(\x0b\x32\x1f.mangaplus_api.SubscriptionView\x12=\n\x12titleRankingViewV2\x18% \x01(\x0b\x32!.mangaplus_api.TitleRankingViewV2\x12\x33\n\rwebHomeViewV4\x18& \x01(\x0b\x32\x1c.mangaplus_api.WebHomeViewV4\x12\x41\n\x14\x66\x65\x61turedTitlesViewV2\x18\' \x01(\x0b\x32#.mangaplus_api.FeaturedTitlesViewV2\x12/\n\x0bhistoryView\x18( \x01(\x0b\x32\x1a.mangaplus_api.HistoryView\x12\x45\n\x16\x64ownloadableImagesView\x18) \x01(\x0b\x32%.mangaplus_api.DownloadableImagesView\x12\x43\n\x15introduceSubscription\x18* \x01(\x0b\x32$.mangaplus_api.IntroduceSubscription\x12=\n\x12\x66\x61voriteTitlesView\x18+ \x01(\x0b\x32!.mangaplus_api.FavoriteTitlesView\x12\x33\n\rmpcStatusView\x18, \x01(\x0b\x32\x1c.mangaplus_api.MpcStatusView\x12-\n\nhomeViewV4\x18- \x01(\x0b\x32\x19.mangaplus_api.HomeViewV4\"\xfd\x06\n\x08\x44\x61taCase\x12\x10\n\x0c\x44\x41TA_NOT_SET\x10\x00\x12\x16\n\x12REGISTERATION_DATA\x10\x02\x12\x18\n\x14\x46\x45\x41TURED_TITLES_VIEW\x10\x04\x12\x13\n\x0f\x41LL_TITLES_VIEW\x10\x05\x12\x16\n\x12TITLE_RANKING_VIEW\x10\x06\x12\x1a\n\x16SUBSCRIBED_TITLES_VIEW\x10\x07\x12\x15\n\x11TITLE_DETAIL_VIEW\x10\x08\x12\x15\n\x11\x43OMMENT_LIST_VIEW\x10\t\x12\x10\n\x0cMANGA_VIEWER\x10\n\x12\x19\n\x15PROFILE_SETTINGS_VIEW\x10\r\x12\x1e\n\x1aUPDATE_PROFILE_RESULT_VIEW\x10\x0e\x12\x1e\n\x1aSERVICE_ANNOUNCEMENTS_VIEW\x10\x0f\x12\x11\n\rFEEDBACK_VIEW\x10\x11\x12\x1c\n\x18PUBLISHER_NEWS_LIST_VIEW\x10\x12\x12\x16\n\x12QUESTIONNAIRE_VIEW\x10\x13\x12\x16\n\x12TITLE_UPDATED_VIEW\x10\x14\x12\x1b\n\x17UPDATED_TITLE_LIST_VIEW\x10\x16\x12\x1a\n\x16\x41LL_TICKET_TITLES_VIEW\x10\x17\x12\x10\n\x0cHOME_VIEW_V3\x10\x18\x12\x16\n\x12\x41LL_TITLES_VIEW_V2\x10\x19\x12\x14\n\x10SETTINGS_VIEW_V2\x10\x1a\x12\x16\n\x12TITLE_LIST_VIEW_V2\x10\x1b\x12\x13\n\x0fINITIAL_VIEW_V2\x10\x1c\x12\x13\n\x0fPUSH_TOKEN_VIEW\x10 \x12\x18\n\x14\x41LL_FREE_TITLES_VIEW\x10!\x12\x10\n\x0cLABELED_VIEW\x10\"\x12\x0f\n\x0bSEARCH_VIEW\x10#\x12\x15\n\x11SUBSCRIPTION_VIEW\x10$\x12\x19\n\x15TITLE_RANKING_VIEW_V2\x10%\x12\x14\n\x10WEB_HOME_VIEW_V4\x10&\x12\x1b\n\x17\x46\x45\x41TURED_TITLES_VIEW_V2\x10\'\x12\x10\n\x0cHISTORY_VIEW\x10(\x12\x1c\n\x18\x44OWNLOADABLE_IMAGES_VIEW\x10)\x12\x1a\n\x16INTRODUCE_SUBSCRIPTION\x10*\x12\x18\n\x14\x46\x41VORITE_TITLES_VIEW\x10+\x12\x13\n\x0fMPC_STATUS_VIEW\x10,\x12\x10\n\x0cHOME_VIEW_V4\x10-\" \n\x03Tag\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0c\n\x04slug\x18\x02 \x01(\t\"\x88\x12\n\x0fTitleDetailView\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x15\n\rtitleImageUrl\x18\x02 \x01(\t\x12\x10\n\x08overview\x18\x03 \x01(\t\x12\x1a\n\x12\x62\x61\x63kgroundImageUrl\x18\x04 \x01(\t\x12\x15\n\rnextTimeStamp\x18\x05 \x01(\x03\x12\x14\n\x0cupdateTiming\x18\x06 \x01(\x05\x12 \n\x18viewingPeriodDescription\x18\x07 \x01(\t\x12\x19\n\x11nonAppearanceInfo\x18\x08 \x01(\t\x12\x30\n\x10\x66irstChapterList\x18\t \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12/\n\x0flastChapterList\x18\n \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12&\n\x07\x62\x61nners\x18\x0b \x03(\x0b\x32\x15.mangaplus_api.Banner\x12\x32\n\x14recommendedTitleList\x18\x0c \x03(\x0b\x32\x14.mangaplus_api.Title\x12\x1f\n\x03sns\x18\r \x01(\x0b\x32\x12.mangaplus_api.Sns\x12\x17\n\x0fisSimulReleased\x18\x0e \x01(\x08\x12\x14\n\x0cisSubscribed\x18\x0f \x01(\x08\x12\x35\n\x06rating\x18\x10 \x01(\x0e\x32%.mangaplus_api.TitleDetailView.Rating\x12\x1a\n\x12\x63haptersDescending\x18\x11 \x01(\x08\x12\x15\n\rnumberOfViews\x18\x12 \x01(\x05\x12\x44\n\x0epublisherItems\x18\x13 \x03(\x0b\x32,.mangaplus_api.TitleDetailView.PublisherItem\x12+\n\x0ctitleBanners\x18\x14 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12/\n\x0buserTickets\x18\x15 \x01(\x0b\x32\x1a.mangaplus_api.UserTickets\x12\x31\n\x11ticketChapterList\x18\x16 \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12-\n\x0fticketTitleList\x18\x17 \x03(\x0b\x32\x14.mangaplus_api.Title\x12\x1a\n\x12hasChaptersBetween\x18\x18 \x01(\x08\x12.\n\x0fpublisherBanner\x18\x19 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12\x33\n\radvertisement\x18\x1a \x01(\x0b\x32\x1c.mangaplus_api.AdNetworkList\x12\x45\n\x0etitleLanguages\x18\x1b \x03(\x0b\x32-.mangaplus_api.TitleDetailView.TitleLanguages\x12\x45\n\x10\x63hapterListGroup\x18\x1c \x03(\x0b\x32+.mangaplus_api.TitleDetailView.ChapterGroup\x12\x39\n\x10\x66reeViewDialogue\x18\x1d \x01(\x0b\x32\x1f.mangaplus_api.FreeViewDialogue\x12\x12\n\nregionCode\x18\x1e \x01(\t\x12 \n\x04tags\x18\x1f \x03(\x0b\x32\x12.mangaplus_api.Tag\x12?\n\x0btitleLabels\x18  \x01(\x0b\x32*.mangaplus_api.TitleDetailView.TitleLabels\x12\x35\n\x10userSubscription\x18! \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12#\n\x05label\x18\" \x01(\x0b\x32\x14.mangaplus_api.Label\x12\x17\n\x0fisFirstTimeFree\x18# \x01(\x08\x12)\n\x08metaInfo\x18$ \x01(\x0b\x32\x17.mangaplus_api.MetaInfo\x12)\n\x0bratingPopup\x18% \x01(\x0b\x32\x14.mangaplus_api.Popup\x1aL\n\x0bTitleLabels\x12\x17\n\x0freleaseSchedule\x18\x01 \x01(\x05\x12\x12\n\nisSimulpub\x18\x02 \x01(\x08\x12\x10\n\x08planType\x18\x03 \x01(\t\x1ak\n\rPublisherItem\x12%\n\x06\x62\x61nner\x18\x01 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12\x33\n\rpublisherNews\x18\x02 \x01(\x0b\x32\x1c.mangaplus_api.PublisherNews\x1aL\n\x0eTitleLanguages\x12\x0f\n\x07titleId\x18\x01 \x01(\x05\x12)\n\x08language\x18\x02 \x01(\x0e\x32\x17.mangaplus_api.Language\x1a\xb9\x01\n\x0c\x43hapterGroup\x12\x16\n\x0e\x63hapterNumbers\x18\x01 \x01(\t\x12\x30\n\x10\x66irstChapterList\x18\x02 \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12.\n\x0emidChapterList\x18\x03 \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12/\n\x0flastChapterList\x18\x04 \x03(\x0b\x32\x16.mangaplus_api.Chapter\"\x8d\x01\n\x0fReleaseSchedule\x12\x0c\n\x08\x44ISABLED\x10\x00\x12\x0c\n\x08\x45VERYDAY\x10\x01\x12\n\n\x06WEEKLY\x10\x02\x12\x0c\n\x08\x42IWEEKLY\x10\x03\x12\x0b\n\x07MONTHLY\x10\x04\x12\r\n\tBIMONTHLY\x10\x05\x12\x0e\n\nTRIMONTHLY\x10\x06\x12\t\n\x05OTHER\x10\x07\x12\r\n\tCOMPLETED\x10\x08\"\x86\x01\n\x0cUpdateTiming\x12\x11\n\rNOT_REGULARLY\x10\x00\x12\n\n\x06MONDAY\x10\x01\x12\x0b\n\x07TUESDAY\x10\x02\x12\r\n\tWEDNESDAY\x10\x03\x12\x0c\n\x08THURSDAY\x10\x04\x12\n\n\x06\x46RIDAY\x10\x05\x12\x0c\n\x08SATURDAY\x10\x06\x12\n\n\x06SUNDAY\x10\x07\x12\x07\n\x03\x44\x41Y\x10\x08\"8\n\x06Rating\x12\n\n\x06\x41LLAGE\x10\x00\x12\x08\n\x04TEEN\x10\x01\x12\x0c\n\x08TEENPLUS\x10\x02\x12\n\n\x06MATURE\x10\x03\"\xb2\x01\n\x0e\x41llTitlesGroup\x12\x10\n\x08theTitle\x18\x01 \x01(\t\x12$\n\x06titles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\x12 \n\x04tags\x18\x03 \x03(\x0b\x32\x12.mangaplus_api.Tag\x12#\n\x05label\x18\x04 \x01(\x0b\x32\x14.mangaplus_api.Label\x12!\n\x19nextChapterStartTimestamp\x18\x05 \x01(\x03\"a\n\x11TitleRankingGroup\x12\x17\n\x0foriginalTitleId\x18\x01 \x01(\x05\x12$\n\x06titles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\x12\r\n\x05score\x18\x03 \x01(\x05\"f\n\x11TitleUpdatedGroup\x12\x1d\n\x15updatedTitleTimestamp\x18\x01 \x01(\x03\x12\x32\n\x0blatestTitle\x18\x02 \x03(\x0b\x32\x1d.mangaplus_api.AllTitlesGroup\"L\n\x12LabeledTitlesGroup\x12\x10\n\x08theTitle\x18\x01 \x01(\t\x12$\n\x06titles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\"d\n\x16TitleSubscriptionGroup\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12$\n\x06titles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\x12\x16\n\x0etitleCountText\x18\x03 \x01(\t\"`\n\tTitleList\x12\x10\n\x08listName\x18\x01 \x01(\t\x12,\n\x0e\x66\x65\x61turedTitles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\x12\x13\n\x0b\x63ontainerId\x18\x03 \x01(\x05\"V\n\x0f\x43hapterPageList\x12\x10\n\x08listName\x18\x01 \x01(\t\x12\x31\n\x0c\x63hapterPages\x18\x02 \x03(\x0b\x32\x1b.mangaplus_api.ChapterPages\"\xa3\x01\n\x0c\x43hapterPages\x12\x13\n\x0b\x63ontainerId\x18\x01 \x01(\x05\x12\x11\n\tchapterId\x18\x02 \x01(\x05\x12\x0f\n\x07titleId\x18\x03 \x01(\x05\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x05 \x01(\t\x12\x18\n\x10\x66\x61voriteImageUrl\x18\x06 \x01(\t\x12\"\n\x05pages\x18\x07 \x03(\x0b\x32\x13.mangaplus_api.Page\"\x80\x02\n\x05Title\x12\x0f\n\x07titleId\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x03 \x01(\t\x12\x18\n\x10portraitImageUrl\x18\x04 \x01(\t\x12\x19\n\x11landscapeImageUrl\x18\x05 \x01(\t\x12\x11\n\tviewCount\x18\x06 \x01(\x05\x12)\n\x08language\x18\x07 \x01(\x0e\x32\x17.mangaplus_api.Language\x12;\n\x11titleUpdateStatus\x18\x08 \x01(\x0e\x32 .mangaplus_api.TitleUpdateStatus\x12\x18\n\x10\x66\x61voriteImageUrl\x18\t \x01(\t\"\xb8\x01\n\x0cUpdatedTitle\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x11\n\tchapterId\x18\x02 \x01(\x05\x12\x13\n\x0b\x63hapterName\x18\x03 \x01(\t\x12\x17\n\x0f\x63hapterSubTitle\x18\x04 \x01(\t\x12\x10\n\x08isLatest\x18\x05 \x01(\x08\x12\x16\n\x0eisVerticalOnly\x18\x06 \x01(\x08\x12\x18\n\x10isHorizontalOnly\x18\x07 \x01(\x08\"R\n\x0cTitleUpdated\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x1d\n\x15updatedTitleTimestamp\x18\x02 \x01(\t\"O\n\tFreeTitle\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x1d\n\x15updatedTitleTimestamp\x18\x02 \x01(\t\"j\n\x0cTicketTitles\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x1a\n\x12\x66irstTicketChapter\x18\x02 \x01(\x05\x12\x19\n\x11lastTicketChapter\x18\x03 \x01(\x05\"`\n\x11SubscribableTitle\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x10\n\x08isLatest\x18\x02 \x01(\x08\x12\x14\n\x0cisSubscribed\x18\x03 \x01(\x08\"r\n\x0f\x43omingSoonTitle\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x17\n\x0fnextChapterName\x18\x02 \x01(\t\x12!\n\x19nextChapterStartTimestamp\x18\x03 \x01(\x03\"\xb5\x01\n\x0eTitleHighlight\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x11\n\tchapterId\x18\x02 \x01(\x05\x12\x13\n\x0bpageUrlList\x18\x03 \x03(\t\x12\x11\n\tpageHight\x18\x04 \x01(\x05\x12\x11\n\tpageWidth\x18\x05 \x01(\x05\x12\x16\n\x0eisVerticalOnly\x18\x06 \x01(\x08\x12\x18\n\x10isHorizontalOnly\x18\x07 \x01(\x08\"8\n\x10TitleRankingView\x12$\n\x06titles\x18\x01 \x03(\x0b\x32\x14.mangaplus_api.Title\"\x95\x01\n\x12TitleRankingViewV2\x12-\n\x0erankingBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12\x18\n\x10updatedTimeStamp\x18\x02 \x01(\x03\x12\x36\n\x0crankedTitles\x18\x03 \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\"D\n\x10TitleUpdatedView\x12\x30\n\x0blatestTitle\x18\x01 \x03(\x0b\x32\x1b.mangaplus_api.TitleUpdated\"Q\n\x12TitleUpdatedViewV2\x12;\n\x11titleUpdatedGroup\x18\x01 \x03(\x0b\x32 .mangaplus_api.TitleUpdatedGroup\"\x9c\x01\n\x10TransitionAction\x12\x42\n\x06method\x18\x01 \x01(\x0e\x32\x32.mangaplus_api.TransitionAction.PresentationMethod\x12\x0b\n\x03url\x18\x02 \x01(\t\"7\n\x12PresentationMethod\x12\x08\n\x04PUSH\x10\x00\x12\t\n\x05MODAL\x10\x01\x12\x0c\n\x08\x45XTERNAL\x10\x02\"S\n\x11UpdatedTitleGroup\x12\x11\n\tgroupName\x18\x01 \x01(\t\x12+\n\x06titles\x18\x02 \x03(\x0b\x32\x1b.mangaplus_api.UpdatedTitle\"w\n\x13UpdatedTitleV2Group\x12\x11\n\tgroupName\x18\x01 \x01(\t\x12\x36\n\x0btitleGroups\x18\x02 \x03(\x0b\x32!.mangaplus_api.OriginalTitleGroup\x12\x15\n\rgroupNameDays\x18\x03 \x01(\x05\"\xd4\x01\n\x12OriginalTitleGroup\x12\x10\n\x08theTitle\x18\x01 \x01(\t\x12\x15\n\rchapterNumber\x18\x02 \x01(\t\x12+\n\x06titles\x18\x03 \x03(\x0b\x32\x1b.mangaplus_api.UpdatedTitle\x12\x11\n\tviewCount\x18\x04 \x01(\x05\x12;\n\x11titleUpdateStatus\x18\x05 \x01(\x0e\x32 .mangaplus_api.TitleUpdateStatus\x12\x18\n\x10\x63hapterStartTime\x18\x06 \x01(\x05\"H\n\x14UpdatedTitleListView\x12\x30\n\x06groups\x18\x01 \x03(\x0b\x32 .mangaplus_api.UpdatedTitleGroup\"\x8c\x01\n\x17UpdateProfileResultView\x12=\n\x06result\x18\x01 \x01(\x0e\x32-.mangaplus_api.UpdateProfileResultView.Result\"2\n\x06Result\x12\x0b\n\x07SUCCESS\x10\x00\x12\x0e\n\nDUPLICATED\x10\x01\x12\x0b\n\x07NG_WORD\x10\x02\"B\n\x0bUserTickets\x12\x16\n\x0e\x63urrentTickets\x18\x01 \x01(\x05\x12\x1b\n\x13nextTicketTimestamp\x18\x02 \x01(\x03\"\xc3\x02\n\rWebHomeViewV4\x12)\n\ntopBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12\x32\n\x06groups\x18\x02 \x03(\x0b\x32\".mangaplus_api.UpdatedTitleV2Group\x12\x36\n\x0crankedTitles\x18\x03 \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\x12#\n\x05popup\x18\x04 \x01(\x0b\x32\x14.mangaplus_api.Popup\x12\x34\n\x12\x66\x65\x61turedTitleLists\x18\x05 \x03(\x0b\x32\x18.mangaplus_api.TitleList\x12@\n\x14serviceAnnouncements\x18\x06 \x03(\x0b\x32\".mangaplus_api.ServiceAnnouncement*7\n\x15\x46irstTimeFreePlatform\x12\x0c\n\x08\x44ISABLED\x10\x00\x12\x07\n\x03WEB\x10\x01\x12\x07\n\x03\x41PP\x10\x02*\x94\x01\n\nLabelCodes\x12\x06\n\x02WJ\x10\x00\x12\x06\n\x02SQ\x10\x01\x12\x06\n\x02VJ\x10\x02\x12\x06\n\x02YJ\x10\x03\x12\n\n\x06J_PLUS\x10\x04\x12\x0b\n\x07REVIVAL\x10\x05\x12\x0c\n\x08\x43REATORS\x10\x06\x12\x07\n\x03MEE\x10\x07\x12\x07\n\x03TYJ\x10\x08\x12\n\n\x06OTHERS\x10\t\x12\x07\n\x03SKJ\x10\n\x12\x08\n\x04GIGA\x10\x0b\x12\x06\n\x02UJ\x10\x0c\x12\x06\n\x02\x44X\x10\r*\x93\x01\n\x08Language\x12\x0b\n\x07\x45NGLISH\x10\x00\x12\x0b\n\x07SPANISH\x10\x01\x12\n\n\x06\x46RENCH\x10\x02\x12\x0e\n\nINDONESIAN\x10\x03\x12\x11\n\rPORTUGUESE_BR\x10\x04\x12\x0b\n\x07RUSSIAN\x10\x05\x12\x08\n\x04THAI\x10\x06\x12\n\n\x06GERMAN\x10\x07\x12\x0b\n\x07ITALIAN\x10\x08\x12\x0e\n\nVIETNAMESE\x10\t*:\n\x0eRankingTabType\x12\x0b\n\x07HOTTEST\x10\x00\x12\x0c\n\x08TRENDING\x10\x01\x12\r\n\tCOMPLETED\x10\x02*a\n\x11TitleUpdateStatus\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03NEW\x10\x01\x12\x06\n\x02UP\x10\x02\x12\r\n\tREEDITION\x10\x03\x12\x13\n\x0f\x43REATORS_STATUS\x10\x04\x12\r\n\tOUR_PICKS\x10\x05\x42\x18\n\x16jp.co.comic.jump.protob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13mangaplus_api.proto\x12\rmangaplus_api\"=\n\rAdNetworkList\x12,\n\nadNetworks\x18\x01 \x03(\x0b\x32\x18.mangaplus_api.AdNetwork\"k\n\x13\x41\x64RewardNetworkList\x12,\n\nadNetworks\x18\x01 \x03(\x0b\x32\x18.mangaplus_api.AdNetwork\x12\r\n\x05token\x18\x02 \x01(\t\x12\x17\n\x0frewardViewCount\x18\x03 \x01(\x05\"\x8d\x06\n\tAdNetwork\x12\x33\n\x08\x66\x61\x63\x65\x62ook\x18\x01 \x01(\x0b\x32!.mangaplus_api.AdNetwork.Facebook\x12-\n\x05\x61\x64mob\x18\x02 \x01(\x0b\x32\x1e.mangaplus_api.AdNetwork.Admob\x12-\n\x05mopub\x18\x03 \x01(\x0b\x32\x1e.mangaplus_api.AdNetwork.Mopub\x12\x31\n\x07\x61\x64sense\x18\x04 \x01(\x0b\x32 .mangaplus_api.AdNetwork.Adsense\x12\x33\n\x08\x61pplovin\x18\x05 \x01(\x0b\x32!.mangaplus_api.AdNetwork.Applovin\x12\x39\n\x0b\x61pplovinMax\x18\x06 \x01(\x0b\x32$.mangaplus_api.AdNetwork.ApplovinMax\x1a\x1f\n\x08\x46\x61\x63\x65\x62ook\x12\x13\n\x0bplacementID\x18\x01 \x01(\t\x1a\x17\n\x05\x41\x64mob\x12\x0e\n\x06unitID\x18\x01 \x01(\t\x1a+\n\x07\x41\x64sense\x12\x0e\n\x06unitID\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x1a\x1a\n\x08\x41pplovin\x12\x0e\n\x06unitID\x18\x01 \x01(\t\x1a\x17\n\x05Mopub\x12\x0e\n\x06unitID\x18\x01 \x01(\t\x1aX\n\x0b\x41pplovinMax\x12\x0e\n\x06unitID\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\x05\x12\x13\n\x0b\x61mazonAppId\x18\x03 \x01(\t\x12\x16\n\x0e\x61mazonAdUnitId\x18\x04 \x01(\t\"`\n\x06\x41\x64Type\x12\x0f\n\x0bSTILL_IMAGE\x10\x00\x12\t\n\x05MOVIE\x10\x01\x12\x11\n\rNATIVE_MANUAL\x10\x02\x12\x11\n\rNATIVE_MEDIUM\x10\x03\x12\x08\n\x04MREC\x10\x04\x12\n\n\x06REWARD\x10\x05\"r\n\x0bNetworkCase\x12\x13\n\x0fNETWORK_NOT_SET\x10\x00\x12\x0c\n\x08\x46\x41\x43\x45\x42OOK\x10\x01\x12\t\n\x05\x41\x44MOB\x10\x02\x12\t\n\x05MOPUB\x10\x03\x12\x0b\n\x07\x41\x44SENSE\x10\x04\x12\x0c\n\x08\x41PPLOVIN\x10\x05\x12\x0f\n\x0b\x41PPLOVINMAX\x10\x06\"A\n\x11\x41llFreeTitlesView\x12,\n\nfreeTitles\x18\x01 \x03(\x0b\x32\x18.mangaplus_api.FreeTitle\"G\n\x13\x41llTicketTitlesView\x12\x30\n\x0bticketTitle\x18\x01 \x03(\x0b\x32\x1b.mangaplus_api.TicketTitles\"5\n\rAllTitlesView\x12$\n\x06titles\x18\x01 \x03(\x0b\x32\x14.mangaplus_api.Title\"H\n\x0f\x41llTitlesViewV2\x12\x35\n\x0e\x61llTitlesGroup\x18\x01 \x03(\x0b\x32\x1d.mangaplus_api.AllTitlesGroup\"\x84\x01\n\x06\x42\x61nner\x12\x10\n\x08imageUrl\x18\x01 \x01(\t\x12/\n\x06\x61\x63tion\x18\x02 \x01(\x0b\x32\x1f.mangaplus_api.TransitionAction\x12\n\n\x02id\x18\x03 \x01(\x05\x12\r\n\x05width\x18\x04 \x01(\x05\x12\x0e\n\x06height\x18\x05 \x01(\x05\x12\x0c\n\x04isPr\x18\x06 \x01(\x08\"\xe0\x02\n\x07\x43hapter\x12\x0f\n\x07titleId\x18\x01 \x01(\x05\x12\x11\n\tchapterId\x18\x02 \x01(\x05\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x10\n\x08subTitle\x18\x04 \x01(\t\x12\x14\n\x0cthumbnailUrl\x18\x05 \x01(\t\x12\x16\n\x0estartTimeStamp\x18\x06 \x01(\x03\x12\x14\n\x0c\x65ndTimeStamp\x18\x07 \x01(\x03\x12\x15\n\ralreadyViewed\x18\x08 \x01(\x08\x12\x16\n\x0eisVerticalOnly\x18\t \x01(\x08\x12\x1c\n\x14\x63hapterTicketEndtime\x18\n \x01(\x05\x12\x15\n\rviewedForFree\x18\x0b \x01(\x08\x12\x18\n\x10isHorizontalOnly\x18\x0c \x01(\x08\x12\x11\n\tviewCount\x18\r \x01(\x05\x12\x14\n\x0c\x63ommentCount\x18\x0e \x01(\x05\x12\x11\n\tisUpdated\x18\x0f \x01(\x08\x12\x13\n\x0b\x63hapterType\x18\x10 \x01(\x05\"+\n\x0b\x43ommentIcon\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08imageUrl\x18\x02 \x01(\t\"\x80\x02\n\x0f\x43ommentListView\x12(\n\x08\x63omments\x18\x01 \x03(\x0b\x32\x16.mangaplus_api.Comment\x12\x15\n\rifSetUserName\x18\x02 \x01(\x08\x12M\n\x12titleDetailComment\x18\x03 \x01(\x0b\x32\x31.mangaplus_api.CommentListView.TitleDetailComment\x1a]\n\x12TitleDetailComment\x12\x0f\n\x07titleId\x18\x01 \x01(\x05\x12\x11\n\ttitleName\x18\x02 \x01(\t\x12\x13\n\x0b\x63hapterName\x18\x03 \x01(\t\x12\x0e\n\x06\x63redit\x18\x04 \x01(\t\"\xa8\x01\n\x07\x43omment\x12\n\n\x02id\x18\x01 \x01(\x05\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x10\n\x08userName\x18\x03 \x01(\t\x12\x0f\n\x07iconUrl\x18\x04 \x01(\t\x12\x13\n\x0bisMyComment\x18\x06 \x01(\x08\x12\x14\n\x0c\x61lreadyLiked\x18\x07 \x01(\x08\x12\x15\n\rnumberOfLikes\x18\t \x01(\x05\x12\x0c\n\x04\x62ody\x18\n \x01(\t\x12\x0f\n\x07\x63reated\x18\x0b \x01(\x05\"\x8f\x01\n\x10\x46reeViewDialogue\x12\x36\n\x08platform\x18\x01 \x01(\x0e\x32$.mangaplus_api.FirstTimeFreePlatform\x12\x13\n\x0b\x64ialogueUrl\x18\x02 \x01(\t\x12.\n\x0fpublisherBanner\x18\x03 \x01(\x0b\x32\x15.mangaplus_api.Banner\"[\n\x16\x44ownloadableImagesView\x12\x41\n\x12\x64ownloadableImages\x18\x01 \x03(\x0b\x32%.mangaplus_api.DownloadableImageGroup\"w\n\x16\x44ownloadableImageGroup\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08imageUrl\x18\x02 \x01(\t\x12\x12\n\nimageTitle\x18\x03 \x01(\t\x12\r\n\x05width\x18\x04 \x01(\x05\x12\x0e\n\x06height\x18\x05 \x01(\x05\x12\x0c\n\x04type\x18\x06 \x01(\t\"G\n\nEngageView\x12*\n\x06medias\x18\x01 \x03(\x0b\x32\x1a.mangaplus_api.EngageMedia\x12\r\n\x05title\x18\x02 \x01(\t\"\x9e\x01\n\x0b\x45ngageMedia\x12\x0e\n\x06\x62ookId\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x03 \x01(\t\x12\x14\n\x0c\x62ookCoverUri\x18\x04 \x01(\t\x12\x16\n\x0emediaActionUri\x18\x05 \x01(\t\x12\x10\n\x08progress\x18\x06 \x01(\x05\x12 \n\x18lastEngagementTimeMillis\x18\x07 \x01(\x03\"\xbd\x02\n\x0b\x45rrorResult\x12\x31\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32!.mangaplus_api.ErrorResult.Action\x12\x34\n\x0c\x65nglishPopup\x18\x02 \x01(\x0b\x32\x1e.mangaplus_api.Popup.OSDefault\x12\x34\n\x0cspanishPopup\x18\x03 \x01(\x0b\x32\x1e.mangaplus_api.Popup.OSDefault\x12\x11\n\tdebugInfo\x18\x04 \x01(\t\x12.\n\x06popups\x18\x05 \x03(\x0b\x32\x1e.mangaplus_api.Popup.OSDefault\"L\n\x06\x41\x63tion\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x10\n\x0cUNAUTHORIZED\x10\x01\x12\x0f\n\x0bMAINTENANCE\x10\x02\x12\x12\n\x0eGEOIP_BLOCKING\x10\x03\"\x8e\x01\n\x12\x46\x61voriteTitlesView\x12=\n\x12\x61vailableLanguages\x18\x01 \x03(\x0b\x32!.mangaplus_api.AvailableLanguages\x12\x39\n\x0e\x66\x61voriteTitles\x18\x02 \x03(\x0b\x32!.mangaplus_api.FavoriteTitleGroup\"e\n\x12\x46\x61voriteTitleGroup\x12)\n\x08language\x18\x01 \x01(\x0e\x32\x17.mangaplus_api.Language\x12$\n\x06titles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\"\x8a\x03\n\x12\x46\x65\x61turedTitlesView\x12)\n\nmainBanner\x18\x01 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12)\n\nsubBanner1\x18\x02 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12)\n\nsubBanner2\x18\x03 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12<\n\x08\x63ontents\x18\x04 \x03(\x0b\x32*.mangaplus_api.FeaturedTitlesView.Contents\x1a\xb4\x01\n\x08\x43ontents\x12\x41\n\x04\x64\x61ta\x18\x01 \x01(\x0e\x32\x33.mangaplus_api.FeaturedTitlesView.Contents.DataCase\x12+\n\ttitleList\x18\x02 \x01(\x0b\x32\x18.mangaplus_api.TitleList\"8\n\x08\x44\x61taCase\x12\x10\n\x0c\x44\x41TA_NOT_SET\x10\x00\x12\n\n\x06\x42\x41NNER\x10\x01\x12\x0e\n\nTITLE_LIST\x10\x02\"\xa0\x02\n\x14\x46\x65\x61turedTitlesViewV2\x12/\n\x10topSearchBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12>\n\x08\x63ontents\x18\x02 \x03(\x0b\x32,.mangaplus_api.FeaturedTitlesViewV2.Contents\x1a\x96\x01\n\x08\x43ontents\x12%\n\x06\x62\x61nner\x18\x01 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12+\n\ttitleList\x18\x02 \x01(\x0b\x32\x18.mangaplus_api.TitleList\x12\x36\n\x0crankedTitles\x18\x03 \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\"\x91\x01\n\x08\x46\x65\x65\x64\x62\x61\x63k\x12\x11\n\ttimeStamp\x18\x01 \x01(\x03\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12:\n\x0cresponseType\x18\x03 \x01(\x0e\x32$.mangaplus_api.Feedback.ResponseType\"(\n\x0cResponseType\x12\x0c\n\x08QUESTION\x10\x00\x12\n\n\x06\x41NSWER\x10\x01\"=\n\x0c\x46\x65\x65\x64\x62\x61\x63kView\x12-\n\x0c\x66\x65\x65\x64\x62\x61\x63kList\x18\x01 \x03(\x0b\x32\x17.mangaplus_api.Feedback\"g\n\x0bHistoryView\x12-\n\x0ehistoryBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12)\n\x0bviewHistory\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\"T\n\x0fHomePreviewView\x12\x41\n\x0fpreviewSections\x18\x01 \x03(\x0b\x32(.mangaplus_api.HomeViewV6.PreviewSection\"\xa7\x02\n\nHomeViewV3\x12)\n\ntopBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12\x32\n\x06groups\x18\x02 \x03(\x0b\x32\".mangaplus_api.UpdatedTitleV2Group\x12#\n\x05popup\x18\t \x01(\x0b\x32\x14.mangaplus_api.Popup\x12\x1c\n\x14\x64isplayTrackingPopup\x18\n \x01(\x08\x12\x35\n\x10userSubscription\x18\x0b \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12@\n\x14serviceAnnouncements\x18\x0c \x03(\x0b\x32\".mangaplus_api.ServiceAnnouncement\"\xdf\x12\n\nHomeViewV4\x12\x34\n\x08sections\x18\x01 \x03(\x0b\x32\".mangaplus_api.HomeViewV4.Sections\x12#\n\x05popup\x18\x02 \x01(\x0b\x32\x14.mangaplus_api.Popup\x12\x1c\n\x14\x64isplayTrackingPopup\x18\x03 \x01(\x08\x12\x35\n\x10userSubscription\x18\x04 \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12@\n\x14serviceAnnouncements\x18\x05 \x03(\x0b\x32\".mangaplus_api.ServiceAnnouncement\x1a\xe3\x03\n\x08Sections\x12>\n\rweeklySection\x18\x01 \x01(\x0b\x32\'.mangaplus_api.HomeViewV4.WeeklySection\x12@\n\x0erankingSection\x18\x02 \x01(\x0b\x32(.mangaplus_api.HomeViewV4.RankingSection\x12@\n\x0epreviewSection\x18\x03 \x01(\x0b\x32(.mangaplus_api.HomeViewV4.PreviewSection\x12\x44\n\x10titleListSection\x18\x04 \x01(\x0b\x32*.mangaplus_api.HomeViewV4.TitleListSection\x12>\n\rbannerSection\x18\x05 \x01(\x0b\x32\'.mangaplus_api.HomeViewV4.BannerSection\"\x8c\x01\n\x0bSectionCase\x12\x13\n\x0fSECTION_NOT_SET\x10\x00\x12\x12\n\x0eWEEKLY_SECTION\x10\x01\x12\x13\n\x0fRANKING_SECTION\x10\x02\x12\x13\n\x0fPREVIEW_SECTION\x10\x03\x12\x16\n\x12TITLE_LIST_SECTION\x10\x04\x12\x12\n\x0e\x42\x41NNER_SECTION\x10\x05\x1a\xd6\x08\n\rWeeklySection\x12G\n\x08\x63ontents\x18\x01 \x03(\x0b\x32\x35.mangaplus_api.HomeViewV4.WeeklySection.WeeklyContent\x1a\x87\x01\n\rWeeklyContent\x12\x11\n\tisUpdated\x18\x01 \x01(\x08\x12\x18\n\x10updatedTimeStamp\x18\x02 \x01(\x03\x12I\n\x0c\x63ontentItems\x18\x03 \x03(\x0b\x32\x33.mangaplus_api.HomeViewV4.WeeklySection.ContentItem\x1a\xf1\x06\n\x0b\x43ontentItem\x12Q\n\x08prBanner\x18\x01 \x01(\x0e\x32?.mangaplus_api.HomeViewV4.WeeklySection.ContentItem.ContentCase\x12N\n\x08mVBanner\x18\x02 \x01(\x0b\x32<.mangaplus_api.HomeViewV4.WeeklySection.ContentItem.MVBanner\x12R\n\ntitleGroup\x18\x03 \x01(\x0b\x32>.mangaplus_api.HomeViewV4.WeeklySection.ContentItem.TitleGroup\x12[\n\x0f\x63\x61rouselBanners\x18\x04 \x01(\x0b\x32\x42.mangaplus_api.HomeViewV4.WeeklySection.ContentItem.CarouselBanner\x12\x64\n\x13minorLanguageBanner\x18\x05 \x01(\x0b\x32G.mangaplus_api.HomeViewV4.WeeklySection.ContentItem.MinorLanguageBanner\x1aT\n\x08MVBanner\x12\x10\n\x08imageUrl\x18\x01 \x01(\t\x12\x36\n\x0btitleGroups\x18\x02 \x01(\x0b\x32!.mangaplus_api.OriginalTitleGroup\x1a\x44\n\nTitleGroup\x12\x36\n\x0btitleGroups\x18\x01 \x03(\x0b\x32!.mangaplus_api.OriginalTitleGroup\x1a\x38\n\x0e\x43\x61rouselBanner\x12&\n\x07\x62\x61nners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x1aM\n\x13MinorLanguageBanner\x12\x36\n\x0btitleGroups\x18\x01 \x03(\x0b\x32!.mangaplus_api.OriginalTitleGroup\"\x82\x01\n\x0b\x43ontentCase\x12\x13\n\x0f\x43ONTENT_NOT_SET\x10\x00\x12\r\n\tPR_BANNER\x10\x01\x12\r\n\tMV_BANNER\x10\x02\x12\x0f\n\x0bTITLE_GROUP\x10\x03\x12\x14\n\x10\x43\x41ROUSEL_BANNERS\x10\x04\x12\x19\n\x15MINOR_LANGUAGE_BANNER\x10\x05\x1a\xd0\x01\n\x0eRankingSection\x12H\n\x0brankingTabs\x18\x01 \x03(\x0b\x32\x33.mangaplus_api.HomeViewV4.RankingSection.RankingTab\x1at\n\nRankingTab\x12.\n\x07tabType\x18\x01 \x01(\x0e\x32\x1d.mangaplus_api.RankingTabType\x12\x36\n\x0crankedTitles\x18\x02 \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\x1a\xd2\x01\n\x0ePreviewSection\x12H\n\x0bpreviewTabs\x18\x01 \x03(\x0b\x32\x33.mangaplus_api.HomeViewV4.PreviewSection.PreviewTab\x1av\n\nPreviewTab\x12.\n\x07tabType\x18\x01 \x01(\x0e\x32\x1d.mangaplus_api.RankingTabType\x12\x38\n\x10\x63hapterPagesList\x18\x02 \x01(\x0b\x32\x1e.mangaplus_api.ChapterPageList\x1a?\n\x10TitleListSection\x12+\n\ttitleList\x18\x01 \x01(\x0b\x32\x18.mangaplus_api.TitleList\x1a\x37\n\rBannerSection\x12&\n\x07\x62\x61nners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\"\xf4\x12\n\nHomeViewV6\x12\x34\n\x08sections\x18\x01 \x03(\x0b\x32\".mangaplus_api.HomeViewV6.Sections\x12#\n\x05popup\x18\x02 \x01(\x0b\x32\x14.mangaplus_api.Popup\x12\x1c\n\x14\x64isplayTrackingPopup\x18\x03 \x01(\x08\x12\x35\n\x10userSubscription\x18\x04 \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12@\n\x14serviceAnnouncements\x18\x05 \x03(\x0b\x32\".mangaplus_api.ServiceAnnouncement\x1a\xe3\x03\n\x08Sections\x12>\n\rweeklySection\x18\x01 \x01(\x0b\x32\'.mangaplus_api.HomeViewV6.WeeklySection\x12@\n\x0erankingSection\x18\x02 \x01(\x0b\x32(.mangaplus_api.HomeViewV6.RankingSection\x12@\n\x0epreviewSection\x18\x03 \x01(\x0b\x32(.mangaplus_api.HomeViewV6.PreviewSection\x12\x44\n\x10titleListSection\x18\x04 \x01(\x0b\x32*.mangaplus_api.HomeViewV6.TitleListSection\x12>\n\rbannerSection\x18\x05 \x01(\x0b\x32\'.mangaplus_api.HomeViewV6.BannerSection\"\x8c\x01\n\x0bSectionCase\x12\x13\n\x0fSECTION_NOT_SET\x10\x00\x12\x12\n\x0eWEEKLY_SECTION\x10\x01\x12\x13\n\x0fRANKING_SECTION\x10\x02\x12\x13\n\x0fPREVIEW_SECTION\x10\x03\x12\x16\n\x12TITLE_LIST_SECTION\x10\x04\x12\x12\n\x0e\x42\x41NNER_SECTION\x10\x05\x1a\xd6\x08\n\rWeeklySection\x12G\n\x08\x63ontents\x18\x01 \x03(\x0b\x32\x35.mangaplus_api.HomeViewV6.WeeklySection.WeeklyContent\x1a\x87\x01\n\rWeeklyContent\x12\x11\n\tisUpdated\x18\x01 \x01(\x08\x12\x18\n\x10updatedTimeStamp\x18\x02 \x01(\x03\x12I\n\x0c\x63ontentItems\x18\x03 \x03(\x0b\x32\x33.mangaplus_api.HomeViewV6.WeeklySection.ContentItem\x1a\xf1\x06\n\x0b\x43ontentItem\x12Q\n\x08prBanner\x18\x01 \x01(\x0e\x32?.mangaplus_api.HomeViewV6.WeeklySection.ContentItem.ContentCase\x12N\n\x08mVBanner\x18\x02 \x01(\x0b\x32<.mangaplus_api.HomeViewV6.WeeklySection.ContentItem.MVBanner\x12R\n\ntitleGroup\x18\x03 \x01(\x0b\x32>.mangaplus_api.HomeViewV6.WeeklySection.ContentItem.TitleGroup\x12[\n\x0f\x63\x61rouselBanners\x18\x04 \x01(\x0b\x32\x42.mangaplus_api.HomeViewV6.WeeklySection.ContentItem.CarouselBanner\x12\x64\n\x13minorLanguageBanner\x18\x05 \x01(\x0b\x32G.mangaplus_api.HomeViewV6.WeeklySection.ContentItem.MinorLanguageBanner\x1aT\n\x08MVBanner\x12\x10\n\x08imageUrl\x18\x01 \x01(\t\x12\x36\n\x0btitleGroups\x18\x02 \x01(\x0b\x32!.mangaplus_api.OriginalTitleGroup\x1a\x44\n\nTitleGroup\x12\x36\n\x0btitleGroups\x18\x01 \x03(\x0b\x32!.mangaplus_api.OriginalTitleGroup\x1a\x38\n\x0e\x43\x61rouselBanner\x12&\n\x07\x62\x61nners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x1aM\n\x13MinorLanguageBanner\x12\x36\n\x0btitleGroups\x18\x01 \x03(\x0b\x32!.mangaplus_api.OriginalTitleGroup\"\x82\x01\n\x0b\x43ontentCase\x12\x13\n\x0f\x43ONTENT_NOT_SET\x10\x00\x12\r\n\tPR_BANNER\x10\x01\x12\r\n\tMV_BANNER\x10\x02\x12\x0f\n\x0bTITLE_GROUP\x10\x03\x12\x14\n\x10\x43\x41ROUSEL_BANNERS\x10\x04\x12\x19\n\x15MINOR_LANGUAGE_BANNER\x10\x05\x1a\xd0\x01\n\x0eRankingSection\x12H\n\x0brankingTabs\x18\x01 \x03(\x0b\x32\x33.mangaplus_api.HomeViewV6.RankingSection.RankingTab\x1at\n\nRankingTab\x12.\n\x07tabType\x18\x01 \x01(\x0e\x32\x1d.mangaplus_api.RankingTabType\x12\x36\n\x0crankedTitles\x18\x02 \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\x1a\xe7\x01\n\x0ePreviewSection\x12\x13\n\x0bsectionName\x18\x01 \x01(\t\x12H\n\x0bpreviewTabs\x18\x02 \x03(\x0b\x32\x33.mangaplus_api.HomeViewV6.PreviewSection.PreviewTab\x1av\n\nPreviewTab\x12.\n\x07tabType\x18\x01 \x01(\x0e\x32\x1d.mangaplus_api.RankingTabType\x12\x38\n\x10\x63hapterPagesList\x18\x02 \x01(\x0b\x32\x1e.mangaplus_api.ChapterPageList\x1a?\n\x10TitleListSection\x12+\n\ttitleList\x18\x01 \x01(\x0b\x32\x18.mangaplus_api.TitleList\x1a\x37\n\rBannerSection\x12&\n\x07\x62\x61nners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\"m\n\rInitialViewV2\x12\x1d\n\x15gdprAgreementRequired\x18\x01 \x01(\x08\x12=\n\x12\x61vailableLanguages\x18\x02 \x03(\x0b\x32!.mangaplus_api.AvailableLanguages\"_\n\x15IntroduceSubscription\x12\x14\n\x0csubscription\x18\x01 \x01(\t\x12\x16\n\x0etitleCountText\x18\x02 \x01(\t\x12\x18\n\x10\x63hapterCountText\x18\x03 \x01(\t\"q\n\x0bLabeledView\x12#\n\x05label\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Label\x12=\n\x12labeledTitlesGroup\x18\x02 \x03(\x0b\x32!.mangaplus_api.LabeledTitlesGroup\"F\n\x05Label\x12(\n\x05label\x18\x01 \x01(\x0e\x32\x19.mangaplus_api.LabelCodes\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"\xb4\x02\n\tLanguages\x12\x32\n\x11\x64\x65\x66\x61ultUiLanguage\x18\x01 \x01(\x0e\x32\x17.mangaplus_api.Language\x12:\n\x19\x64\x65\x66\x61ultContentLanguageOne\x18\x02 \x01(\x0e\x32\x17.mangaplus_api.Language\x12:\n\x19\x64\x65\x66\x61ultContentLanguageTwo\x18\x03 \x01(\x0e\x32\x17.mangaplus_api.Language\x12<\n\x1b\x64\x65\x66\x61ultContentLanguageThree\x18\x04 \x01(\x0e\x32\x17.mangaplus_api.Language\x12=\n\x12\x61vailableLanguages\x18\x05 \x03(\x0b\x32!.mangaplus_api.AvailableLanguages\"T\n\x12\x41vailableLanguages\x12)\n\x08language\x18\x01 \x01(\x0e\x32\x17.mangaplus_api.Language\x12\x13\n\x0btitlesCount\x18\x02 \x01(\x05\"\xab\x05\n\x0bMangaViewer\x12\"\n\x05pages\x18\x01 \x03(\x0b\x32\x13.mangaplus_api.Page\x12\x11\n\tchapterId\x18\x02 \x01(\x05\x12(\n\x08\x63hapters\x18\x03 \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12\x1f\n\x03sns\x18\x04 \x01(\x0b\x32\x12.mangaplus_api.Sns\x12\x11\n\ttitleName\x18\x05 \x01(\t\x12\x13\n\x0b\x63hapterName\x18\x06 \x01(\t\x12\x18\n\x10numberOfComments\x18\x07 \x01(\x05\x12\x16\n\x0eisVerticalOnly\x18\x08 \x01(\x08\x12\x0f\n\x07titleId\x18\t \x01(\x05\x12\x16\n\x0estartFromRight\x18\n \x01(\x08\x12\x12\n\nregionCode\x18\x0b \x01(\t\x12\x18\n\x10isHorizontalOnly\x18\x0c \x01(\x08\x12\x35\n\x10userSubscription\x18\r \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12\x10\n\x08planType\x18\x0e \x01(\t\x12\x15\n\rtitleLanguage\x18\x0f \x01(\t\x12)\n\x0bratingPopup\x18\x10 \x01(\x0b\x32\x14.mangaplus_api.Popup\x12S\n\x17titleAvailableLanguages\x18\x11 \x03(\x0b\x32\x32.mangaplus_api.MangaViewer.TitleAvailableLanguages\x12#\n\x05title\x18\x12 \x01(\x0b\x32\x14.mangaplus_api.Title\x1a\x64\n\x17TitleAvailableLanguages\x12\x0f\n\x07titleId\x18\x01 \x01(\x05\x12)\n\x08language\x18\x02 \x01(\x0e\x32\x17.mangaplus_api.Language\x12\r\n\x05isNew\x18\x03 \x01(\x08\"6\n\x08MetaInfo\x12\x11\n\tmetaTitle\x18\x01 \x01(\t\x12\x17\n\x0fmetaDescription\x18\x02 \x01(\t\"E\n\rMpcStatusView\x12\x18\n\x10isMpcMaintenance\x18\x01 \x01(\x08\x12\x1a\n\x12maintenanceMessage\x18\x02 \x01(\t\"\x94\x0c\n\x04Page\x12\x30\n\tmangaPage\x18\x01 \x01(\x0b\x32\x1d.mangaplus_api.Page.MangaPage\x12\x32\n\nbannerList\x18\x02 \x01(\x0b\x32\x1e.mangaplus_api.Page.BannerList\x12.\n\x08lastPage\x18\x03 \x01(\x0b\x32\x1c.mangaplus_api.Page.LastPage\x12\x39\n\radvertisement\x18\x04 \x01(\x0b\x32\".mangaplus_api.AdRewardNetworkList\x12\x38\n\x10insertBannerList\x18\x05 \x01(\x0b\x32\x1e.mangaplus_api.Page.BannerList\x1a\x96\x01\n\tMangaPage\x12\x10\n\x08imageUrl\x18\x01 \x01(\t\x12\r\n\x05width\x18\x02 \x01(\x05\x12\x0e\n\x06height\x18\x03 \x01(\x05\x12*\n\x04type\x18\x04 \x01(\x0e\x32\x1c.mangaplus_api.Page.PageType\x12\x15\n\rencryptionKey\x18\x05 \x01(\t\x12\x15\n\rmerchStoreUrl\x18\x06 \x01(\t\x1a\xb1\x06\n\x08LastPage\x12.\n\x0e\x63urrentChapter\x18\x01 \x01(\x0b\x32\x16.mangaplus_api.Chapter\x12+\n\x0bnextChapter\x18\x02 \x01(\x0b\x32\x16.mangaplus_api.Chapter\x12+\n\x0btopComments\x18\x03 \x03(\x0b\x32\x16.mangaplus_api.Comment\x12\x14\n\x0cisSubscribed\x18\x04 \x01(\x08\x12\x15\n\rnextTimeStamp\x18\x05 \x01(\x03\x12\x34\n\x0b\x63hapterType\x18\x06 \x01(\x0e\x32\x1f.mangaplus_api.Page.ChapterType\x12\x33\n\radvertisement\x18\x07 \x01(\x0b\x32\x1c.mangaplus_api.AdNetworkList\x12)\n\x0bmovieReward\x18\x08 \x01(\x0b\x32\x14.mangaplus_api.Popup\x12&\n\x07\x62\x61nners\x18\t \x03(\x0b\x32\x15.mangaplus_api.Banner\x12-\n\x0fticketTitleList\x18\n \x03(\x0b\x32\x14.mangaplus_api.Title\x12.\n\x0fpublisherBanner\x18\x0b \x01(\x0b\x32\x15.mangaplus_api.Banner\x12/\n\x0buserTickets\x18\x0c \x01(\x0b\x32\x1a.mangaplus_api.UserTickets\x12!\n\x19isNextChapterReadByTicket\x18\r \x01(\x08\x12 \n\x18isNextChapterOneTimeFree\x18\x0e \x01(\x08\x12\x39\n\x10\x66reeViewDialogue\x18\x0f \x01(\x0b\x32\x1f.mangaplus_api.FreeViewDialogue\x12!\n\x19isNextChapterSubscription\x18\x10 \x01(\x08\x12?\n\x13\x61\x64vertisementReward\x18\x11 \x01(\x0b\x32\".mangaplus_api.AdRewardNetworkList\x12<\n\x16viewerEndAdvertisement\x18\x12 \x01(\x0b\x32\x1c.mangaplus_api.AdNetworkList\x1aI\n\nBannerList\x12\x13\n\x0b\x62\x61nnerTitle\x18\x01 \x01(\t\x12&\n\x07\x62\x61nners\x18\x02 \x03(\x0b\x32\x15.mangaplus_api.Banner\"7\n\x0b\x43hapterType\x12\n\n\x06LATEST\x10\x00\x12\x0c\n\x08SEQUENCE\x10\x01\x12\x0e\n\nNOSEQUENCE\x10\x02\"7\n\x08PageType\x12\n\n\x06SINGLE\x10\x00\x12\x08\n\x04LEFT\x10\x01\x12\t\n\x05RIGHT\x10\x02\x12\n\n\x06\x44OUBLE\x10\x03\"w\n\x08\x44\x61taCase\x12\x10\n\x0c\x44\x41TA_NOT_SET\x10\x00\x12\x0e\n\nMANGA_PAGE\x10\x01\x12\x0f\n\x0b\x42\x41NNER_LIST\x10\x02\x12\r\n\tLAST_PAGE\x10\x03\x12\x11\n\rADVERTISEMENT\x10\x04\x12\x16\n\x12INSERT_BANNER_LIST\x10\x05\"\xba\x06\n\x05Popup\x12\x31\n\toSDefault\x18\x01 \x01(\x0b\x32\x1e.mangaplus_api.Popup.OSDefault\x12\x33\n\nappDefault\x18\x02 \x01(\x0b\x32\x1f.mangaplus_api.Popup.AppDefault\x12/\n\x0bmovieReward\x18\x03 \x01(\x0b\x32\x1a.mangaplus_api.MovieReward\x12/\n\x08oneImage\x18\x04 \x01(\x0b\x32\x1d.mangaplus_api.Popup.OneImage\x12\x0f\n\x07popupId\x18\x05 \x01(\x05\x1a\xeb\x01\n\tOSDefault\x12\x0f\n\x07subject\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12-\n\x08okButton\x18\x03 \x01(\x0b\x32\x1b.mangaplus_api.Popup.Button\x12\x32\n\rneutralButton\x18\x04 \x01(\x0b\x32\x1b.mangaplus_api.Popup.Button\x12\x31\n\x0c\x63\x61ncelButton\x18\x05 \x01(\x0b\x32\x1b.mangaplus_api.Popup.Button\x12)\n\x08language\x18\x06 \x01(\x0e\x32\x17.mangaplus_api.Language\x1an\n\nAppDefault\x12\x0f\n\x07subject\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12/\n\x06\x61\x63tion\x18\x03 \x01(\x0b\x32\x1f.mangaplus_api.TransitionAction\x12\x10\n\x08imageUrl\x18\x04 \x01(\t\x1aM\n\x08OneImage\x12/\n\x06\x61\x63tion\x18\x01 \x01(\x0b\x32\x1f.mangaplus_api.TransitionAction\x12\x10\n\x08imageUrl\x18\x02 \x01(\t\x1aG\n\x06\x42utton\x12\x0c\n\x04text\x18\x01 \x01(\t\x12/\n\x06\x61\x63tion\x18\x02 \x01(\x0b\x32\x1f.mangaplus_api.TransitionAction\"`\n\tPopupCase\x12\x11\n\rPOPUP_NOT_SET\x10\x00\x12\x0e\n\nOS_DEFAULT\x10\x01\x12\x0f\n\x0b\x41PP_DEFAULT\x10\x02\x12\x10\n\x0cMOVIE_REWARD\x10\x03\x12\r\n\tONE_IMAGE\x10\x04\"T\n\x0bMovieReward\x12\x10\n\x08imageUrl\x18\x01 \x01(\t\x12\x33\n\radvertisement\x18\x02 \x01(\x0b\x32\x1c.mangaplus_api.AdNetworkList\"\x81\x01\n\x13ProfileSettingsView\x12,\n\x08iconList\x18\x01 \x03(\x0b\x32\x1a.mangaplus_api.CommentIcon\x12\x10\n\x08userName\x18\x02 \x01(\t\x12*\n\x06myIcon\x18\x03 \x01(\x0b\x32\x1a.mangaplus_api.CommentIcon\"\x9a\x01\n\x15PublisherNewsListView\x12\x13\n\x0bpublisherId\x18\x01 \x01(\x05\x12\x15\n\rpublisherName\x18\x02 \x01(\t\x12%\n\x06\x62\x61nner\x18\x03 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12.\n\x08newsList\x18\x04 \x03(\x0b\x32\x1c.mangaplus_api.PublisherNews\"\xb3\x01\n\rPublisherNews\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x13\n\x0bpublisherId\x18\x02 \x01(\x05\x12\x15\n\rpublisherName\x18\x03 \x01(\t\x12\x0f\n\x07subject\x18\x04 \x01(\t\x12\x0c\n\x04\x62ody\x18\x05 \x01(\t\x12\x1a\n\x12publishedTimeStamp\x18\x06 \x01(\x03\x12/\n\x06\x61\x63tion\x18\x07 \x01(\x0b\x32\x1f.mangaplus_api.TransitionAction\"6\n\rPushTokenView\x12\r\n\x05token\x18\x01 \x01(\t\x12\x16\n\x0etokenTimeStamp\x18\x02 \x01(\x03\"\x89\x01\n\rQuestionnaire\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x11\n\tselection\x18\x02 \x03(\t\x12\x17\n\x0fnumberOfChoices\x18\x03 \x01(\x05\x12\x14\n\x0chideFreeform\x18\x04 \x01(\x08\x12\x10\n\x08\x66reeForm\x18\x05 \x01(\t\x12\x0f\n\x07\x63\x61nSkip\x18\x06 \x01(\x08\"\x94\x01\n\x11QuestionnaireView\x12\x12\n\nisAnswered\x18\x01 \x01(\x08\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12/\n\tquestions\x18\x03 \x03(\x0b\x32\x1c.mangaplus_api.Questionnaire\x12)\n\x08language\x18\x04 \x01(\x0e\x32\x17.mangaplus_api.Language\"(\n\x10RegistrationData\x12\x14\n\x0c\x64\x65viceSecret\x18\x01 \x01(\t\"\x9e\x01\n\x08Response\x12-\n\x07success\x18\x01 \x01(\x0b\x32\x1c.mangaplus_api.SuccessResult\x12)\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1a.mangaplus_api.ErrorResult\"8\n\nResultCase\x12\x12\n\x0eRESULT_NOT_SET\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\t\n\x05\x45RROR\x10\x02\"\xcb\x03\n\nSearchView\x12/\n\x10topSearchBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12#\n\x07\x61llTags\x18\x02 \x03(\x0b\x32\x12.mangaplus_api.Tag\x12\x35\n\x0e\x61llTitlesGroup\x18\x03 \x03(\x0b\x32\x1d.mangaplus_api.AllTitlesGroup\x12\x34\n\x08\x63ontents\x18\x05 \x03(\x0b\x32\".mangaplus_api.SearchView.Contents\x1a\xf9\x01\n\x08\x43ontents\x12%\n\x06\x62\x61nner\x18\x01 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12+\n\ttitleList\x18\x02 \x01(\x0b\x32\x18.mangaplus_api.TitleList\x12\x36\n\x0crankedTitles\x18\x03 \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\x12\'\n\tallLabels\x18\x04 \x03(\x0b\x32\x14.mangaplus_api.Label\x12\x38\n\x10\x63hapterPagesList\x18\x05 \x01(\x0b\x32\x1e.mangaplus_api.ChapterPageList\"L\n\x13ServiceAnnouncement\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\x03\x12\n\n\x02id\x18\x04 \x01(\x05\"\\\n\x18ServiceAnnouncementsView\x12@\n\x14serviceAnnouncements\x18\x01 \x03(\x0b\x32\".mangaplus_api.ServiceAnnouncement\"\xce\x01\n\x0cSettingsView\x12*\n\x06myIcon\x18\x01 \x01(\x0b\x32\x1a.mangaplus_api.CommentIcon\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x1d\n\x15noticeOfNewsAndEvents\x18\x03 \x01(\x08\x12)\n!noticeOfUpdatesOfSubscribedTitles\x18\x04 \x01(\x08\x12\x1a\n\x12\x65nglishTitlesCount\x18\x05 \x01(\x05\x12\x1a\n\x12spanishTitlesCount\x18\x06 \x01(\x05\"\xb0\x03\n\x0eSettingsViewV2\x12*\n\x06myIcon\x18\x01 \x01(\x0b\x32\x1a.mangaplus_api.CommentIcon\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x1d\n\x15noticeOfNewsAndEvents\x18\x03 \x01(\x08\x12)\n!noticeOfUpdatesOfSubscribedTitles\x18\x04 \x01(\x08\x12=\n\x12\x61vailableLanguages\x18\x05 \x03(\x0b\x32!.mangaplus_api.AvailableLanguages\x12\x35\n\x10userSubscription\x18\x06 \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12%\n\x06\x62\x61nner\x18\x07 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12?\n\x14\x61vailableCustomCodes\x18\x08 \x03(\x0b\x32!.mangaplus_api.CustomCodeDialogue\x12\x38\n\x0e\x66\x61voriteTitles\x18\t \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\"&\n\x12\x43ustomCodeDialogue\x12\x10\n\x08planType\x18\x01 \x01(\t\" \n\x03Sns\x12\x0c\n\x04\x62ody\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\"\x96\x01\n\x14SubscribedTitlesView\x12$\n\x06titles\x18\x01 \x03(\x0b\x32\x14.mangaplus_api.Title\x12-\n\x0ehistoryBanners\x18\x02 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12)\n\x0bviewHistory\x18\x03 \x03(\x0b\x32\x14.mangaplus_api.Title\"\x9c\x02\n\x14IosSubscriptionOffer\x12@\n\tofferType\x18\x01 \x01(\x0e\x32-.mangaplus_api.IosSubscriptionOffer.OfferType\x12\x11\n\tsignature\x18\x02 \x01(\t\x12\x10\n\x08\x61ppleKey\x18\x03 \x01(\t\x12\r\n\x05nonce\x18\x04 \x01(\t\x12\x11\n\ttimestamp\x18\x05 \x01(\t\x12\x12\n\nidentifier\x18\x06 \x01(\t\x12)\n\x08saleType\x18\x07 \x01(\x0e\x32\x17.mangaplus_api.SaleType\"<\n\tOfferType\x12\x0c\n\x08NO_OFFER\x10\x00\x12\x10\n\x0cINTRODUCTORY\x10\x01\x12\x0f\n\x0bPROMOTIONAL\x10\x02\"V\n\x1c\x41ndroidSubscriptionOfferTags\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12)\n\x08saleType\x18\x02 \x01(\x0e\x32\x17.mangaplus_api.SaleType\"\x83\x01\n\x0cSubscription\x12\x10\n\x08planType\x18\x01 \x01(\t\x12\x17\n\x0fnextPaymentDate\x18\x02 \x01(\x05\x12\x13\n\x0bisFreeTrial\x18\x03 \x01(\x08\x12\x1a\n\x12isPendingDowngrade\x18\x04 \x01(\x08\x12\x17\n\x0fisFirstTimeUser\x18\x05 \x01(\x08\"\xc7\x01\n\x08PlanType\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x11\n\tproductId\x18\x03 \x01(\t\x12>\n\x11subscriptionOffer\x18\x04 \x01(\x0b\x32#.mangaplus_api.IosSubscriptionOffer\x12\x45\n\x10\x61ndroidOfferTags\x18\x05 \x03(\x0b\x32+.mangaplus_api.AndroidSubscriptionOfferTags\"\xf3\x02\n\x10SubscriptionView\x12\x35\n\x10userSubscription\x18\x01 \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12*\n\tplanTypes\x18\x02 \x03(\x0b\x32\x17.mangaplus_api.PlanType\x12\x41\n\x12subscriptionTitles\x18\x03 \x03(\x0b\x32%.mangaplus_api.TitleSubscriptionGroup\x12\x18\n\x10userHasUsedTrial\x18\x04 \x01(\x08\x12%\n\x06\x62\x61nner\x18\x05 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12I\n\x12planBoxDescription\x18\x06 \x01(\x0b\x32-.mangaplus_api.SubscriptionPlanBoxDescription\x12-\n\x04note\x18\x07 \x01(\x0b\x32\x1f.mangaplus_api.SubscriptionNote\"=\n\x1eSubscriptionPlanBoxDescription\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"/\n\x10SubscriptionNote\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"\xf6\x19\n\rSuccessResult\x12\x19\n\x11isFeaturedUpdated\x18\x01 \x01(\x08\x12:\n\x11registerationData\x18\x02 \x01(\x0b\x32\x1f.mangaplus_api.RegistrationData\x12=\n\x12\x66\x65\x61turedTitlesView\x18\x04 \x01(\x0b\x32!.mangaplus_api.FeaturedTitlesView\x12\x33\n\rallTitlesView\x18\x05 \x01(\x0b\x32\x1c.mangaplus_api.AllTitlesView\x12\x39\n\x10titleRankingView\x18\x06 \x01(\x0b\x32\x1f.mangaplus_api.TitleRankingView\x12\x41\n\x14subscribedTitlesView\x18\x07 \x01(\x0b\x32#.mangaplus_api.SubscribedTitlesView\x12\x37\n\x0ftitleDetailView\x18\x08 \x01(\x0b\x32\x1e.mangaplus_api.TitleDetailView\x12\x37\n\x0f\x63ommentListView\x18\t \x01(\x0b\x32\x1e.mangaplus_api.CommentListView\x12/\n\x0bmangaViewer\x18\n \x01(\x0b\x32\x1a.mangaplus_api.MangaViewer\x12?\n\x13profileSettingsView\x18\r \x01(\x0b\x32\".mangaplus_api.ProfileSettingsView\x12G\n\x17updateProfileResultView\x18\x0e \x01(\x0b\x32&.mangaplus_api.UpdateProfileResultView\x12I\n\x18serviceAnnouncementsView\x18\x0f \x01(\x0b\x32\'.mangaplus_api.ServiceAnnouncementsView\x12\x31\n\x0c\x66\x65\x65\x64\x62\x61\x63kView\x18\x11 \x01(\x0b\x32\x1b.mangaplus_api.FeedbackView\x12\x43\n\x15publisherNewsListView\x18\x12 \x01(\x0b\x32$.mangaplus_api.PublisherNewsListView\x12;\n\x11questionnaireView\x18\x13 \x01(\x0b\x32 .mangaplus_api.QuestionnaireView\x12\x39\n\x10titleUpdatedView\x18\x14 \x01(\x0b\x32\x1f.mangaplus_api.TitleUpdatedView\x12\x41\n\x14updatedTitleListView\x18\x16 \x01(\x0b\x32#.mangaplus_api.UpdatedTitleListView\x12?\n\x13\x61llTicketTitlesView\x18\x17 \x01(\x0b\x32\".mangaplus_api.AllTicketTitlesView\x12-\n\nhomeViewV3\x18\x18 \x01(\x0b\x32\x19.mangaplus_api.HomeViewV3\x12\x37\n\x0f\x61llTitlesViewV2\x18\x19 \x01(\x0b\x32\x1e.mangaplus_api.AllTitlesViewV2\x12\x35\n\x0esettingsViewV2\x18\x1a \x01(\x0b\x32\x1d.mangaplus_api.SettingsViewV2\x12:\n\x0ftitleListViewV2\x18\x1b \x01(\x0b\x32!.mangaplus_api.TitleUpdatedViewV2\x12\x33\n\rinitialViewV2\x18\x1c \x01(\x0b\x32\x1c.mangaplus_api.InitialViewV2\x12+\n\tlanguages\x18\x1d \x01(\x0b\x32\x18.mangaplus_api.Languages\x12\x33\n\rpushTokenView\x18  \x01(\x0b\x32\x1c.mangaplus_api.PushTokenView\x12;\n\x11\x61llFreeTitlesView\x18! \x01(\x0b\x32 .mangaplus_api.AllFreeTitlesView\x12/\n\x0blabeledView\x18\" \x01(\x0b\x32\x1a.mangaplus_api.LabeledView\x12-\n\nsearchView\x18# \x01(\x0b\x32\x19.mangaplus_api.SearchView\x12\x39\n\x10subscriptionView\x18$ \x01(\x0b\x32\x1f.mangaplus_api.SubscriptionView\x12=\n\x12titleRankingViewV2\x18% \x01(\x0b\x32!.mangaplus_api.TitleRankingViewV2\x12\x33\n\rwebHomeViewV4\x18& \x01(\x0b\x32\x1c.mangaplus_api.WebHomeViewV4\x12\x41\n\x14\x66\x65\x61turedTitlesViewV2\x18\' \x01(\x0b\x32#.mangaplus_api.FeaturedTitlesViewV2\x12/\n\x0bhistoryView\x18( \x01(\x0b\x32\x1a.mangaplus_api.HistoryView\x12\x45\n\x16\x64ownloadableImagesView\x18) \x01(\x0b\x32%.mangaplus_api.DownloadableImagesView\x12\x43\n\x15introduceSubscription\x18* \x01(\x0b\x32$.mangaplus_api.IntroduceSubscription\x12=\n\x12\x66\x61voriteTitlesView\x18+ \x01(\x0b\x32!.mangaplus_api.FavoriteTitlesView\x12\x33\n\rmpcStatusView\x18, \x01(\x0b\x32\x1c.mangaplus_api.MpcStatusView\x12-\n\nhomeViewV4\x18- \x01(\x0b\x32\x19.mangaplus_api.HomeViewV4\x12-\n\nengageView\x18. \x01(\x0b\x32\x19.mangaplus_api.EngageView\x12-\n\nhomeViewV6\x18/ \x01(\x0b\x32\x19.mangaplus_api.HomeViewV6\x12\x37\n\x0fhomePreviewView\x18\x30 \x01(\x0b\x32\x1e.mangaplus_api.HomePreviewView\"\xb7\x07\n\x08\x44\x61taCase\x12\x10\n\x0c\x44\x41TA_NOT_SET\x10\x00\x12\x16\n\x12REGISTERATION_DATA\x10\x02\x12\x18\n\x14\x46\x45\x41TURED_TITLES_VIEW\x10\x04\x12\x13\n\x0f\x41LL_TITLES_VIEW\x10\x05\x12\x16\n\x12TITLE_RANKING_VIEW\x10\x06\x12\x1a\n\x16SUBSCRIBED_TITLES_VIEW\x10\x07\x12\x15\n\x11TITLE_DETAIL_VIEW\x10\x08\x12\x15\n\x11\x43OMMENT_LIST_VIEW\x10\t\x12\x10\n\x0cMANGA_VIEWER\x10\n\x12\x19\n\x15PROFILE_SETTINGS_VIEW\x10\r\x12\x1e\n\x1aUPDATE_PROFILE_RESULT_VIEW\x10\x0e\x12\x1e\n\x1aSERVICE_ANNOUNCEMENTS_VIEW\x10\x0f\x12\x11\n\rFEEDBACK_VIEW\x10\x11\x12\x1c\n\x18PUBLISHER_NEWS_LIST_VIEW\x10\x12\x12\x16\n\x12QUESTIONNAIRE_VIEW\x10\x13\x12\x16\n\x12TITLE_UPDATED_VIEW\x10\x14\x12\x1b\n\x17UPDATED_TITLE_LIST_VIEW\x10\x16\x12\x1a\n\x16\x41LL_TICKET_TITLES_VIEW\x10\x17\x12\x10\n\x0cHOME_VIEW_V3\x10\x18\x12\x16\n\x12\x41LL_TITLES_VIEW_V2\x10\x19\x12\x14\n\x10SETTINGS_VIEW_V2\x10\x1a\x12\x16\n\x12TITLE_LIST_VIEW_V2\x10\x1b\x12\x13\n\x0fINITIAL_VIEW_V2\x10\x1c\x12\x13\n\x0fPUSH_TOKEN_VIEW\x10 \x12\x18\n\x14\x41LL_FREE_TITLES_VIEW\x10!\x12\x10\n\x0cLABELED_VIEW\x10\"\x12\x0f\n\x0bSEARCH_VIEW\x10#\x12\x15\n\x11SUBSCRIPTION_VIEW\x10$\x12\x19\n\x15TITLE_RANKING_VIEW_V2\x10%\x12\x14\n\x10WEB_HOME_VIEW_V4\x10&\x12\x1b\n\x17\x46\x45\x41TURED_TITLES_VIEW_V2\x10\'\x12\x10\n\x0cHISTORY_VIEW\x10(\x12\x1c\n\x18\x44OWNLOADABLE_IMAGES_VIEW\x10)\x12\x1a\n\x16INTRODUCE_SUBSCRIPTION\x10*\x12\x18\n\x14\x46\x41VORITE_TITLES_VIEW\x10+\x12\x13\n\x0fMPC_STATUS_VIEW\x10,\x12\x10\n\x0cHOME_VIEW_V4\x10-\x12\x0f\n\x0b\x45NGAGE_VIEW\x10.\x12\x10\n\x0cHOME_VIEW_V6\x10/\x12\x15\n\x11HOME_PREVIEW_VIEW\x10\x30\" \n\x03Tag\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0c\n\x04slug\x18\x02 \x01(\t\"\x95\x13\n\x0fTitleDetailView\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x15\n\rtitleImageUrl\x18\x02 \x01(\t\x12\x10\n\x08overview\x18\x03 \x01(\t\x12\x1a\n\x12\x62\x61\x63kgroundImageUrl\x18\x04 \x01(\t\x12\x15\n\rnextTimeStamp\x18\x05 \x01(\x03\x12\x41\n\x0cupdateTiming\x18\x06 \x01(\x0e\x32+.mangaplus_api.TitleDetailView.UpdateTiming\x12 \n\x18viewingPeriodDescription\x18\x07 \x01(\t\x12\x19\n\x11nonAppearanceInfo\x18\x08 \x01(\t\x12\x30\n\x10\x66irstChapterList\x18\t \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12/\n\x0flastChapterList\x18\n \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12&\n\x07\x62\x61nners\x18\x0b \x03(\x0b\x32\x15.mangaplus_api.Banner\x12\x32\n\x14recommendedTitleList\x18\x0c \x03(\x0b\x32\x14.mangaplus_api.Title\x12\x1f\n\x03sns\x18\r \x01(\x0b\x32\x12.mangaplus_api.Sns\x12\x17\n\x0fisSimulReleased\x18\x0e \x01(\x08\x12\x14\n\x0cisSubscribed\x18\x0f \x01(\x08\x12\x35\n\x06rating\x18\x10 \x01(\x0e\x32%.mangaplus_api.TitleDetailView.Rating\x12\x1a\n\x12\x63haptersDescending\x18\x11 \x01(\x08\x12\x15\n\rnumberOfViews\x18\x12 \x01(\x05\x12\x44\n\x0epublisherItems\x18\x13 \x03(\x0b\x32,.mangaplus_api.TitleDetailView.PublisherItem\x12+\n\x0ctitleBanners\x18\x14 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12/\n\x0buserTickets\x18\x15 \x01(\x0b\x32\x1a.mangaplus_api.UserTickets\x12\x31\n\x11ticketChapterList\x18\x16 \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12-\n\x0fticketTitleList\x18\x17 \x03(\x0b\x32\x14.mangaplus_api.Title\x12\x1a\n\x12hasChaptersBetween\x18\x18 \x01(\x08\x12.\n\x0fpublisherBanner\x18\x19 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12\x33\n\radvertisement\x18\x1a \x01(\x0b\x32\x1c.mangaplus_api.AdNetworkList\x12\x45\n\x0etitleLanguages\x18\x1b \x03(\x0b\x32-.mangaplus_api.TitleDetailView.TitleLanguages\x12\x45\n\x10\x63hapterListGroup\x18\x1c \x03(\x0b\x32+.mangaplus_api.TitleDetailView.ChapterGroup\x12\x39\n\x10\x66reeViewDialogue\x18\x1d \x01(\x0b\x32\x1f.mangaplus_api.FreeViewDialogue\x12\x12\n\nregionCode\x18\x1e \x01(\t\x12 \n\x04tags\x18\x1f \x03(\x0b\x32\x12.mangaplus_api.Tag\x12?\n\x0btitleLabels\x18  \x01(\x0b\x32*.mangaplus_api.TitleDetailView.TitleLabels\x12\x35\n\x10userSubscription\x18! \x01(\x0b\x32\x1b.mangaplus_api.Subscription\x12#\n\x05label\x18\" \x01(\x0b\x32\x14.mangaplus_api.Label\x12\x17\n\x0fisFirstTimeFree\x18# \x01(\x08\x12)\n\x08metaInfo\x18$ \x01(\x0b\x32\x17.mangaplus_api.MetaInfo\x12)\n\x0bratingPopup\x18% \x01(\x0b\x32\x14.mangaplus_api.Popup\x12-\n\rchapterListV2\x18& \x03(\x0b\x32\x16.mangaplus_api.Chapter\x1a|\n\x0bTitleLabels\x12G\n\x0freleaseSchedule\x18\x01 \x01(\x0e\x32..mangaplus_api.TitleDetailView.ReleaseSchedule\x12\x12\n\nisSimulpub\x18\x02 \x01(\x08\x12\x10\n\x08planType\x18\x03 \x01(\t\x1ak\n\rPublisherItem\x12%\n\x06\x62\x61nner\x18\x01 \x01(\x0b\x32\x15.mangaplus_api.Banner\x12\x33\n\rpublisherNews\x18\x02 \x01(\x0b\x32\x1c.mangaplus_api.PublisherNews\x1a\x33\n\x0eTitleLanguages\x12\x0f\n\x07titleId\x18\x01 \x01(\x05\x12\x10\n\x08language\x18\x02 \x01(\x05\x1a\xb9\x01\n\x0c\x43hapterGroup\x12\x16\n\x0e\x63hapterNumbers\x18\x01 \x01(\t\x12\x30\n\x10\x66irstChapterList\x18\x02 \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12.\n\x0emidChapterList\x18\x03 \x03(\x0b\x32\x16.mangaplus_api.Chapter\x12/\n\x0flastChapterList\x18\x04 \x03(\x0b\x32\x16.mangaplus_api.Chapter\"\xa7\x01\n\x0fReleaseSchedule\x12\x0c\n\x08\x44ISABLED\x10\x00\x12\x0c\n\x08\x45VERYDAY\x10\x01\x12\n\n\x06WEEKLY\x10\x02\x12\x0c\n\x08\x42IWEEKLY\x10\x03\x12\x0b\n\x07MONTHLY\x10\x04\x12\r\n\tBIMONTHLY\x10\x05\x12\x0e\n\nTRIMONTHLY\x10\x06\x12\t\n\x05OTHER\x10\x07\x12\r\n\tCOMPLETED\x10\x08\x12\x0c\n\x08ONE_SHOT\x10\t\x12\n\n\x06HIATUS\x10\n\"\x86\x01\n\x0cUpdateTiming\x12\x11\n\rNOT_REGULARLY\x10\x00\x12\n\n\x06MONDAY\x10\x01\x12\x0b\n\x07TUESDAY\x10\x02\x12\r\n\tWEDNESDAY\x10\x03\x12\x0c\n\x08THURSDAY\x10\x04\x12\n\n\x06\x46RIDAY\x10\x05\x12\x0c\n\x08SATURDAY\x10\x06\x12\n\n\x06SUNDAY\x10\x07\x12\x07\n\x03\x44\x41Y\x10\x08\"8\n\x06Rating\x12\n\n\x06\x41LLAGE\x10\x00\x12\x08\n\x04TEEN\x10\x01\x12\x0c\n\x08TEENPLUS\x10\x02\x12\n\n\x06MATURE\x10\x03\"\xb2\x01\n\x0e\x41llTitlesGroup\x12\x10\n\x08theTitle\x18\x01 \x01(\t\x12$\n\x06titles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\x12 \n\x04tags\x18\x03 \x03(\x0b\x32\x12.mangaplus_api.Tag\x12#\n\x05label\x18\x04 \x01(\x0b\x32\x14.mangaplus_api.Label\x12!\n\x19nextChapterStartTimestamp\x18\x05 \x01(\x03\"a\n\x11TitleRankingGroup\x12\x17\n\x0foriginalTitleId\x18\x01 \x01(\x05\x12$\n\x06titles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\x12\r\n\x05score\x18\x03 \x01(\x05\"f\n\x11TitleUpdatedGroup\x12\x1d\n\x15updatedTitleTimestamp\x18\x01 \x01(\x03\x12\x32\n\x0blatestTitle\x18\x02 \x03(\x0b\x32\x1d.mangaplus_api.AllTitlesGroup\"L\n\x12LabeledTitlesGroup\x12\x10\n\x08theTitle\x18\x01 \x01(\t\x12$\n\x06titles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\"d\n\x16TitleSubscriptionGroup\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12$\n\x06titles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\x12\x16\n\x0etitleCountText\x18\x03 \x01(\t\"`\n\tTitleList\x12\x10\n\x08listName\x18\x01 \x01(\t\x12,\n\x0e\x66\x65\x61turedTitles\x18\x02 \x03(\x0b\x32\x14.mangaplus_api.Title\x12\x13\n\x0b\x63ontainerId\x18\x03 \x01(\x05\"V\n\x0f\x43hapterPageList\x12\x10\n\x08listName\x18\x01 \x01(\t\x12\x31\n\x0c\x63hapterPages\x18\x02 \x03(\x0b\x32\x1b.mangaplus_api.ChapterPages\"\xa3\x01\n\x0c\x43hapterPages\x12\x13\n\x0b\x63ontainerId\x18\x01 \x01(\x05\x12\x11\n\tchapterId\x18\x02 \x01(\x05\x12\x0f\n\x07titleId\x18\x03 \x01(\x05\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x05 \x01(\t\x12\x18\n\x10\x66\x61voriteImageUrl\x18\x06 \x01(\t\x12\"\n\x05pages\x18\x07 \x03(\x0b\x32\x13.mangaplus_api.Page\"\x80\x02\n\x05Title\x12\x0f\n\x07titleId\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x03 \x01(\t\x12\x18\n\x10portraitImageUrl\x18\x04 \x01(\t\x12\x19\n\x11landscapeImageUrl\x18\x05 \x01(\t\x12\x11\n\tviewCount\x18\x06 \x01(\x05\x12)\n\x08language\x18\x07 \x01(\x0e\x32\x17.mangaplus_api.Language\x12;\n\x11titleUpdateStatus\x18\x08 \x01(\x0e\x32 .mangaplus_api.TitleUpdateStatus\x12\x18\n\x10\x66\x61voriteImageUrl\x18\t \x01(\t\"\xb8\x01\n\x0cUpdatedTitle\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x11\n\tchapterId\x18\x02 \x01(\x05\x12\x13\n\x0b\x63hapterName\x18\x03 \x01(\t\x12\x17\n\x0f\x63hapterSubTitle\x18\x04 \x01(\t\x12\x10\n\x08isLatest\x18\x05 \x01(\x08\x12\x16\n\x0eisVerticalOnly\x18\x06 \x01(\x08\x12\x18\n\x10isHorizontalOnly\x18\x07 \x01(\x08\"R\n\x0cTitleUpdated\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x1d\n\x15updatedTitleTimestamp\x18\x02 \x01(\t\"O\n\tFreeTitle\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x1d\n\x15updatedTitleTimestamp\x18\x02 \x01(\t\"j\n\x0cTicketTitles\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x1a\n\x12\x66irstTicketChapter\x18\x02 \x01(\x05\x12\x19\n\x11lastTicketChapter\x18\x03 \x01(\x05\"`\n\x11SubscribableTitle\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x10\n\x08isLatest\x18\x02 \x01(\x08\x12\x14\n\x0cisSubscribed\x18\x03 \x01(\x08\"r\n\x0f\x43omingSoonTitle\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x17\n\x0fnextChapterName\x18\x02 \x01(\t\x12!\n\x19nextChapterStartTimestamp\x18\x03 \x01(\x03\"\xb5\x01\n\x0eTitleHighlight\x12#\n\x05title\x18\x01 \x01(\x0b\x32\x14.mangaplus_api.Title\x12\x11\n\tchapterId\x18\x02 \x01(\x05\x12\x13\n\x0bpageUrlList\x18\x03 \x03(\t\x12\x11\n\tpageHight\x18\x04 \x01(\x05\x12\x11\n\tpageWidth\x18\x05 \x01(\x05\x12\x16\n\x0eisVerticalOnly\x18\x06 \x01(\x08\x12\x18\n\x10isHorizontalOnly\x18\x07 \x01(\x08\"8\n\x10TitleRankingView\x12$\n\x06titles\x18\x01 \x03(\x0b\x32\x14.mangaplus_api.Title\"\x95\x01\n\x12TitleRankingViewV2\x12-\n\x0erankingBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12\x18\n\x10updatedTimeStamp\x18\x02 \x01(\x03\x12\x36\n\x0crankedTitles\x18\x03 \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\"D\n\x10TitleUpdatedView\x12\x30\n\x0blatestTitle\x18\x01 \x03(\x0b\x32\x1b.mangaplus_api.TitleUpdated\"Q\n\x12TitleUpdatedViewV2\x12;\n\x11titleUpdatedGroup\x18\x01 \x03(\x0b\x32 .mangaplus_api.TitleUpdatedGroup\"\x9c\x01\n\x10TransitionAction\x12\x42\n\x06method\x18\x01 \x01(\x0e\x32\x32.mangaplus_api.TransitionAction.PresentationMethod\x12\x0b\n\x03url\x18\x02 \x01(\t\"7\n\x12PresentationMethod\x12\x08\n\x04PUSH\x10\x00\x12\t\n\x05MODAL\x10\x01\x12\x0c\n\x08\x45XTERNAL\x10\x02\"S\n\x11UpdatedTitleGroup\x12\x11\n\tgroupName\x18\x01 \x01(\t\x12+\n\x06titles\x18\x02 \x03(\x0b\x32\x1b.mangaplus_api.UpdatedTitle\"w\n\x13UpdatedTitleV2Group\x12\x11\n\tgroupName\x18\x01 \x01(\t\x12\x36\n\x0btitleGroups\x18\x02 \x03(\x0b\x32!.mangaplus_api.OriginalTitleGroup\x12\x15\n\rgroupNameDays\x18\x03 \x01(\x05\"\xd4\x01\n\x12OriginalTitleGroup\x12\x10\n\x08theTitle\x18\x01 \x01(\t\x12\x15\n\rchapterNumber\x18\x02 \x01(\t\x12+\n\x06titles\x18\x03 \x03(\x0b\x32\x1b.mangaplus_api.UpdatedTitle\x12\x11\n\tviewCount\x18\x04 \x01(\x05\x12;\n\x11titleUpdateStatus\x18\x05 \x01(\x0e\x32 .mangaplus_api.TitleUpdateStatus\x12\x18\n\x10\x63hapterStartTime\x18\x06 \x01(\x05\"H\n\x14UpdatedTitleListView\x12\x30\n\x06groups\x18\x01 \x03(\x0b\x32 .mangaplus_api.UpdatedTitleGroup\"\x8c\x01\n\x17UpdateProfileResultView\x12=\n\x06result\x18\x01 \x01(\x0e\x32-.mangaplus_api.UpdateProfileResultView.Result\"2\n\x06Result\x12\x0b\n\x07SUCCESS\x10\x00\x12\x0e\n\nDUPLICATED\x10\x01\x12\x0b\n\x07NG_WORD\x10\x02\"B\n\x0bUserTickets\x12\x16\n\x0e\x63urrentTickets\x18\x01 \x01(\x05\x12\x1b\n\x13nextTicketTimestamp\x18\x02 \x01(\x03\"\xee\x02\n\rWebHomeViewV4\x12)\n\ntopBanners\x18\x01 \x03(\x0b\x32\x15.mangaplus_api.Banner\x12\x32\n\x06groups\x18\x02 \x03(\x0b\x32\".mangaplus_api.UpdatedTitleV2Group\x12\x36\n\x0crankedTitles\x18\x03 \x03(\x0b\x32 .mangaplus_api.TitleRankingGroup\x12#\n\x05popup\x18\x04 \x01(\x0b\x32\x14.mangaplus_api.Popup\x12\x34\n\x12\x66\x65\x61turedTitleLists\x18\x05 \x03(\x0b\x32\x18.mangaplus_api.TitleList\x12@\n\x14serviceAnnouncements\x18\x06 \x03(\x0b\x32\".mangaplus_api.ServiceAnnouncement\x12)\n\x08mvBanner\x18\x07 \x01(\x0b\x32\x17.mangaplus_api.MVBanner\"T\n\x08MVBanner\x12\x10\n\x08imageUrl\x18\x01 \x01(\t\x12\x36\n\x0btitleGroups\x18\x02 \x01(\x0b\x32!.mangaplus_api.OriginalTitleGroup*f\n\x0b\x43hapterType\x12\x08\n\x04\x46REE\x10\x00\x12\x17\n\x13\x46REE_FOR_FIRST_TIME\x10\x01\x12\x0c\n\x08STANDARD\x10\x02\x12\n\n\x06\x44\x45LUXE\x10\x03\x12\x1a\n\x16LOCKED_AFTER_FREE_READ\x10\x04*7\n\x15\x46irstTimeFreePlatform\x12\x0c\n\x08\x44ISABLED\x10\x00\x12\x07\n\x03WEB\x10\x01\x12\x07\n\x03\x41PP\x10\x02*\x94\x01\n\nLabelCodes\x12\x06\n\x02WJ\x10\x00\x12\x06\n\x02SQ\x10\x01\x12\x06\n\x02VJ\x10\x02\x12\x06\n\x02YJ\x10\x03\x12\n\n\x06J_PLUS\x10\x04\x12\x0b\n\x07REVIVAL\x10\x05\x12\x0c\n\x08\x43REATORS\x10\x06\x12\x07\n\x03MEE\x10\x07\x12\x07\n\x03TYJ\x10\x08\x12\n\n\x06OTHERS\x10\t\x12\x07\n\x03SKJ\x10\n\x12\x08\n\x04GIGA\x10\x0b\x12\x06\n\x02UJ\x10\x0c\x12\x06\n\x02\x44X\x10\r*\x93\x01\n\x08Language\x12\x0b\n\x07\x45NGLISH\x10\x00\x12\x0b\n\x07SPANISH\x10\x01\x12\n\n\x06\x46RENCH\x10\x02\x12\x0e\n\nINDONESIAN\x10\x03\x12\x11\n\rPORTUGUESE_BR\x10\x04\x12\x0b\n\x07RUSSIAN\x10\x05\x12\x08\n\x04THAI\x10\x06\x12\n\n\x06GERMAN\x10\x07\x12\x0b\n\x07ITALIAN\x10\x08\x12\x0e\n\nVIETNAMESE\x10\t*:\n\x0eRankingTabType\x12\x0b\n\x07HOTTEST\x10\x00\x12\x0c\n\x08TRENDING\x10\x01\x12\r\n\tCOMPLETED\x10\x02*(\n\x08SaleType\x12\x0c\n\x08\x44ISCOUNT\x10\x00\x12\x0e\n\nFREE_TRIAL\x10\x01*a\n\x11TitleUpdateStatus\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03NEW\x10\x01\x12\x06\n\x02UP\x10\x02\x12\r\n\tREEDITION\x10\x03\x12\x13\n\x0f\x43REATORS_STATUS\x10\x04\x12\r\n\tOUR_PICKS\x10\x05\x42\x18\n\x16jp.co.comic.jump.protob\x06proto3')
 
+_CHAPTERTYPE = DESCRIPTOR.enum_types_by_name['ChapterType']
+ChapterType = enum_type_wrapper.EnumTypeWrapper(_CHAPTERTYPE)
 _FIRSTTIMEFREEPLATFORM = DESCRIPTOR.enum_types_by_name['FirstTimeFreePlatform']
 FirstTimeFreePlatform = enum_type_wrapper.EnumTypeWrapper(_FIRSTTIMEFREEPLATFORM)
 _LABELCODES = DESCRIPTOR.enum_types_by_name['LabelCodes']
@@ -25,8 +27,15 @@ _LANGUAGE = DESCRIPTOR.enum_types_by_name['Language']
 Language = enum_type_wrapper.EnumTypeWrapper(_LANGUAGE)
 _RANKINGTABTYPE = DESCRIPTOR.enum_types_by_name['RankingTabType']
 RankingTabType = enum_type_wrapper.EnumTypeWrapper(_RANKINGTABTYPE)
+_SALETYPE = DESCRIPTOR.enum_types_by_name['SaleType']
+SaleType = enum_type_wrapper.EnumTypeWrapper(_SALETYPE)
 _TITLEUPDATESTATUS = DESCRIPTOR.enum_types_by_name['TitleUpdateStatus']
 TitleUpdateStatus = enum_type_wrapper.EnumTypeWrapper(_TITLEUPDATESTATUS)
+FREE = 0
+FREE_FOR_FIRST_TIME = 1
+STANDARD = 2
+DELUXE = 3
+LOCKED_AFTER_FREE_READ = 4
 DISABLED = 0
 WEB = 1
 APP = 2
@@ -57,6 +66,8 @@ VIETNAMESE = 9
 HOTTEST = 0
 TRENDING = 1
 COMPLETED = 2
+DISCOUNT = 0
+FREE_TRIAL = 1
 NONE = 0
 NEW = 1
 UP = 2
@@ -87,6 +98,8 @@ _COMMENT = DESCRIPTOR.message_types_by_name['Comment']
 _FREEVIEWDIALOGUE = DESCRIPTOR.message_types_by_name['FreeViewDialogue']
 _DOWNLOADABLEIMAGESVIEW = DESCRIPTOR.message_types_by_name['DownloadableImagesView']
 _DOWNLOADABLEIMAGEGROUP = DESCRIPTOR.message_types_by_name['DownloadableImageGroup']
+_ENGAGEVIEW = DESCRIPTOR.message_types_by_name['EngageView']
+_ENGAGEMEDIA = DESCRIPTOR.message_types_by_name['EngageMedia']
 _ERRORRESULT = DESCRIPTOR.message_types_by_name['ErrorResult']
 _FAVORITETITLESVIEW = DESCRIPTOR.message_types_by_name['FavoriteTitlesView']
 _FAVORITETITLEGROUP = DESCRIPTOR.message_types_by_name['FavoriteTitleGroup']
@@ -97,22 +110,38 @@ _FEATUREDTITLESVIEWV2_CONTENTS = _FEATUREDTITLESVIEWV2.nested_types_by_name['Con
 _FEEDBACK = DESCRIPTOR.message_types_by_name['Feedback']
 _FEEDBACKVIEW = DESCRIPTOR.message_types_by_name['FeedbackView']
 _HISTORYVIEW = DESCRIPTOR.message_types_by_name['HistoryView']
+_HOMEPREVIEWVIEW = DESCRIPTOR.message_types_by_name['HomePreviewView']
 _HOMEVIEWV3 = DESCRIPTOR.message_types_by_name['HomeViewV3']
 _HOMEVIEWV4 = DESCRIPTOR.message_types_by_name['HomeViewV4']
 _HOMEVIEWV4_SECTIONS = _HOMEVIEWV4.nested_types_by_name['Sections']
 _HOMEVIEWV4_WEEKLYSECTION = _HOMEVIEWV4.nested_types_by_name['WeeklySection']
 _HOMEVIEWV4_WEEKLYSECTION_WEEKLYCONTENT = _HOMEVIEWV4_WEEKLYSECTION.nested_types_by_name['WeeklyContent']
 _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM = _HOMEVIEWV4_WEEKLYSECTION.nested_types_by_name['ContentItem']
-_HOMEVIEWV4_WEEKLYSECTION_MVBANNER = _HOMEVIEWV4_WEEKLYSECTION.nested_types_by_name['MVBanner']
-_HOMEVIEWV4_WEEKLYSECTION_TITLEGROUP = _HOMEVIEWV4_WEEKLYSECTION.nested_types_by_name['TitleGroup']
-_HOMEVIEWV4_WEEKLYSECTION_CAROUSELBANNER = _HOMEVIEWV4_WEEKLYSECTION.nested_types_by_name['CarouselBanner']
-_HOMEVIEWV4_WEEKLYSECTION_MINORLANGUAGEBANNER = _HOMEVIEWV4_WEEKLYSECTION.nested_types_by_name['MinorLanguageBanner']
+_HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_MVBANNER = _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM.nested_types_by_name['MVBanner']
+_HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_TITLEGROUP = _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM.nested_types_by_name['TitleGroup']
+_HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_CAROUSELBANNER = _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM.nested_types_by_name['CarouselBanner']
+_HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_MINORLANGUAGEBANNER = _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM.nested_types_by_name['MinorLanguageBanner']
 _HOMEVIEWV4_RANKINGSECTION = _HOMEVIEWV4.nested_types_by_name['RankingSection']
 _HOMEVIEWV4_RANKINGSECTION_RANKINGTAB = _HOMEVIEWV4_RANKINGSECTION.nested_types_by_name['RankingTab']
 _HOMEVIEWV4_PREVIEWSECTION = _HOMEVIEWV4.nested_types_by_name['PreviewSection']
 _HOMEVIEWV4_PREVIEWSECTION_PREVIEWTAB = _HOMEVIEWV4_PREVIEWSECTION.nested_types_by_name['PreviewTab']
 _HOMEVIEWV4_TITLELISTSECTION = _HOMEVIEWV4.nested_types_by_name['TitleListSection']
 _HOMEVIEWV4_BANNERSECTION = _HOMEVIEWV4.nested_types_by_name['BannerSection']
+_HOMEVIEWV6 = DESCRIPTOR.message_types_by_name['HomeViewV6']
+_HOMEVIEWV6_SECTIONS = _HOMEVIEWV6.nested_types_by_name['Sections']
+_HOMEVIEWV6_WEEKLYSECTION = _HOMEVIEWV6.nested_types_by_name['WeeklySection']
+_HOMEVIEWV6_WEEKLYSECTION_WEEKLYCONTENT = _HOMEVIEWV6_WEEKLYSECTION.nested_types_by_name['WeeklyContent']
+_HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM = _HOMEVIEWV6_WEEKLYSECTION.nested_types_by_name['ContentItem']
+_HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_MVBANNER = _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM.nested_types_by_name['MVBanner']
+_HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_TITLEGROUP = _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM.nested_types_by_name['TitleGroup']
+_HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_CAROUSELBANNER = _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM.nested_types_by_name['CarouselBanner']
+_HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_MINORLANGUAGEBANNER = _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM.nested_types_by_name['MinorLanguageBanner']
+_HOMEVIEWV6_RANKINGSECTION = _HOMEVIEWV6.nested_types_by_name['RankingSection']
+_HOMEVIEWV6_RANKINGSECTION_RANKINGTAB = _HOMEVIEWV6_RANKINGSECTION.nested_types_by_name['RankingTab']
+_HOMEVIEWV6_PREVIEWSECTION = _HOMEVIEWV6.nested_types_by_name['PreviewSection']
+_HOMEVIEWV6_PREVIEWSECTION_PREVIEWTAB = _HOMEVIEWV6_PREVIEWSECTION.nested_types_by_name['PreviewTab']
+_HOMEVIEWV6_TITLELISTSECTION = _HOMEVIEWV6.nested_types_by_name['TitleListSection']
+_HOMEVIEWV6_BANNERSECTION = _HOMEVIEWV6.nested_types_by_name['BannerSection']
 _INITIALVIEWV2 = DESCRIPTOR.message_types_by_name['InitialViewV2']
 _INTRODUCESUBSCRIPTION = DESCRIPTOR.message_types_by_name['IntroduceSubscription']
 _LABELEDVIEW = DESCRIPTOR.message_types_by_name['LabeledView']
@@ -192,6 +221,7 @@ _UPDATEDTITLELISTVIEW = DESCRIPTOR.message_types_by_name['UpdatedTitleListView']
 _UPDATEPROFILERESULTVIEW = DESCRIPTOR.message_types_by_name['UpdateProfileResultView']
 _USERTICKETS = DESCRIPTOR.message_types_by_name['UserTickets']
 _WEBHOMEVIEWV4 = DESCRIPTOR.message_types_by_name['WebHomeViewV4']
+_MVBANNER = DESCRIPTOR.message_types_by_name['MVBanner']
 _ADNETWORK_ADTYPE = _ADNETWORK.enum_types_by_name['AdType']
 _ADNETWORK_NETWORKCASE = _ADNETWORK.enum_types_by_name['NetworkCase']
 _ERRORRESULT_ACTION = _ERRORRESULT.enum_types_by_name['Action']
@@ -199,6 +229,8 @@ _FEATUREDTITLESVIEW_CONTENTS_DATACASE = _FEATUREDTITLESVIEW_CONTENTS.enum_types_
 _FEEDBACK_RESPONSETYPE = _FEEDBACK.enum_types_by_name['ResponseType']
 _HOMEVIEWV4_SECTIONS_SECTIONCASE = _HOMEVIEWV4_SECTIONS.enum_types_by_name['SectionCase']
 _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_CONTENTCASE = _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM.enum_types_by_name['ContentCase']
+_HOMEVIEWV6_SECTIONS_SECTIONCASE = _HOMEVIEWV6_SECTIONS.enum_types_by_name['SectionCase']
+_HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_CONTENTCASE = _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM.enum_types_by_name['ContentCase']
 _PAGE_CHAPTERTYPE = _PAGE.enum_types_by_name['ChapterType']
 _PAGE_PAGETYPE = _PAGE.enum_types_by_name['PageType']
 _PAGE_DATACASE = _PAGE.enum_types_by_name['DataCase']
@@ -372,6 +404,20 @@ DownloadableImageGroup = _reflection.GeneratedProtocolMessageType('DownloadableI
   })
 _sym_db.RegisterMessage(DownloadableImageGroup)
 
+EngageView = _reflection.GeneratedProtocolMessageType('EngageView', (_message.Message,), {
+  'DESCRIPTOR' : _ENGAGEVIEW,
+  '__module__' : 'mangaplus_api_pb2'
+  # @@protoc_insertion_point(class_scope:mangaplus_api.EngageView)
+  })
+_sym_db.RegisterMessage(EngageView)
+
+EngageMedia = _reflection.GeneratedProtocolMessageType('EngageMedia', (_message.Message,), {
+  'DESCRIPTOR' : _ENGAGEMEDIA,
+  '__module__' : 'mangaplus_api_pb2'
+  # @@protoc_insertion_point(class_scope:mangaplus_api.EngageMedia)
+  })
+_sym_db.RegisterMessage(EngageMedia)
+
 ErrorResult = _reflection.GeneratedProtocolMessageType('ErrorResult', (_message.Message,), {
   'DESCRIPTOR' : _ERRORRESULT,
   '__module__' : 'mangaplus_api_pb2'
@@ -444,6 +490,13 @@ HistoryView = _reflection.GeneratedProtocolMessageType('HistoryView', (_message.
   })
 _sym_db.RegisterMessage(HistoryView)
 
+HomePreviewView = _reflection.GeneratedProtocolMessageType('HomePreviewView', (_message.Message,), {
+  'DESCRIPTOR' : _HOMEPREVIEWVIEW,
+  '__module__' : 'mangaplus_api_pb2'
+  # @@protoc_insertion_point(class_scope:mangaplus_api.HomePreviewView)
+  })
+_sym_db.RegisterMessage(HomePreviewView)
+
 HomeViewV3 = _reflection.GeneratedProtocolMessageType('HomeViewV3', (_message.Message,), {
   'DESCRIPTOR' : _HOMEVIEWV3,
   '__module__' : 'mangaplus_api_pb2'
@@ -470,37 +523,37 @@ HomeViewV4 = _reflection.GeneratedProtocolMessageType('HomeViewV4', (_message.Me
     ,
 
     'ContentItem' : _reflection.GeneratedProtocolMessageType('ContentItem', (_message.Message,), {
+
+      'MVBanner' : _reflection.GeneratedProtocolMessageType('MVBanner', (_message.Message,), {
+        'DESCRIPTOR' : _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_MVBANNER,
+        '__module__' : 'mangaplus_api_pb2'
+        # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV4.WeeklySection.ContentItem.MVBanner)
+        })
+      ,
+
+      'TitleGroup' : _reflection.GeneratedProtocolMessageType('TitleGroup', (_message.Message,), {
+        'DESCRIPTOR' : _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_TITLEGROUP,
+        '__module__' : 'mangaplus_api_pb2'
+        # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV4.WeeklySection.ContentItem.TitleGroup)
+        })
+      ,
+
+      'CarouselBanner' : _reflection.GeneratedProtocolMessageType('CarouselBanner', (_message.Message,), {
+        'DESCRIPTOR' : _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_CAROUSELBANNER,
+        '__module__' : 'mangaplus_api_pb2'
+        # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV4.WeeklySection.ContentItem.CarouselBanner)
+        })
+      ,
+
+      'MinorLanguageBanner' : _reflection.GeneratedProtocolMessageType('MinorLanguageBanner', (_message.Message,), {
+        'DESCRIPTOR' : _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_MINORLANGUAGEBANNER,
+        '__module__' : 'mangaplus_api_pb2'
+        # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV4.WeeklySection.ContentItem.MinorLanguageBanner)
+        })
+      ,
       'DESCRIPTOR' : _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM,
       '__module__' : 'mangaplus_api_pb2'
       # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV4.WeeklySection.ContentItem)
-      })
-    ,
-
-    'MVBanner' : _reflection.GeneratedProtocolMessageType('MVBanner', (_message.Message,), {
-      'DESCRIPTOR' : _HOMEVIEWV4_WEEKLYSECTION_MVBANNER,
-      '__module__' : 'mangaplus_api_pb2'
-      # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV4.WeeklySection.MVBanner)
-      })
-    ,
-
-    'TitleGroup' : _reflection.GeneratedProtocolMessageType('TitleGroup', (_message.Message,), {
-      'DESCRIPTOR' : _HOMEVIEWV4_WEEKLYSECTION_TITLEGROUP,
-      '__module__' : 'mangaplus_api_pb2'
-      # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV4.WeeklySection.TitleGroup)
-      })
-    ,
-
-    'CarouselBanner' : _reflection.GeneratedProtocolMessageType('CarouselBanner', (_message.Message,), {
-      'DESCRIPTOR' : _HOMEVIEWV4_WEEKLYSECTION_CAROUSELBANNER,
-      '__module__' : 'mangaplus_api_pb2'
-      # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV4.WeeklySection.CarouselBanner)
-      })
-    ,
-
-    'MinorLanguageBanner' : _reflection.GeneratedProtocolMessageType('MinorLanguageBanner', (_message.Message,), {
-      'DESCRIPTOR' : _HOMEVIEWV4_WEEKLYSECTION_MINORLANGUAGEBANNER,
-      '__module__' : 'mangaplus_api_pb2'
-      # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV4.WeeklySection.MinorLanguageBanner)
       })
     ,
     'DESCRIPTOR' : _HOMEVIEWV4_WEEKLYSECTION,
@@ -559,16 +612,135 @@ _sym_db.RegisterMessage(HomeViewV4.Sections)
 _sym_db.RegisterMessage(HomeViewV4.WeeklySection)
 _sym_db.RegisterMessage(HomeViewV4.WeeklySection.WeeklyContent)
 _sym_db.RegisterMessage(HomeViewV4.WeeklySection.ContentItem)
-_sym_db.RegisterMessage(HomeViewV4.WeeklySection.MVBanner)
-_sym_db.RegisterMessage(HomeViewV4.WeeklySection.TitleGroup)
-_sym_db.RegisterMessage(HomeViewV4.WeeklySection.CarouselBanner)
-_sym_db.RegisterMessage(HomeViewV4.WeeklySection.MinorLanguageBanner)
+_sym_db.RegisterMessage(HomeViewV4.WeeklySection.ContentItem.MVBanner)
+_sym_db.RegisterMessage(HomeViewV4.WeeklySection.ContentItem.TitleGroup)
+_sym_db.RegisterMessage(HomeViewV4.WeeklySection.ContentItem.CarouselBanner)
+_sym_db.RegisterMessage(HomeViewV4.WeeklySection.ContentItem.MinorLanguageBanner)
 _sym_db.RegisterMessage(HomeViewV4.RankingSection)
 _sym_db.RegisterMessage(HomeViewV4.RankingSection.RankingTab)
 _sym_db.RegisterMessage(HomeViewV4.PreviewSection)
 _sym_db.RegisterMessage(HomeViewV4.PreviewSection.PreviewTab)
 _sym_db.RegisterMessage(HomeViewV4.TitleListSection)
 _sym_db.RegisterMessage(HomeViewV4.BannerSection)
+
+HomeViewV6 = _reflection.GeneratedProtocolMessageType('HomeViewV6', (_message.Message,), {
+
+  'Sections' : _reflection.GeneratedProtocolMessageType('Sections', (_message.Message,), {
+    'DESCRIPTOR' : _HOMEVIEWV6_SECTIONS,
+    '__module__' : 'mangaplus_api_pb2'
+    # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.Sections)
+    })
+  ,
+
+  'WeeklySection' : _reflection.GeneratedProtocolMessageType('WeeklySection', (_message.Message,), {
+
+    'WeeklyContent' : _reflection.GeneratedProtocolMessageType('WeeklyContent', (_message.Message,), {
+      'DESCRIPTOR' : _HOMEVIEWV6_WEEKLYSECTION_WEEKLYCONTENT,
+      '__module__' : 'mangaplus_api_pb2'
+      # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.WeeklySection.WeeklyContent)
+      })
+    ,
+
+    'ContentItem' : _reflection.GeneratedProtocolMessageType('ContentItem', (_message.Message,), {
+
+      'MVBanner' : _reflection.GeneratedProtocolMessageType('MVBanner', (_message.Message,), {
+        'DESCRIPTOR' : _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_MVBANNER,
+        '__module__' : 'mangaplus_api_pb2'
+        # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.WeeklySection.ContentItem.MVBanner)
+        })
+      ,
+
+      'TitleGroup' : _reflection.GeneratedProtocolMessageType('TitleGroup', (_message.Message,), {
+        'DESCRIPTOR' : _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_TITLEGROUP,
+        '__module__' : 'mangaplus_api_pb2'
+        # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.WeeklySection.ContentItem.TitleGroup)
+        })
+      ,
+
+      'CarouselBanner' : _reflection.GeneratedProtocolMessageType('CarouselBanner', (_message.Message,), {
+        'DESCRIPTOR' : _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_CAROUSELBANNER,
+        '__module__' : 'mangaplus_api_pb2'
+        # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.WeeklySection.ContentItem.CarouselBanner)
+        })
+      ,
+
+      'MinorLanguageBanner' : _reflection.GeneratedProtocolMessageType('MinorLanguageBanner', (_message.Message,), {
+        'DESCRIPTOR' : _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_MINORLANGUAGEBANNER,
+        '__module__' : 'mangaplus_api_pb2'
+        # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.WeeklySection.ContentItem.MinorLanguageBanner)
+        })
+      ,
+      'DESCRIPTOR' : _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM,
+      '__module__' : 'mangaplus_api_pb2'
+      # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.WeeklySection.ContentItem)
+      })
+    ,
+    'DESCRIPTOR' : _HOMEVIEWV6_WEEKLYSECTION,
+    '__module__' : 'mangaplus_api_pb2'
+    # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.WeeklySection)
+    })
+  ,
+
+  'RankingSection' : _reflection.GeneratedProtocolMessageType('RankingSection', (_message.Message,), {
+
+    'RankingTab' : _reflection.GeneratedProtocolMessageType('RankingTab', (_message.Message,), {
+      'DESCRIPTOR' : _HOMEVIEWV6_RANKINGSECTION_RANKINGTAB,
+      '__module__' : 'mangaplus_api_pb2'
+      # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.RankingSection.RankingTab)
+      })
+    ,
+    'DESCRIPTOR' : _HOMEVIEWV6_RANKINGSECTION,
+    '__module__' : 'mangaplus_api_pb2'
+    # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.RankingSection)
+    })
+  ,
+
+  'PreviewSection' : _reflection.GeneratedProtocolMessageType('PreviewSection', (_message.Message,), {
+
+    'PreviewTab' : _reflection.GeneratedProtocolMessageType('PreviewTab', (_message.Message,), {
+      'DESCRIPTOR' : _HOMEVIEWV6_PREVIEWSECTION_PREVIEWTAB,
+      '__module__' : 'mangaplus_api_pb2'
+      # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.PreviewSection.PreviewTab)
+      })
+    ,
+    'DESCRIPTOR' : _HOMEVIEWV6_PREVIEWSECTION,
+    '__module__' : 'mangaplus_api_pb2'
+    # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.PreviewSection)
+    })
+  ,
+
+  'TitleListSection' : _reflection.GeneratedProtocolMessageType('TitleListSection', (_message.Message,), {
+    'DESCRIPTOR' : _HOMEVIEWV6_TITLELISTSECTION,
+    '__module__' : 'mangaplus_api_pb2'
+    # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.TitleListSection)
+    })
+  ,
+
+  'BannerSection' : _reflection.GeneratedProtocolMessageType('BannerSection', (_message.Message,), {
+    'DESCRIPTOR' : _HOMEVIEWV6_BANNERSECTION,
+    '__module__' : 'mangaplus_api_pb2'
+    # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6.BannerSection)
+    })
+  ,
+  'DESCRIPTOR' : _HOMEVIEWV6,
+  '__module__' : 'mangaplus_api_pb2'
+  # @@protoc_insertion_point(class_scope:mangaplus_api.HomeViewV6)
+  })
+_sym_db.RegisterMessage(HomeViewV6)
+_sym_db.RegisterMessage(HomeViewV6.Sections)
+_sym_db.RegisterMessage(HomeViewV6.WeeklySection)
+_sym_db.RegisterMessage(HomeViewV6.WeeklySection.WeeklyContent)
+_sym_db.RegisterMessage(HomeViewV6.WeeklySection.ContentItem)
+_sym_db.RegisterMessage(HomeViewV6.WeeklySection.ContentItem.MVBanner)
+_sym_db.RegisterMessage(HomeViewV6.WeeklySection.ContentItem.TitleGroup)
+_sym_db.RegisterMessage(HomeViewV6.WeeklySection.ContentItem.CarouselBanner)
+_sym_db.RegisterMessage(HomeViewV6.WeeklySection.ContentItem.MinorLanguageBanner)
+_sym_db.RegisterMessage(HomeViewV6.RankingSection)
+_sym_db.RegisterMessage(HomeViewV6.RankingSection.RankingTab)
+_sym_db.RegisterMessage(HomeViewV6.PreviewSection)
+_sym_db.RegisterMessage(HomeViewV6.PreviewSection.PreviewTab)
+_sym_db.RegisterMessage(HomeViewV6.TitleListSection)
+_sym_db.RegisterMessage(HomeViewV6.BannerSection)
 
 InitialViewV2 = _reflection.GeneratedProtocolMessageType('InitialViewV2', (_message.Message,), {
   'DESCRIPTOR' : _INITIALVIEWV2,
@@ -1136,20 +1308,31 @@ WebHomeViewV4 = _reflection.GeneratedProtocolMessageType('WebHomeViewV4', (_mess
   })
 _sym_db.RegisterMessage(WebHomeViewV4)
 
+MVBanner = _reflection.GeneratedProtocolMessageType('MVBanner', (_message.Message,), {
+  'DESCRIPTOR' : _MVBANNER,
+  '__module__' : 'mangaplus_api_pb2'
+  # @@protoc_insertion_point(class_scope:mangaplus_api.MVBanner)
+  })
+_sym_db.RegisterMessage(MVBanner)
+
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\026jp.co.comic.jump.proto'
-  _FIRSTTIMEFREEPLATFORM._serialized_start=23511
-  _FIRSTTIMEFREEPLATFORM._serialized_end=23566
-  _LABELCODES._serialized_start=23569
-  _LABELCODES._serialized_end=23717
-  _LANGUAGE._serialized_start=23720
-  _LANGUAGE._serialized_end=23867
-  _RANKINGTABTYPE._serialized_start=23869
-  _RANKINGTABTYPE._serialized_end=23927
-  _TITLEUPDATESTATUS._serialized_start=23929
-  _TITLEUPDATESTATUS._serialized_end=24026
+  _CHAPTERTYPE._serialized_start=26932
+  _CHAPTERTYPE._serialized_end=27034
+  _FIRSTTIMEFREEPLATFORM._serialized_start=27036
+  _FIRSTTIMEFREEPLATFORM._serialized_end=27091
+  _LABELCODES._serialized_start=27094
+  _LABELCODES._serialized_end=27242
+  _LANGUAGE._serialized_start=27245
+  _LANGUAGE._serialized_end=27392
+  _RANKINGTABTYPE._serialized_start=27394
+  _RANKINGTABTYPE._serialized_end=27452
+  _SALETYPE._serialized_start=27454
+  _SALETYPE._serialized_end=27494
+  _TITLEUPDATESTATUS._serialized_start=27496
+  _TITLEUPDATESTATUS._serialized_end=27593
   _ADNETWORKLIST._serialized_start=38
   _ADNETWORKLIST._serialized_end=99
   _ADREWARDNETWORKLIST._serialized_start=101
@@ -1183,263 +1366,305 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _BANNER._serialized_start=1264
   _BANNER._serialized_end=1396
   _CHAPTER._serialized_start=1399
-  _CHAPTER._serialized_end=1711
-  _COMMENTICON._serialized_start=1713
-  _COMMENTICON._serialized_end=1756
-  _COMMENTLISTVIEW._serialized_start=1759
-  _COMMENTLISTVIEW._serialized_end=2015
-  _COMMENTLISTVIEW_TITLEDETAILCOMMENT._serialized_start=1922
-  _COMMENTLISTVIEW_TITLEDETAILCOMMENT._serialized_end=2015
-  _COMMENT._serialized_start=2018
-  _COMMENT._serialized_end=2186
-  _FREEVIEWDIALOGUE._serialized_start=2189
-  _FREEVIEWDIALOGUE._serialized_end=2332
-  _DOWNLOADABLEIMAGESVIEW._serialized_start=2334
-  _DOWNLOADABLEIMAGESVIEW._serialized_end=2425
-  _DOWNLOADABLEIMAGEGROUP._serialized_start=2427
-  _DOWNLOADABLEIMAGEGROUP._serialized_end=2546
-  _ERRORRESULT._serialized_start=2549
-  _ERRORRESULT._serialized_end=2866
-  _ERRORRESULT_ACTION._serialized_start=2790
-  _ERRORRESULT_ACTION._serialized_end=2866
-  _FAVORITETITLESVIEW._serialized_start=2869
-  _FAVORITETITLESVIEW._serialized_end=3011
-  _FAVORITETITLEGROUP._serialized_start=3013
-  _FAVORITETITLEGROUP._serialized_end=3114
-  _FEATUREDTITLESVIEW._serialized_start=3117
-  _FEATUREDTITLESVIEW._serialized_end=3511
-  _FEATUREDTITLESVIEW_CONTENTS._serialized_start=3331
-  _FEATUREDTITLESVIEW_CONTENTS._serialized_end=3511
-  _FEATUREDTITLESVIEW_CONTENTS_DATACASE._serialized_start=3455
-  _FEATUREDTITLESVIEW_CONTENTS_DATACASE._serialized_end=3511
-  _FEATUREDTITLESVIEWV2._serialized_start=3514
-  _FEATUREDTITLESVIEWV2._serialized_end=3802
-  _FEATUREDTITLESVIEWV2_CONTENTS._serialized_start=3652
-  _FEATUREDTITLESVIEWV2_CONTENTS._serialized_end=3802
-  _FEEDBACK._serialized_start=3805
-  _FEEDBACK._serialized_end=3950
-  _FEEDBACK_RESPONSETYPE._serialized_start=3910
-  _FEEDBACK_RESPONSETYPE._serialized_end=3950
-  _FEEDBACKVIEW._serialized_start=3952
-  _FEEDBACKVIEW._serialized_end=4013
-  _HISTORYVIEW._serialized_start=4015
-  _HISTORYVIEW._serialized_end=4118
-  _HOMEVIEWV3._serialized_start=4121
-  _HOMEVIEWV3._serialized_end=4416
-  _HOMEVIEWV4._serialized_start=4419
-  _HOMEVIEWV4._serialized_end=6769
-  _HOMEVIEWV4_SECTIONS._serialized_start=4676
-  _HOMEVIEWV4_SECTIONS._serialized_end=5159
-  _HOMEVIEWV4_SECTIONS_SECTIONCASE._serialized_start=5019
-  _HOMEVIEWV4_SECTIONS_SECTIONCASE._serialized_end=5159
-  _HOMEVIEWV4_WEEKLYSECTION._serialized_start=5162
-  _HOMEVIEWV4_WEEKLYSECTION._serialized_end=6223
-  _HOMEVIEWV4_WEEKLYSECTION_WEEKLYCONTENT._serialized_start=5253
-  _HOMEVIEWV4_WEEKLYSECTION_WEEKLYCONTENT._serialized_end=5388
-  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM._serialized_start=5391
-  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM._serialized_end=5930
-  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_CONTENTCASE._serialized_start=5800
-  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_CONTENTCASE._serialized_end=5930
-  _HOMEVIEWV4_WEEKLYSECTION_MVBANNER._serialized_start=5932
-  _HOMEVIEWV4_WEEKLYSECTION_MVBANNER._serialized_end=6016
-  _HOMEVIEWV4_WEEKLYSECTION_TITLEGROUP._serialized_start=6018
-  _HOMEVIEWV4_WEEKLYSECTION_TITLEGROUP._serialized_end=6086
-  _HOMEVIEWV4_WEEKLYSECTION_CAROUSELBANNER._serialized_start=6088
-  _HOMEVIEWV4_WEEKLYSECTION_CAROUSELBANNER._serialized_end=6144
-  _HOMEVIEWV4_WEEKLYSECTION_MINORLANGUAGEBANNER._serialized_start=6146
-  _HOMEVIEWV4_WEEKLYSECTION_MINORLANGUAGEBANNER._serialized_end=6223
-  _HOMEVIEWV4_RANKINGSECTION._serialized_start=6226
-  _HOMEVIEWV4_RANKINGSECTION._serialized_end=6434
-  _HOMEVIEWV4_RANKINGSECTION_RANKINGTAB._serialized_start=6318
-  _HOMEVIEWV4_RANKINGSECTION_RANKINGTAB._serialized_end=6434
-  _HOMEVIEWV4_PREVIEWSECTION._serialized_start=6437
-  _HOMEVIEWV4_PREVIEWSECTION._serialized_end=6647
-  _HOMEVIEWV4_PREVIEWSECTION_PREVIEWTAB._serialized_start=6529
-  _HOMEVIEWV4_PREVIEWSECTION_PREVIEWTAB._serialized_end=6647
-  _HOMEVIEWV4_TITLELISTSECTION._serialized_start=6649
-  _HOMEVIEWV4_TITLELISTSECTION._serialized_end=6712
-  _HOMEVIEWV4_BANNERSECTION._serialized_start=6714
-  _HOMEVIEWV4_BANNERSECTION._serialized_end=6769
-  _INITIALVIEWV2._serialized_start=6771
-  _INITIALVIEWV2._serialized_end=6880
-  _INTRODUCESUBSCRIPTION._serialized_start=6882
-  _INTRODUCESUBSCRIPTION._serialized_end=6977
-  _LABELEDVIEW._serialized_start=6979
-  _LABELEDVIEW._serialized_end=7092
-  _LABEL._serialized_start=7094
-  _LABEL._serialized_end=7164
-  _LANGUAGES._serialized_start=7167
-  _LANGUAGES._serialized_end=7475
-  _AVAILABLELANGUAGES._serialized_start=7477
-  _AVAILABLELANGUAGES._serialized_end=7561
-  _MANGAVIEWER._serialized_start=7564
-  _MANGAVIEWER._serialized_end=8247
-  _MANGAVIEWER_TITLEAVAILABLELANGUAGES._serialized_start=8147
-  _MANGAVIEWER_TITLEAVAILABLELANGUAGES._serialized_end=8247
-  _METAINFO._serialized_start=8249
-  _METAINFO._serialized_end=8303
-  _MPCSTATUSVIEW._serialized_start=8305
-  _MPCSTATUSVIEW._serialized_end=8374
-  _PAGE._serialized_start=8377
-  _PAGE._serialized_end=9909
-  _PAGE_MANGAPAGE._serialized_start=8652
-  _PAGE_MANGAPAGE._serialized_end=8779
-  _PAGE_LASTPAGE._serialized_start=8782
-  _PAGE_LASTPAGE._serialized_end=9599
-  _PAGE_BANNERLIST._serialized_start=9601
-  _PAGE_BANNERLIST._serialized_end=9674
-  _PAGE_CHAPTERTYPE._serialized_start=9676
-  _PAGE_CHAPTERTYPE._serialized_end=9731
-  _PAGE_PAGETYPE._serialized_start=9733
-  _PAGE_PAGETYPE._serialized_end=9788
-  _PAGE_DATACASE._serialized_start=9790
-  _PAGE_DATACASE._serialized_end=9909
-  _POPUP._serialized_start=9912
-  _POPUP._serialized_end=10738
-  _POPUP_OSDEFAULT._serialized_start=10141
-  _POPUP_OSDEFAULT._serialized_end=10376
-  _POPUP_APPDEFAULT._serialized_start=10378
-  _POPUP_APPDEFAULT._serialized_end=10488
-  _POPUP_ONEIMAGE._serialized_start=10490
-  _POPUP_ONEIMAGE._serialized_end=10567
-  _POPUP_BUTTON._serialized_start=10569
-  _POPUP_BUTTON._serialized_end=10640
-  _POPUP_POPUPCASE._serialized_start=10642
-  _POPUP_POPUPCASE._serialized_end=10738
-  _MOVIEREWARD._serialized_start=10740
-  _MOVIEREWARD._serialized_end=10824
-  _PROFILESETTINGSVIEW._serialized_start=10827
-  _PROFILESETTINGSVIEW._serialized_end=10956
-  _PUBLISHERNEWSLISTVIEW._serialized_start=10959
-  _PUBLISHERNEWSLISTVIEW._serialized_end=11113
-  _PUBLISHERNEWS._serialized_start=11116
-  _PUBLISHERNEWS._serialized_end=11295
-  _PUSHTOKENVIEW._serialized_start=11297
-  _PUSHTOKENVIEW._serialized_end=11351
-  _QUESTIONNAIRE._serialized_start=11354
-  _QUESTIONNAIRE._serialized_end=11491
-  _QUESTIONNAIREVIEW._serialized_start=11494
-  _QUESTIONNAIREVIEW._serialized_end=11642
-  _REGISTRATIONDATA._serialized_start=11644
-  _REGISTRATIONDATA._serialized_end=11684
-  _RESPONSE._serialized_start=11687
-  _RESPONSE._serialized_end=11845
-  _RESPONSE_RESULTCASE._serialized_start=11789
-  _RESPONSE_RESULTCASE._serialized_end=11845
-  _SEARCHVIEW._serialized_start=11848
-  _SEARCHVIEW._serialized_end=12307
-  _SEARCHVIEW_CONTENTS._serialized_start=12058
-  _SEARCHVIEW_CONTENTS._serialized_end=12307
-  _SERVICEANNOUNCEMENT._serialized_start=12309
-  _SERVICEANNOUNCEMENT._serialized_end=12385
-  _SERVICEANNOUNCEMENTSVIEW._serialized_start=12387
-  _SERVICEANNOUNCEMENTSVIEW._serialized_end=12479
-  _SETTINGSVIEW._serialized_start=12482
-  _SETTINGSVIEW._serialized_end=12688
-  _SETTINGSVIEWV2._serialized_start=12691
-  _SETTINGSVIEWV2._serialized_end=13123
-  _CUSTOMCODEDIALOGUE._serialized_start=13125
-  _CUSTOMCODEDIALOGUE._serialized_end=13163
-  _SNS._serialized_start=13165
-  _SNS._serialized_end=13197
-  _SUBSCRIBEDTITLESVIEW._serialized_start=13200
-  _SUBSCRIBEDTITLESVIEW._serialized_end=13350
-  _IOSSUBSCRIPTIONOFFER._serialized_start=13353
-  _IOSSUBSCRIPTIONOFFER._serialized_end=13594
-  _IOSSUBSCRIPTIONOFFER_OFFERTYPE._serialized_start=13534
-  _IOSSUBSCRIPTIONOFFER_OFFERTYPE._serialized_end=13594
-  _ANDROIDSUBSCRIPTIONOFFERTAGS._serialized_start=13596
-  _ANDROIDSUBSCRIPTIONOFFERTAGS._serialized_end=13639
-  _SUBSCRIPTION._serialized_start=13642
-  _SUBSCRIPTION._serialized_end=13773
-  _PLANTYPE._serialized_start=13776
-  _PLANTYPE._serialized_end=13975
-  _SUBSCRIPTIONVIEW._serialized_start=13978
-  _SUBSCRIPTIONVIEW._serialized_end=14349
-  _SUBSCRIPTIONPLANBOXDESCRIPTION._serialized_start=14351
-  _SUBSCRIPTIONPLANBOXDESCRIPTION._serialized_end=14412
-  _SUBSCRIPTIONNOTE._serialized_start=14414
-  _SUBSCRIPTIONNOTE._serialized_end=14461
-  _SUCCESSRESULT._serialized_start=14464
-  _SUCCESSRESULT._serialized_end=17573
-  _SUCCESSRESULT_DATACASE._serialized_start=16680
-  _SUCCESSRESULT_DATACASE._serialized_end=17573
-  _TAG._serialized_start=17575
-  _TAG._serialized_end=17607
-  _TITLEDETAILVIEW._serialized_start=17610
-  _TITLEDETAILVIEW._serialized_end=19922
-  _TITLEDETAILVIEW_TITLELABELS._serialized_start=19132
-  _TITLEDETAILVIEW_TITLELABELS._serialized_end=19208
-  _TITLEDETAILVIEW_PUBLISHERITEM._serialized_start=19210
-  _TITLEDETAILVIEW_PUBLISHERITEM._serialized_end=19317
-  _TITLEDETAILVIEW_TITLELANGUAGES._serialized_start=19319
-  _TITLEDETAILVIEW_TITLELANGUAGES._serialized_end=19395
-  _TITLEDETAILVIEW_CHAPTERGROUP._serialized_start=19398
-  _TITLEDETAILVIEW_CHAPTERGROUP._serialized_end=19583
-  _TITLEDETAILVIEW_RELEASESCHEDULE._serialized_start=19586
-  _TITLEDETAILVIEW_RELEASESCHEDULE._serialized_end=19727
-  _TITLEDETAILVIEW_UPDATETIMING._serialized_start=19730
-  _TITLEDETAILVIEW_UPDATETIMING._serialized_end=19864
-  _TITLEDETAILVIEW_RATING._serialized_start=19866
-  _TITLEDETAILVIEW_RATING._serialized_end=19922
-  _ALLTITLESGROUP._serialized_start=19925
-  _ALLTITLESGROUP._serialized_end=20103
-  _TITLERANKINGGROUP._serialized_start=20105
-  _TITLERANKINGGROUP._serialized_end=20202
-  _TITLEUPDATEDGROUP._serialized_start=20204
-  _TITLEUPDATEDGROUP._serialized_end=20306
-  _LABELEDTITLESGROUP._serialized_start=20308
-  _LABELEDTITLESGROUP._serialized_end=20384
-  _TITLESUBSCRIPTIONGROUP._serialized_start=20386
-  _TITLESUBSCRIPTIONGROUP._serialized_end=20486
-  _TITLELIST._serialized_start=20488
-  _TITLELIST._serialized_end=20584
-  _CHAPTERPAGELIST._serialized_start=20586
-  _CHAPTERPAGELIST._serialized_end=20672
-  _CHAPTERPAGES._serialized_start=20675
-  _CHAPTERPAGES._serialized_end=20838
-  _TITLE._serialized_start=20841
-  _TITLE._serialized_end=21097
-  _UPDATEDTITLE._serialized_start=21100
-  _UPDATEDTITLE._serialized_end=21284
-  _TITLEUPDATED._serialized_start=21286
-  _TITLEUPDATED._serialized_end=21368
-  _FREETITLE._serialized_start=21370
-  _FREETITLE._serialized_end=21449
-  _TICKETTITLES._serialized_start=21451
-  _TICKETTITLES._serialized_end=21557
-  _SUBSCRIBABLETITLE._serialized_start=21559
-  _SUBSCRIBABLETITLE._serialized_end=21655
-  _COMINGSOONTITLE._serialized_start=21657
-  _COMINGSOONTITLE._serialized_end=21771
-  _TITLEHIGHLIGHT._serialized_start=21774
-  _TITLEHIGHLIGHT._serialized_end=21955
-  _TITLERANKINGVIEW._serialized_start=21957
-  _TITLERANKINGVIEW._serialized_end=22013
-  _TITLERANKINGVIEWV2._serialized_start=22016
-  _TITLERANKINGVIEWV2._serialized_end=22165
-  _TITLEUPDATEDVIEW._serialized_start=22167
-  _TITLEUPDATEDVIEW._serialized_end=22235
-  _TITLEUPDATEDVIEWV2._serialized_start=22237
-  _TITLEUPDATEDVIEWV2._serialized_end=22318
-  _TRANSITIONACTION._serialized_start=22321
-  _TRANSITIONACTION._serialized_end=22477
-  _TRANSITIONACTION_PRESENTATIONMETHOD._serialized_start=22422
-  _TRANSITIONACTION_PRESENTATIONMETHOD._serialized_end=22477
-  _UPDATEDTITLEGROUP._serialized_start=22479
-  _UPDATEDTITLEGROUP._serialized_end=22562
-  _UPDATEDTITLEV2GROUP._serialized_start=22564
-  _UPDATEDTITLEV2GROUP._serialized_end=22683
-  _ORIGINALTITLEGROUP._serialized_start=22686
-  _ORIGINALTITLEGROUP._serialized_end=22898
-  _UPDATEDTITLELISTVIEW._serialized_start=22900
-  _UPDATEDTITLELISTVIEW._serialized_end=22972
-  _UPDATEPROFILERESULTVIEW._serialized_start=22975
-  _UPDATEPROFILERESULTVIEW._serialized_end=23115
-  _UPDATEPROFILERESULTVIEW_RESULT._serialized_start=23065
-  _UPDATEPROFILERESULTVIEW_RESULT._serialized_end=23115
-  _USERTICKETS._serialized_start=23117
-  _USERTICKETS._serialized_end=23183
-  _WEBHOMEVIEWV4._serialized_start=23186
-  _WEBHOMEVIEWV4._serialized_end=23509
+  _CHAPTER._serialized_end=1751
+  _COMMENTICON._serialized_start=1753
+  _COMMENTICON._serialized_end=1796
+  _COMMENTLISTVIEW._serialized_start=1799
+  _COMMENTLISTVIEW._serialized_end=2055
+  _COMMENTLISTVIEW_TITLEDETAILCOMMENT._serialized_start=1962
+  _COMMENTLISTVIEW_TITLEDETAILCOMMENT._serialized_end=2055
+  _COMMENT._serialized_start=2058
+  _COMMENT._serialized_end=2226
+  _FREEVIEWDIALOGUE._serialized_start=2229
+  _FREEVIEWDIALOGUE._serialized_end=2372
+  _DOWNLOADABLEIMAGESVIEW._serialized_start=2374
+  _DOWNLOADABLEIMAGESVIEW._serialized_end=2465
+  _DOWNLOADABLEIMAGEGROUP._serialized_start=2467
+  _DOWNLOADABLEIMAGEGROUP._serialized_end=2586
+  _ENGAGEVIEW._serialized_start=2588
+  _ENGAGEVIEW._serialized_end=2659
+  _ENGAGEMEDIA._serialized_start=2662
+  _ENGAGEMEDIA._serialized_end=2820
+  _ERRORRESULT._serialized_start=2823
+  _ERRORRESULT._serialized_end=3140
+  _ERRORRESULT_ACTION._serialized_start=3064
+  _ERRORRESULT_ACTION._serialized_end=3140
+  _FAVORITETITLESVIEW._serialized_start=3143
+  _FAVORITETITLESVIEW._serialized_end=3285
+  _FAVORITETITLEGROUP._serialized_start=3287
+  _FAVORITETITLEGROUP._serialized_end=3388
+  _FEATUREDTITLESVIEW._serialized_start=3391
+  _FEATUREDTITLESVIEW._serialized_end=3785
+  _FEATUREDTITLESVIEW_CONTENTS._serialized_start=3605
+  _FEATUREDTITLESVIEW_CONTENTS._serialized_end=3785
+  _FEATUREDTITLESVIEW_CONTENTS_DATACASE._serialized_start=3729
+  _FEATUREDTITLESVIEW_CONTENTS_DATACASE._serialized_end=3785
+  _FEATUREDTITLESVIEWV2._serialized_start=3788
+  _FEATUREDTITLESVIEWV2._serialized_end=4076
+  _FEATUREDTITLESVIEWV2_CONTENTS._serialized_start=3926
+  _FEATUREDTITLESVIEWV2_CONTENTS._serialized_end=4076
+  _FEEDBACK._serialized_start=4079
+  _FEEDBACK._serialized_end=4224
+  _FEEDBACK_RESPONSETYPE._serialized_start=4184
+  _FEEDBACK_RESPONSETYPE._serialized_end=4224
+  _FEEDBACKVIEW._serialized_start=4226
+  _FEEDBACKVIEW._serialized_end=4287
+  _HISTORYVIEW._serialized_start=4289
+  _HISTORYVIEW._serialized_end=4392
+  _HOMEPREVIEWVIEW._serialized_start=4394
+  _HOMEPREVIEWVIEW._serialized_end=4478
+  _HOMEVIEWV3._serialized_start=4481
+  _HOMEVIEWV3._serialized_end=4776
+  _HOMEVIEWV4._serialized_start=4779
+  _HOMEVIEWV4._serialized_end=7178
+  _HOMEVIEWV4_SECTIONS._serialized_start=5036
+  _HOMEVIEWV4_SECTIONS._serialized_end=5519
+  _HOMEVIEWV4_SECTIONS_SECTIONCASE._serialized_start=5379
+  _HOMEVIEWV4_SECTIONS_SECTIONCASE._serialized_end=5519
+  _HOMEVIEWV4_WEEKLYSECTION._serialized_start=5522
+  _HOMEVIEWV4_WEEKLYSECTION._serialized_end=6632
+  _HOMEVIEWV4_WEEKLYSECTION_WEEKLYCONTENT._serialized_start=5613
+  _HOMEVIEWV4_WEEKLYSECTION_WEEKLYCONTENT._serialized_end=5748
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM._serialized_start=5751
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM._serialized_end=6632
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_MVBANNER._serialized_start=6208
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_MVBANNER._serialized_end=6292
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_TITLEGROUP._serialized_start=6294
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_TITLEGROUP._serialized_end=6362
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_CAROUSELBANNER._serialized_start=6364
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_CAROUSELBANNER._serialized_end=6420
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_MINORLANGUAGEBANNER._serialized_start=6422
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_MINORLANGUAGEBANNER._serialized_end=6499
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_CONTENTCASE._serialized_start=6502
+  _HOMEVIEWV4_WEEKLYSECTION_CONTENTITEM_CONTENTCASE._serialized_end=6632
+  _HOMEVIEWV4_RANKINGSECTION._serialized_start=6635
+  _HOMEVIEWV4_RANKINGSECTION._serialized_end=6843
+  _HOMEVIEWV4_RANKINGSECTION_RANKINGTAB._serialized_start=6727
+  _HOMEVIEWV4_RANKINGSECTION_RANKINGTAB._serialized_end=6843
+  _HOMEVIEWV4_PREVIEWSECTION._serialized_start=6846
+  _HOMEVIEWV4_PREVIEWSECTION._serialized_end=7056
+  _HOMEVIEWV4_PREVIEWSECTION_PREVIEWTAB._serialized_start=6938
+  _HOMEVIEWV4_PREVIEWSECTION_PREVIEWTAB._serialized_end=7056
+  _HOMEVIEWV4_TITLELISTSECTION._serialized_start=7058
+  _HOMEVIEWV4_TITLELISTSECTION._serialized_end=7121
+  _HOMEVIEWV4_BANNERSECTION._serialized_start=7123
+  _HOMEVIEWV4_BANNERSECTION._serialized_end=7178
+  _HOMEVIEWV6._serialized_start=7181
+  _HOMEVIEWV6._serialized_end=9601
+  _HOMEVIEWV6_SECTIONS._serialized_start=7438
+  _HOMEVIEWV6_SECTIONS._serialized_end=7921
+  _HOMEVIEWV6_SECTIONS_SECTIONCASE._serialized_start=5379
+  _HOMEVIEWV6_SECTIONS_SECTIONCASE._serialized_end=5519
+  _HOMEVIEWV6_WEEKLYSECTION._serialized_start=7924
+  _HOMEVIEWV6_WEEKLYSECTION._serialized_end=9034
+  _HOMEVIEWV6_WEEKLYSECTION_WEEKLYCONTENT._serialized_start=8015
+  _HOMEVIEWV6_WEEKLYSECTION_WEEKLYCONTENT._serialized_end=8150
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM._serialized_start=8153
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM._serialized_end=9034
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_MVBANNER._serialized_start=6208
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_MVBANNER._serialized_end=6292
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_TITLEGROUP._serialized_start=6294
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_TITLEGROUP._serialized_end=6362
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_CAROUSELBANNER._serialized_start=6364
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_CAROUSELBANNER._serialized_end=6420
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_MINORLANGUAGEBANNER._serialized_start=6422
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_MINORLANGUAGEBANNER._serialized_end=6499
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_CONTENTCASE._serialized_start=6502
+  _HOMEVIEWV6_WEEKLYSECTION_CONTENTITEM_CONTENTCASE._serialized_end=6632
+  _HOMEVIEWV6_RANKINGSECTION._serialized_start=9037
+  _HOMEVIEWV6_RANKINGSECTION._serialized_end=9245
+  _HOMEVIEWV6_RANKINGSECTION_RANKINGTAB._serialized_start=6727
+  _HOMEVIEWV6_RANKINGSECTION_RANKINGTAB._serialized_end=6843
+  _HOMEVIEWV6_PREVIEWSECTION._serialized_start=9248
+  _HOMEVIEWV6_PREVIEWSECTION._serialized_end=9479
+  _HOMEVIEWV6_PREVIEWSECTION_PREVIEWTAB._serialized_start=6938
+  _HOMEVIEWV6_PREVIEWSECTION_PREVIEWTAB._serialized_end=7056
+  _HOMEVIEWV6_TITLELISTSECTION._serialized_start=7058
+  _HOMEVIEWV6_TITLELISTSECTION._serialized_end=7121
+  _HOMEVIEWV6_BANNERSECTION._serialized_start=7123
+  _HOMEVIEWV6_BANNERSECTION._serialized_end=7178
+  _INITIALVIEWV2._serialized_start=9603
+  _INITIALVIEWV2._serialized_end=9712
+  _INTRODUCESUBSCRIPTION._serialized_start=9714
+  _INTRODUCESUBSCRIPTION._serialized_end=9809
+  _LABELEDVIEW._serialized_start=9811
+  _LABELEDVIEW._serialized_end=9924
+  _LABEL._serialized_start=9926
+  _LABEL._serialized_end=9996
+  _LANGUAGES._serialized_start=9999
+  _LANGUAGES._serialized_end=10307
+  _AVAILABLELANGUAGES._serialized_start=10309
+  _AVAILABLELANGUAGES._serialized_end=10393
+  _MANGAVIEWER._serialized_start=10396
+  _MANGAVIEWER._serialized_end=11079
+  _MANGAVIEWER_TITLEAVAILABLELANGUAGES._serialized_start=10979
+  _MANGAVIEWER_TITLEAVAILABLELANGUAGES._serialized_end=11079
+  _METAINFO._serialized_start=11081
+  _METAINFO._serialized_end=11135
+  _MPCSTATUSVIEW._serialized_start=11137
+  _MPCSTATUSVIEW._serialized_end=11206
+  _PAGE._serialized_start=11209
+  _PAGE._serialized_end=12765
+  _PAGE_MANGAPAGE._serialized_start=11485
+  _PAGE_MANGAPAGE._serialized_end=11635
+  _PAGE_LASTPAGE._serialized_start=11638
+  _PAGE_LASTPAGE._serialized_end=12455
+  _PAGE_BANNERLIST._serialized_start=12457
+  _PAGE_BANNERLIST._serialized_end=12530
+  _PAGE_CHAPTERTYPE._serialized_start=12532
+  _PAGE_CHAPTERTYPE._serialized_end=12587
+  _PAGE_PAGETYPE._serialized_start=12589
+  _PAGE_PAGETYPE._serialized_end=12644
+  _PAGE_DATACASE._serialized_start=12646
+  _PAGE_DATACASE._serialized_end=12765
+  _POPUP._serialized_start=12768
+  _POPUP._serialized_end=13594
+  _POPUP_OSDEFAULT._serialized_start=12997
+  _POPUP_OSDEFAULT._serialized_end=13232
+  _POPUP_APPDEFAULT._serialized_start=13234
+  _POPUP_APPDEFAULT._serialized_end=13344
+  _POPUP_ONEIMAGE._serialized_start=13346
+  _POPUP_ONEIMAGE._serialized_end=13423
+  _POPUP_BUTTON._serialized_start=13425
+  _POPUP_BUTTON._serialized_end=13496
+  _POPUP_POPUPCASE._serialized_start=13498
+  _POPUP_POPUPCASE._serialized_end=13594
+  _MOVIEREWARD._serialized_start=13596
+  _MOVIEREWARD._serialized_end=13680
+  _PROFILESETTINGSVIEW._serialized_start=13683
+  _PROFILESETTINGSVIEW._serialized_end=13812
+  _PUBLISHERNEWSLISTVIEW._serialized_start=13815
+  _PUBLISHERNEWSLISTVIEW._serialized_end=13969
+  _PUBLISHERNEWS._serialized_start=13972
+  _PUBLISHERNEWS._serialized_end=14151
+  _PUSHTOKENVIEW._serialized_start=14153
+  _PUSHTOKENVIEW._serialized_end=14207
+  _QUESTIONNAIRE._serialized_start=14210
+  _QUESTIONNAIRE._serialized_end=14347
+  _QUESTIONNAIREVIEW._serialized_start=14350
+  _QUESTIONNAIREVIEW._serialized_end=14498
+  _REGISTRATIONDATA._serialized_start=14500
+  _REGISTRATIONDATA._serialized_end=14540
+  _RESPONSE._serialized_start=14543
+  _RESPONSE._serialized_end=14701
+  _RESPONSE_RESULTCASE._serialized_start=14645
+  _RESPONSE_RESULTCASE._serialized_end=14701
+  _SEARCHVIEW._serialized_start=14704
+  _SEARCHVIEW._serialized_end=15163
+  _SEARCHVIEW_CONTENTS._serialized_start=14914
+  _SEARCHVIEW_CONTENTS._serialized_end=15163
+  _SERVICEANNOUNCEMENT._serialized_start=15165
+  _SERVICEANNOUNCEMENT._serialized_end=15241
+  _SERVICEANNOUNCEMENTSVIEW._serialized_start=15243
+  _SERVICEANNOUNCEMENTSVIEW._serialized_end=15335
+  _SETTINGSVIEW._serialized_start=15338
+  _SETTINGSVIEW._serialized_end=15544
+  _SETTINGSVIEWV2._serialized_start=15547
+  _SETTINGSVIEWV2._serialized_end=15979
+  _CUSTOMCODEDIALOGUE._serialized_start=15981
+  _CUSTOMCODEDIALOGUE._serialized_end=16019
+  _SNS._serialized_start=16021
+  _SNS._serialized_end=16053
+  _SUBSCRIBEDTITLESVIEW._serialized_start=16056
+  _SUBSCRIBEDTITLESVIEW._serialized_end=16206
+  _IOSSUBSCRIPTIONOFFER._serialized_start=16209
+  _IOSSUBSCRIPTIONOFFER._serialized_end=16493
+  _IOSSUBSCRIPTIONOFFER_OFFERTYPE._serialized_start=16433
+  _IOSSUBSCRIPTIONOFFER_OFFERTYPE._serialized_end=16493
+  _ANDROIDSUBSCRIPTIONOFFERTAGS._serialized_start=16495
+  _ANDROIDSUBSCRIPTIONOFFERTAGS._serialized_end=16581
+  _SUBSCRIPTION._serialized_start=16584
+  _SUBSCRIPTION._serialized_end=16715
+  _PLANTYPE._serialized_start=16718
+  _PLANTYPE._serialized_end=16917
+  _SUBSCRIPTIONVIEW._serialized_start=16920
+  _SUBSCRIPTIONVIEW._serialized_end=17291
+  _SUBSCRIPTIONPLANBOXDESCRIPTION._serialized_start=17293
+  _SUBSCRIPTIONPLANBOXDESCRIPTION._serialized_end=17354
+  _SUBSCRIPTIONNOTE._serialized_start=17356
+  _SUBSCRIPTIONNOTE._serialized_end=17403
+  _SUCCESSRESULT._serialized_start=17406
+  _SUCCESSRESULT._serialized_end=20724
+  _SUCCESSRESULT_DATACASE._serialized_start=19773
+  _SUCCESSRESULT_DATACASE._serialized_end=20724
+  _TAG._serialized_start=20726
+  _TAG._serialized_end=20758
+  _TITLEDETAILVIEW._serialized_start=20761
+  _TITLEDETAILVIEW._serialized_end=23214
+  _TITLEDETAILVIEW_TITLELABELS._serialized_start=22375
+  _TITLEDETAILVIEW_TITLELABELS._serialized_end=22499
+  _TITLEDETAILVIEW_PUBLISHERITEM._serialized_start=22501
+  _TITLEDETAILVIEW_PUBLISHERITEM._serialized_end=22608
+  _TITLEDETAILVIEW_TITLELANGUAGES._serialized_start=22610
+  _TITLEDETAILVIEW_TITLELANGUAGES._serialized_end=22661
+  _TITLEDETAILVIEW_CHAPTERGROUP._serialized_start=22664
+  _TITLEDETAILVIEW_CHAPTERGROUP._serialized_end=22849
+  _TITLEDETAILVIEW_RELEASESCHEDULE._serialized_start=22852
+  _TITLEDETAILVIEW_RELEASESCHEDULE._serialized_end=23019
+  _TITLEDETAILVIEW_UPDATETIMING._serialized_start=23022
+  _TITLEDETAILVIEW_UPDATETIMING._serialized_end=23156
+  _TITLEDETAILVIEW_RATING._serialized_start=23158
+  _TITLEDETAILVIEW_RATING._serialized_end=23214
+  _ALLTITLESGROUP._serialized_start=23217
+  _ALLTITLESGROUP._serialized_end=23395
+  _TITLERANKINGGROUP._serialized_start=23397
+  _TITLERANKINGGROUP._serialized_end=23494
+  _TITLEUPDATEDGROUP._serialized_start=23496
+  _TITLEUPDATEDGROUP._serialized_end=23598
+  _LABELEDTITLESGROUP._serialized_start=23600
+  _LABELEDTITLESGROUP._serialized_end=23676
+  _TITLESUBSCRIPTIONGROUP._serialized_start=23678
+  _TITLESUBSCRIPTIONGROUP._serialized_end=23778
+  _TITLELIST._serialized_start=23780
+  _TITLELIST._serialized_end=23876
+  _CHAPTERPAGELIST._serialized_start=23878
+  _CHAPTERPAGELIST._serialized_end=23964
+  _CHAPTERPAGES._serialized_start=23967
+  _CHAPTERPAGES._serialized_end=24130
+  _TITLE._serialized_start=24133
+  _TITLE._serialized_end=24389
+  _UPDATEDTITLE._serialized_start=24392
+  _UPDATEDTITLE._serialized_end=24576
+  _TITLEUPDATED._serialized_start=24578
+  _TITLEUPDATED._serialized_end=24660
+  _FREETITLE._serialized_start=24662
+  _FREETITLE._serialized_end=24741
+  _TICKETTITLES._serialized_start=24743
+  _TICKETTITLES._serialized_end=24849
+  _SUBSCRIBABLETITLE._serialized_start=24851
+  _SUBSCRIBABLETITLE._serialized_end=24947
+  _COMINGSOONTITLE._serialized_start=24949
+  _COMINGSOONTITLE._serialized_end=25063
+  _TITLEHIGHLIGHT._serialized_start=25066
+  _TITLEHIGHLIGHT._serialized_end=25247
+  _TITLERANKINGVIEW._serialized_start=25249
+  _TITLERANKINGVIEW._serialized_end=25305
+  _TITLERANKINGVIEWV2._serialized_start=25308
+  _TITLERANKINGVIEWV2._serialized_end=25457
+  _TITLEUPDATEDVIEW._serialized_start=25459
+  _TITLEUPDATEDVIEW._serialized_end=25527
+  _TITLEUPDATEDVIEWV2._serialized_start=25529
+  _TITLEUPDATEDVIEWV2._serialized_end=25610
+  _TRANSITIONACTION._serialized_start=25613
+  _TRANSITIONACTION._serialized_end=25769
+  _TRANSITIONACTION_PRESENTATIONMETHOD._serialized_start=25714
+  _TRANSITIONACTION_PRESENTATIONMETHOD._serialized_end=25769
+  _UPDATEDTITLEGROUP._serialized_start=25771
+  _UPDATEDTITLEGROUP._serialized_end=25854
+  _UPDATEDTITLEV2GROUP._serialized_start=25856
+  _UPDATEDTITLEV2GROUP._serialized_end=25975
+  _ORIGINALTITLEGROUP._serialized_start=25978
+  _ORIGINALTITLEGROUP._serialized_end=26190
+  _UPDATEDTITLELISTVIEW._serialized_start=26192
+  _UPDATEDTITLELISTVIEW._serialized_end=26264
+  _UPDATEPROFILERESULTVIEW._serialized_start=26267
+  _UPDATEPROFILERESULTVIEW._serialized_end=26407
+  _UPDATEPROFILERESULTVIEW_RESULT._serialized_start=26357
+  _UPDATEPROFILERESULTVIEW_RESULT._serialized_end=26407
+  _USERTICKETS._serialized_start=26409
+  _USERTICKETS._serialized_end=26475
+  _WEBHOMEVIEWV4._serialized_start=26478
+  _WEBHOMEVIEWV4._serialized_end=26844
+  _MVBANNER._serialized_start=6208
+  _MVBANNER._serialized_end=6292
 # @@protoc_insertion_point(module_scope)

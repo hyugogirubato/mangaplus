@@ -15,7 +15,6 @@ message AdRewardNetworkList {
 }
 
 message AdNetwork {
-
   enum AdType {
     STILL_IMAGE = 0;
     MOVIE = 1;

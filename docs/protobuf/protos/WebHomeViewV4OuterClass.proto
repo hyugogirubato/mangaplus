@@ -18,4 +18,10 @@ message WebHomeViewV4 {
   PopupOuterClass.Popup popup = 4;
   repeated TitleListOuterClass.TitleList featuredTitleLists = 5;
   repeated ServiceAnnouncementOuterClass.ServiceAnnouncement serviceAnnouncements = 6;
+  MVBanner mvBanner = 7;
+}
+
+message MVBanner {
+  string imageUrl = 1;
+  UpdatedTitleGroupOuterClass.OriginalTitleGroup titleGroups = 2;
 }

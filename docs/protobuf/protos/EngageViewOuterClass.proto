@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package mangaplus_api_protocol;
+
+option java_package = "jp.co.comic.jump.proto";
+
+message EngageView {
+  repeated EngageMedia medias = 1;
+  string title = 2;
+}
+
+message EngageMedia {
+  int32 bookId = 1;
+  string title = 2;
+  string author = 3;
+  string bookCoverUri = 4;
+  string mediaActionUri = 5;
+  int32 progress = 6;
+  int64 lastEngagementTimeMillis = 7;
+}

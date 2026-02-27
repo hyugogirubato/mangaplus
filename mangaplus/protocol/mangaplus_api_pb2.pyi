@@ -19,6 +19,27 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _ChapterType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _ChapterTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ChapterType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    FREE: _ChapterType.ValueType  # 0
+    FREE_FOR_FIRST_TIME: _ChapterType.ValueType  # 1
+    STANDARD: _ChapterType.ValueType  # 2
+    DELUXE: _ChapterType.ValueType  # 3
+    LOCKED_AFTER_FREE_READ: _ChapterType.ValueType  # 4
+
+class ChapterType(_ChapterType, metaclass=_ChapterTypeEnumTypeWrapper): ...
+
+FREE: ChapterType.ValueType  # 0
+FREE_FOR_FIRST_TIME: ChapterType.ValueType  # 1
+STANDARD: ChapterType.ValueType  # 2
+DELUXE: ChapterType.ValueType  # 3
+LOCKED_AFTER_FREE_READ: ChapterType.ValueType  # 4
+global___ChapterType = ChapterType
+
 class _FirstTimeFreePlatform:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -122,6 +143,21 @@ HOTTEST: RankingTabType.ValueType  # 0
 TRENDING: RankingTabType.ValueType  # 1
 COMPLETED: RankingTabType.ValueType  # 2
 global___RankingTabType = RankingTabType
+
+class _SaleType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _SaleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SaleType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    DISCOUNT: _SaleType.ValueType  # 0
+    FREE_TRIAL: _SaleType.ValueType  # 1
+
+class SaleType(_SaleType, metaclass=_SaleTypeEnumTypeWrapper): ...
+
+DISCOUNT: SaleType.ValueType  # 0
+FREE_TRIAL: SaleType.ValueType  # 1
+global___SaleType = SaleType
 
 class _TitleUpdateStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -469,6 +505,8 @@ class Chapter(google.protobuf.message.Message):
     ISHORIZONTALONLY_FIELD_NUMBER: builtins.int
     VIEWCOUNT_FIELD_NUMBER: builtins.int
     COMMENTCOUNT_FIELD_NUMBER: builtins.int
+    ISUPDATED_FIELD_NUMBER: builtins.int
+    CHAPTERTYPE_FIELD_NUMBER: builtins.int
     titleId: builtins.int
     chapterId: builtins.int
     name: builtins.str
@@ -483,6 +521,8 @@ class Chapter(google.protobuf.message.Message):
     isHorizontalOnly: builtins.bool
     viewCount: builtins.int
     commentCount: builtins.int
+    isUpdated: builtins.bool
+    chapterType: builtins.int
     def __init__(
         self,
         *,
@@ -500,8 +540,10 @@ class Chapter(google.protobuf.message.Message):
         isHorizontalOnly: builtins.bool = ...,
         viewCount: builtins.int = ...,
         commentCount: builtins.int = ...,
+        isUpdated: builtins.bool = ...,
+        chapterType: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["alreadyViewed", b"alreadyViewed", "chapterId", b"chapterId", "chapterTicketEndtime", b"chapterTicketEndtime", "commentCount", b"commentCount", "endTimeStamp", b"endTimeStamp", "isHorizontalOnly", b"isHorizontalOnly", "isVerticalOnly", b"isVerticalOnly", "name", b"name", "startTimeStamp", b"startTimeStamp", "subTitle", b"subTitle", "thumbnailUrl", b"thumbnailUrl", "titleId", b"titleId", "viewCount", b"viewCount", "viewedForFree", b"viewedForFree"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["alreadyViewed", b"alreadyViewed", "chapterId", b"chapterId", "chapterTicketEndtime", b"chapterTicketEndtime", "chapterType", b"chapterType", "commentCount", b"commentCount", "endTimeStamp", b"endTimeStamp", "isHorizontalOnly", b"isHorizontalOnly", "isUpdated", b"isUpdated", "isVerticalOnly", b"isVerticalOnly", "name", b"name", "startTimeStamp", b"startTimeStamp", "subTitle", b"subTitle", "thumbnailUrl", b"thumbnailUrl", "titleId", b"titleId", "viewCount", b"viewCount", "viewedForFree", b"viewedForFree"]) -> None: ...
 
 global___Chapter = Chapter
 
@@ -676,6 +718,58 @@ class DownloadableImageGroup(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["height", b"height", "id", b"id", "imageTitle", b"imageTitle", "imageUrl", b"imageUrl", "type", b"type", "width", b"width"]) -> None: ...
 
 global___DownloadableImageGroup = DownloadableImageGroup
+
+@typing.final
+class EngageView(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MEDIAS_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    title: builtins.str
+    @property
+    def medias(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___EngageMedia]: ...
+    def __init__(
+        self,
+        *,
+        medias: collections.abc.Iterable[global___EngageMedia] | None = ...,
+        title: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["medias", b"medias", "title", b"title"]) -> None: ...
+
+global___EngageView = EngageView
+
+@typing.final
+class EngageMedia(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BOOKID_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    AUTHOR_FIELD_NUMBER: builtins.int
+    BOOKCOVERURI_FIELD_NUMBER: builtins.int
+    MEDIAACTIONURI_FIELD_NUMBER: builtins.int
+    PROGRESS_FIELD_NUMBER: builtins.int
+    LASTENGAGEMENTTIMEMILLIS_FIELD_NUMBER: builtins.int
+    bookId: builtins.int
+    title: builtins.str
+    author: builtins.str
+    bookCoverUri: builtins.str
+    mediaActionUri: builtins.str
+    progress: builtins.int
+    lastEngagementTimeMillis: builtins.int
+    def __init__(
+        self,
+        *,
+        bookId: builtins.int = ...,
+        title: builtins.str = ...,
+        author: builtins.str = ...,
+        bookCoverUri: builtins.str = ...,
+        mediaActionUri: builtins.str = ...,
+        progress: builtins.int = ...,
+        lastEngagementTimeMillis: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["author", b"author", "bookCoverUri", b"bookCoverUri", "bookId", b"bookId", "lastEngagementTimeMillis", b"lastEngagementTimeMillis", "mediaActionUri", b"mediaActionUri", "progress", b"progress", "title", b"title"]) -> None: ...
+
+global___EngageMedia = EngageMedia
 
 @typing.final
 class ErrorResult(google.protobuf.message.Message):
@@ -940,6 +1034,22 @@ class HistoryView(google.protobuf.message.Message):
 global___HistoryView = HistoryView
 
 @typing.final
+class HomePreviewView(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PREVIEWSECTIONS_FIELD_NUMBER: builtins.int
+    @property
+    def previewSections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HomeViewV6.PreviewSection]: ...
+    def __init__(
+        self,
+        *,
+        previewSections: collections.abc.Iterable[global___HomeViewV6.PreviewSection] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["previewSections", b"previewSections"]) -> None: ...
+
+global___HomePreviewView = HomePreviewView
+
+@typing.final
 class HomeViewV3(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1080,91 +1190,91 @@ class HomeViewV4(google.protobuf.message.Message):
             CAROUSEL_BANNERS: HomeViewV4.WeeklySection.ContentItem.ContentCase.ValueType  # 4
             MINOR_LANGUAGE_BANNER: HomeViewV4.WeeklySection.ContentItem.ContentCase.ValueType  # 5
 
-            CONTENT_FIELD_NUMBER: builtins.int
+            @typing.final
+            class MVBanner(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                IMAGEURL_FIELD_NUMBER: builtins.int
+                TITLEGROUPS_FIELD_NUMBER: builtins.int
+                imageUrl: builtins.str
+                @property
+                def titleGroups(self) -> global___OriginalTitleGroup: ...
+                def __init__(
+                    self,
+                    *,
+                    imageUrl: builtins.str = ...,
+                    titleGroups: global___OriginalTitleGroup | None = ...,
+                ) -> None: ...
+                def HasField(self, field_name: typing.Literal["titleGroups", b"titleGroups"]) -> builtins.bool: ...
+                def ClearField(self, field_name: typing.Literal["imageUrl", b"imageUrl", "titleGroups", b"titleGroups"]) -> None: ...
+
+            @typing.final
+            class TitleGroup(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                TITLEGROUPS_FIELD_NUMBER: builtins.int
+                @property
+                def titleGroups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OriginalTitleGroup]: ...
+                def __init__(
+                    self,
+                    *,
+                    titleGroups: collections.abc.Iterable[global___OriginalTitleGroup] | None = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["titleGroups", b"titleGroups"]) -> None: ...
+
+            @typing.final
+            class CarouselBanner(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                BANNERS_FIELD_NUMBER: builtins.int
+                @property
+                def banners(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Banner]: ...
+                def __init__(
+                    self,
+                    *,
+                    banners: collections.abc.Iterable[global___Banner] | None = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["banners", b"banners"]) -> None: ...
+
+            @typing.final
+            class MinorLanguageBanner(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                TITLEGROUPS_FIELD_NUMBER: builtins.int
+                @property
+                def titleGroups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OriginalTitleGroup]: ...
+                def __init__(
+                    self,
+                    *,
+                    titleGroups: collections.abc.Iterable[global___OriginalTitleGroup] | None = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["titleGroups", b"titleGroups"]) -> None: ...
+
+            PRBANNER_FIELD_NUMBER: builtins.int
             MVBANNER_FIELD_NUMBER: builtins.int
             TITLEGROUP_FIELD_NUMBER: builtins.int
             CAROUSELBANNERS_FIELD_NUMBER: builtins.int
             MINORLANGUAGEBANNER_FIELD_NUMBER: builtins.int
-            content: global___HomeViewV4.WeeklySection.ContentItem.ContentCase.ValueType
+            prBanner: global___HomeViewV4.WeeklySection.ContentItem.ContentCase.ValueType
             @property
-            def mVBanner(self) -> global___HomeViewV4.WeeklySection.MVBanner: ...
+            def mVBanner(self) -> global___HomeViewV4.WeeklySection.ContentItem.MVBanner: ...
             @property
-            def titleGroup(self) -> global___HomeViewV4.WeeklySection.TitleGroup: ...
+            def titleGroup(self) -> global___HomeViewV4.WeeklySection.ContentItem.TitleGroup: ...
             @property
-            def carouselBanners(self) -> global___HomeViewV4.WeeklySection.CarouselBanner: ...
+            def carouselBanners(self) -> global___HomeViewV4.WeeklySection.ContentItem.CarouselBanner: ...
             @property
-            def minorLanguageBanner(self) -> global___HomeViewV4.WeeklySection.MinorLanguageBanner: ...
+            def minorLanguageBanner(self) -> global___HomeViewV4.WeeklySection.ContentItem.MinorLanguageBanner: ...
             def __init__(
                 self,
                 *,
-                content: global___HomeViewV4.WeeklySection.ContentItem.ContentCase.ValueType = ...,
-                mVBanner: global___HomeViewV4.WeeklySection.MVBanner | None = ...,
-                titleGroup: global___HomeViewV4.WeeklySection.TitleGroup | None = ...,
-                carouselBanners: global___HomeViewV4.WeeklySection.CarouselBanner | None = ...,
-                minorLanguageBanner: global___HomeViewV4.WeeklySection.MinorLanguageBanner | None = ...,
+                prBanner: global___HomeViewV4.WeeklySection.ContentItem.ContentCase.ValueType = ...,
+                mVBanner: global___HomeViewV4.WeeklySection.ContentItem.MVBanner | None = ...,
+                titleGroup: global___HomeViewV4.WeeklySection.ContentItem.TitleGroup | None = ...,
+                carouselBanners: global___HomeViewV4.WeeklySection.ContentItem.CarouselBanner | None = ...,
+                minorLanguageBanner: global___HomeViewV4.WeeklySection.ContentItem.MinorLanguageBanner | None = ...,
             ) -> None: ...
             def HasField(self, field_name: typing.Literal["carouselBanners", b"carouselBanners", "mVBanner", b"mVBanner", "minorLanguageBanner", b"minorLanguageBanner", "titleGroup", b"titleGroup"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["carouselBanners", b"carouselBanners", "content", b"content", "mVBanner", b"mVBanner", "minorLanguageBanner", b"minorLanguageBanner", "titleGroup", b"titleGroup"]) -> None: ...
-
-        @typing.final
-        class MVBanner(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            IMAGEURL_FIELD_NUMBER: builtins.int
-            TITLEGROUPS_FIELD_NUMBER: builtins.int
-            imageUrl: builtins.str
-            @property
-            def titleGroups(self) -> global___OriginalTitleGroup: ...
-            def __init__(
-                self,
-                *,
-                imageUrl: builtins.str = ...,
-                titleGroups: global___OriginalTitleGroup | None = ...,
-            ) -> None: ...
-            def HasField(self, field_name: typing.Literal["titleGroups", b"titleGroups"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["imageUrl", b"imageUrl", "titleGroups", b"titleGroups"]) -> None: ...
-
-        @typing.final
-        class TitleGroup(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            TITLEGROUPS_FIELD_NUMBER: builtins.int
-            @property
-            def titleGroups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OriginalTitleGroup]: ...
-            def __init__(
-                self,
-                *,
-                titleGroups: collections.abc.Iterable[global___OriginalTitleGroup] | None = ...,
-            ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["titleGroups", b"titleGroups"]) -> None: ...
-
-        @typing.final
-        class CarouselBanner(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            BANNERS_FIELD_NUMBER: builtins.int
-            @property
-            def banners(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Banner]: ...
-            def __init__(
-                self,
-                *,
-                banners: collections.abc.Iterable[global___Banner] | None = ...,
-            ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["banners", b"banners"]) -> None: ...
-
-        @typing.final
-        class MinorLanguageBanner(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            TITLEGROUPS_FIELD_NUMBER: builtins.int
-            @property
-            def titleGroups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OriginalTitleGroup]: ...
-            def __init__(
-                self,
-                *,
-                titleGroups: collections.abc.Iterable[global___OriginalTitleGroup] | None = ...,
-            ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["titleGroups", b"titleGroups"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["carouselBanners", b"carouselBanners", "mVBanner", b"mVBanner", "minorLanguageBanner", b"minorLanguageBanner", "prBanner", b"prBanner", "titleGroup", b"titleGroup"]) -> None: ...
 
         CONTENTS_FIELD_NUMBER: builtins.int
         @property
@@ -1295,6 +1405,330 @@ class HomeViewV4(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["displayTrackingPopup", b"displayTrackingPopup", "popup", b"popup", "sections", b"sections", "serviceAnnouncements", b"serviceAnnouncements", "userSubscription", b"userSubscription"]) -> None: ...
 
 global___HomeViewV4 = HomeViewV4
+
+@typing.final
+class HomeViewV6(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class Sections(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _SectionCase:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _SectionCaseEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[HomeViewV6.Sections._SectionCase.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            SECTION_NOT_SET: HomeViewV6.Sections._SectionCase.ValueType  # 0
+            WEEKLY_SECTION: HomeViewV6.Sections._SectionCase.ValueType  # 1
+            RANKING_SECTION: HomeViewV6.Sections._SectionCase.ValueType  # 2
+            PREVIEW_SECTION: HomeViewV6.Sections._SectionCase.ValueType  # 3
+            TITLE_LIST_SECTION: HomeViewV6.Sections._SectionCase.ValueType  # 4
+            BANNER_SECTION: HomeViewV6.Sections._SectionCase.ValueType  # 5
+
+        class SectionCase(_SectionCase, metaclass=_SectionCaseEnumTypeWrapper): ...
+        SECTION_NOT_SET: HomeViewV6.Sections.SectionCase.ValueType  # 0
+        WEEKLY_SECTION: HomeViewV6.Sections.SectionCase.ValueType  # 1
+        RANKING_SECTION: HomeViewV6.Sections.SectionCase.ValueType  # 2
+        PREVIEW_SECTION: HomeViewV6.Sections.SectionCase.ValueType  # 3
+        TITLE_LIST_SECTION: HomeViewV6.Sections.SectionCase.ValueType  # 4
+        BANNER_SECTION: HomeViewV6.Sections.SectionCase.ValueType  # 5
+
+        WEEKLYSECTION_FIELD_NUMBER: builtins.int
+        RANKINGSECTION_FIELD_NUMBER: builtins.int
+        PREVIEWSECTION_FIELD_NUMBER: builtins.int
+        TITLELISTSECTION_FIELD_NUMBER: builtins.int
+        BANNERSECTION_FIELD_NUMBER: builtins.int
+        @property
+        def weeklySection(self) -> global___HomeViewV6.WeeklySection: ...
+        @property
+        def rankingSection(self) -> global___HomeViewV6.RankingSection: ...
+        @property
+        def previewSection(self) -> global___HomeViewV6.PreviewSection: ...
+        @property
+        def titleListSection(self) -> global___HomeViewV6.TitleListSection: ...
+        @property
+        def bannerSection(self) -> global___HomeViewV6.BannerSection: ...
+        def __init__(
+            self,
+            *,
+            weeklySection: global___HomeViewV6.WeeklySection | None = ...,
+            rankingSection: global___HomeViewV6.RankingSection | None = ...,
+            previewSection: global___HomeViewV6.PreviewSection | None = ...,
+            titleListSection: global___HomeViewV6.TitleListSection | None = ...,
+            bannerSection: global___HomeViewV6.BannerSection | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["bannerSection", b"bannerSection", "previewSection", b"previewSection", "rankingSection", b"rankingSection", "titleListSection", b"titleListSection", "weeklySection", b"weeklySection"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["bannerSection", b"bannerSection", "previewSection", b"previewSection", "rankingSection", b"rankingSection", "titleListSection", b"titleListSection", "weeklySection", b"weeklySection"]) -> None: ...
+
+    @typing.final
+    class WeeklySection(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class WeeklyContent(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            ISUPDATED_FIELD_NUMBER: builtins.int
+            UPDATEDTIMESTAMP_FIELD_NUMBER: builtins.int
+            CONTENTITEMS_FIELD_NUMBER: builtins.int
+            isUpdated: builtins.bool
+            updatedTimeStamp: builtins.int
+            @property
+            def contentItems(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HomeViewV6.WeeklySection.ContentItem]: ...
+            def __init__(
+                self,
+                *,
+                isUpdated: builtins.bool = ...,
+                updatedTimeStamp: builtins.int = ...,
+                contentItems: collections.abc.Iterable[global___HomeViewV6.WeeklySection.ContentItem] | None = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["contentItems", b"contentItems", "isUpdated", b"isUpdated", "updatedTimeStamp", b"updatedTimeStamp"]) -> None: ...
+
+        @typing.final
+        class ContentItem(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            class _ContentCase:
+                ValueType = typing.NewType("ValueType", builtins.int)
+                V: typing_extensions.TypeAlias = ValueType
+
+            class _ContentCaseEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[HomeViewV6.WeeklySection.ContentItem._ContentCase.ValueType], builtins.type):
+                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+                CONTENT_NOT_SET: HomeViewV6.WeeklySection.ContentItem._ContentCase.ValueType  # 0
+                PR_BANNER: HomeViewV6.WeeklySection.ContentItem._ContentCase.ValueType  # 1
+                MV_BANNER: HomeViewV6.WeeklySection.ContentItem._ContentCase.ValueType  # 2
+                TITLE_GROUP: HomeViewV6.WeeklySection.ContentItem._ContentCase.ValueType  # 3
+                CAROUSEL_BANNERS: HomeViewV6.WeeklySection.ContentItem._ContentCase.ValueType  # 4
+                MINOR_LANGUAGE_BANNER: HomeViewV6.WeeklySection.ContentItem._ContentCase.ValueType  # 5
+
+            class ContentCase(_ContentCase, metaclass=_ContentCaseEnumTypeWrapper): ...
+            CONTENT_NOT_SET: HomeViewV6.WeeklySection.ContentItem.ContentCase.ValueType  # 0
+            PR_BANNER: HomeViewV6.WeeklySection.ContentItem.ContentCase.ValueType  # 1
+            MV_BANNER: HomeViewV6.WeeklySection.ContentItem.ContentCase.ValueType  # 2
+            TITLE_GROUP: HomeViewV6.WeeklySection.ContentItem.ContentCase.ValueType  # 3
+            CAROUSEL_BANNERS: HomeViewV6.WeeklySection.ContentItem.ContentCase.ValueType  # 4
+            MINOR_LANGUAGE_BANNER: HomeViewV6.WeeklySection.ContentItem.ContentCase.ValueType  # 5
+
+            @typing.final
+            class MVBanner(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                IMAGEURL_FIELD_NUMBER: builtins.int
+                TITLEGROUPS_FIELD_NUMBER: builtins.int
+                imageUrl: builtins.str
+                @property
+                def titleGroups(self) -> global___OriginalTitleGroup: ...
+                def __init__(
+                    self,
+                    *,
+                    imageUrl: builtins.str = ...,
+                    titleGroups: global___OriginalTitleGroup | None = ...,
+                ) -> None: ...
+                def HasField(self, field_name: typing.Literal["titleGroups", b"titleGroups"]) -> builtins.bool: ...
+                def ClearField(self, field_name: typing.Literal["imageUrl", b"imageUrl", "titleGroups", b"titleGroups"]) -> None: ...
+
+            @typing.final
+            class TitleGroup(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                TITLEGROUPS_FIELD_NUMBER: builtins.int
+                @property
+                def titleGroups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OriginalTitleGroup]: ...
+                def __init__(
+                    self,
+                    *,
+                    titleGroups: collections.abc.Iterable[global___OriginalTitleGroup] | None = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["titleGroups", b"titleGroups"]) -> None: ...
+
+            @typing.final
+            class CarouselBanner(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                BANNERS_FIELD_NUMBER: builtins.int
+                @property
+                def banners(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Banner]: ...
+                def __init__(
+                    self,
+                    *,
+                    banners: collections.abc.Iterable[global___Banner] | None = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["banners", b"banners"]) -> None: ...
+
+            @typing.final
+            class MinorLanguageBanner(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                TITLEGROUPS_FIELD_NUMBER: builtins.int
+                @property
+                def titleGroups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OriginalTitleGroup]: ...
+                def __init__(
+                    self,
+                    *,
+                    titleGroups: collections.abc.Iterable[global___OriginalTitleGroup] | None = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["titleGroups", b"titleGroups"]) -> None: ...
+
+            PRBANNER_FIELD_NUMBER: builtins.int
+            MVBANNER_FIELD_NUMBER: builtins.int
+            TITLEGROUP_FIELD_NUMBER: builtins.int
+            CAROUSELBANNERS_FIELD_NUMBER: builtins.int
+            MINORLANGUAGEBANNER_FIELD_NUMBER: builtins.int
+            prBanner: global___HomeViewV6.WeeklySection.ContentItem.ContentCase.ValueType
+            @property
+            def mVBanner(self) -> global___HomeViewV6.WeeklySection.ContentItem.MVBanner: ...
+            @property
+            def titleGroup(self) -> global___HomeViewV6.WeeklySection.ContentItem.TitleGroup: ...
+            @property
+            def carouselBanners(self) -> global___HomeViewV6.WeeklySection.ContentItem.CarouselBanner: ...
+            @property
+            def minorLanguageBanner(self) -> global___HomeViewV6.WeeklySection.ContentItem.MinorLanguageBanner: ...
+            def __init__(
+                self,
+                *,
+                prBanner: global___HomeViewV6.WeeklySection.ContentItem.ContentCase.ValueType = ...,
+                mVBanner: global___HomeViewV6.WeeklySection.ContentItem.MVBanner | None = ...,
+                titleGroup: global___HomeViewV6.WeeklySection.ContentItem.TitleGroup | None = ...,
+                carouselBanners: global___HomeViewV6.WeeklySection.ContentItem.CarouselBanner | None = ...,
+                minorLanguageBanner: global___HomeViewV6.WeeklySection.ContentItem.MinorLanguageBanner | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["carouselBanners", b"carouselBanners", "mVBanner", b"mVBanner", "minorLanguageBanner", b"minorLanguageBanner", "titleGroup", b"titleGroup"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["carouselBanners", b"carouselBanners", "mVBanner", b"mVBanner", "minorLanguageBanner", b"minorLanguageBanner", "prBanner", b"prBanner", "titleGroup", b"titleGroup"]) -> None: ...
+
+        CONTENTS_FIELD_NUMBER: builtins.int
+        @property
+        def contents(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HomeViewV6.WeeklySection.WeeklyContent]: ...
+        def __init__(
+            self,
+            *,
+            contents: collections.abc.Iterable[global___HomeViewV6.WeeklySection.WeeklyContent] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["contents", b"contents"]) -> None: ...
+
+    @typing.final
+    class RankingSection(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class RankingTab(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            TABTYPE_FIELD_NUMBER: builtins.int
+            RANKEDTITLES_FIELD_NUMBER: builtins.int
+            tabType: global___RankingTabType.ValueType
+            @property
+            def rankedTitles(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TitleRankingGroup]: ...
+            def __init__(
+                self,
+                *,
+                tabType: global___RankingTabType.ValueType = ...,
+                rankedTitles: collections.abc.Iterable[global___TitleRankingGroup] | None = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["rankedTitles", b"rankedTitles", "tabType", b"tabType"]) -> None: ...
+
+        RANKINGTABS_FIELD_NUMBER: builtins.int
+        @property
+        def rankingTabs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HomeViewV6.RankingSection.RankingTab]: ...
+        def __init__(
+            self,
+            *,
+            rankingTabs: collections.abc.Iterable[global___HomeViewV6.RankingSection.RankingTab] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["rankingTabs", b"rankingTabs"]) -> None: ...
+
+    @typing.final
+    class PreviewSection(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class PreviewTab(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            TABTYPE_FIELD_NUMBER: builtins.int
+            CHAPTERPAGESLIST_FIELD_NUMBER: builtins.int
+            tabType: global___RankingTabType.ValueType
+            @property
+            def chapterPagesList(self) -> global___ChapterPageList: ...
+            def __init__(
+                self,
+                *,
+                tabType: global___RankingTabType.ValueType = ...,
+                chapterPagesList: global___ChapterPageList | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["chapterPagesList", b"chapterPagesList"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["chapterPagesList", b"chapterPagesList", "tabType", b"tabType"]) -> None: ...
+
+        SECTIONNAME_FIELD_NUMBER: builtins.int
+        PREVIEWTABS_FIELD_NUMBER: builtins.int
+        sectionName: builtins.str
+        @property
+        def previewTabs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HomeViewV6.PreviewSection.PreviewTab]: ...
+        def __init__(
+            self,
+            *,
+            sectionName: builtins.str = ...,
+            previewTabs: collections.abc.Iterable[global___HomeViewV6.PreviewSection.PreviewTab] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["previewTabs", b"previewTabs", "sectionName", b"sectionName"]) -> None: ...
+
+    @typing.final
+    class TitleListSection(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        TITLELIST_FIELD_NUMBER: builtins.int
+        @property
+        def titleList(self) -> global___TitleList: ...
+        def __init__(
+            self,
+            *,
+            titleList: global___TitleList | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["titleList", b"titleList"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["titleList", b"titleList"]) -> None: ...
+
+    @typing.final
+    class BannerSection(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        BANNERS_FIELD_NUMBER: builtins.int
+        @property
+        def banners(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Banner]: ...
+        def __init__(
+            self,
+            *,
+            banners: collections.abc.Iterable[global___Banner] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["banners", b"banners"]) -> None: ...
+
+    SECTIONS_FIELD_NUMBER: builtins.int
+    POPUP_FIELD_NUMBER: builtins.int
+    DISPLAYTRACKINGPOPUP_FIELD_NUMBER: builtins.int
+    USERSUBSCRIPTION_FIELD_NUMBER: builtins.int
+    SERVICEANNOUNCEMENTS_FIELD_NUMBER: builtins.int
+    displayTrackingPopup: builtins.bool
+    @property
+    def sections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HomeViewV6.Sections]: ...
+    @property
+    def popup(self) -> global___Popup: ...
+    @property
+    def userSubscription(self) -> global___Subscription: ...
+    @property
+    def serviceAnnouncements(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ServiceAnnouncement]: ...
+    def __init__(
+        self,
+        *,
+        sections: collections.abc.Iterable[global___HomeViewV6.Sections] | None = ...,
+        popup: global___Popup | None = ...,
+        displayTrackingPopup: builtins.bool = ...,
+        userSubscription: global___Subscription | None = ...,
+        serviceAnnouncements: collections.abc.Iterable[global___ServiceAnnouncement] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["popup", b"popup", "userSubscription", b"userSubscription"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["displayTrackingPopup", b"displayTrackingPopup", "popup", b"popup", "sections", b"sections", "serviceAnnouncements", b"serviceAnnouncements", "userSubscription", b"userSubscription"]) -> None: ...
+
+global___HomeViewV6 = HomeViewV6
 
 @typing.final
 class InitialViewV2(google.protobuf.message.Message):
@@ -1616,11 +2050,13 @@ class Page(google.protobuf.message.Message):
         HEIGHT_FIELD_NUMBER: builtins.int
         TYPE_FIELD_NUMBER: builtins.int
         ENCRYPTIONKEY_FIELD_NUMBER: builtins.int
+        MERCHSTOREURL_FIELD_NUMBER: builtins.int
         imageUrl: builtins.str
         width: builtins.int
         height: builtins.int
         type: global___Page.PageType.ValueType
         encryptionKey: builtins.str
+        merchStoreUrl: builtins.str
         def __init__(
             self,
             *,
@@ -1629,8 +2065,9 @@ class Page(google.protobuf.message.Message):
             height: builtins.int = ...,
             type: global___Page.PageType.ValueType = ...,
             encryptionKey: builtins.str = ...,
+            merchStoreUrl: builtins.str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["encryptionKey", b"encryptionKey", "height", b"height", "imageUrl", b"imageUrl", "type", b"type", "width", b"width"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["encryptionKey", b"encryptionKey", "height", b"height", "imageUrl", b"imageUrl", "merchStoreUrl", b"merchStoreUrl", "type", b"type", "width", b"width"]) -> None: ...
 
     @typing.final
     class LastPage(google.protobuf.message.Message):
@@ -2388,12 +2825,14 @@ class IosSubscriptionOffer(google.protobuf.message.Message):
     NONCE_FIELD_NUMBER: builtins.int
     TIMESTAMP_FIELD_NUMBER: builtins.int
     IDENTIFIER_FIELD_NUMBER: builtins.int
+    SALETYPE_FIELD_NUMBER: builtins.int
     offerType: global___IosSubscriptionOffer.OfferType.ValueType
     signature: builtins.str
     appleKey: builtins.str
     nonce: builtins.str
     timestamp: builtins.str
     identifier: builtins.str
+    saleType: global___SaleType.ValueType
     def __init__(
         self,
         *,
@@ -2403,8 +2842,9 @@ class IosSubscriptionOffer(google.protobuf.message.Message):
         nonce: builtins.str = ...,
         timestamp: builtins.str = ...,
         identifier: builtins.str = ...,
+        saleType: global___SaleType.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["appleKey", b"appleKey", "identifier", b"identifier", "nonce", b"nonce", "offerType", b"offerType", "signature", b"signature", "timestamp", b"timestamp"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["appleKey", b"appleKey", "identifier", b"identifier", "nonce", b"nonce", "offerType", b"offerType", "saleType", b"saleType", "signature", b"signature", "timestamp", b"timestamp"]) -> None: ...
 
 global___IosSubscriptionOffer = IosSubscriptionOffer
 
@@ -2413,13 +2853,16 @@ class AndroidSubscriptionOfferTags(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TAG_FIELD_NUMBER: builtins.int
+    SALETYPE_FIELD_NUMBER: builtins.int
     tag: builtins.str
+    saleType: global___SaleType.ValueType
     def __init__(
         self,
         *,
         tag: builtins.str = ...,
+        saleType: global___SaleType.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["tag", b"tag"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["saleType", b"saleType", "tag", b"tag"]) -> None: ...
 
 global___AndroidSubscriptionOfferTags = AndroidSubscriptionOfferTags
 
@@ -2603,6 +3046,9 @@ class SuccessResult(google.protobuf.message.Message):
         FAVORITE_TITLES_VIEW: SuccessResult._DataCase.ValueType  # 43
         MPC_STATUS_VIEW: SuccessResult._DataCase.ValueType  # 44
         HOME_VIEW_V4: SuccessResult._DataCase.ValueType  # 45
+        ENGAGE_VIEW: SuccessResult._DataCase.ValueType  # 46
+        HOME_VIEW_V6: SuccessResult._DataCase.ValueType  # 47
+        HOME_PREVIEW_VIEW: SuccessResult._DataCase.ValueType  # 48
 
     class DataCase(_DataCase, metaclass=_DataCaseEnumTypeWrapper): ...
     DATA_NOT_SET: SuccessResult.DataCase.ValueType  # 0
@@ -2642,6 +3088,9 @@ class SuccessResult(google.protobuf.message.Message):
     FAVORITE_TITLES_VIEW: SuccessResult.DataCase.ValueType  # 43
     MPC_STATUS_VIEW: SuccessResult.DataCase.ValueType  # 44
     HOME_VIEW_V4: SuccessResult.DataCase.ValueType  # 45
+    ENGAGE_VIEW: SuccessResult.DataCase.ValueType  # 46
+    HOME_VIEW_V6: SuccessResult.DataCase.ValueType  # 47
+    HOME_PREVIEW_VIEW: SuccessResult.DataCase.ValueType  # 48
 
     ISFEATUREDUPDATED_FIELD_NUMBER: builtins.int
     REGISTERATIONDATA_FIELD_NUMBER: builtins.int
@@ -2681,6 +3130,9 @@ class SuccessResult(google.protobuf.message.Message):
     FAVORITETITLESVIEW_FIELD_NUMBER: builtins.int
     MPCSTATUSVIEW_FIELD_NUMBER: builtins.int
     HOMEVIEWV4_FIELD_NUMBER: builtins.int
+    ENGAGEVIEW_FIELD_NUMBER: builtins.int
+    HOMEVIEWV6_FIELD_NUMBER: builtins.int
+    HOMEPREVIEWVIEW_FIELD_NUMBER: builtins.int
     isFeaturedUpdated: builtins.bool
     @property
     def registerationData(self) -> global___RegistrationData: ...
@@ -2756,6 +3208,12 @@ class SuccessResult(google.protobuf.message.Message):
     def mpcStatusView(self) -> global___MpcStatusView: ...
     @property
     def homeViewV4(self) -> global___HomeViewV4: ...
+    @property
+    def engageView(self) -> global___EngageView: ...
+    @property
+    def homeViewV6(self) -> global___HomeViewV6: ...
+    @property
+    def homePreviewView(self) -> global___HomePreviewView: ...
     def __init__(
         self,
         *,
@@ -2797,9 +3255,12 @@ class SuccessResult(google.protobuf.message.Message):
         favoriteTitlesView: global___FavoriteTitlesView | None = ...,
         mpcStatusView: global___MpcStatusView | None = ...,
         homeViewV4: global___HomeViewV4 | None = ...,
+        engageView: global___EngageView | None = ...,
+        homeViewV6: global___HomeViewV6 | None = ...,
+        homePreviewView: global___HomePreviewView | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["allFreeTitlesView", b"allFreeTitlesView", "allTicketTitlesView", b"allTicketTitlesView", "allTitlesView", b"allTitlesView", "allTitlesViewV2", b"allTitlesViewV2", "commentListView", b"commentListView", "downloadableImagesView", b"downloadableImagesView", "favoriteTitlesView", b"favoriteTitlesView", "featuredTitlesView", b"featuredTitlesView", "featuredTitlesViewV2", b"featuredTitlesViewV2", "feedbackView", b"feedbackView", "historyView", b"historyView", "homeViewV3", b"homeViewV3", "homeViewV4", b"homeViewV4", "initialViewV2", b"initialViewV2", "introduceSubscription", b"introduceSubscription", "labeledView", b"labeledView", "languages", b"languages", "mangaViewer", b"mangaViewer", "mpcStatusView", b"mpcStatusView", "profileSettingsView", b"profileSettingsView", "publisherNewsListView", b"publisherNewsListView", "pushTokenView", b"pushTokenView", "questionnaireView", b"questionnaireView", "registerationData", b"registerationData", "searchView", b"searchView", "serviceAnnouncementsView", b"serviceAnnouncementsView", "settingsViewV2", b"settingsViewV2", "subscribedTitlesView", b"subscribedTitlesView", "subscriptionView", b"subscriptionView", "titleDetailView", b"titleDetailView", "titleListViewV2", b"titleListViewV2", "titleRankingView", b"titleRankingView", "titleRankingViewV2", b"titleRankingViewV2", "titleUpdatedView", b"titleUpdatedView", "updateProfileResultView", b"updateProfileResultView", "updatedTitleListView", b"updatedTitleListView", "webHomeViewV4", b"webHomeViewV4"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allFreeTitlesView", b"allFreeTitlesView", "allTicketTitlesView", b"allTicketTitlesView", "allTitlesView", b"allTitlesView", "allTitlesViewV2", b"allTitlesViewV2", "commentListView", b"commentListView", "downloadableImagesView", b"downloadableImagesView", "favoriteTitlesView", b"favoriteTitlesView", "featuredTitlesView", b"featuredTitlesView", "featuredTitlesViewV2", b"featuredTitlesViewV2", "feedbackView", b"feedbackView", "historyView", b"historyView", "homeViewV3", b"homeViewV3", "homeViewV4", b"homeViewV4", "initialViewV2", b"initialViewV2", "introduceSubscription", b"introduceSubscription", "isFeaturedUpdated", b"isFeaturedUpdated", "labeledView", b"labeledView", "languages", b"languages", "mangaViewer", b"mangaViewer", "mpcStatusView", b"mpcStatusView", "profileSettingsView", b"profileSettingsView", "publisherNewsListView", b"publisherNewsListView", "pushTokenView", b"pushTokenView", "questionnaireView", b"questionnaireView", "registerationData", b"registerationData", "searchView", b"searchView", "serviceAnnouncementsView", b"serviceAnnouncementsView", "settingsViewV2", b"settingsViewV2", "subscribedTitlesView", b"subscribedTitlesView", "subscriptionView", b"subscriptionView", "titleDetailView", b"titleDetailView", "titleListViewV2", b"titleListViewV2", "titleRankingView", b"titleRankingView", "titleRankingViewV2", b"titleRankingViewV2", "titleUpdatedView", b"titleUpdatedView", "updateProfileResultView", b"updateProfileResultView", "updatedTitleListView", b"updatedTitleListView", "webHomeViewV4", b"webHomeViewV4"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allFreeTitlesView", b"allFreeTitlesView", "allTicketTitlesView", b"allTicketTitlesView", "allTitlesView", b"allTitlesView", "allTitlesViewV2", b"allTitlesViewV2", "commentListView", b"commentListView", "downloadableImagesView", b"downloadableImagesView", "engageView", b"engageView", "favoriteTitlesView", b"favoriteTitlesView", "featuredTitlesView", b"featuredTitlesView", "featuredTitlesViewV2", b"featuredTitlesViewV2", "feedbackView", b"feedbackView", "historyView", b"historyView", "homePreviewView", b"homePreviewView", "homeViewV3", b"homeViewV3", "homeViewV4", b"homeViewV4", "homeViewV6", b"homeViewV6", "initialViewV2", b"initialViewV2", "introduceSubscription", b"introduceSubscription", "labeledView", b"labeledView", "languages", b"languages", "mangaViewer", b"mangaViewer", "mpcStatusView", b"mpcStatusView", "profileSettingsView", b"profileSettingsView", "publisherNewsListView", b"publisherNewsListView", "pushTokenView", b"pushTokenView", "questionnaireView", b"questionnaireView", "registerationData", b"registerationData", "searchView", b"searchView", "serviceAnnouncementsView", b"serviceAnnouncementsView", "settingsViewV2", b"settingsViewV2", "subscribedTitlesView", b"subscribedTitlesView", "subscriptionView", b"subscriptionView", "titleDetailView", b"titleDetailView", "titleListViewV2", b"titleListViewV2", "titleRankingView", b"titleRankingView", "titleRankingViewV2", b"titleRankingViewV2", "titleUpdatedView", b"titleUpdatedView", "updateProfileResultView", b"updateProfileResultView", "updatedTitleListView", b"updatedTitleListView", "webHomeViewV4", b"webHomeViewV4"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allFreeTitlesView", b"allFreeTitlesView", "allTicketTitlesView", b"allTicketTitlesView", "allTitlesView", b"allTitlesView", "allTitlesViewV2", b"allTitlesViewV2", "commentListView", b"commentListView", "downloadableImagesView", b"downloadableImagesView", "engageView", b"engageView", "favoriteTitlesView", b"favoriteTitlesView", "featuredTitlesView", b"featuredTitlesView", "featuredTitlesViewV2", b"featuredTitlesViewV2", "feedbackView", b"feedbackView", "historyView", b"historyView", "homePreviewView", b"homePreviewView", "homeViewV3", b"homeViewV3", "homeViewV4", b"homeViewV4", "homeViewV6", b"homeViewV6", "initialViewV2", b"initialViewV2", "introduceSubscription", b"introduceSubscription", "isFeaturedUpdated", b"isFeaturedUpdated", "labeledView", b"labeledView", "languages", b"languages", "mangaViewer", b"mangaViewer", "mpcStatusView", b"mpcStatusView", "profileSettingsView", b"profileSettingsView", "publisherNewsListView", b"publisherNewsListView", "pushTokenView", b"pushTokenView", "questionnaireView", b"questionnaireView", "registerationData", b"registerationData", "searchView", b"searchView", "serviceAnnouncementsView", b"serviceAnnouncementsView", "settingsViewV2", b"settingsViewV2", "subscribedTitlesView", b"subscribedTitlesView", "subscriptionView", b"subscriptionView", "titleDetailView", b"titleDetailView", "titleListViewV2", b"titleListViewV2", "titleRankingView", b"titleRankingView", "titleRankingViewV2", b"titleRankingViewV2", "titleUpdatedView", b"titleUpdatedView", "updateProfileResultView", b"updateProfileResultView", "updatedTitleListView", b"updatedTitleListView", "webHomeViewV4", b"webHomeViewV4"]) -> None: ...
 
 global___SuccessResult = SuccessResult
 
@@ -2840,6 +3301,8 @@ class TitleDetailView(google.protobuf.message.Message):
         TRIMONTHLY: TitleDetailView._ReleaseSchedule.ValueType  # 6
         OTHER: TitleDetailView._ReleaseSchedule.ValueType  # 7
         COMPLETED: TitleDetailView._ReleaseSchedule.ValueType  # 8
+        ONE_SHOT: TitleDetailView._ReleaseSchedule.ValueType  # 9
+        HIATUS: TitleDetailView._ReleaseSchedule.ValueType  # 10
 
     class ReleaseSchedule(_ReleaseSchedule, metaclass=_ReleaseScheduleEnumTypeWrapper): ...
     DISABLED: TitleDetailView.ReleaseSchedule.ValueType  # 0
@@ -2851,6 +3314,8 @@ class TitleDetailView(google.protobuf.message.Message):
     TRIMONTHLY: TitleDetailView.ReleaseSchedule.ValueType  # 6
     OTHER: TitleDetailView.ReleaseSchedule.ValueType  # 7
     COMPLETED: TitleDetailView.ReleaseSchedule.ValueType  # 8
+    ONE_SHOT: TitleDetailView.ReleaseSchedule.ValueType  # 9
+    HIATUS: TitleDetailView.ReleaseSchedule.ValueType  # 10
 
     class _UpdateTiming:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -2903,13 +3368,13 @@ class TitleDetailView(google.protobuf.message.Message):
         RELEASESCHEDULE_FIELD_NUMBER: builtins.int
         ISSIMULPUB_FIELD_NUMBER: builtins.int
         PLANTYPE_FIELD_NUMBER: builtins.int
-        releaseSchedule: builtins.int
+        releaseSchedule: global___TitleDetailView.ReleaseSchedule.ValueType
         isSimulpub: builtins.bool
         planType: builtins.str
         def __init__(
             self,
             *,
-            releaseSchedule: builtins.int = ...,
+            releaseSchedule: global___TitleDetailView.ReleaseSchedule.ValueType = ...,
             isSimulpub: builtins.bool = ...,
             planType: builtins.str = ...,
         ) -> None: ...
@@ -2941,12 +3406,12 @@ class TitleDetailView(google.protobuf.message.Message):
         TITLEID_FIELD_NUMBER: builtins.int
         LANGUAGE_FIELD_NUMBER: builtins.int
         titleId: builtins.int
-        language: global___Language.ValueType
+        language: builtins.int
         def __init__(
             self,
             *,
             titleId: builtins.int = ...,
-            language: global___Language.ValueType = ...,
+            language: builtins.int = ...,
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["language", b"language", "titleId", b"titleId"]) -> None: ...
 
@@ -3012,11 +3477,12 @@ class TitleDetailView(google.protobuf.message.Message):
     ISFIRSTTIMEFREE_FIELD_NUMBER: builtins.int
     METAINFO_FIELD_NUMBER: builtins.int
     RATINGPOPUP_FIELD_NUMBER: builtins.int
+    CHAPTERLISTV2_FIELD_NUMBER: builtins.int
     titleImageUrl: builtins.str
     overview: builtins.str
     backgroundImageUrl: builtins.str
     nextTimeStamp: builtins.int
-    updateTiming: builtins.int
+    updateTiming: global___TitleDetailView.UpdateTiming.ValueType
     viewingPeriodDescription: builtins.str
     nonAppearanceInfo: builtins.str
     isSimulReleased: builtins.bool
@@ -3071,6 +3537,8 @@ class TitleDetailView(google.protobuf.message.Message):
     def metaInfo(self) -> global___MetaInfo: ...
     @property
     def ratingPopup(self) -> global___Popup: ...
+    @property
+    def chapterListV2(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Chapter]: ...
     def __init__(
         self,
         *,
@@ -3079,7 +3547,7 @@ class TitleDetailView(google.protobuf.message.Message):
         overview: builtins.str = ...,
         backgroundImageUrl: builtins.str = ...,
         nextTimeStamp: builtins.int = ...,
-        updateTiming: builtins.int = ...,
+        updateTiming: global___TitleDetailView.UpdateTiming.ValueType = ...,
         viewingPeriodDescription: builtins.str = ...,
         nonAppearanceInfo: builtins.str = ...,
         firstChapterList: collections.abc.Iterable[global___Chapter] | None = ...,
@@ -3111,9 +3579,10 @@ class TitleDetailView(google.protobuf.message.Message):
         isFirstTimeFree: builtins.bool = ...,
         metaInfo: global___MetaInfo | None = ...,
         ratingPopup: global___Popup | None = ...,
+        chapterListV2: collections.abc.Iterable[global___Chapter] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["advertisement", b"advertisement", "freeViewDialogue", b"freeViewDialogue", "label", b"label", "metaInfo", b"metaInfo", "publisherBanner", b"publisherBanner", "ratingPopup", b"ratingPopup", "sns", b"sns", "title", b"title", "titleLabels", b"titleLabels", "userSubscription", b"userSubscription", "userTickets", b"userTickets"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["advertisement", b"advertisement", "backgroundImageUrl", b"backgroundImageUrl", "banners", b"banners", "chapterListGroup", b"chapterListGroup", "chaptersDescending", b"chaptersDescending", "firstChapterList", b"firstChapterList", "freeViewDialogue", b"freeViewDialogue", "hasChaptersBetween", b"hasChaptersBetween", "isFirstTimeFree", b"isFirstTimeFree", "isSimulReleased", b"isSimulReleased", "isSubscribed", b"isSubscribed", "label", b"label", "lastChapterList", b"lastChapterList", "metaInfo", b"metaInfo", "nextTimeStamp", b"nextTimeStamp", "nonAppearanceInfo", b"nonAppearanceInfo", "numberOfViews", b"numberOfViews", "overview", b"overview", "publisherBanner", b"publisherBanner", "publisherItems", b"publisherItems", "rating", b"rating", "ratingPopup", b"ratingPopup", "recommendedTitleList", b"recommendedTitleList", "regionCode", b"regionCode", "sns", b"sns", "tags", b"tags", "ticketChapterList", b"ticketChapterList", "ticketTitleList", b"ticketTitleList", "title", b"title", "titleBanners", b"titleBanners", "titleImageUrl", b"titleImageUrl", "titleLabels", b"titleLabels", "titleLanguages", b"titleLanguages", "updateTiming", b"updateTiming", "userSubscription", b"userSubscription", "userTickets", b"userTickets", "viewingPeriodDescription", b"viewingPeriodDescription"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["advertisement", b"advertisement", "backgroundImageUrl", b"backgroundImageUrl", "banners", b"banners", "chapterListGroup", b"chapterListGroup", "chapterListV2", b"chapterListV2", "chaptersDescending", b"chaptersDescending", "firstChapterList", b"firstChapterList", "freeViewDialogue", b"freeViewDialogue", "hasChaptersBetween", b"hasChaptersBetween", "isFirstTimeFree", b"isFirstTimeFree", "isSimulReleased", b"isSimulReleased", "isSubscribed", b"isSubscribed", "label", b"label", "lastChapterList", b"lastChapterList", "metaInfo", b"metaInfo", "nextTimeStamp", b"nextTimeStamp", "nonAppearanceInfo", b"nonAppearanceInfo", "numberOfViews", b"numberOfViews", "overview", b"overview", "publisherBanner", b"publisherBanner", "publisherItems", b"publisherItems", "rating", b"rating", "ratingPopup", b"ratingPopup", "recommendedTitleList", b"recommendedTitleList", "regionCode", b"regionCode", "sns", b"sns", "tags", b"tags", "ticketChapterList", b"ticketChapterList", "ticketTitleList", b"ticketTitleList", "title", b"title", "titleBanners", b"titleBanners", "titleImageUrl", b"titleImageUrl", "titleLabels", b"titleLabels", "titleLanguages", b"titleLanguages", "updateTiming", b"updateTiming", "userSubscription", b"userSubscription", "userTickets", b"userTickets", "viewingPeriodDescription", b"viewingPeriodDescription"]) -> None: ...
 
 global___TitleDetailView = TitleDetailView
 
@@ -3774,6 +4243,7 @@ class WebHomeViewV4(google.protobuf.message.Message):
     POPUP_FIELD_NUMBER: builtins.int
     FEATUREDTITLELISTS_FIELD_NUMBER: builtins.int
     SERVICEANNOUNCEMENTS_FIELD_NUMBER: builtins.int
+    MVBANNER_FIELD_NUMBER: builtins.int
     @property
     def topBanners(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Banner]: ...
     @property
@@ -3786,6 +4256,8 @@ class WebHomeViewV4(google.protobuf.message.Message):
     def featuredTitleLists(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TitleList]: ...
     @property
     def serviceAnnouncements(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ServiceAnnouncement]: ...
+    @property
+    def mvBanner(self) -> global___MVBanner: ...
     def __init__(
         self,
         *,
@@ -3795,8 +4267,29 @@ class WebHomeViewV4(google.protobuf.message.Message):
         popup: global___Popup | None = ...,
         featuredTitleLists: collections.abc.Iterable[global___TitleList] | None = ...,
         serviceAnnouncements: collections.abc.Iterable[global___ServiceAnnouncement] | None = ...,
+        mvBanner: global___MVBanner | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["popup", b"popup"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["featuredTitleLists", b"featuredTitleLists", "groups", b"groups", "popup", b"popup", "rankedTitles", b"rankedTitles", "serviceAnnouncements", b"serviceAnnouncements", "topBanners", b"topBanners"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["mvBanner", b"mvBanner", "popup", b"popup"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["featuredTitleLists", b"featuredTitleLists", "groups", b"groups", "mvBanner", b"mvBanner", "popup", b"popup", "rankedTitles", b"rankedTitles", "serviceAnnouncements", b"serviceAnnouncements", "topBanners", b"topBanners"]) -> None: ...
 
 global___WebHomeViewV4 = WebHomeViewV4
+
+@typing.final
+class MVBanner(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IMAGEURL_FIELD_NUMBER: builtins.int
+    TITLEGROUPS_FIELD_NUMBER: builtins.int
+    imageUrl: builtins.str
+    @property
+    def titleGroups(self) -> global___OriginalTitleGroup: ...
+    def __init__(
+        self,
+        *,
+        imageUrl: builtins.str = ...,
+        titleGroups: global___OriginalTitleGroup | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["titleGroups", b"titleGroups"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["imageUrl", b"imageUrl", "titleGroups", b"titleGroups"]) -> None: ...
+
+global___MVBanner = MVBanner

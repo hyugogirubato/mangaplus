@@ -29,4 +29,3 @@ message AvailableLanguages {
   Language language = 1;
   int32 titlesCount = 2;
 }
-
