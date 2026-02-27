@@ -40,7 +40,7 @@ pip install git+https://github.com/hyugogirubato/mangaplus.git
 
 ```python
 from mangaplus import MangaPlus
-from mangaplus.constants import Language, Viewer, Quality, Ranking, TitleType, PageType
+from mangaplus.constants import Language, Viewer, Quality, TitleType
 
 if __name__ == "__main__":
     # Initialize the client
@@ -57,32 +57,32 @@ if __name__ == "__main__":
     titles = client.getAllTitlesV3(title_type=TitleType.SERIALIZING)
 
     # Get chapter images
-    chapter_data = client.getMangaData(chapter_id=1014090, quality=Quality.SUPER_HIGH)
+    chapter_data = client.getMangaData(chapter_id=1000486, quality=Quality.SUPER_HIGH)
 
     # Add a title to favorites
-    client.addFavorited(title_id=100191)
+    client.addFavorited(title_id=100020)
 
     # Post a comment
-    client.postComment(chapter_id=1014090, body="Great chapter!")
+    client.postCommentRx(chapter_id=1000486, body="Great chapter!")
 ```
 
 ## API Methods
 
 Some of the key methods provided by this client:
 
-| Method                                             | Description                                                     |
-|----------------------------------------------------|-----------------------------------------------------------------|
-| `getAllTitlesV3()`                                 | Get titles by type (serializing, completed, one-shots)          |
-| `getMangaData()`                                   | Retrieve chapter images with optional quality and split options |
-| `getTitleDetail()`                                 | Get detailed title information                                  |
-| `getFavoriteTitles()`                              | List all favorite titles                                        |
-| `addFavorited()` / `deleteFavorite()`              | Add or remove titles from favorites                             |
-| `postComment()` / `banComment()` / `likeComment()` | Manage comments and likes                                       |
-| `register()`                                       | Register a device and obtain a secret key                       |
-| `setSubscription()` / `setSubscriptionRestore()`   | Manage subscription data                                        |
-| `getRankingV2()`                                   | Get ranking lists (hottest, trending, completed)                |
-| `getHistory()`                                     | Retrieve user reading history                                   |
-| `logBannerTap()` / `logPopupTap()`                 | Log interactions with banners and popups                        |
+| Method                                           | Description                                                     |
+|--------------------------------------------------|-----------------------------------------------------------------|
+| `getAllTitlesV3()`                               | Get titles by type (serializing, completed, one-shots)          |
+| `getMangaData()`                                 | Retrieve chapter images with optional quality and split options |
+| `getTitleDetail()`                               | Get detailed title information                                  |
+| `getFavoriteTitles()`                            | List all favorite titles                                        |
+| `addFavorited()` / `deleteFavorite()`            | Add or remove titles from favorites                             |
+| `getHome()`                                      | Fetch home screen data                                          |
+| `register()`                                     | Register a device and obtain a secret key                       |
+| `setSubscription()` / `setSubscriptionRestore()` | Manage subscription data                                        |
+| `getRankingV2()`                                 | Get ranking lists (hottest, trending, completed)                |
+| `getHistory()`                                   | Retrieve user reading history                                   |
+| `logBannerTap()` / `logPopupTap()`               | Log interactions with banners and popups                        |
 
 > And many more methods for publisher news, downloadable images, language preferences, and event logging.
 
@@ -102,4 +102,4 @@ You can find a copy of the license in the LICENSE file in the root folder.
 
 ---
 
-© hyugogirubato 2025
+© hyugogirubato 2026

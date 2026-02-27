@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "mangaplus"
-version = "1.23.2"
+version = "2.1.2"
 description = "Python client for MangaPlus to access manga content and interact with the API."
 license = "GPL"
 authors = ["hyugogirubato <65763543+hyugogirubato@users.noreply.github.com>"]
@@ -34,11 +34,11 @@ include = [
 
 [tool.poetry.dependencies]
 python = ">=3.8,<4.0"
-protobuf = "^5.29.5"
+protobuf = "^5.29.6"
 requests = ">=2.32.3"
 
 [tool.poetry.group.dev.dependencies]
-mypy-protobuf = ">=3.6.0"
+mypy-protobuf = "3.6.0"
 pathvalidate = ">=3.2.1"
 cbz = ">=3.4.2"
 

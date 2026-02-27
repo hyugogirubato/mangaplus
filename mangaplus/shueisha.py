@@ -1,6 +1,7 @@
 import hashlib
 
 from typing import List, Optional
+from urllib.parse import urlparse
 
 import requests
 
@@ -12,7 +13,7 @@ class MangaPlus:
     """Python client for interacting with the MangaPlus API."""
 
     # @package jp.co.shueisha.mangaplus.api.ApiFactory;
-    APP_VERSION = 222
+    APP_VERSION = 237
 
     def __init__(
             self,
@@ -48,17 +49,19 @@ class MangaPlus:
         Raises:
             Exception: If API returns an error message.
         """
+        url = kwargs['url']
+
         headers = kwargs.get('headers') or {
             'Accept-Encoding': 'gzip',
             'Connection': 'Keep-Alive',
-            'Host': 'jumpg-api.tokyo-cdn.com',
+            'Host': urlparse(url).netloc,
             'User-Agent': 'okhttp/4.12.0'
         }
 
         params = {
             **kwargs.get('params', {}),
             'os': 'android',
-            'os_ver': 29,
+            'os_ver': 35,
             'app_ver': self.APP_VERSION
         }
 
@@ -67,7 +70,7 @@ class MangaPlus:
 
         r = requests.request(
             method=kwargs.get('method', 'GET'),
-            url=kwargs['url'],
+            url=url,
             params=params,
             headers=headers
         )
@@ -104,21 +107,19 @@ class MangaPlus:
             url=f'{self.api}/comment',
             params={'comment_id': comment_id})
 
-    def deleteFavorite(self, title_id: int) -> dict:
+    def deleteFavoriteTitle(self, title_id: int) -> dict:
         return self.__request(
             method='DELETE',
             url=f'{self.api}/title_list/bookmark',
             params={'title_id': title_id})
 
+    def deleteFavorited(self, content_id: int) -> dict:
+        return self.deleteFavoriteTitle(title_id=content_id)
+
     def deletePushToken(self) -> dict:
         return self.__request(
             method='DELETE',
             url=f'{self.api}/push_token')
-
-    def favorite(self) -> dict:
-        return self.__request(
-            method='GET',
-            url=f'{self.api}/title_list/bookmark')
 
     def getAdTapLog(self, chapter_id: int, token: str, tap_type: str) -> dict:
         return self.__request(
@@ -147,6 +148,9 @@ class MangaPlus:
             url=f'{self.api}/comment',
             params={'chapter_id': chapter_id})
 
+    def getCommentsRx(self, chapter_id: int) -> dict:
+        return self.getComments(chapter_id=chapter_id)
+
     def getDownloadableImages(self) -> dict:
         # @Unchecked
         return self.__request(
@@ -157,7 +161,7 @@ class MangaPlus:
         # @Unchecked
         return self.__request(
             method='GET',
-            url=f'{self.api}/title_list/favorite_titles')
+            url=f'{self.api}/title_list/bookmark')
 
     def getFirstSubscriptionView(self) -> dict:
         # @Unchecked
@@ -167,6 +171,7 @@ class MangaPlus:
             params={'clang': self.__clang})
 
     def getFreeTitles(self) -> dict:
+        # @Legacy
         return self.__request(
             method='GET',
             url=f'{self.api}/title_list/free_titles',
@@ -177,6 +182,12 @@ class MangaPlus:
             method='GET',
             url=f'{self.api}/title_list/history',
             params={'lang': self.lang.value, 'clang': self.__clang})
+
+    def getHome(self) -> dict:
+        return self.__request(
+            method='GET',
+            url=f'{self.api}/home_v6',
+            params={'lang': self.lang.value, 'viewer_mode': self.viewer.value, 'clang': self.__clang})
 
     def getMPCStatus(self) -> dict:
         # @Unchecked
@@ -208,7 +219,20 @@ class MangaPlus:
                 'clang': self.__clang
             })
 
+    def getPreview(self) -> dict:
+        # @Unchecked
+        return self.__request(
+            method='GET',
+            url=f'{self.api}/preview',
+            params={'viewer_mode': self.viewer.value, 'clang': self.__clang})
+
+    def getProfile(self) -> dict:
+        return self.__request(
+            method='GET',
+            url=f'{self.api}/profile')
+
     def getPublisherNewsList(self, publisher_id: int) -> dict:
+        # @Legacy
         return self.__request(
             method='GET',
             url=f'{self.api}/publisher_news_list',
@@ -219,6 +243,13 @@ class MangaPlus:
             method='GET',
             url=f'{self.api}/title_list/rankingV2',
             params={'lang': self.lang.value, 'type': ranking.value, 'clang': self.__clang})
+
+    def getRecommendedTitles(self) -> dict:
+        # @Unchecked
+        return self.__request(
+            method='GET',
+            url=f'{self.api}/title_list/favorite_titles',
+            params={'lang': self.lang.value, 'clang': self.__clang})
 
     def getSearchTitles(self) -> dict:
         return self.__request(
@@ -235,9 +266,12 @@ class MangaPlus:
     def getSubscriptionView(self) -> dict:
         return self.__request(
             method='GET',
-            url=f'{self.api}/subscription')
+            url=f'{self.api}/subscription',
+            # params={'country_code': self.__clang}
+        )
 
     def getTicketTitles(self) -> dict:
+        # @Legacy
         return self.__request(
             method='GET',
             url=f'{self.api}/title_list/ticket_titles')
@@ -249,6 +283,7 @@ class MangaPlus:
             params={'title_id': title_id, 'lang': self.lang.value, 'clang': self.__clang})
 
     def getUpdates(self) -> dict:
+        # @Legacy
         return self.__request(
             method='GET',
             url=f'{self.api}/home_v4',
@@ -260,11 +295,24 @@ class MangaPlus:
             url=f'{self.api}/comment_like',
             params={'comment_id': comment_id})
 
+    def logAddedLanguage(self) -> dict:
+        return self.__request(
+            method='GET',
+            url=f'{self.api}/minor_lang_user_follow_log',
+            params={'clang': self.__clang})
+
     def logBannerTap(self, banner_id: int) -> dict:
         return self.__request(
             method='GET',
             url=f'{self.api}/title_banner_tap_log',
             params={'banner_id': banner_id})
+
+    def logBannerTapForMinorLanguage(self, banner_type: str) -> dict:
+        # @Unchecked
+        return self.__request(
+            method='GET',
+            url=f'{self.api}/minor_care_banner_tap_log',
+            params={'type': banner_type})
 
     def logTitleBannerTap(self, banner_id: int, title_id: int, banner_type: str, location: str, tap_type: str) -> dict:
         # @Unchecked
@@ -327,7 +375,7 @@ class MangaPlus:
             url=f'{self.api}/popup_tap_log',
             params={'popup_id': popup_id})
 
-    def postComment(self, chapter_id: int, body: str) -> dict:
+    def postCommentRx(self, chapter_id: int, body: str) -> dict:
         return self.__request(
             method='POST',
             url=f'{self.api}/comment',
@@ -339,12 +387,12 @@ class MangaPlus:
             url=f'{self.api}/push_token',
             params={'push_token': push_token})
 
-    def putFavoriteTitles(self, title_ids: str) -> dict:
+    def putFavoriteTitle(self, title_id: str) -> dict:
         # @Unchecked
         return self.__request(
             method='PUT',
-            url=f'{self.api}/title_list/favorite_titles',
-            params={'title_ids': title_ids})
+            url=f'{self.api}/title_list/bookmark',
+            params={'title_id': title_id})
 
     def putLanguagePreferences(self, dlang: str) -> dict:
         # @Unchecked
@@ -352,6 +400,13 @@ class MangaPlus:
             method='PUT',
             url=f'{self.api}/language_preferences',
             params={'lang': self.lang.value, 'clang': self.__clang, 'dlang': dlang})
+
+    def putRecommendedTitles(self, title_ids: str) -> dict:
+        # @Unchecked
+        return self.__request(
+            method='PUT',
+            url=f'{self.api}/title_list/favorite_titles',
+            params={'title_ids': title_ids})
 
     def register(self, device_id: str) -> dict:
         # package jp.co.shueisha.mangaplus.util.UtilKt;
@@ -382,6 +437,12 @@ class MangaPlus:
             method='DELETE',
             url=f'{self.api}/comment_like',
             params={'comment_id': comment_id})
+
+    def updateProfile(self, icon_id: int, user_name: str) -> dict:
+        return self.__request(
+            method='POST',
+            url=f'{self.api}/profile',
+            params={'icon_id': icon_id, 'name': user_name})
 
 
 __all__ = ('MangaPlus',)

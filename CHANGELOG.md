@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.2] - 2026-02-27
+
+### Updated
+
+- Protobuf private API.
+- Added new API endpoints.
+
 ## [1.23.2] - 2025-09-21
 
 ### Changed
@@ -119,6 +126,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Initial push.
 
+[2.1.2]: https://github.com/hyugogirubato/mangaplus/releases/tag/v2.1.2
 [1.23.2]: https://github.com/hyugogirubato/mangaplus/releases/tag/v1.23.2
 [1.23.1]: https://github.com/hyugogirubato/mangaplus/releases/tag/v1.23.1
 [1.9.19]: https://github.com/hyugogirubato/mangaplus/releases/tag/v1.9.19
