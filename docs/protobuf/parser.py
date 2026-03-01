@@ -205,7 +205,7 @@ if __name__ == '__main__':
     path = Path('compiled.java')
     parser = Parser(path)
 
-    print('--- Protobufs ---')
+    print('--- Protobuf ---')
     print('\n'.join(parser.proto_parsed).replace('    ', '|---'))
 
     # Combine proto output: header, messages, enums
