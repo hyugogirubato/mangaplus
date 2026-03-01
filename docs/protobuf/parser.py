@@ -175,7 +175,7 @@ class Parser(object):
                         field_type = 'repeated ' + INTERNAL_PROTO_TYPE.get(m.group(1), m.group(1))
 
                     # Convert timestamp int fields to int64
-                    if field_type in 'int' and 'timestamp' in field_key.lower():
+                    if 'int' in field_type and 'timestamp' in field_key.lower():
                         field_type = 'int64'
 
                     # Map Java types to Protobuf types
