@@ -12,7 +12,7 @@ This document explains how the identifier works and how it can be obtained for u
 
 Historically, applications could retrieve a device identifier directly using:
 
-```bash
+```sh
 adb shell settings get secure android_id
 ```
 
@@ -111,13 +111,13 @@ Most of them require **root privileges** or **network interception**.
 
    You can convert and search it with:
 
-   ```bash
+   ```sh
    abx2xml /data/system/users/0/settings_ssaid.xml - | grep "jp.co.shueisha.mangaplus"
    ```
 
    Example output:
 
-   ```
+   ```xml
      <setting id="32" name="10320" value="0123456789abcdef" package="jp.co.shueisha.mangaplus" defaultValue="0123456789abcdef" defaultSysSet="false" tag="null" />
    ```
 
@@ -130,7 +130,7 @@ Most of them require **root privileges** or **network interception**.
 
    Example command:
 
-   ```bash
+   ```sh
    frida -U -l hook.js -f jp.co.shueisha.mangaplus
    ```
 
