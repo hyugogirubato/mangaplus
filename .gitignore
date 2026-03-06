@@ -178,3 +178,4 @@ pyrightconfig.json
 # MangaPlus
 *.apk
 docs/scripts/
+main.py
